@@ -1,0 +1,260 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B00000000000000000000001 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000001 /* main.swift */; };
+		B00000000000000000000002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000002 /* AppDelegate.swift */; };
+		B00000000000000000000003 /* EditorWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000003 /* EditorWindowController.swift */; };
+		B00000000000000000000004 /* EditorSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000004 /* EditorSession.swift */; };
+		B00000000000000000000005 /* NoteReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000005 /* NoteReader.swift */; };
+		B00000000000000000000011 /* NoteReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000011 /* NoteReaderTests.swift */; };
+		B00000000000000000000012 /* EditorSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000012 /* EditorSessionTests.swift */; };
+		B00000000000000000000013 /* EditorWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000013 /* EditorWindowTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D00000000000000000000001 = {
+			isa = PBXContainerItemProxy;
+			containerPortal = P00000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A00000000000000000000001;
+			remoteInfo = FinderNotes;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F00000000000000000000001 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		F00000000000000000000002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F00000000000000000000003 /* EditorWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorWindowController.swift; sourceTree = "<group>"; };
+		F00000000000000000000004 /* EditorSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorSession.swift; sourceTree = "<group>"; };
+		F00000000000000000000005 /* NoteReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteReader.swift; sourceTree = "<group>"; };
+		F00000000000000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F00000000000000000000011 /* NoteReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteReaderTests.swift; sourceTree = "<group>"; };
+		F00000000000000000000012 /* EditorSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorSessionTests.swift; sourceTree = "<group>"; };
+		F00000000000000000000013 /* EditorWindowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorWindowTests.swift; sourceTree = "<group>"; };
+		F00000000000000000000021 /* FinderNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinderNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F00000000000000000000022 /* FinderNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinderNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		H00000000000000000000001 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		H00000000000000000000002 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		G00000000000000000000001 = {
+			isa = PBXGroup;
+			children = (G00000000000000000000002 /* FinderNotes */, G00000000000000000000003 /* FinderNotesTests */, G00000000000000000000004 /* Products */);
+			sourceTree = "<group>";
+		};
+		G00000000000000000000002 /* FinderNotes */ = {
+			isa = PBXGroup;
+			children = (F00000000000000000000001, F00000000000000000000002, F00000000000000000000003, F00000000000000000000004, F00000000000000000000005, F00000000000000000000006);
+			path = FinderNotes;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000003 /* FinderNotesTests */ = {
+			isa = PBXGroup;
+			children = (F00000000000000000000011, F00000000000000000000012, F00000000000000000000013);
+			path = FinderNotesTests;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000004 /* Products */ = {
+			isa = PBXGroup;
+			children = (F00000000000000000000021, F00000000000000000000022);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A00000000000000000000001 /* FinderNotes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C00000000000000000000002;
+			buildPhases = (S00000000000000000000001, H00000000000000000000001, R00000000000000000000001);
+			buildRules = ();
+			dependencies = ();
+			name = FinderNotes;
+			productName = FinderNotes;
+			productReference = F00000000000000000000021;
+			productType = "com.apple.product-type.application";
+		};
+		A00000000000000000000002 /* FinderNotesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C00000000000000000000003;
+			buildPhases = (S00000000000000000000002, H00000000000000000000002, R00000000000000000000002);
+			buildRules = ();
+			dependencies = (D00000000000000000000002);
+			name = FinderNotesTests;
+			productName = FinderNotesTests;
+			productReference = F00000000000000000000022;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		P00000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2700;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					A00000000000000000000001 = {CreatedOnToolsVersion = 27.0; };
+					A00000000000000000000002 = {CreatedOnToolsVersion = 27.0; TestTargetID = A00000000000000000000001; };
+				};
+			};
+			buildConfigurationList = C00000000000000000000001;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = zh_CN;
+			hasScannedForEncodings = 0;
+			knownRegions = (zh_CN, en, Base);
+			mainGroup = G00000000000000000000001;
+			productRefGroup = G00000000000000000000004;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (A00000000000000000000001, A00000000000000000000002);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		R00000000000000000000001 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		R00000000000000000000002 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		S00000000000000000000001 = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (B00000000000000000000001, B00000000000000000000002, B00000000000000000000003, B00000000000000000000004, B00000000000000000000005);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		S00000000000000000000002 = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (B00000000000000000000011, B00000000000000000000012, B00000000000000000000013);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D00000000000000000000002 = {isa = PBXTargetDependency; target = A00000000000000000000001; targetProxy = D00000000000000000000001; };
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C00000000000000000000011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		C00000000000000000000012 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		C00000000000000000000021 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FinderNotes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+				PRODUCT_BUNDLE_IDENTIFIER = com.findernotes.FinderNotes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+			};
+			name = Debug;
+		};
+		C00000000000000000000022 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FinderNotes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+				PRODUCT_BUNDLE_IDENTIFIER = com.findernotes.FinderNotes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+			};
+			name = Release;
+		};
+		C00000000000000000000031 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks", "@loader_path/../Frameworks");
+				PRODUCT_BUNDLE_IDENTIFIER = com.findernotes.FinderNotesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinderNotes.app/Contents/MacOS/FinderNotes";
+			};
+			name = Debug;
+		};
+		C00000000000000000000032 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks", "@loader_path/../Frameworks");
+				PRODUCT_BUNDLE_IDENTIFIER = com.findernotes.FinderNotesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinderNotes.app/Contents/MacOS/FinderNotes";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C00000000000000000000001 = {isa = XCConfigurationList; buildConfigurations = (C00000000000000000000011, C00000000000000000000012); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		C00000000000000000000002 = {isa = XCConfigurationList; buildConfigurations = (C00000000000000000000021, C00000000000000000000022); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		C00000000000000000000003 = {isa = XCConfigurationList; buildConfigurations = (C00000000000000000000031, C00000000000000000000032); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = P00000000000000000000001 /* Project object */;
+}
