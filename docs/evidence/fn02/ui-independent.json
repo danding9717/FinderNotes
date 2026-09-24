@@ -1,0 +1,102 @@
+{
+  "root": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn02-7mnvwmor",
+  "ok": true,
+  "checks": [
+    {
+      "file": "conflict.mov",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "conflict.png",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "disappear.mov",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "hard-link.mov",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "hard-link.png",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "hard.mov",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "hard.png",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "invalid.mov",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": "ff"
+    },
+    {
+      "file": "invalid.png",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": "ff"
+    },
+    {
+      "file": "normal.mov",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": "464e3032204d4f5620e783ade590afe58aa820e4b8ade69687f09f9982"
+    },
+    {
+      "file": "normal.png",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": "464e303220e69c80e7bb88e69e84e5bbbae9878de5a48de8a7a6e58f91f09f9982"
+    },
+    {
+      "file": "readonly.mov",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "readonly.png",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "replace.mov",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "replace.png",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "replacement.mov",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    }
+  ]
+}
