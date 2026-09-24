@@ -36,4 +36,8 @@ fn01_root='/把 prepare 输出的 ROOT 完整路径粘贴到这里'
 3. 对 `work/lifecycle.png` 与 `.mov` 写入 `mixed`，关闭探针。在 Finder 中改名为 `renamed.png` / `renamed.mov`，移入本轮 `moved/`，复制一份并将副本命名为 `copy.png` / `copy.mov`。分别从新路径读取并核对 `mixed`；仅将副本改写为 `cjk2000`，再次读取原件与副本。各次 `read` 也核对媒体内容哈希与设备／inode 身份。
 4. 记录 Finder 界面可见响应、权限提示与是否允许。终端或当前命令身份的授权，不等于未来正式应用的授权；服务入口、拒绝授权及多选行为由 FN-02 验证。
 
+## 已观察到的操作路径差异
+
+2026-09-24 在本机 APFS 临时目录中，Finder UI 移动 MOV 保留注释，但命令行同卷 `mv` 对新建 PNG 和 MOV 测试副本都使 Finder 注释读回为空，媒体内容 SHA-256 和 inode 不变。复现时在新的 `prepare` 根目录中分别复制一个种子到 `work/mv-probe.png` / `.mov`，先运行 `write-verify ... mixed`，再用 `mv` 移入同轮 `moved/`，最后运行带 `mixed` 期望的 `read`。两类媒体在移动后均返回非零并报告实际 0 字节。不要将文件系统移动结果等同于 Finder UI 移动；也不要把空文本自动解释为用户主动删除注释。实际日志与限制见 [本机证据](../../docs/evidence/fn01/2026-09-24.md)。
+
 临时目录仅在本轮证据核对完后清理，且只清理本次 `prepare` 创建的目录。Git 保存合成数据的哈希、实际命令和日志，不提交临时媒体及本机私有信息。
