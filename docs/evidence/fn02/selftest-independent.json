@@ -1,0 +1,90 @@
+{
+  "root": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn02-_hmnl3iq",
+  "ok": true,
+  "checks": [
+    {
+      "file": "conflict.mov",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "conflict.png",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "hard-link.mov",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "hard-link.png",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "hard.mov",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "hard.png",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "invalid.mov",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": "ff"
+    },
+    {
+      "file": "invalid.png",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": "ff"
+    },
+    {
+      "file": "normal.mov",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": "464e303220e4b8ade69687f09f99820ae5a4b1e8b4a5e58fafe5a48de588b6e88d89e7a8bf206d6f762020"
+    },
+    {
+      "file": "normal.png",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": "464e303220e4b8ade69687f09f99820ae5a4b1e8b4a5e58fafe5a48de588b6e88d89e7a8bf20706e672020"
+    },
+    {
+      "file": "readonly.mov",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "readonly.png",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "replace.mov",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    },
+    {
+      "file": "replace.png",
+      "media_matches_seed": true,
+      "sentinel_preserved": true,
+      "note": null
+    }
+  ]
+}

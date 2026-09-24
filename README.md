@@ -47,3 +47,7 @@ python3 validation/fn01/run-xattr.py
 [M0 验证方案](docs/M0_VALIDATION.md)规定隔离样本和证据格式。仅在独立临时目录对测试副本写入；旧 Orbit 的服务、数据库与真实素材库不作为测试对象。
 
 一个已授权的任务使用一个分支与 PR；PR 写明对应 Notion 任务、实际执行的检查、失败与未验证项及 Dan 的验收步骤。`Review` 表示待验收，只有 Dan 明确确认后才能将任务设为 `Done`。首次 PR 模板位于 [.github/pull_request_template.md](.github/pull_request_template.md)。
+
+## FN-02 验证入口
+
+原生 AppKit 系统服务验证应用、独立合成样本与构建／验收方法见 [validation/fn02](validation/fn02/README.md)，本机结果见 [FN-02 实测证据](docs/evidence/fn02/2026-09-24.md)。仅为 M0 验证，不代表 M1 产品或正式权限配置已交付。

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>CFBundleIdentifier</key><string>com.findernotes.validation.fn02</string>
+<key>CFBundleName</key><string>FinderNotes FN02</string>
+<key>CFBundleExecutable</key><string>FinderNotesFN02</string>
+<key>CFBundlePackageType</key><string>APPL</string>
+<key>CFBundleVersion</key><string>1</string>
+<key>CFBundleShortVersionString</key><string>0.0.2</string>
+<key>NSPrincipalClass</key><string>NSApplication</string>
+<key>NSHighResolutionCapable</key><true/>
+<key>NSServices</key><array><dict>
+<key>NSMenuItem</key><dict><key>default</key><string>FinderNotes FN02 验证笔记</string></dict>
+<key>NSMessage</key><string>receiveFiles</string>
+<key>NSPortName</key><string>FinderNotes FN02</string>
+<key>NSSendTypes</key><array><string>public.file-url</string><string>NSFilenamesPboardType</string></array>
+<key>NSRequiredContext</key><dict/>
+<key>NSTimeout</key><string>10000</string>
+</dict></array>
+</dict></plist>
