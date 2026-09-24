@@ -1,6 +1,6 @@
 # FinderNotes
 
-FinderNotes 计划为 Finder 中的单份图片或视频提供原生笔记编辑入口。文件仍由 Finder 管理。当前仓库保存项目约定与设计说明；Finder 注释存储、系统服务入口和应用行为均待 M0 本机验证。
+FinderNotes 计划为 Finder 中的单份图片或视频提供原生笔记编辑入口，文件仍由 Finder 管理。按已确认的 D-006，正式笔记拟保存为文件上的自定义 xattr；不与 Finder 原生注释同步，不自动迁移旧注释。当前仓库包含 M0 验证探针与证据，尚无正式应用。
 
 ## 项目入口
 
@@ -8,7 +8,7 @@ FinderNotes 计划为 Finder 中的单份图片或视频提供原生笔记编辑
 - [设计与决策](https://app.notion.com/p/3e4e7607d6498101ae7cede78291e918)
 - [开发与验收约定](https://app.notion.com/p/3e4e7607d6498155b515fd03212b3437)
 
-需求、任务状态与验收结论以 Notion 的当前记录为准。开发前先阅读 [AGENTS.md](AGENTS.md)、本轮任务卡和实际 Git 状态。初始技术方案保存在 [设计说明](Finder_Notes_Codex_Design.md)；其中的候选路线尚不代表实测结论。
+需求、任务状态与验收结论以 Notion 的当前记录为准。开发前先阅读 [AGENTS.md](AGENTS.md)、本轮任务卡和实际 Git 状态。[初始设计说明](Finder_Notes_Codex_Design.md)作为历史归档保留，其中的 Finder 原生注释路线已由 D-006 替代。
 
 ## 本机准备
 
@@ -21,9 +21,26 @@ xcrun --sdk macosx --show-sdk-version
 swift --version
 ```
 
-若 Xcode 安装在别处，先设置 `FINDERNOTES_DEVELOPER_DIR` 为该 `.app` 内的 `Contents/Developer`。实际工具链版本、签名和应用权限在 M0 记录。仓库尚无应用工程、应用构建命令或自动化测试；建立最小验证工程后再补入实测可复现的命令。
+若 Xcode 安装在别处，先设置 `FINDERNOTES_DEVELOPER_DIR` 为该 `.app` 内的 `Contents/Developer`。实际工具链版本、签名和应用权限在 M0 记录。下述探针构建与隔离测试不代替正式 `.app`、系统服务或应用身份下的权限验收。
 
 安装完成后运行 `./scripts/verify_toolchain.sh`。脚本仅在系统临时目录编译一个导入 AppKit 的最小程序，并在退出时清理；成功运行后才把工具链记为已验证。
+
+## FN-01 验证入口
+
+- [build-xattr.sh](validation/fn01/build-xattr.sh)：构建自定义 xattr 最小探针。
+- [run-xattr.py](validation/fn01/run-xattr.py)：运行合成样本的隔离验证；运行方法及 Finder 人工步骤见[探针说明](validation/fn01/README.md)。
+- [证据目录](docs/evidence/fn01/)：保存实际环境、命令、结果与未验证项。旧 Finder 原生注释实验保留为历史证据，不作为自定义 xattr 的通过结论。
+
+在仓库根目录执行：
+
+```sh
+./validation/fn01/build-xattr.sh
+python3 validation/fn01/run-xattr.py
+```
+
+每次运行新建独立临时目录并输出 JSONL 结果；Finder 界面操作按探针说明单独执行和记录。自定义探针路径可通过 `run-xattr.py --probe /absolute/path` 指定。
+
+探针使用自有属性 `com.findernotes.note.v1` 保存原始 UTF-8 正文，验证文本完整性、持久化、文件操作后的保留情况及原件保护。路线选择不等于验证通过；当前结果以 FN-01 任务卡与对应证据为准。FN-02 的系统服务与权限验证另行开展，不由存储探针代替。
 
 ## 验证与协作
 
