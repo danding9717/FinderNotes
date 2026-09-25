@@ -3,11 +3,10 @@ import AppKit
 @MainActor
 final class EditorWindowController: NSWindowController, NSWindowDelegate, NSTextViewDelegate {
     enum LeaveAction { case switchFile, closeWindow, quit }
-    enum DraftDecision { case keepEditing, copy, discard }
+    enum DraftDecision { case keepEditing, discard }
 
     let session: EditorSession
     let editor = NSTextView()
-    let fileName = NSTextField(labelWithString: "未打开文件")
     let filePath = NSTextField(wrappingLabelWithString: "")
     let statusLabel = NSTextField(wrappingLabelWithString: "")
     let saveButton = NSButton(title: "保存", target: nil, action: nil)
@@ -50,7 +49,7 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
         let stack = NSStackView()
         stack.orientation = .vertical
         stack.alignment = .leading
-        stack.spacing = 12
+        stack.spacing = 8
         stack.translatesAutoresizingMaskIntoConstraints = false
         content.addSubview(stack)
         NSLayoutConstraint.activate([
@@ -59,18 +58,12 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
             stack.topAnchor.constraint(equalTo: content.topAnchor, constant: 20),
             stack.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -18)
         ])
-        fileName.font = .systemFont(ofSize: 18, weight: .semibold)
-        fileName.lineBreakMode = .byTruncatingMiddle
-        fileName.isSelectable = true
-        fileName.setAccessibilityIdentifier("fn-file-name")
         filePath.font = .systemFont(ofSize: 11)
         filePath.textColor = .secondaryLabelColor
         filePath.isSelectable = true
-        filePath.maximumNumberOfLines = 2
+        filePath.maximumNumberOfLines = 1
         filePath.lineBreakMode = .byTruncatingMiddle
         filePath.setAccessibilityIdentifier("fn-file-path")
-        stack.addArrangedSubview(fileName)
-        stack.addArrangedSubview(filePath)
 
         editor.isRichText = false
         editor.importsGraphics = false
@@ -100,9 +93,7 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
         stack.addArrangedSubview(scroll)
         NSLayoutConstraint.activate([
             scroll.widthAnchor.constraint(equalTo: stack.widthAnchor),
-            scroll.heightAnchor.constraint(greaterThanOrEqualToConstant: 130),
-            fileName.widthAnchor.constraint(equalTo: stack.widthAnchor),
-            filePath.widthAnchor.constraint(equalTo: stack.widthAnchor)
+            scroll.heightAnchor.constraint(greaterThanOrEqualToConstant: 130)
         ])
         let controls = NSStackView()
         controls.spacing = 10
@@ -122,11 +113,8 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
         statusLabel.setAccessibilityIdentifier("fn-status")
         stack.addArrangedSubview(statusLabel)
         statusLabel.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
-        let notice = NSTextField(wrappingLabelWithString: "请在整理或替换素材文件前完成编辑。保存遇到外部修改时会保留草稿，可复制或导出 Markdown。")
-        notice.font = .systemFont(ofSize: 11)
-        notice.textColor = .secondaryLabelColor
-        stack.addArrangedSubview(notice)
-        notice.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
+        stack.addArrangedSubview(filePath)
+        filePath.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
     }
 
     func showEditor() {
@@ -194,7 +182,6 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
         editor.scrollToBeginningOfDocument(nil)
         editor.isEditable = session.snapshot != nil
         editor.isSelectable = session.snapshot != nil
-        fileName.stringValue = session.snapshot?.url.lastPathComponent ?? "未打开文件"
         filePath.stringValue = session.snapshot?.url.path ?? ""
         filePath.toolTip = session.snapshot?.url.path
         window?.title = session.snapshot.map { "\($0.url.lastPathComponent) — FinderNotes" } ?? "FinderNotes"
@@ -312,25 +299,23 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
     func makeDiscardAlert(for action: LeaveAction) -> NSAlert {
         let alert = NSAlert()
         alert.messageText = "草稿尚未保存"
-        alert.informativeText = "当前草稿尚未确认保存。继续编辑或复制草稿会保留当前窗口；只有明确丢弃才会离开。"
-        alert.addButton(withTitle: "继续编辑")
-        alert.addButton(withTitle: "复制草稿")
         let label: String
         switch action {
         case .switchFile: label = "丢弃并切换"
         case .closeWindow: label = "丢弃并关闭"
         case .quit: label = "丢弃并退出"
         }
+        alert.informativeText = "请先返回编辑器完成输入并点击“保存”。选择“\(label)”会放弃未保存的改动。"
+        alert.addButton(withTitle: "返回编辑")
         alert.addButton(withTitle: label)
         alert.buttons[0].keyEquivalent = "\r"
-        alert.buttons[2].hasDestructiveAction = true
+        alert.buttons[1].hasDestructiveAction = true
         return alert
     }
 
-    func applyDecision(_ decision: DraftDecision, pasteboard: NSPasteboard = .general) -> Bool {
+    func applyDecision(_ decision: DraftDecision) -> Bool {
         switch decision {
         case .keepEditing: return false
-        case .copy: _ = copyDraft(to: pasteboard); return false
         case .discard: return true
         }
     }
@@ -348,8 +333,7 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
         }
         let response = await makeDiscardAlert(for: action).beginSheetModal(for: window)
         switch response {
-        case .alertSecondButtonReturn: return applyDecision(.copy)
-        case .alertThirdButtonReturn: return applyDecision(.discard)
+        case .alertSecondButtonReturn: return applyDecision(.discard)
         default: return applyDecision(.keepEditing)
         }
     }

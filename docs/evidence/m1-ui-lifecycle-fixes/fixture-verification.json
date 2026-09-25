@@ -1,0 +1,58 @@
+{
+  "schema": "findernotes-fn05-fixtures-v1",
+  "root": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn05-spibvlkf",
+  "runID": "7cf069db-b0d2-4d03-a2b2-b5ad81bea12a",
+  "status": "passed",
+  "failures": [],
+  "fixtureMutationsByVerifier": [],
+  "checks": [
+    {
+      "file": "conflict.png",
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteHex": "464e303520e58e9fe69c89e6ada3e696870a4d3120e59b9ee5bd92e5beaae78eaf2035"
+    },
+    {
+      "file": "copy.png",
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteHex": "464e303520e59bbee78987e7ac94e8aeb0efbc9ae4b8ade69687f09f99820a2020e9a696e5b0bee7a9bae799bd20200a"
+    },
+    {
+      "file": "empty.png",
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteHex": "4d3120e59b9ee5bd92e5beaae78eaf2034"
+    },
+    {
+      "file": "missing.png",
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteHex": "4d3120e59b9ee5bd92e5beaae78eaf2033"
+    },
+    {
+      "file": "normal.mov",
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteHex": "464e303520e8a786e9a291e7ac94e8aeb0efbc9ae4b8ade69687f09f9a800ae8a786e9a291e7acace4ba8ce8a18c0a4d3120e59b9ee5bd92e5beaae78eaf2032"
+    },
+    {
+      "file": "normal.png",
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteHex": "464e303520e59bbee78987e7ac94e8aeb0efbc9ae4b8ade69687f09f99820a2020e9a696e5b0bee7a9bae799bd20200a0a4d3120e59b9ee5bd92e5beaae78eaf2031"
+    }
+  ]
+}

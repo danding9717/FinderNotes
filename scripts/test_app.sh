@@ -13,7 +13,8 @@ profile_settings=()
 case "$profile" in
   standard) ;;
   fn05) profile_settings=(FINDERNOTES_APP_SUFFIX=.FN05Tests FINDERNOTES_INFO_SUFFIX=-FN05Tests FINDERNOTES_TEST_SUFFIX=.FN05Tests) ;;
-  *) print -u2 'FINDERNOTES_BUILD_PROFILE must be standard or fn05.'; exit 2 ;;
+  m1fix) profile_settings=(FINDERNOTES_APP_SUFFIX=.M1FixTests FINDERNOTES_INFO_SUFFIX=-M1FixTests FINDERNOTES_TEST_SUFFIX=.M1FixTests) ;;
+  *) print -u2 'FINDERNOTES_BUILD_PROFILE must be standard, fn05, or m1fix.'; exit 2 ;;
 esac
 project_root="${0:A:h:h}"
 derived_data="$project_root/.build/DerivedData"

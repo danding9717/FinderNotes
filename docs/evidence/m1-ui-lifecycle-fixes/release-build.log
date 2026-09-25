@@ -1,0 +1,56 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/FinderNotes.xcodeproj -scheme FinderNotes -configuration Release -destination platform=macOS,arch=arm64 -derivedDataPath /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData FINDERNOTES_APP_SUFFIX=.M1FixValidation FINDERNOTES_INFO_SUFFIX=-M1FixValidation FINDERNOTES_TEST_SUFFIX=.M1FixTests build
+
+Build settings from command line:
+    FINDERNOTES_APP_SUFFIX = .M1FixValidation
+    FINDERNOTES_INFO_SUFFIX = -M1FixValidation
+    FINDERNOTES_TEST_SUFFIX = .M1FixTests
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'FinderNotes' in project 'FinderNotes' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 4dbacfdca860256c161770a2838d5d00
+Build description path: /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData/Build/Intermediates.noindex/XCBuildData/4dbacfdca860256c161770a2838d5d00.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-7231f6df4def33e022ae2eb8f782df1a.sdkstatcache
+    cd /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/FinderNotes.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -o /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-7231f6df4def33e022ae2eb8f782df1a.sdkstatcache
+
+ProcessInfoPlistFile /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData/Build/Products/Release/FinderNotes.app/Contents/Info.plist /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/FinderNotes/Info-M1FixValidation.plist (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes
+    builtin-infoPlistUtility /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/FinderNotes/Info-M1FixValidation.plist -producttype com.apple.product-type.application -genpkginfo /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData/Build/Products/Release/FinderNotes.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData/Build/Products/Release/FinderNotes.app/Contents/Info.plist
+
+CopySwiftLibs /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData/Build/Products/Release/FinderNotes.app (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData/Build/Products/Release/FinderNotes.app/Contents/MacOS/FinderNotes --scan-folder /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData/Build/Products/Release/FinderNotes.app/Contents/Frameworks --scan-folder /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData/Build/Products/Release/FinderNotes.app/Contents/PlugIns --scan-folder /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData/Build/Products/Release/FinderNotes.app/Contents/Library/SystemExtensions --scan-folder /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData/Build/Products/Release/FinderNotes.app/Contents/Extensions --platform macosx --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData/Build/Products/Release/FinderNotes.app/Contents/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Release/FinderNotes.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+PruneExplicitPrecompiledModules /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData/SDKExplicitPrecompiledModules
+
+** BUILD SUCCEEDED **
+
+/Users/danding/.codex/worktrees/fn05-m1-ui-lifecycle-fixes/.build/DerivedData/Build/Products/Release/FinderNotes.app

@@ -4,14 +4,14 @@ import XCTest
 
 @MainActor
 final class EditorWindowTests: XCTestCase {
-    private func note() -> NoteSnapshot {
-        NoteSnapshot(url: URL(fileURLWithPath: "/tmp/FN04-window-test.png"),
+    private func note(url: URL = URL(fileURLWithPath: "/tmp/FN04-window-test.png")) -> NoteSnapshot {
+        NoteSnapshot(url: url,
                      identity: FileIdentity(device: 1, inode: 1),
                      content: .present(Data("第一行\n中文🙂 笔记\n第三行".utf8)))
     }
 
-    private func controller() -> EditorWindowController {
-        let snapshot = note()
+    private func controller(snapshot: NoteSnapshot? = nil) -> EditorWindowController {
+        let snapshot = snapshot ?? note()
         let session = EditorSession()
         _ = session.resolve(snapshot, ticket: session.beginLoading())
         return EditorWindowController(session: session, read: { _ in snapshot })
@@ -39,17 +39,35 @@ final class EditorWindowTests: XCTestCase {
         XCTAssertFalse(controller.editor.importsGraphics)
         XCTAssertTrue(controller.editor.allowsUndo)
         XCTAssertTrue(controller.editor.usesFindBar)
-        XCTAssertFalse(controller.fileName.isEditable)
-        XCTAssertTrue(controller.fileName.isSelectable)
         XCTAssertFalse(controller.filePath.isEditable)
         XCTAssertTrue(controller.filePath.isSelectable)
+        XCTAssertEqual(controller.window?.title, "FN04-window-test.png — FinderNotes")
+        XCTAssertEqual(controller.filePath.stringValue, "/tmp/FN04-window-test.png")
+        XCTAssertEqual(controller.filePath.maximumNumberOfLines, 1)
+        XCTAssertEqual(controller.filePath.lineBreakMode, .byTruncatingMiddle)
+        XCTAssertEqual(controller.filePath.toolTip, "/tmp/FN04-window-test.png")
+        XCTAssertFalse(controller.window!.contentView!.subviews.flatMap(\.subviews).contains {
+            $0.accessibilityIdentifier() == "fn-file-name"
+        })
         XCTAssertTrue(controller.saveButton.isEnabled)
         XCTAssertTrue(controller.exportButton.isEnabled)
         XCTAssertTrue(controller.window!.styleMask.contains(.resizable))
+        XCTAssertEqual(controller.window!.minSize, NSSize(width: 500, height: 360))
         XCTAssertNil(controller.window!.appearance, "Follow system appearance")
         let delegate = AppDelegate()
         let save = NSMenuItem(title: "保存", action: #selector(AppDelegate.saveNote(_:)), keyEquivalent: "s")
         XCTAssertFalse(delegate.validateMenuItem(save))
+    }
+
+    func testLongPathIsSelectableAndRetainsFullHoverValue() {
+        let path = "/tmp/" + String(repeating: "nested-目录-", count: 24) + "a-long-file.mov"
+        let controller = controller(snapshot: note(url: URL(fileURLWithPath: path)))
+        XCTAssertEqual(controller.filePath.stringValue, path)
+        XCTAssertEqual(controller.filePath.toolTip, path)
+        XCTAssertTrue(controller.filePath.isSelectable)
+        XCTAssertEqual(controller.filePath.maximumNumberOfLines, 1)
+        XCTAssertEqual(controller.filePath.lineBreakMode, .byTruncatingMiddle)
+        XCTAssertEqual(controller.window?.minSize, NSSize(width: 500, height: 360))
     }
 
     func testNativeUndoRedoSelectionAndRepeatServicePreserveText() async throws {
@@ -92,22 +110,26 @@ final class EditorWindowTests: XCTestCase {
         XCTAssertEqual(controller.editor.selectedRange(), selected)
     }
 
-    func testDiscardDefaultAndCopyKeepDraftForEveryLeaveAction() {
+    func testLeavePromptRemindsToSaveAndRequiresExplicitDiscard() {
         let controller = controller()
         controller.editor.string = "需要保留的中文草稿🙂"
         controller.captureDraft()
-        let pasteboard = NSPasteboard.withUniqueName()
-        defer { pasteboard.releaseGlobally() }
-        for action: EditorWindowController.LeaveAction in [.switchFile, .closeWindow, .quit] {
+        let actions: [(EditorWindowController.LeaveAction, String)] = [
+            (.switchFile, "丢弃并切换"),
+            (.closeWindow, "丢弃并关闭"),
+            (.quit, "丢弃并退出")
+        ]
+        for (action, discardTitle) in actions {
             let alert = controller.makeDiscardAlert(for: action)
-            XCTAssertEqual(alert.buttons[0].title, "继续编辑")
+            XCTAssertEqual(alert.messageText, "草稿尚未保存")
+            XCTAssertEqual(alert.buttons.map(\.title), ["返回编辑", discardTitle])
+            XCTAssertTrue(alert.informativeText.contains("完成输入并点击“保存”"))
+            XCTAssertTrue(alert.informativeText.contains(discardTitle))
             XCTAssertEqual(alert.buttons[0].keyEquivalent, "\r")
-            XCTAssertTrue(alert.buttons[2].hasDestructiveAction)
-            XCTAssertFalse(controller.applyDecision(.keepEditing, pasteboard: pasteboard))
-            XCTAssertFalse(controller.applyDecision(.copy, pasteboard: pasteboard))
-            XCTAssertEqual(pasteboard.string(forType: .string), "需要保留的中文草稿🙂")
+            XCTAssertTrue(alert.buttons[1].hasDestructiveAction)
+            XCTAssertFalse(controller.applyDecision(.keepEditing))
             XCTAssertEqual(controller.session.draft, "需要保留的中文草稿🙂")
-            XCTAssertTrue(controller.applyDecision(.discard, pasteboard: pasteboard))
+            XCTAssertTrue(controller.applyDecision(.discard))
         }
     }
 
@@ -120,6 +142,12 @@ final class EditorWindowTests: XCTestCase {
         XCTAssertFalse(controller.exportButton.isEnabled)
         XCTAssertFalse(controller.saveButton.isEnabled)
         XCTAssertTrue(controller.statusLabel.stringValue.contains("读取失败"))
+    }
+
+    func testLastWindowCloseRequestsNormalApplicationTermination() {
+        let delegate = AppDelegate()
+        XCTAssertEqual(delegate.applicationShouldTerminateAfterLastWindowClosed(NSApplication.shared),
+                       ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil)
     }
 
     func testSaveUsesCapturedBytesAndKeepsNewerDraftAndSelection() async throws {
