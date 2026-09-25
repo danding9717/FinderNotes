@@ -35,7 +35,7 @@ struct FileIdentity: Equatable, Sendable {
         self.birthNanoseconds = birthNanoseconds
     }
 
-    fileprivate init(_ status: stat) {
+    init(_ status: stat) {
         self.init(device: UInt64(UInt32(bitPattern: status.st_dev)), inode: UInt64(status.st_ino),
                   birthSeconds: Int64(status.st_birthtimespec.tv_sec),
                   birthNanoseconds: Int64(status.st_birthtimespec.tv_nsec))
@@ -146,7 +146,7 @@ struct NoteReader: Sendable {
         return NoteSnapshot(url: url, identity: identity, content: content)
     }
 
-    private static func localPath(_ path: String) throws -> String {
+    static func localPath(_ path: String) throws -> String {
         guard path.hasPrefix("/"), !path.contains("\0"),
               !path.split(separator: "/").contains(where: { $0 == "." || $0 == ".." }) else {
             throw NoteReadError.invalidPath
@@ -156,7 +156,7 @@ struct NoteReader: Sendable {
         return path
     }
 
-    private static func openPath(_ path: String) throws -> Int32 {
+    static func openPath(_ path: String, access: Int32 = O_RDONLY) throws -> Int32 {
         let parts = path.split(separator: "/").map(String.init)
         guard let name = parts.last else { throw NoteReadError.regularFileRequired }
         var parent = open("/", O_RDONLY | O_DIRECTORY | O_CLOEXEC)
@@ -168,12 +168,12 @@ struct NoteReader: Sendable {
             close(parent)
             parent = next
         }
-        let fd = openat(parent, name, O_RDONLY | O_NOFOLLOW | O_NONBLOCK | O_CLOEXEC)
+        let fd = openat(parent, name, access | O_NOFOLLOW | O_NONBLOCK | O_CLOEXEC)
         guard fd >= 0 else { throw systemError("打开文件") }
         return fd
     }
 
-    private static func regularStatus(_ fd: Int32) throws -> stat {
+    static func regularStatus(_ fd: Int32) throws -> stat {
         var status = stat()
         guard fstat(fd, &status) == 0 else { throw systemError("检查文件身份") }
         guard status.st_mode & S_IFMT == S_IFREG else { throw NoteReadError.regularFileRequired }
@@ -182,7 +182,7 @@ struct NoteReader: Sendable {
         return status
     }
 
-    private static func attribute(_ fd: Int32, name: String) throws -> Data? {
+    static func attribute(_ fd: Int32, name: String) throws -> Data? {
         for _ in 0..<4 {
             let size = fgetxattr(fd, name, nil, 0, 0, 0)
             guard size >= 0 else {

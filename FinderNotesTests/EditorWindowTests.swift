@@ -25,7 +25,15 @@ final class EditorWindowTests: XCTestCase {
         XCTFail("Background load did not finish")
     }
 
-    func testPlainEditorAndReadOnlyInformationAndDisabledSave() {
+    private func finishSave(_ controller: EditorWindowController) async throws {
+        for _ in 0..<200 {
+            if !controller.session.isSaving { return }
+            try await Task.sleep(for: .milliseconds(10))
+        }
+        XCTFail("Background save did not finish")
+    }
+
+    func testPlainEditorAndReadOnlyInformationAndSaveAvailability() {
         let controller = controller()
         XCTAssertFalse(controller.editor.isRichText)
         XCTAssertFalse(controller.editor.importsGraphics)
@@ -35,11 +43,12 @@ final class EditorWindowTests: XCTestCase {
         XCTAssertTrue(controller.fileName.isSelectable)
         XCTAssertFalse(controller.filePath.isEditable)
         XCTAssertTrue(controller.filePath.isSelectable)
-        XCTAssertFalse(controller.saveButton.isEnabled)
+        XCTAssertTrue(controller.saveButton.isEnabled)
+        XCTAssertTrue(controller.exportButton.isEnabled)
         XCTAssertTrue(controller.window!.styleMask.contains(.resizable))
         XCTAssertNil(controller.window!.appearance, "Follow system appearance")
         let delegate = AppDelegate()
-        let save = NSMenuItem(title: "保存", action: #selector(AppDelegate.unavailableSave(_:)), keyEquivalent: "s")
+        let save = NSMenuItem(title: "保存", action: #selector(AppDelegate.saveNote(_:)), keyEquivalent: "s")
         XCTAssertFalse(delegate.validateMenuItem(save))
     }
 
@@ -108,7 +117,79 @@ final class EditorWindowTests: XCTestCase {
         let controller = EditorWindowController(session: session)
         XCTAssertFalse(controller.editor.isEditable)
         XCTAssertFalse(controller.copyButton.isEnabled)
+        XCTAssertFalse(controller.exportButton.isEnabled)
+        XCTAssertFalse(controller.saveButton.isEnabled)
         XCTAssertTrue(controller.statusLabel.stringValue.contains("读取失败"))
+    }
+
+    func testSaveUsesCapturedBytesAndKeepsNewerDraftAndSelection() async throws {
+        let snapshot = note()
+        let session = EditorSession()
+        _ = session.resolve(snapshot, ticket: session.beginLoading())
+        let controller = EditorWindowController(session: session,
+                                                read: { _ in snapshot },
+                                                save: { request in
+            Thread.sleep(forTimeInterval: 0.1)
+            return NoteSnapshot(url: request.baseline.url,
+                                identity: request.baseline.identity,
+                                content: request.desiredContent)
+        })
+        defer { controller.window?.orderOut(nil) }
+        controller.editor.string = "第一版🙂\n"
+        controller.captureDraft()
+        controller.saveNote(nil)
+        XCTAssertTrue(controller.session.isSaving)
+        XCTAssertFalse(controller.saveButton.isEnabled)
+        XCTAssertTrue(controller.exportButton.isEnabled)
+        XCTAssertFalse(controller.windowShouldClose(controller.window!))
+        let canQuit = await controller.prepareToQuit()
+        XCTAssertFalse(canQuit)
+        controller.receive([URL(fileURLWithPath: "/tmp/another.mov")])
+        XCTAssertEqual(controller.session.snapshot?.url, snapshot.url)
+        XCTAssertFalse(controller.session.isLoading)
+        controller.editor.string = "第二版🙂\n"
+        controller.editor.setSelectedRange(NSRange(location: 2, length: 1))
+        controller.captureDraft()
+        let selected = controller.editor.selectedRange()
+        try await finishSave(controller)
+        XCTAssertEqual(controller.session.snapshot?.content, .present(Data("第一版🙂\n".utf8)))
+        XCTAssertEqual(controller.editor.string, "第二版🙂\n")
+        XCTAssertEqual(controller.editor.selectedRange(), selected)
+        XCTAssertTrue(controller.session.isDirty)
+        XCTAssertTrue(controller.statusLabel.stringValue.contains("当前草稿尚未保存"))
+    }
+
+    func testSaveFailurePreservesDraftAndCopyExportAvailability() async throws {
+        let snapshot = note()
+        let session = EditorSession()
+        _ = session.resolve(snapshot, ticket: session.beginLoading())
+        let controller = EditorWindowController(session: session,
+                                                save: { _ in throw NoteWriteError.conflict })
+        controller.editor.string = "冲突时保留🙂"
+        controller.captureDraft()
+        controller.saveNote(nil)
+        try await finishSave(controller)
+        XCTAssertEqual(controller.session.draft, "冲突时保留🙂")
+        XCTAssertTrue(controller.session.requiresLeaveConfirmation)
+        XCTAssertTrue(controller.statusLabel.stringValue.contains("外部改变"))
+        XCTAssertTrue(controller.copyButton.isEnabled)
+        XCTAssertTrue(controller.exportButton.isEnabled)
+        let pasteboard = NSPasteboard.withUniqueName()
+        defer { pasteboard.releaseGlobally() }
+        XCTAssertTrue(controller.copyDraft(to: pasteboard))
+        XCTAssertEqual(pasteboard.string(forType: .string), "冲突时保留🙂")
+    }
+
+    func testMarkedTextRefusesSaveAndExportBeforeWriting() {
+        let controller = controller()
+        controller.editor.setMarkedText("zhongwen", selectedRange: NSRange(location: 8, length: 0),
+                                        replacementRange: NSRange(location: NSNotFound, length: 0))
+        defer { controller.editor.unmarkText() }
+        controller.saveNote(nil)
+        XCTAssertFalse(controller.session.isSaving)
+        XCTAssertTrue(controller.statusLabel.stringValue.contains("完成中文输入"))
+        controller.exportMarkdown(nil)
+        XCTAssertTrue(controller.statusLabel.stringValue.contains("完成中文输入"))
     }
 
     func testServiceReadsOnlyGivenPasteboardAndPreservesMultipleURLs() {

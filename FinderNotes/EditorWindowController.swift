@@ -12,15 +12,24 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
     let statusLabel = NSTextField(wrappingLabelWithString: "")
     let saveButton = NSButton(title: "保存", target: nil, action: nil)
     let copyButton = NSButton(title: "复制草稿", target: nil, action: nil)
+    let exportButton = NSButton(title: "导出 Markdown…", target: nil, action: nil)
     private(set) var isConfirming = false
     private var readingTask: Task<Void, Never>?
+    private var savingTask: Task<Void, Never>?
+    private var isExporting = false
     private var allowClosing = false
     private let read: @Sendable ([URL]) throws -> NoteSnapshot
+    private let save: @Sendable (NoteSaveRequest) throws -> NoteSnapshot
+    private let export: @Sendable (MarkdownExportRequest) throws -> Void
 
     init(session: EditorSession = EditorSession(),
-         read: @escaping @Sendable ([URL]) throws -> NoteSnapshot = { try NoteReader().read(urls: $0) }) {
+         read: @escaping @Sendable ([URL]) throws -> NoteSnapshot = { try NoteReader().read(urls: $0) },
+         save: @escaping @Sendable (NoteSaveRequest) throws -> NoteSnapshot = { try NoteWriter().save($0) },
+         export: @escaping @Sendable (MarkdownExportRequest) throws -> Void = { try MarkdownExporter().export($0) }) {
         self.session = session
         self.read = read
+        self.save = save
+        self.export = export
         let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 760, height: 560),
                               styleMask: [.titled, .closable, .miniaturizable, .resizable],
                               backing: .buffered, defer: false)
@@ -97,18 +106,23 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
         ])
         let controls = NSStackView()
         controls.spacing = 10
-        saveButton.isEnabled = false
-        saveButton.toolTip = "当前尚不支持保存"
+        saveButton.target = self
+        saveButton.action = #selector(saveNote(_:))
+        saveButton.setAccessibilityIdentifier("fn-save")
         copyButton.target = self
         copyButton.action = #selector(copyDraft(_:))
+        exportButton.target = self
+        exportButton.action = #selector(exportMarkdown(_:))
+        exportButton.setAccessibilityIdentifier("fn-export-markdown")
         controls.addArrangedSubview(saveButton)
         controls.addArrangedSubview(copyButton)
+        controls.addArrangedSubview(exportButton)
         stack.addArrangedSubview(controls)
         statusLabel.font = .systemFont(ofSize: 12)
         statusLabel.setAccessibilityIdentifier("fn-status")
         stack.addArrangedSubview(statusLabel)
         statusLabel.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
-        let notice = NSTextField(wrappingLabelWithString: "当前尚不支持保存，草稿仅保留在本次运行中。离开前请复制需要保留的文字。")
+        let notice = NSTextField(wrappingLabelWithString: "请在整理或替换素材文件前完成编辑。保存遇到外部修改时会保留草稿，可复制或导出 Markdown。")
         notice.font = .systemFont(ofSize: 11)
         notice.textColor = .secondaryLabelColor
         stack.addArrangedSubview(notice)
@@ -123,8 +137,10 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
 
     func receive(_ urls: [URL]) {
         showEditor()
-        guard !isConfirming else {
+        guard !isConfirming, !session.isSaving, !isExporting else {
             NSSound.beep()
+            if session.isSaving { showActionMessage("正在保存笔记，请等待结果后再切换文件。") }
+            if isExporting { showActionMessage("正在导出 Markdown，请等待结果后再切换文件。") }
             return
         }
         captureDraft()
@@ -189,9 +205,95 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
 
     func renderStatus() {
         statusLabel.stringValue = session.status
-        statusLabel.textColor = session.failure == nil ? .secondaryLabelColor : .systemRed
+        statusLabel.textColor = session.failure == nil && session.saveIssue == nil ? .secondaryLabelColor : .systemRed
+        saveButton.isEnabled = session.canBeginSave && !isConfirming
         copyButton.isEnabled = session.snapshot != nil
-        window?.isDocumentEdited = session.isDirty
+        exportButton.isEnabled = session.snapshot != nil && !isExporting
+        window?.isDocumentEdited = session.requiresLeaveConfirmation
+    }
+
+    var canSaveFromMenu: Bool { session.canBeginSave && !isConfirming }
+    var canExportFromMenu: Bool { session.snapshot != nil && !isExporting }
+
+    private func showActionMessage(_ message: String, isError: Bool = false) {
+        statusLabel.stringValue = message
+        statusLabel.textColor = isError ? .systemRed : .secondaryLabelColor
+    }
+
+    @objc func saveNote(_ sender: Any?) {
+        guard !isConfirming else { return }
+        guard !editor.hasMarkedText() else {
+            showActionMessage("请先完成中文输入，再保存笔记。")
+            return
+        }
+        captureDraft()
+        guard let ticket = session.beginSaving() else {
+            NSSound.beep()
+            return
+        }
+        renderStatus()
+        let save = self.save
+        savingTask = Task { [weak self] in
+            let result = await Task.detached(priority: .userInitiated) {
+                Result { try save(ticket.request) }
+            }.value
+            guard let self else { return }
+            switch result {
+            case .success(let candidate):
+                if !self.session.completeSaving(candidate, ticket: ticket) {
+                    _ = self.session.failSaving("保存结果与请求不符，请重新打开文件核对。",
+                                                uncertain: true, ticket: ticket)
+                }
+            case .failure(let error):
+                let uncertain = (error as? NoteWriteError)?.resultWasUnconfirmed ?? false
+                _ = self.session.failSaving(error.localizedDescription, uncertain: uncertain, ticket: ticket)
+            }
+            self.savingTask = nil
+            self.renderStatus()
+        }
+    }
+
+    @objc func exportMarkdown(_ sender: Any?) {
+        guard session.snapshot != nil, !isExporting else { return }
+        guard !editor.hasMarkedText() else {
+            showActionMessage("请先完成中文输入，再导出 Markdown。")
+            return
+        }
+        captureDraft()
+        guard let source = session.snapshot?.url, let window else { return }
+        // The sheet may stay open while the editor changes. Export these exact bytes.
+        let bytes = Data(session.draft.utf8)
+        let panel = NSSavePanel()
+        panel.title = "导出 Markdown 快照"
+        panel.prompt = "导出"
+        panel.nameFieldStringValue = MarkdownExporter.defaultFileName(for: source)
+        panel.directoryURL = source.deletingLastPathComponent()
+        panel.canCreateDirectories = true
+        isExporting = true
+        renderStatus()
+        let export = self.export
+        Task { [weak self] in
+            let response = await panel.beginSheetModal(for: window)
+            guard let self else { return }
+            guard response == .OK, let destination = panel.url else {
+                self.isExporting = false
+                self.renderStatus()
+                return
+            }
+            let request = MarkdownExportRequest(source: source, destination: destination, bytes: bytes)
+            let result = await Task.detached(priority: .userInitiated) {
+                Result { try export(request) }
+            }.value
+            self.isExporting = false
+            self.renderStatus()
+            switch result {
+            case .success:
+                self.showActionMessage("\(self.session.status)\n已导出 Markdown 快照：\(destination.lastPathComponent)",
+                                       isError: self.session.failure != nil || self.session.saveIssue != nil)
+            case .failure(let error):
+                self.showActionMessage("\(self.session.status)\n导出失败：\(error.localizedDescription) 草稿仍保留。", isError: true)
+            }
+        }
     }
 
     @objc func copyDraft(_ sender: Any?) {
@@ -210,7 +312,7 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
     func makeDiscardAlert(for action: LeaveAction) -> NSAlert {
         let alert = NSAlert()
         alert.messageText = "草稿尚未保存"
-        alert.informativeText = "当前尚不支持保存。继续编辑或复制草稿会保留当前窗口；只有明确丢弃才会离开。"
+        alert.informativeText = "当前草稿尚未确认保存。继续编辑或复制草稿会保留当前窗口；只有明确丢弃才会离开。"
         alert.addButton(withTitle: "继续编辑")
         alert.addButton(withTitle: "复制草稿")
         let label: String
@@ -234,11 +336,16 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
     }
 
     func confirmLeaving(_ action: LeaveAction) async -> Bool {
+        guard !session.isSaving else { return false }
         captureDraft()
-        guard session.isDirty || editor.hasMarkedText() else { return true }
+        guard session.requiresLeaveConfirmation || editor.hasMarkedText() else { return true }
         guard !isConfirming, let window else { return false }
         isConfirming = true
-        defer { isConfirming = false }
+        renderStatus()
+        defer {
+            isConfirming = false
+            renderStatus()
+        }
         let response = await makeDiscardAlert(for: action).beginSheetModal(for: window)
         switch response {
         case .alertSecondButtonReturn: return applyDecision(.copy)
@@ -249,7 +356,7 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
 
     func windowShouldClose(_ sender: NSWindow) -> Bool {
         if allowClosing { return true }
-        guard !isConfirming else { return false }
+        guard !isConfirming, !session.isSaving, !isExporting else { return false }
         session.invalidateLoading()
         readingTask?.cancel()
         Task {
@@ -264,7 +371,7 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
     }
 
     func prepareToQuit() async -> Bool {
-        guard !isConfirming else { return false }
+        guard !isConfirming, !session.isSaving, !isExporting else { return false }
         session.invalidateLoading()
         readingTask?.cancel()
         return await confirmLeaving(.quit)
