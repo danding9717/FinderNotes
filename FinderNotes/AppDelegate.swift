@@ -49,6 +49,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         return .terminateLater
     }
 
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil
+    }
+
     @objc func saveNote(_ sender: Any?) { controller?.saveNote(sender) }
     @objc func exportMarkdown(_ sender: Any?) { controller?.exportMarkdown(sender) }
 

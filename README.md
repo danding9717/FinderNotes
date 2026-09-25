@@ -34,7 +34,7 @@ FINDERNOTES_BUILD_PROFILE=fn05 ./scripts/build_app.sh
 FINDERNOTES_BUILD_PROFILE=fn05 ./scripts/test_app.sh
 ```
 
-`build_app.sh` 构建 Release 并核对代码签名，产物为 `.build/DerivedData/Build/Products/Release/FinderNotes.app`；`test_app.sh` 构建独立 Debug 测试宿主，结果包在 `.build/TestResults/`。`fn05` profile 的 Release 身份为 `com.findernotes.FinderNotes.FN05Validation`，服务菜单为“FinderNotes FN05 验收编辑笔记”；Debug 身份为 `.FN05Tests`，不声明服务。脚本不安装应用，但 Xcode 构建会注册产物；因此本轮只使用上述 profile，不运行无前缀的正式身份构建，以保留 FN-04 验收应用与服务。正式应用身份的服务派发仍待单独验证。
+`build_app.sh` 构建 Release 并核对代码签名，产物为 `.build/DerivedData/Build/Products/Release/FinderNotes.app`；`test_app.sh` 构建独立 Debug 测试宿主，结果包在 `.build/TestResults/`。`fn05` profile 的 Release 身份为 `com.findernotes.FinderNotes.FN05Validation`，服务菜单为“FinderNotes FN05 验收编辑笔记”；Debug 身份为 `.FN05Tests`，不声明服务。`m1fix` profile 为本轮界面与生命周期回归验收使用独立的 `com.findernotes.FinderNotes.M1FixValidation` Release 身份、`com.findernotes.FinderNotes.M1FixTests` Debug 身份；服务只由 Release 提供，菜单为“FinderNotes M1 修正验收编辑笔记”。脚本不安装应用，但 Xcode 构建会注册产物；保留 FN-04/FN-05 验收应用及原服务，正式应用身份的服务派发仍待单独验证。
 
 本轮环境为 Xcode 27、macOS 26.6.2、arm64 和内置 APFS。工程的 deployment target 为 macOS 26.0，只是构建设置，不表示该版本已实测。隔离验收构建为非沙盒、ad hoc 本机签名，未公证；不代表可分发版本。
 
@@ -42,11 +42,22 @@ FINDERNOTES_BUILD_PROFILE=fn05 ./scripts/test_app.sh
 
 窗口保留文件名、路径的只读显示及原生纯文本编辑、查找和撤销重做。保存按钮与 Command-S 共用手动保存：写前核对当前文件身份及自有属性基线，写后完整回读原始字节并复核身份，成功才显示已保存。无正文的首次显式保存创建零字节属性；将已有正文删空后保存也保留零字节属性，以区别“尚无笔记”。已知外部修改、文件消失或被替换时停止覆盖并保留草稿。检查与写入不是原子操作，不能据此承诺任意并发安全；整理或移动文件前请结束编辑。
 
-“导出 Markdown…”把点击时的草稿存为独立 UTF-8 快照，默认文件名为完整原文件名加 `.note.md`，例如 `photo.PNG.note.md`。导出不改变笔记保存状态；目标必须是新文件，重名时改名或换目录，应用不会执行覆盖。写入失败或结果未能确认时，草稿仍可复制、导出。有未保存内容或保存错误时，切换、关闭、退出默认继续编辑；复制后也不离开，只有明确丢弃才离开。保存及导出期间仍可编辑、复制，但暂缓切换、关闭、退出；中文输入组合期间请先完成输入再保存或导出。
+“导出 Markdown…”把点击时的草稿存为独立 UTF-8 快照，默认文件名为完整原文件名加 `.note.md`，例如 `photo.PNG.note.md`。导出不改变笔记保存状态；目标必须是新文件，重名时改名或换目录，应用不会执行覆盖。写入失败或结果未能确认时，草稿仍可复制、导出。有未保存内容或保存错误时，切换、关闭、退出会提醒先完成输入并保存；默认返回编辑器，只有明确丢弃才离开。编辑器的“复制草稿”按钮仍可使用，复制本身不会离开。保存及导出期间仍可编辑、复制，但暂缓切换、关闭、退出；中文输入组合期间请先完成输入再保存或导出。
 
 本轮没有预览、自动保存或异常退出草稿恢复。应用不默认要求自动化、辅助功能或完全磁盘访问权限，不修改 TCC。受保护目录、云盘、NAS、外置卷、正式身份及分发行为未由临时副本验证代替。
 
 实际测试、限制和 Dan 的图片／视频往返步骤见 [FN-05 交付证据](docs/evidence/fn05/2026-09-25.md)。FN-04 的真实中文输入法、完整缩放和外观、有效截图等未验证项继续保留于 [FN-04 报告](docs/evidence/fn04/2026-09-24.md)。
+
+## M1 界面与生命周期回归验收应用
+
+使用独立的 M1 修正 profile 构建，避免覆盖历史验收身份：
+
+```sh
+FINDERNOTES_BUILD_PROFILE=m1fix ./scripts/build_app.sh
+FINDERNOTES_BUILD_PROFILE=m1fix ./scripts/test_app.sh
+```
+
+从 Finder 选择临时样本，运行 **访达 → 服务 → FinderNotes M1 修正验收编辑笔记**。关闭最后一个已确认可丢弃的窗口后，应用退出；之后再从同一服务打开下一样本，记录进程 PID 和 Dock 状态。该隔离验收身份及服务只用于本地 M1 回归验证。
 
 ## FN-01 历史验证入口
 
