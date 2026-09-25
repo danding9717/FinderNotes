@@ -49,8 +49,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         return .terminateLater
     }
 
-    @objc func unavailableSave(_ sender: Any?) {}
-    func validateMenuItem(_ menuItem: NSMenuItem) -> Bool { menuItem.action != #selector(unavailableSave(_:)) }
+    @objc func saveNote(_ sender: Any?) { controller?.saveNote(sender) }
+    @objc func exportMarkdown(_ sender: Any?) { controller?.exportMarkdown(sender) }
+
+    func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+        if menuItem.action == #selector(saveNote(_:)) { return controller?.canSaveFromMenu ?? false }
+        if menuItem.action == #selector(exportMarkdown(_:)) { return controller?.canExportFromMenu ?? false }
+        return true
+    }
 
     func setupMenu() {
         let main = NSMenu()
@@ -73,8 +79,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         app.addItem(withTitle: "退出 FinderNotes", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         let file = submenu("文件")
         file.addItem(withTitle: "关闭窗口", action: #selector(NSWindow.performClose(_:)), keyEquivalent: "w")
-        let save = file.addItem(withTitle: "保存（尚不可用）", action: #selector(unavailableSave(_:)), keyEquivalent: "s")
+        let save = file.addItem(withTitle: "保存", action: #selector(saveNote(_:)), keyEquivalent: "s")
         save.target = self
+        let export = file.addItem(withTitle: "导出 Markdown…", action: #selector(exportMarkdown(_:)), keyEquivalent: "e")
+        export.target = self
         let edit = submenu("编辑")
         edit.addItem(withTitle: "撤销", action: Selector(("undo:")), keyEquivalent: "z")
         let redo = edit.addItem(withTitle: "重做", action: Selector(("redo:")), keyEquivalent: "z")

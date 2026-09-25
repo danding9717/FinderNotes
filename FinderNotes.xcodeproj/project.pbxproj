@@ -11,9 +11,13 @@
 		B00000000000000000000003 /* EditorWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000003 /* EditorWindowController.swift */; };
 		B00000000000000000000004 /* EditorSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000004 /* EditorSession.swift */; };
 		B00000000000000000000005 /* NoteReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000005 /* NoteReader.swift */; };
+		B00000000000000000000006 /* NoteWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000007 /* NoteWriter.swift */; };
+		B00000000000000000000007 /* MarkdownExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000008 /* MarkdownExporter.swift */; };
 		B00000000000000000000011 /* NoteReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000011 /* NoteReaderTests.swift */; };
 		B00000000000000000000012 /* EditorSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000012 /* EditorSessionTests.swift */; };
 		B00000000000000000000013 /* EditorWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000013 /* EditorWindowTests.swift */; };
+		B00000000000000000000014 /* NoteWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000014 /* NoteWriterTests.swift */; };
+		B00000000000000000000015 /* MarkdownExporterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000015 /* MarkdownExporterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,9 +37,13 @@
 		F00000000000000000000004 /* EditorSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorSession.swift; sourceTree = "<group>"; };
 		F00000000000000000000005 /* NoteReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteReader.swift; sourceTree = "<group>"; };
 		F00000000000000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F00000000000000000000007 /* NoteWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteWriter.swift; sourceTree = "<group>"; };
+		F00000000000000000000008 /* MarkdownExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownExporter.swift; sourceTree = "<group>"; };
 		F00000000000000000000011 /* NoteReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteReaderTests.swift; sourceTree = "<group>"; };
 		F00000000000000000000012 /* EditorSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorSessionTests.swift; sourceTree = "<group>"; };
 		F00000000000000000000013 /* EditorWindowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorWindowTests.swift; sourceTree = "<group>"; };
+		F00000000000000000000014 /* NoteWriterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteWriterTests.swift; sourceTree = "<group>"; };
+		F00000000000000000000015 /* MarkdownExporterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownExporterTests.swift; sourceTree = "<group>"; };
 		F00000000000000000000021 /* FinderNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinderNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F00000000000000000000022 /* FinderNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinderNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -53,13 +61,13 @@
 		};
 		G00000000000000000000002 /* FinderNotes */ = {
 			isa = PBXGroup;
-			children = (F00000000000000000000001, F00000000000000000000002, F00000000000000000000003, F00000000000000000000004, F00000000000000000000005, F00000000000000000000006);
+			children = (F00000000000000000000001, F00000000000000000000002, F00000000000000000000003, F00000000000000000000004, F00000000000000000000005, F00000000000000000000007, F00000000000000000000008, F00000000000000000000006);
 			path = FinderNotes;
 			sourceTree = "<group>";
 		};
 		G00000000000000000000003 /* FinderNotesTests */ = {
 			isa = PBXGroup;
-			children = (F00000000000000000000011, F00000000000000000000012, F00000000000000000000013);
+			children = (F00000000000000000000011, F00000000000000000000012, F00000000000000000000013, F00000000000000000000014, F00000000000000000000015);
 			path = FinderNotesTests;
 			sourceTree = "<group>";
 		};
@@ -130,13 +138,13 @@
 		S00000000000000000000001 = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
-			files = (B00000000000000000000001, B00000000000000000000002, B00000000000000000000003, B00000000000000000000004, B00000000000000000000005);
+			files = (B00000000000000000000001, B00000000000000000000002, B00000000000000000000003, B00000000000000000000004, B00000000000000000000005, B00000000000000000000006, B00000000000000000000007);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		S00000000000000000000002 = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
-			files = (B00000000000000000000011, B00000000000000000000012, B00000000000000000000013);
+			files = (B00000000000000000000011, B00000000000000000000012, B00000000000000000000013, B00000000000000000000014, B00000000000000000000015);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
@@ -193,9 +201,9 @@
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = NO;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = FinderNotes/Info.plist;
+				INFOPLIST_FILE = "FinderNotes/Info$(FINDERNOTES_INFO_SUFFIX).plist";
 				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
-				PRODUCT_BUNDLE_IDENTIFIER = com.findernotes.FinderNotes;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.findernotes.FinderNotes$(FINDERNOTES_APP_SUFFIX)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 			};
@@ -210,9 +218,9 @@
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = NO;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = FinderNotes/Info.plist;
+				INFOPLIST_FILE = "FinderNotes/Info$(FINDERNOTES_INFO_SUFFIX).plist";
 				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
-				PRODUCT_BUNDLE_IDENTIFIER = com.findernotes.FinderNotes;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.findernotes.FinderNotes$(FINDERNOTES_APP_SUFFIX)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 			};
@@ -226,7 +234,7 @@
 				CODE_SIGN_STYLE = Manual;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks", "@loader_path/../Frameworks");
-				PRODUCT_BUNDLE_IDENTIFIER = com.findernotes.FinderNotesTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.findernotes.FinderNotesTests$(FINDERNOTES_TEST_SUFFIX)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinderNotes.app/Contents/MacOS/FinderNotes";
@@ -241,7 +249,7 @@
 				CODE_SIGN_STYLE = Manual;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks", "@loader_path/../Frameworks");
-				PRODUCT_BUNDLE_IDENTIFIER = com.findernotes.FinderNotesTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.findernotes.FinderNotesTests$(FINDERNOTES_TEST_SUFFIX)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinderNotes.app/Contents/MacOS/FinderNotes";

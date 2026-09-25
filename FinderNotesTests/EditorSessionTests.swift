@@ -109,4 +109,78 @@ final class EditorSessionTests: XCTestCase {
         session.updateDraft("é")
         XCTAssertFalse(session.isDirty)
     }
+
+    func testExplicitEmptySaveTurnsMissingNoteIntoPresentEmptyNote() throws {
+        let session = EditorSession()
+        _ = session.resolve(note(text: nil), ticket: session.beginLoading())
+        XCTAssertFalse(session.isDirty)
+        let ticket = try XCTUnwrap(session.beginSaving())
+        XCTAssertEqual(ticket.request.baseline.content, .missing)
+        XCTAssertEqual(ticket.request.desiredContent, .present(Data()))
+        XCTAssertTrue(session.isSaving)
+        XCTAssertNil(session.beginSaving(), "Only one write can be pending")
+        let saved = NoteSnapshot(url: ticket.request.baseline.url,
+                                 identity: ticket.request.baseline.identity,
+                                 content: .present(Data()))
+        XCTAssertTrue(session.completeSaving(saved, ticket: ticket))
+        XCTAssertEqual(session.snapshot?.content, .present(Data()))
+        XCTAssertEqual(session.status, "空笔记已保存")
+        XCTAssertFalse(session.requiresLeaveConfirmation)
+    }
+
+    func testSuccessfulOldSaveAdvancesBaselineWithoutOverwritingNewDraft() throws {
+        let session = EditorSession()
+        _ = session.resolve(note(text: "原文"), ticket: session.beginLoading())
+        session.updateDraft("先保存🙂\n")
+        let ticket = try XCTUnwrap(session.beginSaving())
+        let captured = Data("先保存🙂\n".utf8)
+        XCTAssertEqual(ticket.request.desiredContent, .present(captured))
+        session.updateDraft("保存期间的新草稿🙂\n")
+        let saved = NoteSnapshot(url: ticket.request.baseline.url,
+                                 identity: ticket.request.baseline.identity,
+                                 content: .present(captured))
+        XCTAssertTrue(session.completeSaving(saved, ticket: ticket))
+        XCTAssertEqual(session.snapshot?.content, .present(captured))
+        XCTAssertEqual(session.draft, "保存期间的新草稿🙂\n")
+        XCTAssertTrue(session.isDirty)
+        XCTAssertEqual(session.status, "上一版已保存 · 当前草稿尚未保存")
+        XCTAssertFalse(session.completeSaving(saved, ticket: ticket), "A late duplicate result must be ignored")
+    }
+
+    func testClearingExistingNoteAndFailureProtection() throws {
+        let session = EditorSession()
+        _ = session.resolve(note(text: "有正文"), ticket: session.beginLoading())
+        session.updateDraft("")
+        let ticket = try XCTUnwrap(session.beginSaving())
+        let saved = NoteSnapshot(url: ticket.request.baseline.url,
+                                 identity: ticket.request.baseline.identity,
+                                 content: .present(Data()))
+        XCTAssertTrue(session.completeSaving(saved, ticket: ticket))
+        XCTAssertEqual(session.status, "笔记已清空并保存")
+
+        let retry = try XCTUnwrap(session.beginSaving())
+        XCTAssertTrue(session.failSaving("磁盘拒绝写入", uncertain: false, ticket: retry))
+        XCTAssertFalse(session.isDirty)
+        XCTAssertTrue(session.requiresLeaveConfirmation, "Even an equal empty draft needs protection after a failed save")
+        XCTAssertTrue(session.status.contains("保存失败"))
+        let uncertain = try XCTUnwrap(session.beginSaving())
+        XCTAssertTrue(session.failSaving("需要重新打开核对", uncertain: true, ticket: uncertain))
+        XCTAssertTrue(session.status.contains("写入结果未能确认"))
+        XCTAssertTrue(session.requiresLeaveConfirmation)
+        XCTAssertEqual(session.resolve(note("other.mov", inode: 9), ticket: session.beginLoading()), .needsDiscard)
+    }
+
+    func testSaveResultAfterClosedSessionCannotInstallOldBaseline() throws {
+        let session = EditorSession()
+        _ = session.resolve(note(), ticket: session.beginLoading())
+        session.updateDraft("待保存")
+        let ticket = try XCTUnwrap(session.beginSaving())
+        let result = NoteSnapshot(url: ticket.request.baseline.url,
+                                  identity: ticket.request.baseline.identity,
+                                  content: ticket.request.desiredContent)
+        session.close()
+        XCTAssertFalse(session.completeSaving(result, ticket: ticket))
+        XCTAssertNil(session.snapshot)
+        XCTAssertEqual(session.draft, "")
+    }
 }
