@@ -11,3 +11,6 @@ DerivedData/
 .build/
 *.xcuserstate
 **/xcuserdata/
+
+# Xcode-generated self-referencing workspace metadata
+/FinderNotes.xcodeproj/project.xcworkspace/contents.xcworkspacedata
