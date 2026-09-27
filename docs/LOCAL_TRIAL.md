@@ -1,32 +1,28 @@
 # FinderNotes v0.1 本地试用
 
-本手册用于 FN-08 的个人本机试用与重复安装。步骤与预期不代表已经实测；本轮实际环境、产物摘要、失败和未验证项以 [FN-08 证据目录](evidence/fn08/) 为准。Dan 接受 FN-08、M2 整体验收和项目整体完成须分别明确记录。本轮不公开发布，不提交、推送或合并。
+本手册用于 FinderNotes v0.1 的个人本机使用与安装卸载。Dan 于 2026-09-27 明确确认 v0.1、M2 和项目整体交付通过，项目状态与交付后清理结果以 [Notion 项目首页](https://app.notion.com/p/3e4e7607d6498038adeee4c1069f2bb9)为准。步骤与预期不代表已经实测；已有失败、未验证项和 FN08-I07／FN08-I08 保留原结论，见 [历史验收记录](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/docs/evidence/fn08/ACCEPTANCE.md)。本地测试资源和历史验收证据在交付后清理，Git 历史与 Notion 记录保留；本次交付仍为个人本机使用，未公开发布。
 
-当前软件显示名与安装文件名统一为 **FinderNotes**／**FinderNotes.app**。版本信息在“关于 FinderNotes”中显示为 `0.1.0 (11)`；构建日志和交付包仍记录版本以便追溯。服务显示名改为“用 FinderNotes 编辑笔记”，LocalTrial bundle ID、端口与恢复目录保持不变。
+当前软件显示名与安装文件名统一为 **FinderNotes**／**FinderNotes.app**。版本信息在“关于 FinderNotes”中显示为 `0.1.0 (11)`；历史交付记录按构建号追溯。服务显示名改为“用 FinderNotes 编辑笔记”，LocalTrial bundle ID、端口与恢复目录保持不变。
 
 ## 交付身份与使用范围
 
 | 项目 | 本地试用选择与影响 |
 | --- | --- |
-| 版本／构建号 | `0.1.0`／`11`，本次应用名称简化；还须用本轮源码提交、未提交差异与产物 SHA-256 锁定对象 |
+| 版本／构建号 | `0.1.0`／`11`，当前使用版；历史交付对象见固定提交中的验收记录 |
 | Release bundle ID | `com.findernotes.FinderNotes.LocalTrial`，个人试用使用的独立稳定身份 |
 | Finder 服务 | `用 FinderNotes 编辑笔记`；服务端口 `FinderNotesLocalTrial` |
 | 默认安装位置 | `~/Applications/FinderNotes.app`，已有同名对象时拒绝覆盖 |
-| 保留的 build 10 | `~/Applications/FinderNotes v0.1 Local Trial Build 10.app`，铺满图标版保留 |
-| 保留的 build 9 | `~/Applications/FinderNotes v0.1 Local Trial Build 9.app`，旧图标版保留 |
-| 保留的 build 8 | `~/Applications/FinderNotes v0.1 Local Trial.app`，不覆盖、不移动或清理 |
-| 测试身份 | `com.findernotes.FinderNotes.FN08Tests`，不声明 Finder 服务 |
 | 草稿恢复目录 | `~/Library/Application Support/com.findernotes.FinderNotes.LocalTrial/DraftRecovery/v1/` |
 | 正式笔记 | 所选媒体的 `com.findernotes.note.v1` 自定义扩展属性，值为原始 UTF-8 正文 |
 | 签名与系统要求 | 本机 ad hoc、非沙盒、未公证；工程 deployment target 为 macOS 26.0，该设置不证明 26.0 已获实测支持 |
 
-此身份不复用 FN07Validation，也不冒充 Developer ID 签名的公开发行版。build 11 沿用 build 8 的 LocalTrial 身份、服务端口和恢复目录，仅更新新版服务显示名；已有草稿无需迁移，这些副本不能同时运行。旧 build 8／9／10 与 FN-06／FN-07／M1 验收应用、草稿、样本与证据全部保留，不自动导入、迁移或清理。旧版服务标签保留；新标签也不能替代进程身份核验，调用后须核对实际进程路径和构建号。
+此身份不复用 FN07Validation，也不冒充 Developer ID 签名的公开发行版。build 11 沿用 build 8 的 LocalTrial 身份、服务端口和恢复目录，仅更新新版服务显示名；已有草稿无需迁移，不要同时运行同身份的多个副本。交付后的清理以当前 `~/Applications/FinderNotes.app` 为保留对象；旧应用和已确认的测试资源按明确授权清理，无法确认属于测试的恢复草稿保留。服务标签不能替代进程身份核验，调用后须核对实际进程路径和构建号。
 
-build 8 的实际运行环境为 macOS 26.6.2（25G83）、Apple M2、Xcode 27.0（27A266a）、Swift 6.4、内置 APFS 的独立合成 PNG/MOV，详见 [2026-09-27 build 8 实测报告](evidence/fn08/2026-09-27.md)。其 Release 含 arm64/x86_64，只有当前 arm64 主机经过运行测试。既有 140 项测试、真实文件与 Finder/UI 结果沿用为 build 8 历史证据，本次名称更新未据此声称 build 11 重跑通过；build 11 的构建、名称和安装核验另行留证。不能把构建成功或 deployment target 写成所有 macOS 26、Intel、大媒体、所有图片／视频格式均已支持。既有本机 ad hoc 构建带 `get-task-allow`、无 hardened runtime；不是公开分发签名配置。
+build 8 的实际运行环境为 macOS 26.6.2（25G83）、Apple M2、Xcode 27.0（27A266a）、Swift 6.4、内置 APFS 的独立合成 PNG/MOV，详见 [2026-09-27 build 8 实测报告](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/docs/evidence/fn08/2026-09-27.md)。其 Release 含 arm64/x86_64，只有当前 arm64 主机经过运行测试。既有 140 项测试、真实文件与 Finder/UI 结果沿用为 build 8 历史证据，本次名称更新未据此声称 build 11 重跑通过；build 11 的构建、名称和安装核验另行留证。不能把构建成功或 deployment target 写成所有 macOS 26、Intel、大媒体、所有图片／视频格式均已支持。既有本机 ad hoc 构建带 `get-task-allow`、无 hardened runtime；不是公开分发签名配置。
 
 ## 构建与安装
 
-从本轮独立工作树的仓库根目录执行。需要完整 Xcode；如位于其他位置，只给当前命令设置 `FINDERNOTES_DEVELOPER_DIR`，不更改系统全局开发目录。
+从保留的仓库根目录执行。需要完整 Xcode；如位于其他位置，只给当前命令设置 `FINDERNOTES_DEVELOPER_DIR`，不更改系统全局开发目录。
 
 ```sh
 FINDERNOTES_DERIVED_DATA="$PWD/.build/DerivedData-build11" \
@@ -34,14 +30,7 @@ FINDERNOTES_DERIVED_DATA="$PWD/.build/DerivedData-build11" \
 python3 -B scripts/install_local_trial.py
 ```
 
-本次命令使用 `.build/DerivedData-build11`，保留 build 8 的 `.build/DerivedData`。构建脚本支持 `FINDERNOTES_DERIVED_DATA`；未设置时仍默认旧路径，因此本次必须使用上述显式目录。build 11 Release 产物及安装器默认源为 `.build/DerivedData-build11/Build/Products/Release/FinderNotes.app`。构建脚本进行代码签名核验，具体输出必须保存。Xcode 可能向 LaunchServices 注册构建产物，因此“看到服务”不证明启动的是安装件，Finder 试用时还要核对实际进程路径。
-
-如后续需要重新运行完整测试，使用下面的复现命令；它不是本次已执行记录。测试使用 FN08Tests，继续无服务，结果包写入 `.build/TestResults/` 的新时间戳路径：
-
-```sh
-FINDERNOTES_DERIVED_DATA="$PWD/.build/DerivedData-build11" \
-  FINDERNOTES_BUILD_PROFILE=local-trial ./scripts/test_app.sh
-```
+上述命令使用 `.build/DerivedData-build11`；清理后需要重新构建才会产生该目录。构建脚本支持 `FINDERNOTES_DERIVED_DATA`，未设置时默认 `.build/DerivedData`。build 11 Release 产物及安装器默认源为 `.build/DerivedData-build11/Build/Products/Release/FinderNotes.app`，因此按上述命令显式指定路径。`local-trial` 只接受 Release；测试 target 和专用 profile 已移除。构建脚本核验代码签名、身份、版本、名称和服务，不会安装或覆盖当前应用。Xcode 可能向 LaunchServices 注册构建产物，因此“看到服务”不证明启动的是安装件，使用时还要核对实际进程路径。
 
 安装脚本默认复制上述 Release 到用户级安装位置，不要求管理员权限。也可以显式指定源与一个不存在的目标：
 
@@ -57,17 +46,15 @@ python3 -B scripts/install_local_trial.py \
 
 ## 首次启动与 Finder 服务
 
-**构建 9 的本机实测限制：** 保留 build 8 后，同名服务的两次冷启动都仍进入旧安装路径；仅强制登记新安装件未改变这一结果。先正常退出其他 LocalTrial 实例，再从 `~/Applications/FinderNotes v0.1 Local Trial Build 9.app` 明确启动构建 9，随后调用 Finder 服务，本机已验证进入构建 9。不要同时运行两版，也不要把服务名称当作版本证明。旧应用未删除、移动或覆盖；没有重置服务数据库。要恢复构建 9 的直接服务冷启动，需 Dan 决定是否授权后续处理旧安装件，再单独复验；本轮不擅自处理。见 [图标交付证据](evidence/fn08/icon-build9/README.md)。
+**FN08-I07 保留为未解决：** 构建 9 的历史实测中，同名服务冷启动曾进入保留的旧安装路径；仅强制登记新安装件未改变该结果。构建 11 只核验了新版服务显示名，交付后移除旧应用也不等于完成了服务路由复验。使用时先明确启动 `~/Applications/FinderNotes.app`，再选择“用 FinderNotes 编辑笔记”并核对实际路径。历史失败和边界见 [图标交付证据](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/docs/evidence/fn08/icon-build9/README.md)及 [验收记录](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/docs/evidence/fn08/ACCEPTANCE.md)。
 
-构建 10 仅修正图标铺满效果；本次构建 11 简化名称，仍不把上述服务问题记为已解决。使用时先明确启动 `~/Applications/FinderNotes.app`，再选择“用 FinderNotes 编辑笔记”并核对实际路径；旧版本热启动记录不是当前构建的全流程证据。
-
-1. 在 Finder 中前往 `~/Applications`，确认应用名称为 **FinderNotes.app**，双击启动。首次空窗口用于核对应用身份和恢复入口；文件应经 Finder 单选后送入服务。不要同时启动保留的 build 8／9／10。
+1. 在 Finder 中前往 `~/Applications`，确认应用名称为 **FinderNotes.app**，双击启动。首次空窗口用于核对应用身份和恢复入口；文件应经 Finder 单选后送入服务。不要同时启动同身份的其他副本。
 2. 遇到系统安全阻挡，保留完整提示及产物摘要并停止该启动步骤。不要关闭 Gatekeeper、SIP，不删除 quarantine 属性，不安装系统组件，也不自动创建安全例外。此产物未公证，外部下载后的行为另需实测；参见 [Apple：在 Mac 上安全地打开 App](https://support.apple.com/zh-cn/102445)。
 3. 如服务未显示，进入 **系统设置 → 键盘 → 键盘快捷键 → 服务**，查找并由用户勾选 **用 FinderNotes 编辑笔记**。服务是否显示还取决于当前选择；这是系统服务，不需要新增 Automator 或“快捷指令”工作流。[Apple：在 App 中使用服务](https://support.apple.com/zh-cn/guide/mac-help/mchlp1012/mac)。
-4. 在 Finder 单选一份本轮合成图片／视频，分别检查 **访达 → 服务** 和文件右键的 **服务** 菜单。调用本地试用服务后，核对窗口文件名、完整路径、初始正文与启动进程的安装路径。
+4. 在 Finder 单选一份要编辑的本地图片／视频，分别检查 **访达 → 服务** 和文件右键的 **服务** 菜单。调用本地试用服务后，核对窗口文件名、完整路径、初始正文与启动进程的安装路径。
 5. 如顶部菜单未载入文件，记录选择、菜单、时间、应用 PID／路径与画面；重新核对选择后可单独尝试右键服务。右键成功不能把顶部失败改记为修复。不要自动重启 Finder、重置服务数据库或清除历史注册项。
 
-服务不预设全局快捷键。Dan 可在上述“服务”设置里自行设置一个不与现有组合冲突的快捷键，再用单个合成文件实测。安装与测试不会自动改写快捷键设置。应用内已有 `⌘S` 保存、`⌘E` 导出 Markdown、`⌘W` 关闭、`⌘Q` 退出、`⌘F` 查找、`⌘G` 查找下一个、`⌘Z` 撤销及 `⇧⌘Z` 重做。
+服务不预设全局快捷键。Dan 可在上述“服务”设置里自行设置一个不与现有组合冲突的快捷键，再用单个独立副本核对。安装不会自动改写快捷键设置。应用内已有 `⌘S` 保存、`⌘E` 导出 Markdown、`⌘W` 关闭、`⌘Q` 退出、`⌘F` 查找、`⌘G` 查找下一个、`⌘Z` 撤销及 `⇧⌘Z` 重做。
 
 ## 编辑、保存与导出
 
@@ -85,7 +72,7 @@ python3 -B scripts/install_local_trial.py \
 
 预览默认展开，视频不应自动播放。左侧图标切换预览，悬停与无障碍名称应为“收起预览／展开预览”。预览失败不应阻止编辑、复制、保存或导出。Quick Look 设置了 URL 不代表已渲染成功；视频声音、播放中收起停止、长文滚动和悬停浮层须由现场观察单独确认。
 
-应用需要当前用户能够读取文件和写入该文件的扩展属性，以及写入自己的恢复目录和用户选定的新导出文件。不会默认要求控制 Finder、辅助功能或完全磁盘访问。受保护目录若出现系统提示，记录请求来源、选择和实际结果；未经 Dan 自行决定不扩大权限、不重置 TCC。合成文件 `chmod 0444` 只测试 Unix 权限拒绝，不能作为 TCC 允许／拒绝、只读卷或沙盒证据。试用不操作 Orbit 或真实素材。
+应用需要当前用户能够读取文件和写入该文件的扩展属性，以及写入自己的恢复目录和用户选定的新导出文件。不会默认要求控制 Finder、辅助功能或完全磁盘访问。受保护目录若出现系统提示，记录请求来源、选择和实际结果；未经 Dan 自行决定不扩大权限、不重置 TCC。合成文件 `chmod 0444` 只测试 Unix 权限拒绝，不能作为 TCC 允许／拒绝、只读卷或沙盒证据。项目验证只使用明确的测试副本，不操作 Orbit 或真实素材；使用应用时由用户选择要编辑的文件。
 
 外部正文变化时使用 **高级选项 → 核对外部版本…**。继续编辑保留本地；载入外部前须成功导出本地；明确覆盖前须成功导出外部并再次确认。取消或导出失败应留在原稿。外部属性不存在和存在但空字节须区别显示和保留，读取错误不能当作空正文。目标被删除、移动或同名替换时禁止自动写回，草稿仍可复制、编辑和导出。
 
@@ -101,12 +88,12 @@ python3 -B scripts/install_local_trial.py \
 
 属性格式固定为 `com.findernotes.note.v1` 的原始 UTF-8 字节，没有 JSON 包装；版本由属性名表示。属性缺失、属性存在且为零字节、读取失败是三种不同结果。这个格式与恢复 JSON 不同。
 
-在仓库根目录把路径替换为本轮合成文件：
+在仓库根目录把路径替换为要只读查看笔记的文件：
 
 ```sh
-media_path="/absolute/path/to/findernotes-fn08-NEW/work/recovery.png"
-python3 -B validation/fn08/read_note.py "$media_path"
-python3 -B validation/fn08/read_note.py "$media_path" \
+media_path="/absolute/path/to/photo.png"
+python3 -B scripts/read_note.py "$media_path"
+python3 -B scripts/read_note.py "$media_path" \
   --export "/absolute/path/to/a-new-note.md"
 ```
 
@@ -120,7 +107,7 @@ python3 -B validation/fn08/read_note.py "$media_path" \
 /usr/bin/xattr -px com.findernotes.note.v1 "$media_path"
 ```
 
-不要把 `xattr -p ... > note.md` 当作安全导出方案：重定向可先创建或截断文件，随后读取仍可能失败。独立导出的验证步骤见 [FN-08 验收说明](../validation/fn08/README.md)。
+不要把 `xattr -p ... > note.md` 当作安全导出方案：重定向可先创建或截断文件，随后读取仍可能失败。独立导出的验证步骤见 [FN-08 验收说明](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/validation/fn08/README.md)。
 
 ## 复制、备份与传输边界
 
@@ -128,28 +115,37 @@ python3 -B validation/fn08/read_note.py "$media_path" \
 
 | 路径 | 已有证据与本轮要求 |
 | --- | --- |
-| 内置 APFS 上 CLI 改名／同卷移动、`cp -p` | M0 合成 PNG/MOV 有保留证据，详见 [FN-01 原始报告](evidence/fn01/2026-09-24-xattr.md)；仅限该工具与参数 |
+| 内置 APFS 上 CLI 改名／同卷移动、`cp -p` | M0 合成 PNG/MOV 有保留证据，详见 [FN-01 原始报告](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/docs/evidence/fn01/2026-09-24-xattr.md)；仅限该工具与参数 |
 | Finder 改名／同卷移动／复制 | M0 为 Dan 操作后最终回读，不包含每一步中间采样；不自动扩大为所有文件操作 |
 | 备份及恢复 | 没有默认保留承诺；按实际工具和选项对新副本验证，不能把普通复制当成 Time Machine 验证 |
 | 跨卷、外置盘、NAS、云盘／占位文件 | 未实测的组合继续列未验证；网络卷不在当前本地文件入口承诺内 |
 | ZIP 等压缩、解压、转发、上传下载 | 按实际工具、选项、解压端与接收端逐项记录；没有新证据时继续未验证 |
 
-build 8 交付期间的独立实测：同卷 `cp -p`、`ditto` 和指定 `ditto` ZIP 往返保持属性；Python 标准 ZIP 往返丢失笔记、原生注释及测试属性，媒体哈希仍相同。完整命令与比较见 [传输报告](evidence/fn08/transfer.md)，结果只约束所测工具、参数与接收端，本次图标更新未重跑该实验。
+build 8 交付期间的独立实测：同卷 `cp -p`、`ditto` 和指定 `ditto` ZIP 往返保持属性；Python 标准 ZIP 往返丢失笔记、原生注释及测试属性，媒体哈希仍相同。完整命令与比较见 [传输报告](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/docs/evidence/fn08/transfer.md)，结果只约束所测工具、参数与接收端，本次图标更新未重跑该实验。
 
 Markdown 是便于独立阅读的快照，导出之后的编辑不会自动同步。应用不增加媒体备份系统，也不承诺任意传输能保留笔记。
 
 ## 卸载与保留
 
-先把当前未保存草稿复制或导出，核对需要保留的恢复记录，再正常退出本次 LocalTrial 应用。在 Finder 中核对完整路径及构建号，只把 `~/Applications/FinderNotes.app` 移入废纸篓；保留原 build 8／9／10，不要以所有“FinderNotes”名称批量删除。这些副本共用服务及快捷键设置，若仍使用 build 8，不应将公共服务入口作为卸载 build 11 的默认清理项。
+仅在另行决定卸载当前应用时执行：先把未保存草稿复制或导出，核对需要保留的恢复记录，再正常退出 LocalTrial 应用。在 Finder 中核对完整路径、bundle ID 和构建号，只把 `~/Applications/FinderNotes.app` 移入废纸篓。不要以所有“FinderNotes”名称批量删除；本轮交付后清理保留当前应用。
 
-卸载应用不会主动删除媒体上的自定义笔记；恢复目录、导出的 Markdown、FN-06／FN-07／M1 验收应用与证据也保留。重新安装相同 LocalTrial 身份会再次使用该恢复目录。工作树中的构建副本可能仍被系统注册，因此菜单残留不证明应用仍安装于原位置；先核对路径，不自动清空 LaunchServices 缓存。
+卸载应用不会主动删除媒体上的自定义笔记；恢复目录和用户导出的 Markdown 也保留。重新安装相同 LocalTrial 身份会再次使用该恢复目录。工作树中的构建副本可能仍被系统注册，因此菜单残留不证明应用仍安装于原位置；先核对路径，不自动清空 LaunchServices 缓存。
 
 **清除媒体笔记属于破坏性操作，绝非默认卸载动作。** 删除 `com.findernotes.note.v1` 会失去那份已保存正文；先独立导出并核验，且必须另行明确选择具体文件。本文不提供批量清除命令。删除恢复 JSON 同样可能丢失唯一未保存草稿，不作为卸载步骤。
 
-## Dan 验收与问题记录
+## 已验收结论与保留问题
 
-完整逐项清单见 [FN-08 验收说明](../validation/fn08/README.md)。Codex 提供独立样本、步骤与证据；Dan 实际试用后决定接受或退回。未执行项保持未验证，历史缺陷保持未解决，不能因其他任务 Done、PR 合并或看板分组改变。
+Dan 已于 2026-09-27 明确确认 v0.1、M2 和项目整体交付通过。未执行项仍为未验证，历史失败仍按原记录保留；清理本地文件不重写 Git 历史或 Notion 记录。
 
-发现数据丢失、误写、错误显示已保存、权限扩大或存储方案变化时，停止相关写入，保留当前编辑器草稿、合成样本、恢复记录、时间和原始输出；记录最小复现与最小处理建议。不要为补验收扩大产品范围或改写原始失败。
+FN08-I07 服务路由仍未解决。FN08-I08 的历史合成恢复 JSON 缺失仍未查明：当时轮次起始基线不完整，目录修改时间早于名称更新，验收不能确定其删除原因。此次仅清理已确认属于测试的恢复文件，不能把清理解释为恢复了此前缺失记录或证明该问题解决。
 
-交付报告须包含实际支持环境、源代码和可构建工程、安装件及摘要、README、[M0 报告](evidence/fn03/2026-09-24-m0-review.md)、历次原始证据、失败／未验证项、风险、问题卡和 Dan 判断。可验收时最多设 `Review`；Dan 明确接受 FN-08 后才设 `Done` 并追加实际本地交付记录。项目整体 `Done` 仍需单独确认。
+发现数据丢失、误写、错误显示已保存、权限扩大或存储方案变化时，停止相关写入，保留当前编辑器草稿、恢复记录、时间和原始输出；记录最小复现。不要为补验收扩大产品范围或改写原始失败。
+
+历史清单、报告与失败记录固定于清理前 Git 提交：
+
+- [FN-08 验收记录及 I07／I08](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/docs/evidence/fn08/ACCEPTANCE.md)
+- [FN-08 实测报告及未验证项](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/docs/evidence/fn08/2026-09-27.md)
+- [FN-08 历史验收说明](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/validation/fn08/README.md)
+- [M0 评审报告](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/docs/evidence/fn03/2026-09-24-m0-review.md)
+
+本手册不启动下一版本，也不把构建成功替代功能验收。

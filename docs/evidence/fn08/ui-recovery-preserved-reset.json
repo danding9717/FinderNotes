@@ -1,8 +1,0 @@
-{
-  "pid": 90444,
-  "executable": "/Users/danding/Applications/FinderNotes v0.1 Local Trial.app/Contents/MacOS/FinderNotes",
-  "recoveryFile": "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.LocalTrial/DraftRecovery/v1/B34273B6-7568-4D81-B469-D171057CCCFD.json",
-  "sha256": "141083b8054b3d516d3ba729f77ce1ae2a1d6df77a0594d26a6fea198ae858b6",
-  "draftMatchesBefore": true,
-  "purpose": "Keep this synthetic recovery record while opening a clean session for corrupt-preview test"
-}

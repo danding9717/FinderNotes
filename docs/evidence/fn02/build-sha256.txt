@@ -1,4 +1,0 @@
-f03d614f40613770106c3bc4ee7fe64e730ab7ee4a7a851be5d8980d7ab49be3  validation/fn02/Core.swift
-3f323fc448c81d7ca3c262a983f443b42d9e1afb864c67e64dd4c223dc734ae1  validation/fn02/main.swift
-17b0442f47dcca6b603b12bfddb968083dd1d94b0edbc78c78ae16ae139a2195  validation/fn02/Info.plist
-172999744636235eb608cdd82b96910b1f72deced94af78deb76def13caa1952  /Users/danding/Applications/FinderNotes FN02.app/Contents/MacOS/FinderNotesFN02

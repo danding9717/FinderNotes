@@ -1,2 +1,0 @@
-There has been no change in the accessibility tree for Window: "Unknown".
-The focused UI element is 21 表单 Description: 警告, Secondary Actions: Raise
