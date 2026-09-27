@@ -1,0 +1,4 @@
+There has been no change in the accessibility tree for Window: "audio.mov — FinderNotes".
+The focused UI element is 4 文本输入区 (settable) Description: 笔记正文, ID: fn-note-editor, Value: FN08 视频本地试用
+独立 Markdown 快照
+中文🙂

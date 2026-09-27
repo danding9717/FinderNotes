@@ -1,0 +1,2 @@
+There has been no change in the accessibility tree for Window: "FinderNotes".
+The focused UI element is 0 标准窗口 FinderNotes, Secondary Actions: Raise

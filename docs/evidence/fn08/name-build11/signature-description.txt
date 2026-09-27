@@ -1,0 +1,23 @@
+Executable=/Users/danding/Applications/FinderNotes.app/Contents/MacOS/FinderNotes
+Identifier=com.findernotes.FinderNotes.LocalTrial
+Format=app bundle with Mach-O universal (x86_64 arm64)
+CodeDirectory v=20400 size=1567 flags=0x2(adhoc) hashes=38+7 location=embedded
+VersionPlatform=1
+VersionMin=1703936
+VersionSDK=1769472
+Hash type=sha256 size=32
+CandidateCDHash sha256=ef6dd364db623265fc9765213bf7bea0d6dfcee8
+CandidateCDHashFull sha256=ef6dd364db623265fc9765213bf7bea0d6dfcee85769667ead8880dde0159fa4
+Hash choices=sha256
+CMSDigest=ef6dd364db623265fc9765213bf7bea0d6dfcee85769667ead8880dde0159fa4
+CMSDigestType=2
+Executable Segment base=0
+Executable Segment limit=294912
+Executable Segment flags=0x1
+Page size=16384
+CDHash=ef6dd364db623265fc9765213bf7bea0d6dfcee8
+Signature=adhoc
+Info.plist entries=27
+TeamIdentifier=not set
+Sealed Resources version=2 rules=13 files=2
+Internal requirements count=0 size=12

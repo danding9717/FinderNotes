@@ -1,0 +1,2 @@
+There has been no change in the accessibility tree for Window: "corrupt.png — FinderNotes".
+The focused UI element is 5 文本输入区 (settable) Description: 笔记正文, ID: fn-note-editor, Value: FN08 损坏预览仍可保存🙂

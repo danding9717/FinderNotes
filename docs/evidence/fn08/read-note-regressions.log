@@ -1,0 +1,17 @@
+test_deleted_after_publication_is_unconfirmed (__main__.ExportRegression.test_deleted_after_publication_is_unconfirmed) ... ok
+test_empty_export (__main__.ExportRegression.test_empty_export) ... ok
+test_existing_target_is_preserved (__main__.ExportRegression.test_existing_target_is_preserved) ... ok
+test_missing_attribute (__main__.ExportRegression.test_missing_attribute) ... ok
+test_nonempty_export (__main__.ExportRegression.test_nonempty_export) ... ok
+test_partial_writes_are_completed (__main__.ExportRegression.test_partial_writes_are_completed) ... ok
+test_replaced_after_publication_is_unconfirmed (__main__.ExportRegression.test_replaced_after_publication_is_unconfirmed) ... ok
+test_same_path_is_rejected_before_read (__main__.ExportRegression.test_same_path_is_rejected_before_read) ... ok
+test_symlink_alias_is_rejected_before_read (__main__.ExportRegression.test_symlink_alias_is_rejected_before_read) ... ok
+test_var_private_var_alias_is_rejected_before_read (__main__.ExportRegression.test_var_private_var_alias_is_rejected_before_read) ... ok
+test_write_failure_retains_temporary_and_never_publishes (__main__.ExportRegression.test_write_failure_retains_temporary_and_never_publishes) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.315s
+
+OK
+Evidence root: /private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q

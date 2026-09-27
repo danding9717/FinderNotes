@@ -1,0 +1,22 @@
+{
+  "fixtureRoot": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-vbrd10vl",
+  "commands": [
+    {
+      "argv": [
+        "df",
+        "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-vbrd10vl"
+      ],
+      "stdout": "Filesystem   512-blocks      Used Available Capacity iused      ifree %iused  Mounted on\n/dev/disk3s5  478724992 199854632 219043600    48% 1442016 1095218000    0%   /System/Volumes/Data\n",
+      "exit": 0
+    },
+    {
+      "argv": [
+        "diskutil",
+        "info",
+        "/dev/disk3s5"
+      ],
+      "stdout": "   Device Identifier:         disk3s5\n   Device Node:               /dev/disk3s5\n   Whole:                     No\n   Part of Whole:             disk3\n\n   Volume Name:               Macintosh HD - Data\n   Mounted:                   Yes\n   Mount Point:               /System/Volumes/Data\n\n   Partition Type:            41504653-0000-11AA-AA11-00306543ECAC\n   File System Personality:   APFS\n   Type (Bundle):             apfs\n   Name (User Visible):       APFS\n   Owners:                    Enabled\n\n   OS Can Be Installed:       Yes\n   Booter Disk:               disk3s2\n   Recovery Disk:             disk3s3\n   Media Type:                通用\n   Protocol:                  Apple Fabric\n   SMART Status:              Verified\n   Volume UUID:               C0FFB15D-221D-43E2-BDFF-9FB3D028D91B\n   Disk / Partition UUID:     C0FFB15D-221D-43E2-BDFF-9FB3D028D91B\n\n   Disk Size:                 245.1 GB (245107195904 Bytes) (exactly 478724992 512-Byte-Units)\n   Device Block Size:         4096 Bytes\n\n   Volume Used Space:         102.3 GB (102325575680 Bytes) (exactly 199854640 512-Byte-Units)\n   Container Total Space:     245.1 GB (245107195904 Bytes) (exactly 478724992 512-Byte-Units)\n   Container Free Space:      112.2 GB (112150319104 Bytes) (exactly 219043592 512-Byte-Units)\n   Allocation Block Size:     4096 Bytes\n\n   Media OS Use Only:         No\n   Media Read-Only:           No\n   Volume Read-Only:          No\n\n   Device Location:           Internal\n   Removable Media:           Fixed\n\n   Solid State:               Yes\n   Hardware AES Support:      Yes\n\n   This disk is an APFS Volume.  APFS Information:\n   APFS Container:            disk3\n   APFS Physical Store:       disk0s2\n   APFS Volume Group:         57B9B88C-DD6C-4F40-A936-0FE0248A0A05\n   FileVault:                 Yes\n   Sealed:                    No\n   Locked:                    No\n\n",
+      "exit": 0
+    }
+  ]
+}

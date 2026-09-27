@@ -1,0 +1,108 @@
+{
+  "assets": [
+    {
+      "file": "FinderNotes/Assets.xcassets/AppIcon.appiconset/icon_16x16.png",
+      "width": 16,
+      "height": 16,
+      "opaque": true
+    },
+    {
+      "file": "FinderNotes/Assets.xcassets/AppIcon.appiconset/icon_16x16@2x.png",
+      "width": 32,
+      "height": 32,
+      "opaque": true
+    },
+    {
+      "file": "FinderNotes/Assets.xcassets/AppIcon.appiconset/icon_32x32.png",
+      "width": 32,
+      "height": 32,
+      "opaque": true
+    },
+    {
+      "file": "FinderNotes/Assets.xcassets/AppIcon.appiconset/icon_32x32@2x.png",
+      "width": 64,
+      "height": 64,
+      "opaque": true
+    },
+    {
+      "file": "FinderNotes/Assets.xcassets/AppIcon.appiconset/icon_128x128.png",
+      "width": 128,
+      "height": 128,
+      "opaque": true
+    },
+    {
+      "file": "FinderNotes/Assets.xcassets/AppIcon.appiconset/icon_128x128@2x.png",
+      "width": 256,
+      "height": 256,
+      "opaque": true
+    },
+    {
+      "file": "FinderNotes/Assets.xcassets/AppIcon.appiconset/icon_256x256.png",
+      "width": 256,
+      "height": 256,
+      "opaque": true
+    },
+    {
+      "file": "FinderNotes/Assets.xcassets/AppIcon.appiconset/icon_256x256@2x.png",
+      "width": 512,
+      "height": 512,
+      "opaque": true
+    },
+    {
+      "file": "FinderNotes/Assets.xcassets/AppIcon.appiconset/icon_512x512.png",
+      "width": 512,
+      "height": 512,
+      "opaque": true
+    },
+    {
+      "file": "FinderNotes/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x.png",
+      "width": 1024,
+      "height": 1024,
+      "opaque": true
+    }
+  ],
+  "info": {
+    "BuildMachineOSBuild": "25G83",
+    "CFBundleDevelopmentRegion": "zh_CN",
+    "CFBundleExecutable": "FinderNotes",
+    "CFBundleIconFile": "AppIcon",
+    "CFBundleIconName": "AppIcon",
+    "CFBundleIdentifier": "com.findernotes.FinderNotes.LocalTrial",
+    "CFBundleInfoDictionaryVersion": "6.0",
+    "CFBundleName": "FinderNotes v0.1 本地试用",
+    "CFBundlePackageType": "APPL",
+    "CFBundleShortVersionString": "0.1.0",
+    "CFBundleSupportedPlatforms": [
+      "MacOSX"
+    ],
+    "CFBundleVersion": "10",
+    "DTCompiler": "com.apple.compilers.llvm.clang.1_0",
+    "DTPlatformBuild": "26A425",
+    "DTPlatformName": "macosx",
+    "DTPlatformVersion": "27.0",
+    "DTSDKBuild": "26A425",
+    "DTSDKName": "macosx27.0",
+    "DTXcode": "2700",
+    "DTXcodeBuild": "27A266a",
+    "LSApplicationCategoryType": "public.app-category.productivity",
+    "LSMinimumSystemVersion": "26.0",
+    "LSUIElement": false,
+    "NSHighResolutionCapable": true,
+    "NSPrincipalClass": "NSApplication",
+    "NSServices": [
+      {
+        "NSMenuItem": {
+          "default": "FinderNotes v0.1 本地试用编辑笔记"
+        },
+        "NSMessage": "receiveFiles",
+        "NSPortName": "FinderNotesLocalTrial",
+        "NSRequiredContext": {},
+        "NSSendTypes": [
+          "public.file-url",
+          "NSFilenamesPboardType"
+        ],
+        "NSTimeout": "10000"
+      }
+    ]
+  }
+}

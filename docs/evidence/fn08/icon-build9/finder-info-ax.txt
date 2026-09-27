@@ -1,0 +1,84 @@
+Window: "“FinderNotes v0.1 Local Trial Build 9.app”简介", App: 访达.
+0 标准窗口 “FinderNotes v0.1 Local Trial Build 9.app”简介, ID: Info, Secondary Actions: Raise
+	1 滚动区
+		2 图像 Icon
+		3 text Help: FinderNotes v0.1 Local Trial Build 9.app, Value: FinderNotes v0.1 Local Trial Build 9.app 3 MB 修改时间： 今天 21:53
+		4 滚动区
+			5 文本栏 Description: 标签编辑器, Placeholder: 添加标签…
+		6 显示三角形 Value: 1, ID: General
+		7 文本 通用：
+		8 container
+			9 text 种类： 应用程序(通用)
+		10 container
+			11 text 大小： 3,001,157 字节（磁盘上的3 MB）
+		12 container
+			13 text 位置： ‎⁨Macintosh HD⁩ ▸ ⁨用户⁩ ▸ ⁨danding⁩ ▸ ⁨Applications⁩
+		14 container
+			15 text 创建时间： 2026年9月27日 星期日 21:53
+		16 container
+			17 text 修改时间： 2026年9月27日 星期日 21:53
+		18 container
+			19 text 版本： 0.1.0
+		20 复选框 使用Rosetta打开, Value: 0
+		21 复选框 已锁定, Value: 0
+		22 复选框 缩放以适合于内建摄像头下方, Value: 0
+		23 显示三角形 Value: 0, ID: MetaData
+		24 文本 更多信息：
+		25 忙指示器 on
+		26 文本 正在抓取…
+		27 显示三角形 Value: 1, ID: Name
+		28 文本 名称与扩展名：
+		29 文本栏 (settable) Value: FinderNotes v0.1 Local Trial Build 9.app, ID: Name
+		30 复选框 (disabled) 隐藏扩展名, Value: 1
+		31 显示三角形 Value: 1, ID: Comments
+		32 文本 注释：
+		33 滚动区
+			34 文本输入区 (settable) Comments
+		35 显示三角形 Value: 1, ID: Preview
+		36 文本 预览：
+		37 图像 Description: 预览, ID: QLAXImageAndText_Image
+		38 显示三角形 Value: 1, ID: Privileges
+		39 text 共享与权限： 你有自定义访问权限
+		40 滚动区
+			41 表格 权限
+				42 row (selectable)
+					43 单元格
+						44 图像 账户
+						45 文本 danding（本用户）
+					46 单元格
+						47 弹出式按钮 读与写
+				48 row (selectable)
+					49 单元格
+						50 图像
+						51 文本 staff
+					52 单元格
+						53 弹出式按钮 只读
+				54 row (selectable)
+					55 单元格
+						56 图像
+						57 文本 everyone
+					58 单元格
+						59 弹出式按钮 只读
+				60 container
+					61 排序按钮 名称
+					62 排序按钮 权限
+		63 container
+			64 按钮 添加
+			65 按钮 (disabled) 移除
+			66 菜单按钮 Description: 更多, Help: 操作
+		67 开关按钮 Description: 锁定, Value: on
+	68 关闭按钮
+	69 缩放按钮
+	70 最小化按钮
+	71 图像 Macintosh HD
+	72 文本 “FinderNotes v0.1 Local Trial Build 9.app”简介
+73 menu bar
+	74 访达
+	75 文件
+	76 编辑
+	77 显示
+	78 前往
+	79 窗口
+	80 帮助
+
+The focused UI element is 0 标准窗口 “FinderNotes v0.1 Local Trial Build 9.app”简介, ID: Info, Secondary Actions: Raise

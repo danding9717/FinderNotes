@@ -1,0 +1,73 @@
+Window: "Applications", App: 访达.
+0 标准窗口 Applications, ID: FinderWindow, Secondary Actions: Raise
+	1 分离组
+		2 滚动区
+			3 外框 边栏
+				4 row (selectable, expanded) Value: 个人收藏, Secondary Actions: Collapse
+				5 row (selectable) 应用程序
+				6 row (selectable) 桌面
+				7 row (selectable) 文稿
+				8 row (selectable) Downloads
+				9 row (selectable) 影片
+				10 row (selectable, expanded) Value: 位置, Secondary Actions: Collapse
+				11 row (selectable) iCloud云盘
+				12 row (selectable) OneDrive
+				13 row (selectable) danding
+				14 row (selectable) Macintosh HD
+				15 row (selectable) 网络
+				16 row (selectable) 废纸篓
+				17 row (selectable, expanded) Value: 标签, Secondary Actions: Collapse
+				18 row (selectable) 红色
+				19 row (selectable) 橙色
+				20 row (selectable) 黄色
+				21 row (selectable) 绿色
+				22 row (selectable) 蓝色
+				23 row (selectable) 紫色
+				24 row (selectable) 灰色
+				25 row (selectable) 所有标签…
+		26 分离器 (disabled, settable, float) 167
+		27 滚动区
+			28 集合 Description: 图标视图, ID: IconView
+				29 节 (disabled)
+					30 图像 asr, Secondary Actions: 打开
+					31 图像 FinderNotes FN02.app, Secondary Actions: 打开
+					32 图像 FinderNotes v0.1 Local Trial Build 9.app, Secondary Actions: 打开
+					33 图像 FinderNotes v0.1 Local Trial Build 10.app, Secondary Actions: 打开
+					34 图像 FinderNotes v0.1 Local Trial.app, Secondary Actions: 打开
+					35 图像 (selected) FinderNotes.app, Secondary Actions: 打开
+					36 图像 Terraria.app, Secondary Actions: 打开
+		37 未知 Details: 状态栏, ID: statusBar
+			38 文本 Value: 选择了1项（共7项），127.72 GB可用, ID: statusBarText
+			39 滑块 (settable, float) Description: 调整大小图标, Value: 24
+				40 值指示器 (settable, float) 24
+		41 列表 路径
+			42 text URL: file:///, Value: Macintosh HD 用户 danding Applications FinderNotes.app, Secondary Actions: 打开
+	43 工具栏
+		44 container 返回/前进
+			45 按钮 返回
+			46 按钮 (disabled) 前进
+		47 单选按钮 Description: 图标视图, Value: 1
+		48 单选按钮 Description: 列表视图, Value: 0
+		49 单选按钮 Description: 分栏视图, Value: 0
+		50 单选按钮 Description: 画廊视图, Value: 0
+		51 菜单按钮 Description: 群组, Help: 更改项目的分组方式（按住Option键来更改排列顺序）, Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+		52 按钮 Description: 隔空投送, Help: 使用隔空投送共享所选项目, Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+		53 按钮 Description: 添加标签, Help: 编辑标签, Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+		54 按钮 Description: 共享, Help: 共享所选项目, Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+		55 菜单按钮 Description: 操作, Help: 用所选项执行任务, Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+		56 搜索文本栏
+			57 按钮 搜索
+	58 关闭按钮
+	59 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	60 最小化按钮
+	61 文本 Applications
+62 menu bar
+	63 访达
+	64 文件
+	65 编辑
+	66 显示
+	67 前往
+	68 窗口
+	69 帮助
+
+The focused UI element is 28 集合 Description: 图标视图, ID: IconView

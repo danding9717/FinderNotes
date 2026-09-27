@@ -1,0 +1,45 @@
+{
+  "BuildMachineOSBuild": "25G83",
+  "CFBundleDevelopmentRegion": "zh_CN",
+  "CFBundleDisplayName": "FinderNotes",
+  "CFBundleExecutable": "FinderNotes",
+  "CFBundleIconFile": "AppIcon",
+  "CFBundleIconName": "AppIcon",
+  "CFBundleIdentifier": "com.findernotes.FinderNotes.LocalTrial",
+  "CFBundleInfoDictionaryVersion": "6.0",
+  "CFBundleName": "FinderNotes",
+  "CFBundlePackageType": "APPL",
+  "CFBundleShortVersionString": "0.1.0",
+  "CFBundleSupportedPlatforms": [
+    "MacOSX"
+  ],
+  "CFBundleVersion": "11",
+  "DTCompiler": "com.apple.compilers.llvm.clang.1_0",
+  "DTPlatformBuild": "26A425",
+  "DTPlatformName": "macosx",
+  "DTPlatformVersion": "27.0",
+  "DTSDKBuild": "26A425",
+  "DTSDKName": "macosx27.0",
+  "DTXcode": "2700",
+  "DTXcodeBuild": "27A266a",
+  "LSApplicationCategoryType": "public.app-category.productivity",
+  "LSMinimumSystemVersion": "26.0",
+  "LSUIElement": false,
+  "NSHighResolutionCapable": true,
+  "NSPrincipalClass": "NSApplication",
+  "NSServices": [
+    {
+      "NSMenuItem": {
+        "default": "用 FinderNotes 编辑笔记"
+      },
+      "NSMessage": "receiveFiles",
+      "NSPortName": "FinderNotesLocalTrial",
+      "NSRequiredContext": {},
+      "NSSendTypes": [
+        "public.file-url",
+        "NSFilenamesPboardType"
+      ],
+      "NSTimeout": "10000"
+    }
+  ]
+}
