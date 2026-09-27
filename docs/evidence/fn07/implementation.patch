@@ -1,0 +1,3478 @@
+diff --git a/FinderNotes.xcodeproj/project.pbxproj b/FinderNotes.xcodeproj/project.pbxproj
+index 1adcf55..a0573fb 100644
+--- a/FinderNotes.xcodeproj/project.pbxproj
++++ b/FinderNotes.xcodeproj/project.pbxproj
+@@ -25,6 +25,11 @@
+ 		B00000000000000000000042 /* MediaPreviewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000042 /* MediaPreviewControllerTests.swift */; };
+ 		B00000000000000000000043 /* PreviewWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000043 /* PreviewWindowTests.swift */; };
+ 		B00000000000000000000044 /* AutosaveFileIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000044 /* AutosaveFileIntegrationTests.swift */; };
++		B00000000000000000000051 /* DraftRecoveryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000051 /* DraftRecoveryStore.swift */; };
++		B00000000000000000000052 /* DraftRecoveryStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000052 /* DraftRecoveryStoreTests.swift */; };
++		B00000000000000000000053 /* EditorRecoverySessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000053 /* EditorRecoverySessionTests.swift */; };
++		B00000000000000000000054 /* EditorRecoveryWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000054 /* EditorRecoveryWindowTests.swift */; };
++		B00000000000000000000055 /* RecoveryFileIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000055 /* RecoveryFileIntegrationTests.swift */; };
+ /* End PBXBuildFile section */
+ 
+ /* Begin PBXContainerItemProxy section */
+@@ -60,6 +65,11 @@
+ 		F00000000000000000000042 /* MediaPreviewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewControllerTests.swift; sourceTree = "<group>"; };
+ 		F00000000000000000000043 /* PreviewWindowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewWindowTests.swift; sourceTree = "<group>"; };
+ 		F00000000000000000000044 /* AutosaveFileIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutosaveFileIntegrationTests.swift; sourceTree = "<group>"; };
++		F00000000000000000000051 /* DraftRecoveryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftRecoveryStore.swift; sourceTree = "<group>"; };
++		F00000000000000000000052 /* DraftRecoveryStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftRecoveryStoreTests.swift; sourceTree = "<group>"; };
++		F00000000000000000000053 /* EditorRecoverySessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorRecoverySessionTests.swift; sourceTree = "<group>"; };
++		F00000000000000000000054 /* EditorRecoveryWindowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorRecoveryWindowTests.swift; sourceTree = "<group>"; };
++		F00000000000000000000055 /* RecoveryFileIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryFileIntegrationTests.swift; sourceTree = "<group>"; };
+ /* End PBXFileReference section */
+ 
+ /* Begin PBXFrameworksBuildPhase section */
+@@ -75,13 +85,13 @@
+ 		};
+ 		G00000000000000000000002 /* FinderNotes */ = {
+ 			isa = PBXGroup;
+-			children = (F00000000000000000000001, F00000000000000000000002, F00000000000000000000003, F00000000000000000000004, F00000000000000000000005, F00000000000000000000007, F00000000000000000000008, F00000000000000000000006, F00000000000000000000031, F00000000000000000000032, F00000000000000000000033);
++			children = (F00000000000000000000001, F00000000000000000000002, F00000000000000000000003, F00000000000000000000004, F00000000000000000000005, F00000000000000000000007, F00000000000000000000008, F00000000000000000000006, F00000000000000000000031, F00000000000000000000032, F00000000000000000000033, F00000000000000000000051);
+ 			path = FinderNotes;
+ 			sourceTree = "<group>";
+ 		};
+ 		G00000000000000000000003 /* FinderNotesTests */ = {
+ 			isa = PBXGroup;
+-			children = (F00000000000000000000011, F00000000000000000000012, F00000000000000000000013, F00000000000000000000014, F00000000000000000000015, F00000000000000000000041, F00000000000000000000042, F00000000000000000000043, F00000000000000000000044);
++			children = (F00000000000000000000011, F00000000000000000000012, F00000000000000000000013, F00000000000000000000014, F00000000000000000000015, F00000000000000000000041, F00000000000000000000042, F00000000000000000000043, F00000000000000000000044, F00000000000000000000052, F00000000000000000000053, F00000000000000000000054, F00000000000000000000055);
+ 			path = FinderNotesTests;
+ 			sourceTree = "<group>";
+ 		};
+@@ -152,13 +162,13 @@
+ 		S00000000000000000000001 = {
+ 			isa = PBXSourcesBuildPhase;
+ 			buildActionMask = 2147483647;
+-			files = (B00000000000000000000001, B00000000000000000000002, B00000000000000000000003, B00000000000000000000004, B00000000000000000000005, B00000000000000000000006, B00000000000000000000007, B00000000000000000000031, B00000000000000000000032, B00000000000000000000033);
++			files = (B00000000000000000000001, B00000000000000000000002, B00000000000000000000003, B00000000000000000000004, B00000000000000000000005, B00000000000000000000006, B00000000000000000000007, B00000000000000000000031, B00000000000000000000032, B00000000000000000000033, B00000000000000000000051);
+ 			runOnlyForDeploymentPostprocessing = 0;
+ 		};
+ 		S00000000000000000000002 = {
+ 			isa = PBXSourcesBuildPhase;
+ 			buildActionMask = 2147483647;
+-			files = (B00000000000000000000011, B00000000000000000000012, B00000000000000000000013, B00000000000000000000014, B00000000000000000000015, B00000000000000000000041, B00000000000000000000042, B00000000000000000000043, B00000000000000000000044);
++			files = (B00000000000000000000011, B00000000000000000000012, B00000000000000000000013, B00000000000000000000014, B00000000000000000000015, B00000000000000000000041, B00000000000000000000042, B00000000000000000000043, B00000000000000000000044, B00000000000000000000052, B00000000000000000000053, B00000000000000000000054, B00000000000000000000055);
+ 			runOnlyForDeploymentPostprocessing = 0;
+ 		};
+ /* End PBXSourcesBuildPhase section */
+diff --git a/FinderNotes/AppDelegate.swift b/FinderNotes/AppDelegate.swift
+index 38d9889..a5867a5 100644
+--- a/FinderNotes/AppDelegate.swift
++++ b/FinderNotes/AppDelegate.swift
+@@ -15,7 +15,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
+ 
+     private func editorController() -> EditorWindowController {
+         if let controller { return controller }
+-        let created = EditorWindowController()
++        let created = EditorWindowController(recoveryStore: DraftRecoveryStore(directory: DraftRecoveryStore.defaultDirectory()))
++        created.refreshRecoveryAvailability()
+         controller = created
+         return created
+     }
+diff --git a/FinderNotes/EditorSession.swift b/FinderNotes/EditorSession.swift
+index bfb00c1..6873838 100644
+--- a/FinderNotes/EditorSession.swift
++++ b/FinderNotes/EditorSession.swift
+@@ -36,6 +36,10 @@ final class EditorSession {
+     private(set) var failure: String?
+     private(set) var saveIssue: SaveIssue?
+     private(set) var isSaving = false
++    private(set) var recoveryIdentifier = UUID()
++    private(set) var recoveryNeedsAttention = false
++    private(set) var recoveryWriteBlocked = false
++    private(set) var recoveryIssue: String?
+     private var generation: UInt64 = 0
+     private var nextSaveIdentifier: UInt64 = 0
+     private var pendingSaveIdentifier: UInt64?
+@@ -45,10 +49,16 @@ final class EditorSession {
+         Data(draft.utf8) != Data((snapshot?.content.text ?? "").utf8)
+     }
+ 
+-    var requiresLeaveConfirmation: Bool { isDirty || saveIssue != nil }
+-    var canBeginSave: Bool { snapshot != nil && !isLoading && !isSaving }
++    var requiresLeaveConfirmation: Bool { isDirty || saveIssue != nil || recoveryNeedsAttention }
++    var canBeginSave: Bool { snapshot != nil && !isLoading && !isSaving && !recoveryWriteBlocked }
++    var recoveryRecord: DraftRecoveryRecord? {
++        guard let snapshot, isDirty || saveIssue != nil || recoveryNeedsAttention else { return nil }
++        return DraftRecoveryRecord(id: recoveryIdentifier, baseline: snapshot,
++                                   draft: draft, revision: draftRevision)
++    }
+     var autosaveTicket: AutosaveTicket? {
+-        guard canBeginSave, isDirty, saveIssue == nil, let snapshot else { return nil }
++        guard canBeginSave, isDirty, saveIssue == nil, !recoveryNeedsAttention,
++              recoveryIssue == nil, let snapshot else { return nil }
+         return AutosaveTicket(generation: generation, draftRevision: draftRevision,
+                               url: snapshot.url, identity: snapshot.identity)
+     }
+@@ -60,7 +70,19 @@ final class EditorSession {
+         if isLoading { return "正在读取笔记…" }
+         guard let snapshot else { return "从 Finder 选择一份图片或视频，运行本应用的编辑笔记服务。" }
+         if isSaving { return "正在保存笔记… 可以继续编辑或导出当前草稿" }
+-        if let saveIssue { return saveIssue.message + " · 自动保存已暂停 · 草稿仍保留，可复制或导出" }
++        if recoveryWriteBlocked {
++            let detail = [saveIssue?.message, recoveryIssue].compactMap { $0 }.joined(separator: " · ")
++            return "草稿的原文件身份无法确认 · 已禁止写回 · 草稿仍保留，可复制或导出" +
++                (detail.isEmpty ? "" : " · " + detail)
++        }
++        if saveIssue != nil || recoveryIssue != nil {
++            let recoveryDetail = recoveryIssue.map { "草稿恢复文件更新失败：\($0)" }
++            let detail = [saveIssue?.message, recoveryDetail].compactMap { $0 }.joined(separator: " · ")
++            return detail + " · 自动保存已暂停 · 草稿仍保留，可复制或导出"
++        }
++        if recoveryNeedsAttention {
++            return "恢复或冲突草稿待确认 · 自动保存已暂停 · 请核对外部版本后手动保存，或复制、导出草稿"
++        }
+         if isDirty {
+             return lastSaveStatus == nil ? "草稿有改动 · 尚未保存" : "上一版已保存 · 当前草稿尚未保存"
+         }
+@@ -77,6 +99,74 @@ final class EditorSession {
+         draftRevision &+= 1
+     }
+ 
++    func setRecoveryIssue(_ message: String?) {
++        recoveryIssue = message
++    }
++
++    func pauseForExternalIssue(_ message: String) {
++        saveIssue = .failed(message)
++        recoveryNeedsAttention = true
++    }
++
++    func blockRecoveryWrite(_ message: String) {
++        recoveryWriteBlocked = true
++        recoveryNeedsAttention = true
++        recoveryIssue = message
++    }
++
++    /// Restore the original storage baseline, never silently adopt newer external bytes.
++    /// The caller must first protect or explicitly discard any currently open draft.
++    @discardableResult
++    func restoreRecovery(record: DraftRecoveryRecord, current: NoteSnapshot?) -> Bool {
++        guard !isSaving else { return false }
++        invalidateLoading()
++        pendingSaveIdentifier = nil
++        snapshot = record.snapshot
++        draft = record.draft
++        draftRevision = record.revision
++        recoveryIdentifier = record.id
++        recoveryNeedsAttention = true
++        recoveryWriteBlocked = !Self.hasRecoveryIdentity(record.snapshot.identity) ||
++            current?.url.path != record.snapshot.url.path ||
++            current?.identity != record.snapshot.identity
++        recoveryIssue = nil
++        failure = nil
++        saveIssue = nil
++        if !recoveryWriteBlocked, let current, current.content != record.snapshot.content {
++            let externalState: String
++            switch current.content {
++            case .missing: externalState = "外部自定义笔记属性已不存在"
++            case .present(let bytes): externalState = bytes.isEmpty ? "外部自定义笔记为空正文" : "外部自定义笔记正文已改变"
++            }
++            saveIssue = .failed("已落盘草稿的正文基线与外部版本不同；\(externalState)，请先核对外部版本。")
++        }
++        lastSaveStatus = nil
++        return true
++    }
++
++    /// Only a user-confirmed external snapshot can replace this session's baseline.
++    /// Saving still checks that baseline against the xattr; this does not provide a CAS.
++    @discardableResult
++    func applyExternal(_ candidate: NoteSnapshot, replacingDraft: Bool,
++                       confirmedRevision: UInt64) -> Bool {
++        guard !isSaving, !isLoading, draftRevision == confirmedRevision,
++              let snapshot, candidate.url.path == snapshot.url.path,
++              candidate.identity == snapshot.identity,
++              !recoveryWriteBlocked || Self.hasRecoveryIdentity(candidate.identity) else { return false }
++        generation &+= 1
++        if replacingDraft {
++            install(candidate)
++        } else {
++            self.snapshot = candidate
++            recoveryNeedsAttention = true
++            recoveryWriteBlocked = false
++            failure = nil
++            saveIssue = nil
++            lastSaveStatus = nil
++        }
++        return true
++    }
++
+     func beginSaving() -> SaveTicket? {
+         guard canBeginSave, let snapshot else { return nil }
+         nextSaveIdentifier &+= 1
+@@ -103,6 +193,8 @@ final class EditorSession {
+         isSaving = false
+         snapshot = candidate
+         saveIssue = nil
++        recoveryNeedsAttention = false
++        recoveryWriteBlocked = false
+         if bytes.isEmpty {
+             if case .present(let previous) = ticket.request.baseline.content, !previous.isEmpty {
+                 lastSaveStatus = "笔记已清空并保存"
+@@ -177,6 +269,7 @@ final class EditorSession {
+         failure = nil
+         saveIssue = nil
+         lastSaveStatus = nil
++        resetRecoveryState()
+     }
+ 
+     private func install(_ candidate: NoteSnapshot) {
+@@ -186,5 +279,18 @@ final class EditorSession {
+         failure = nil
+         saveIssue = nil
+         lastSaveStatus = nil
++        resetRecoveryState()
++    }
++
++    private static func hasRecoveryIdentity(_ identity: FileIdentity) -> Bool {
++        identity.inode != 0 && identity.birthSeconds > 0 &&
++            (0..<1_000_000_000).contains(identity.birthNanoseconds)
++    }
++
++    private func resetRecoveryState() {
++        recoveryIdentifier = UUID()
++        recoveryNeedsAttention = false
++        recoveryWriteBlocked = false
++        recoveryIssue = nil
+     }
+ }
+diff --git a/FinderNotes/EditorWindowController.swift b/FinderNotes/EditorWindowController.swift
+index 4bc1125..8371b7e 100644
+--- a/FinderNotes/EditorWindowController.swift
++++ b/FinderNotes/EditorWindowController.swift
+@@ -14,6 +14,14 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
+     let copyButton = NSButton(title: "复制草稿", target: nil, action: nil)
+     let exportButton = NSButton(title: "导出 Markdown…", target: nil, action: nil)
+     let previewButton = NSButton(title: "收起预览", target: nil, action: nil)
++    let recoveryButton = NSButton(title: "恢复草稿…", target: nil, action: nil)
++    let conflictButton = NSButton(title: "核对外部版本…", target: nil, action: nil)
++    private let recoveryStore: DraftRecoveryStore?
++    private let protectedExportDestination: (@MainActor (URL, String, String) async -> URL?)?
++    private var recoveryTimer: Task<Void, Never>?
++    private var recoveryIO: Task<Bool, Never>?
++    private var lastRecoveryRecord: DraftRecoveryRecord?
++    private var recoveryOperation: UInt64 = 0
+     private var previewWidth: NSLayoutConstraint?
+     private(set) var isConfirming = false
+     private var readingTask: Task<Void, Never>?
+@@ -31,7 +39,11 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
+          save: @escaping @Sendable (NoteSaveRequest) throws -> NoteSnapshot = { try NoteWriter().save($0) },
+          export: @escaping @Sendable (MarkdownExportRequest) throws -> Void = { try MarkdownExporter().export($0) },
+          autosaveScheduler: any EditorAutosaveScheduling = EditorAutosaveScheduler(),
+-         preview: MediaPreviewController = MediaPreviewController()) {
++         preview: MediaPreviewController = MediaPreviewController(),
++         recoveryStore: DraftRecoveryStore? = nil,
++         protectedExportDestination: (@MainActor (URL, String, String) async -> URL?)? = nil) {
++        self.protectedExportDestination = protectedExportDestination
++        self.recoveryStore = recoveryStore
+         self.session = session
+         self.preview = preview
+         self.read = read
+@@ -95,6 +107,7 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
+         editor.delegate = self
+         editor.inputStateDidChange = { [weak self] in
+             self?.captureDraft()
++            self?.scheduleRecovery()
+             self?.scheduleAutosave()
+             self?.renderStatus()
+         }
+@@ -138,6 +151,15 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
+         previewButton.setAccessibilityIdentifier("fn-toggle-preview")
+         controls.addArrangedSubview(previewButton)
+         stack.addArrangedSubview(controls)
++        let recoveryControls = NSStackView(views: [conflictButton, recoveryButton])
++        recoveryControls.spacing = 10
++        conflictButton.target = self
++        conflictButton.action = #selector(resolveConflict(_:))
++        conflictButton.setAccessibilityIdentifier("fn-resolve-conflict")
++        recoveryButton.target = self
++        recoveryButton.action = #selector(showRecovery(_:))
++        recoveryButton.setAccessibilityIdentifier("fn-recover-draft")
++        stack.addArrangedSubview(recoveryControls)
+         statusLabel.font = .systemFont(ofSize: 12)
+         statusLabel.setAccessibilityIdentifier("fn-status")
+         stack.addArrangedSubview(statusLabel)
+@@ -176,6 +198,19 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
+             case .failure(let error):
+                 self.session.reject(error.localizedDescription, ticket: ticket)
+             case .success(let candidate):
++                if let current = self.session.snapshot,
++                   current.url.path != candidate.url.path || current.identity != candidate.identity,
++                   !self.session.requiresLeaveConfirmation, !self.editor.hasMarkedText(),
++                   self.lastRecoveryRecord?.id == self.session.recoveryIdentifier {
++                    // The user undid the entire draft to its confirmed baseline and is leaving.
++                    // Clean up only after the new target was read successfully, never on a
++                    // repeated service invocation or a failed open.
++                    guard await self.discardRecovery() else {
++                        self.session.reject("恢复记录未能清理，已保留当前文件。", ticket: ticket)
++                        self.renderStatus()
++                        return
++                    }
++                }
+                 switch self.session.resolve(candidate, ticket: ticket, protectsMarkedText: self.editor.hasMarkedText()) {
+                 case .stale: return
+                 case .reused: break // Never assign editor.string or touch its input state.
+@@ -202,6 +237,7 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
+ 
+     func textDidChange(_ notification: Notification) {
+         captureDraft()
++        scheduleRecovery()
+         scheduleAutosave()
+         renderStatus()
+     }
+@@ -225,7 +261,7 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
+ 
+     /// Called only after changing the target (never for status changes or repeated services).
+     func renderInstalledSnapshot() {
+-        preview.install(snapshot: session.snapshot)
++        preview.install(snapshot: session.recoveryWriteBlocked ? nil : session.snapshot)
+         if session.snapshot != nil { setPreviewExpanded(true) }
+         editor.string = session.draft
+         editor.undoManager?.removeAllActions()
+@@ -258,14 +294,16 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
+     func renderStatus() {
+         statusLabel.stringValue = session.status
+         statusLabel.textColor = session.failure == nil && session.saveIssue == nil ? .secondaryLabelColor : .systemRed
++        recoveryButton.isEnabled = recoveryStore != nil && !isConfirming && !session.isSaving && !session.isLoading && !isExporting
++        conflictButton.isEnabled = session.snapshot != nil && !isConfirming && !session.isSaving && !session.isLoading && !isExporting
+         saveButton.isEnabled = session.canBeginSave && !isConfirming
+         copyButton.isEnabled = session.snapshot != nil
+-        exportButton.isEnabled = session.snapshot != nil && !isExporting
++        exportButton.isEnabled = session.snapshot != nil && !isExporting && !isConfirming
+         window?.isDocumentEdited = session.requiresLeaveConfirmation
+     }
+ 
+     var canSaveFromMenu: Bool { session.canBeginSave && !isConfirming }
+-    var canExportFromMenu: Bool { session.snapshot != nil && !isExporting }
++    var canExportFromMenu: Bool { session.snapshot != nil && !isExporting && !isConfirming }
+ 
+     private func showActionMessage(_ message: String, isError: Bool = false) {
+         statusLabel.stringValue = message
+@@ -292,7 +330,18 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
+         }
+         renderStatus()
+         let save = self.save
++        // Enqueue before the xattr write. Even if the process exits during saving, the prior
++        // baseline is retained; recovery always rechecks it and never silently resumes autosave.
++        let recovery = queueCurrentRecovery()
+         savingTask = Task { [weak self] in
++            let protected = await recovery?.value ?? true
++            if automatically, !protected {
++                guard let self else { return }
++                _ = self.session.failSaving("草稿恢复文件未能更新，请手动保存或导出。", uncertain: false, ticket: ticket)
++                self.savingTask = nil
++                self.renderStatus()
++                return
++            }
+             let result = await Task.detached(priority: .userInitiated) {
+                 Result { try save(ticket.request) }
+             }.value
+@@ -308,13 +357,19 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
+                 _ = self.session.failSaving(error.localizedDescription, uncertain: uncertain, ticket: ticket)
+             }
+             self.savingTask = nil
++            self.captureDraft()
++            if self.session.saveIssue == nil, !self.session.isDirty, !self.editor.hasMarkedText() {
++                _ = self.queueRecoveryRemoval(id: self.session.recoveryIdentifier)
++            } else if !self.editor.hasMarkedText() {
++                _ = self.queueCurrentRecovery()
++            }
+             self.renderStatus()
+             self.scheduleAutosave()
+         }
+     }
+ 
+     @objc func exportMarkdown(_ sender: Any?) {
+-        guard session.snapshot != nil, !isExporting else { return }
++        guard session.snapshot != nil, !isExporting, !isConfirming else { return }
+         guard !editor.hasMarkedText() else {
+             showActionMessage("请先完成中文输入，再导出 Markdown。")
+             return
+@@ -397,7 +452,9 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
+         guard !session.isSaving else { return false }
+         cancelAutosave()
+         captureDraft()
+-        guard session.requiresLeaveConfirmation || editor.hasMarkedText() else { return true }
++        guard session.requiresLeaveConfirmation || editor.hasMarkedText() else {
++            return await discardRecovery()
++        }
+         guard !isConfirming, let window else { return false }
+         isConfirming = true
+         renderStatus()
+@@ -407,7 +464,10 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
+         }
+         let response = await makeDiscardAlert(for: action).beginSheetModal(for: window)
+         switch response {
+-        case .alertSecondButtonReturn: return applyDecision(.discard)
++        case .alertSecondButtonReturn:
++            let revision = session.draftRevision
++            guard await discardRecovery(), session.draftRevision == revision else { return false }
++            return applyDecision(.discard)
+         default:
+             // Returning to editing starts a fresh quiet period, without flushing on leave.
+             isConfirming = false
+@@ -443,3 +503,290 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
+         return canQuit
+     }
+ }
++
++extension EditorWindowController {
++    // Only completed input is persisted. A cancelled timer does not cancel a write already
++    // queued: all puts/removals join the preceding operation, including explicit discard.
++    private func scheduleRecovery() {
++        recoveryTimer?.cancel()
++        guard recoveryStore != nil, !editor.hasMarkedText(), session.snapshot != nil else { return }
++        let revision = session.draftRevision
++        let id = session.recoveryIdentifier
++        recoveryTimer = Task { [weak self] in
++            do { try await Task.sleep(for: .milliseconds(250)) } catch { return }
++            guard let self, !Task.isCancelled, !self.editor.hasMarkedText(),
++                  self.session.recoveryIdentifier == id, self.session.draftRevision == revision else { return }
++            _ = self.queueCurrentRecovery()
++        }
++    }
++
++    @discardableResult
++    func queueCurrentRecovery() -> Task<Bool, Never>? {
++        recoveryTimer?.cancel()
++        guard let store = recoveryStore, !editor.hasMarkedText(), let snapshot = session.snapshot else { return nil }
++        // Persist undo-to-baseline as the newest draft too, rather than leaving a stale earlier
++        // edit on disk. Removal is reserved for confirmed save or an explicit leave/discard.
++        guard session.recoveryRecord != nil || lastRecoveryRecord?.id == session.recoveryIdentifier else { return nil }
++        let record = DraftRecoveryRecord(id: session.recoveryIdentifier, baseline: snapshot,
++                                         draft: session.draft, revision: session.draftRevision)
++        if let previous = lastRecoveryRecord,
++           previous.id == record.id, previous.revision == record.revision,
++           previous.snapshot.content == record.snapshot.content, session.recoveryIssue == nil {
++            return recoveryIO
++        }
++        lastRecoveryRecord = record
++        let preceding = recoveryIO
++        recoveryOperation &+= 1
++        let operation = recoveryOperation
++        let task = Task { [weak self] () -> Bool in
++            _ = await preceding?.value
++            do {
++                try await store.put(record)
++                if let self, self.recoveryOperation == operation,
++                   self.session.recoveryIdentifier == record.id {
++                    self.session.setRecoveryIssue(nil)
++                    self.renderStatus()
++                }
++                return true
++            } catch {
++                if let self, self.session.recoveryIdentifier == record.id {
++                    self.session.setRecoveryIssue(error.localizedDescription)
++                    self.cancelAutosave()
++                    self.renderStatus()
++                }
++                return false
++            }
++        }
++        recoveryIO = task
++        return task
++    }
++
++    @discardableResult
++    private func queueRecoveryRemoval(id: UUID) -> Task<Bool, Never>? {
++        recoveryTimer?.cancel()
++        guard let store = recoveryStore else { return nil }
++        // A never-edited empty/clean window owns no record. Closing it must not acquire
++        // another instance's recovery lock or fail merely because that directory is busy.
++        guard lastRecoveryRecord?.id == id || session.recoveryRecord != nil else { return nil }
++        let preceding = recoveryIO
++        recoveryOperation &+= 1
++        let operation = recoveryOperation
++        let task = Task { [weak self] () -> Bool in
++            _ = await preceding?.value
++            do {
++                try await store.remove(id: id)
++                if let self, self.recoveryOperation == operation {
++                    self.lastRecoveryRecord = nil
++                    if self.session.recoveryIdentifier == id { self.session.setRecoveryIssue(nil) }
++                    self.renderStatus()
++                }
++                return true
++            } catch {
++                if let self, self.session.recoveryIdentifier == id {
++                    self.session.setRecoveryIssue("恢复文件清理失败：" + error.localizedDescription)
++                    self.cancelAutosave()
++                    self.renderStatus()
++                }
++                return false
++            }
++        }
++        recoveryIO = task
++        return task
++    }
++
++    func discardRecovery() async -> Bool {
++        recoveryTimer?.cancel()
++        let revision = session.draftRevision
++        let editable = editor.isEditable
++        editor.isEditable = false
++        defer { editor.isEditable = editable }
++        let result = queueRecoveryRemoval(id: session.recoveryIdentifier)
++        let removed = await result?.value ?? true
++        guard session.draftRevision == revision else {
++            _ = await queueCurrentRecovery()?.value
++            return false
++        }
++        return removed
++    }
++
++    func refreshRecoveryAvailability() {
++        guard let store = recoveryStore else { return }
++        Task { [weak self] in
++            do {
++                let records = try await store.records()
++                self?.recoveryButton.title = records.isEmpty ? "恢复草稿…" : "恢复草稿（\(records.count)）…"
++            } catch {
++                self?.showActionMessage("恢复目录暂不可用：" + error.localizedDescription, isError: true)
++            }
++        }
++    }
++
++    @objc func showRecovery(_ sender: Any?) {
++        guard let store = recoveryStore, !isConfirming, !session.isSaving, !session.isLoading,
++              !isExporting, !editor.hasMarkedText(), let window else { return }
++        cancelAutosave()
++        isConfirming = true
++        renderStatus()
++        Task {
++            defer { isConfirming = false; renderStatus(); scheduleAutosave() }
++            do {
++                _ = await recoveryIO?.value
++                let records = try await store.records().filter { $0.id != session.recoveryIdentifier }
++                guard !records.isEmpty else {
++                    let alert = NSAlert()
++                    alert.messageText = "没有已落盘的待恢复草稿"
++                    alert.informativeText = "恢复文件只保护未保存的草稿；尚未落盘的最后输入不在保证范围内。"
++                    alert.addButton(withTitle: "返回编辑")
++                    _ = await alert.beginSheetModal(for: window)
++                    return
++                }
++                let chooser = NSAlert()
++                chooser.messageText = "选择已落盘的草稿"
++                chooser.informativeText = "恢复后暂停自动保存。将重新核对原文件身份及正文基线；原件消失或被替换时，只保留和导出草稿。"
++                let popup = NSPopUpButton(frame: NSRect(x: 0, y: 0, width: 440, height: 28))
++                for record in records {
++                    popup.addItem(withTitle: "\(record.snapshot.url.path) · \(record.updatedAt.formatted()) · \(record.id.uuidString.prefix(8))")
++                }
++                chooser.accessoryView = popup
++                chooser.addButton(withTitle: "返回编辑")
++                chooser.addButton(withTitle: "恢复所选草稿")
++                guard await chooser.beginSheetModal(for: window) == .alertSecondButtonReturn else { return }
++                let record = records[popup.indexOfSelectedItem]
++                let read = self.read
++                let current = await Task.detached { try? read([record.snapshot.url]) }.value
++                // Choosing/cancelling the list never discards the active draft. Only after a
++                // record is selected do we ask to leave, then immediately install the record.
++                isConfirming = false
++                guard await confirmLeaving(.switchFile) else { return }
++                if session.restoreRecovery(record: record, current: current) {
++                    lastRecoveryRecord = record
++                    renderInstalledSnapshot()
++                }
++            } catch {
++                session.setRecoveryIssue(error.localizedDescription)
++            }
++        }
++    }
++
++    func makeConflictAlert(external: NoteSnapshot) -> NSAlert {
++        let alert = NSAlert()
++        alert.messageText = "核对文件中的笔记"
++        let state: String
++        switch external.content {
++        case .missing: state = "外部自定义笔记属性已不存在。"
++        case .present(let bytes): state = bytes.isEmpty ? "外部自定义笔记是空正文。" : "已读取外部自定义笔记正文。"
++        }
++        alert.informativeText = state + "\n载入外部版前先导出本地草稿；覆盖前先导出外部版，再确认写入。取消或导出失败会保留当前草稿。"
++        alert.addButton(withTitle: "继续编辑")
++        alert.addButton(withTitle: "导出草稿并载入外部版…")
++        alert.addButton(withTitle: "备份外部版并覆盖…")
++        alert.addButton(withTitle: "仅导出本地草稿…")
++        alert.buttons[0].keyEquivalent = "\r"
++        alert.buttons[2].hasDestructiveAction = true
++        return alert
++    }
++
++    @objc func resolveConflict(_ sender: Any?) {
++        guard !isConfirming, !session.isSaving, !session.isLoading, !isExporting,
++              !editor.hasMarkedText(), let baseline = session.snapshot, let window else { return }
++        cancelAutosave()
++        captureDraft()
++        let revision = session.draftRevision
++        let id = session.recoveryIdentifier
++        let read = self.read
++        isConfirming = true
++        renderStatus()
++        Task {
++            defer { isConfirming = false; renderStatus(); scheduleAutosave() }
++            do {
++                let external = try await Task.detached { try read([baseline.url]) }.value
++                guard session.draftRevision == revision, session.recoveryIdentifier == id else { return }
++                guard external.url.path == baseline.url.path, external.identity == baseline.identity else {
++                    session.blockRecoveryWrite("原文件身份已变化；当前草稿只能保留或导出，不能写入同名替换文件。")
++                    return
++                }
++                let response = await makeConflictAlert(external: external).beginSheetModal(for: window)
++                guard session.draftRevision == revision, session.recoveryIdentifier == id else { return }
++                if response == NSApplication.ModalResponse(rawValue: 1003) {
++                    _ = await exportProtectedSnapshot(bytes: Data(session.draft.utf8), source: baseline.url, suffix: ".local-draft.note.md", title: "导出本地草稿")
++                    return
++                }
++                guard response == .alertSecondButtonReturn || response == .alertThirdButtonReturn else { return }
++                let replacingDraft = response == .alertSecondButtonReturn
++                let bytes: Data
++                let suffix: String
++                if replacingDraft {
++                    bytes = Data(session.draft.utf8)
++                    suffix = ".local-draft.note.md"
++                } else {
++                    switch external.content {
++                    case .missing:
++                        bytes = Data("# 外部笔记状态\n\n自定义属性 com.findernotes.note.v1 不存在（不是空正文）。\n".utf8)
++                        suffix = ".external-missing.note.md"
++                    case .present(let data): bytes = data; suffix = ".external.note.md"
++                    }
++                }
++                guard await exportProtectedSnapshot(bytes: bytes, source: baseline.url, suffix: suffix,
++                    title: replacingDraft ? "载入前导出本地草稿" : "覆盖前备份外部版本") else { return }
++                // Re-read after the export sheet: neither a changed target nor a newer external
++                // version is covered by the preceding user choice.
++                let checked = try await Task.detached { try read([baseline.url]) }.value
++                guard session.draftRevision == revision, session.recoveryIdentifier == id,
++                      checked.identity == external.identity, checked.url.path == external.url.path,
++                      checked.content == external.content else {
++                    session.pauseForExternalIssue("确认期间文件或正文发生变化；导出快照已保留，请重新核对。")
++                    return
++                }
++                if replacingDraft {
++                    guard await discardRecovery() else { return }
++                    guard session.applyExternal(checked, replacingDraft: true, confirmedRevision: revision) else { return }
++                    renderInstalledSnapshot()
++                } else {
++                    let confirm = NSAlert()
++                    confirm.messageText = "用本地草稿覆盖外部笔记？"
++                    confirm.informativeText = "外部版本已导出。将把当前本地草稿保存到原文件的自定义笔记属性；写前仍会检查文件身份和刚确认的外部基线。"
++                    confirm.addButton(withTitle: "继续编辑")
++                    confirm.addButton(withTitle: "明确覆盖")
++                    confirm.buttons[1].hasDestructiveAction = true
++                    guard await confirm.beginSheetModal(for: window) == .alertSecondButtonReturn,
++                          session.applyExternal(checked, replacingDraft: false, confirmedRevision: revision) else { return }
++                    _ = await queueCurrentRecovery()?.value
++                    isConfirming = false
++                    performSave(automatically: false)
++                }
++            } catch {
++                session.pauseForExternalIssue("外部版本读取失败；未载入或覆盖：" + error.localizedDescription)
++            }
++        }
++    }
++
++    private func exportProtectedSnapshot(bytes: Data, source: URL, suffix: String, title: String) async -> Bool {
++        guard let window else { return false }
++        let destination: URL
++        if let choose = protectedExportDestination {
++            guard let chosen = await choose(source, suffix, title) else { return false }
++            destination = chosen
++        } else {
++            let panel = NSSavePanel()
++            panel.title = title
++            panel.prompt = "导出并继续"
++            panel.nameFieldStringValue = source.lastPathComponent + suffix
++            panel.directoryURL = FileManager.default.homeDirectoryForCurrentUser
++            panel.canCreateDirectories = true
++            guard await panel.beginSheetModal(for: window) == .OK, let chosen = panel.url else { return false }
++            destination = chosen
++        }
++        let export = self.export
++        do {
++            try await Task.detached { try export(MarkdownExportRequest(source: source, destination: destination, bytes: bytes)) }.value
++            return true
++        } catch {
++            let alert = NSAlert()
++            alert.messageText = "导出失败，当前草稿仍保留"
++            alert.informativeText = error.localizedDescription
++            alert.addButton(withTitle: "返回编辑")
++            _ = await alert.beginSheetModal(for: window)
++            return false
++        }
++    }
++}
+diff --git a/README.md b/README.md
+index d36adb5..920e6d1 100644
+--- a/README.md
++++ b/README.md
+@@ -1,6 +1,6 @@
+ # FinderNotes
+ 
+-FinderNotes 为 Finder 中的单份图片或视频提供原生笔记编辑入口，文件仍由 Finder 管理。FN-06 在手动保存和 Markdown 快照导出基础上加入可收起的系统预览与延迟自动保存。正式笔记只写自有 xattr `com.findernotes.note.v1` 的原始 UTF-8 正文；不与 Finder 原生注释同步，不自动迁移旧注释。M0 探针与历史证据独立保留。
++FinderNotes 为 Finder 中的单份图片或视频提供原生笔记编辑入口，文件仍由 Finder 管理。FN-07 在现有预览、手动／自动保存和 Markdown 导出基础上加入冲突处理与最小草稿恢复。正式笔记只写自有 xattr `com.findernotes.note.v1` 的原始 UTF-8 正文；不与 Finder 原生注释同步，不自动迁移旧注释。M0 探针与历史证据独立保留。
+ 
+ ## 项目入口
+ 
+@@ -25,7 +25,25 @@ swift --version
+ 
+ 安装完成后运行 `./scripts/verify_toolchain.sh`。脚本仅在系统临时目录编译一个导入 AppKit 的最小程序，并在退出时清理；成功运行后才把工具链记为已验证。
+ 
+-## FN-06 预览与自动保存
++## FN-07 冲突与草稿恢复
++
++```sh
++FINDERNOTES_BUILD_PROFILE=fn07 ./scripts/test_app.sh
++FINDERNOTES_BUILD_PROFILE=fn07 ./scripts/build_app.sh
++python3 -B validation/fn07/prepare.py
++```
++
++本轮独立 Release 身份为 `com.findernotes.FinderNotes.FN07Validation`，从 Finder 的“FinderNotes FN07 验收编辑笔记”服务打开合成样本；Debug 为 `.FN07Tests`，不声明服务。完整复现步骤见 [FN-07 验证说明](validation/fn07/README.md)，实际结果见 [FN-07 证据](docs/evidence/fn07/2026-09-27.md)。
++
++完成输入并空闲约 250 毫秒后，草稿进入串行恢复写入队列；中文组合态保留上一份完整输入。恢复数据在 `~/Library/Application Support/<当前 bundle ID>/DraftRecovery/v1/`，目录 0700、文件 0600，每个编辑会话一份 `<UUID>.json`。版本 1 JSON 包含原路径、device/inode/出生时间身份、原始自定义属性基线（区分不存在和空字节）、UTF-8 草稿、修订号和时间。它是本机明文草稿，不是笔记历史库；应用不上传或在普通日志中记录正文。正式笔记仍只有自定义 xattr。
++
++恢复文件以同目录临时文件完整写入、fsync、回读、原子 rename 替换并核验；恢复写入与清理串行，目录锁阻止同一应用身份的第二个实例同时操作。只保证恢复成功落盘的草稿，不保证未落盘的最后击键或突然断电。保存成功只清理该版草稿；保存途中有新输入则继续保护新版。明确丢弃关闭／切换／退出会等待清理结果；清理失败保留当前编辑器。完整撤销回已确认基线后，成功切换文件也清理已无未保存内容的记录。
++
++异常退出后打开相同应用，点击“恢复草稿…”选择记录。恢复先核对原路径、身份和基线，默认暂停自动保存，需要手动保存或处理冲突。原目标消失、被替换或读取失败时禁止写回，草稿仍可复制、编辑与导出。副本不通过媒体或正文内容匹配草稿；移动后的目标也不自动重新关联。损坏、不支持的版本或不安全权限会明确报错并保留原文件；目前一个损坏记录会使整个恢复列表停止读取，需人工保留并移出该损坏文件后重试，不会自动删除。未完成发布的 `.draft-*.tmp` 保留原地，不当作有效恢复记录。
++
++“核对外部版本…”只读取自有笔记属性。载入外部版前必须成功导出本地草稿；覆盖前必须成功导出外部版，并再次点击“明确覆盖”。外部属性缺失会导出一份标明“属性不存在”的状态文件，外部空正文保留零字节快照。取消或导出失败不替换本地草稿。导出后重新核对，保存仍走原身份／基线检查及完整回读链；检查加写入不是原子 CAS。复制与普通 Markdown 导出不会清理恢复记录。
++
++## FN-06 预览与自动保存（继承行为）
+ 
+ ```sh
+ FINDERNOTES_BUILD_PROFILE=fn06 ./scripts/test_app.sh
+@@ -41,7 +59,7 @@ python3 validation/fn06/prepare.py
+ 
+ 权限失败、文件身份不确定、外部正文冲突或写入结果未确认会暂停自动保存，继续输入也不会后台反复重试。可复制或导出草稿；排除问题后手动保存成功才恢复自动保存，冲突不会因为点击保存而强制覆盖。未改动正文的显式保存只重新核验，不重复写入；尚无属性的空白文件只在首次显式保存时创建零字节笔记，打开或原样关闭不会创建笔记。
+ 
+-关闭、切换和退出先取消等待中的自动保存；仍有草稿或错误时提醒返回编辑或明确丢弃，不执行“保存并关闭”。已经开始的写入不会被伪装成可取消的操作，结果返回前暂缓离开。暂不提供异常退出后的持久草稿恢复或完整冲突选择，这些属于 FN-07。xattr 最后核对与写入之间仍非原子操作，不承诺任意跨进程并发安全。
++关闭、切换和退出先取消等待中的自动保存；仍有草稿或错误时提醒返回编辑或明确丢弃，不执行“保存并关闭”。已经开始的写入不会被伪装成可取消的操作，结果返回前暂缓离开。FN-07 的恢复与冲突交互见上节。xattr 最后核对与写入之间仍非原子操作，不承诺任意跨进程并发安全。
+ 
+ 实际环境、自动测试、真实 Finder/UI 结果及未验证项见 [FN-06 交付证据](docs/evidence/fn06/2026-09-26.md)。各层证据分别记录；程序化 marked text 不能代替真实中文输入法，模拟权限错误不能代替 TCC 验收。
+ 
+diff --git a/scripts/build_app.sh b/scripts/build_app.sh
+index 750871c..7961d46 100755
+--- a/scripts/build_app.sh
++++ b/scripts/build_app.sh
+@@ -31,6 +31,13 @@ case "$profile" in
+       profile_settings=(FINDERNOTES_APP_SUFFIX=.FN06Tests FINDERNOTES_INFO_SUFFIX=-FN06Tests FINDERNOTES_TEST_SUFFIX=.FN06Tests)
+     fi
+     ;;
++  fn07)
++    if [[ "$configuration" == Release ]]; then
++      profile_settings=(FINDERNOTES_APP_SUFFIX=.FN07Validation FINDERNOTES_INFO_SUFFIX=-FN07Validation FINDERNOTES_TEST_SUFFIX=.FN07Tests)
++    else
++      profile_settings=(FINDERNOTES_APP_SUFFIX=.FN07Tests FINDERNOTES_INFO_SUFFIX=-FN07Tests FINDERNOTES_TEST_SUFFIX=.FN07Tests)
++    fi
++    ;;
+   m1fix)
+     if [[ "$configuration" == Release ]]; then
+       profile_settings=(FINDERNOTES_APP_SUFFIX=.M1FixValidation FINDERNOTES_INFO_SUFFIX=-M1FixValidation FINDERNOTES_TEST_SUFFIX=.M1FixTests)
+@@ -38,7 +45,7 @@ case "$profile" in
+       profile_settings=(FINDERNOTES_APP_SUFFIX=.M1FixTests FINDERNOTES_INFO_SUFFIX=-M1FixTests FINDERNOTES_TEST_SUFFIX=.M1FixTests)
+     fi
+     ;;
+-  *) print -u2 'FINDERNOTES_BUILD_PROFILE must be standard, fn05, fn06, or m1fix.'; exit 2 ;;
++  *) print -u2 'FINDERNOTES_BUILD_PROFILE must be standard, fn05, fn06, fn07, or m1fix.'; exit 2 ;;
+ esac
+ project_root="${0:A:h:h}"
+ derived_data="$project_root/.build/DerivedData"
+@@ -50,13 +57,15 @@ xcodebuild -project "$project_root/FinderNotes.xcodeproj" \
+ 
+ app_path="$derived_data/Build/Products/$configuration/FinderNotes.app"
+ codesign --verify --deep --strict "$app_path"
+-if [[ "$profile" == fn05 || "$profile" == fn06 || "$profile" == m1fix ]]; then
++if [[ "$profile" == fn05 || "$profile" == fn06 || "$profile" == fn07 || "$profile" == m1fix ]]; then
+   actual_id="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$app_path/Contents/Info.plist")"
+   if [[ "$configuration" == Debug ]]; then
+     if [[ "$profile" == fn05 ]]; then
+       expected_id=com.findernotes.FinderNotes.FN05Tests
+     elif [[ "$profile" == fn06 ]]; then
+       expected_id=com.findernotes.FinderNotes.FN06Tests
++    elif [[ "$profile" == fn07 ]]; then
++      expected_id=com.findernotes.FinderNotes.FN07Tests
+     else
+       expected_id=com.findernotes.FinderNotes.M1FixTests
+     fi
+@@ -64,6 +73,8 @@ if [[ "$profile" == fn05 || "$profile" == fn06 || "$profile" == m1fix ]]; then
+     expected_id=com.findernotes.FinderNotes.FN05Validation
+   elif [[ "$profile" == fn06 ]]; then
+     expected_id=com.findernotes.FinderNotes.FN06Validation
++  elif [[ "$profile" == fn07 ]]; then
++    expected_id=com.findernotes.FinderNotes.FN07Validation
+   else
+     expected_id=com.findernotes.FinderNotes.M1FixValidation
+   fi
+diff --git a/scripts/test_app.sh b/scripts/test_app.sh
+index b0be274..2f4e790 100755
+--- a/scripts/test_app.sh
++++ b/scripts/test_app.sh
+@@ -14,8 +14,9 @@ case "$profile" in
+   standard) ;;
+   fn05) profile_settings=(FINDERNOTES_APP_SUFFIX=.FN05Tests FINDERNOTES_INFO_SUFFIX=-FN05Tests FINDERNOTES_TEST_SUFFIX=.FN05Tests) ;;
+   fn06) profile_settings=(FINDERNOTES_APP_SUFFIX=.FN06Tests FINDERNOTES_INFO_SUFFIX=-FN06Tests FINDERNOTES_TEST_SUFFIX=.FN06Tests) ;;
++  fn07) profile_settings=(FINDERNOTES_APP_SUFFIX=.FN07Tests FINDERNOTES_INFO_SUFFIX=-FN07Tests FINDERNOTES_TEST_SUFFIX=.FN07Tests) ;;
+   m1fix) profile_settings=(FINDERNOTES_APP_SUFFIX=.M1FixTests FINDERNOTES_INFO_SUFFIX=-M1FixTests FINDERNOTES_TEST_SUFFIX=.M1FixTests) ;;
+-  *) print -u2 'FINDERNOTES_BUILD_PROFILE must be standard, fn05, fn06, or m1fix.'; exit 2 ;;
++  *) print -u2 'FINDERNOTES_BUILD_PROFILE must be standard, fn05, fn06, fn07, or m1fix.'; exit 2 ;;
+ esac
+ project_root="${0:A:h:h}"
+ derived_data="$project_root/.build/DerivedData"
+diff --git a/FinderNotes/DraftRecoveryStore.swift b/FinderNotes/DraftRecoveryStore.swift
+new file mode 100644
+index 0000000..0ea5728
+--- /dev/null
++++ b/FinderNotes/DraftRecoveryStore.swift
+@@ -0,0 +1,442 @@
++import Darwin
++import Foundation
++
++/// A recovery record is an unsaved draft and the exact baseline against which it was edited.
++/// It is never a second source of saved notes and never grants permission to write to its path.
++struct DraftRecoveryRecord: Codable, Sendable, Equatable {
++    let version: Int
++    let id: UUID
++    let draft: String
++    let revision: UInt64
++    let updatedAt: Date
++    private let baseline: NoteSnapshot
++
++    var snapshot: NoteSnapshot { baseline }
++
++    init(id: UUID, baseline: NoteSnapshot, draft: String, revision: UInt64) {
++        self.version = 1
++        self.id = id
++        // Foundation may retain the system /var alias even after resolvingSymlinksInPath.
++        // Match NoteReader's canonical path both in memory and in the on-disk representation.
++        if baseline.url.isFileURL,
++           baseline.url.host == nil || baseline.url.host == "" || baseline.url.host == "localhost",
++           baseline.url.query == nil, baseline.url.fragment == nil,
++           let path = try? NoteReader.localPath(baseline.url.path) {
++            self.baseline = NoteSnapshot(url: URL(fileURLWithPath: path),
++                                         identity: baseline.identity, content: baseline.content)
++        } else {
++            self.baseline = baseline
++        }
++        self.draft = draft
++        self.revision = revision
++        self.updatedAt = Date()
++    }
++
++    private enum Keys: String, CodingKey { case version, id, baseline, draft, revision, updatedAt }
++    private enum BaselineKeys: String, CodingKey { case path, identity, content }
++    private enum IdentityKeys: String, CodingKey { case device, inode, birthSeconds, birthNanoseconds }
++    private enum ContentKeys: String, CodingKey { case kind, bytes }
++
++    init(from decoder: any Decoder) throws {
++        let values = try decoder.container(keyedBy: Keys.self)
++        version = try values.decode(Int.self, forKey: .version)
++        guard version == 1 else { throw DraftRecoveryError.unsupportedVersion }
++        id = try values.decode(UUID.self, forKey: .id)
++        draft = try values.decode(String.self, forKey: .draft)
++        revision = try values.decode(UInt64.self, forKey: .revision)
++        updatedAt = try values.decode(Date.self, forKey: .updatedAt)
++        let baselineValues = try values.nestedContainer(keyedBy: BaselineKeys.self, forKey: .baseline)
++        let path = try baselineValues.decode(String.self, forKey: .path)
++        guard try NoteReader.localPath(path) == path else { throw DraftRecoveryError.invalidRecord }
++        let identityValues = try baselineValues.nestedContainer(keyedBy: IdentityKeys.self, forKey: .identity)
++        let identity = FileIdentity(device: try identityValues.decode(UInt64.self, forKey: .device),
++                                    inode: try identityValues.decode(UInt64.self, forKey: .inode),
++                                    birthSeconds: try identityValues.decode(Int64.self, forKey: .birthSeconds),
++                                    birthNanoseconds: try identityValues.decode(Int64.self, forKey: .birthNanoseconds))
++        let contentValues = try baselineValues.nestedContainer(keyedBy: ContentKeys.self, forKey: .content)
++        let content: NoteContent
++        switch try contentValues.decode(String.self, forKey: .kind) {
++        case "missing":
++            guard !contentValues.contains(.bytes) else { throw DraftRecoveryError.invalidRecord }
++            content = .missing
++        case "present":
++            let bytes = try contentValues.decode(Data.self, forKey: .bytes)
++            guard String(data: bytes, encoding: .utf8) != nil else { throw DraftRecoveryError.invalidUTF8 }
++            content = .present(bytes)
++        default:
++            throw DraftRecoveryError.invalidRecord
++        }
++        baseline = NoteSnapshot(url: URL(fileURLWithPath: path), identity: identity, content: content)
++    }
++
++    func encode(to encoder: any Encoder) throws {
++        try validate()
++        var values = encoder.container(keyedBy: Keys.self)
++        try values.encode(version, forKey: .version)
++        try values.encode(id, forKey: .id)
++        try values.encode(draft, forKey: .draft)
++        try values.encode(revision, forKey: .revision)
++        try values.encode(updatedAt, forKey: .updatedAt)
++        var baselineValues = values.nestedContainer(keyedBy: BaselineKeys.self, forKey: .baseline)
++        try baselineValues.encode(try NoteReader.localPath(baseline.url.path), forKey: .path)
++        var identityValues = baselineValues.nestedContainer(keyedBy: IdentityKeys.self, forKey: .identity)
++        try identityValues.encode(baseline.identity.device, forKey: .device)
++        try identityValues.encode(baseline.identity.inode, forKey: .inode)
++        try identityValues.encode(baseline.identity.birthSeconds, forKey: .birthSeconds)
++        try identityValues.encode(baseline.identity.birthNanoseconds, forKey: .birthNanoseconds)
++        var contentValues = baselineValues.nestedContainer(keyedBy: ContentKeys.self, forKey: .content)
++        switch baseline.content {
++        case .missing:
++            try contentValues.encode("missing", forKey: .kind)
++        case .present(let bytes):
++            try contentValues.encode("present", forKey: .kind)
++            try contentValues.encode(bytes, forKey: .bytes)
++        }
++    }
++
++    fileprivate func validate() throws {
++        guard version == 1 else { throw DraftRecoveryError.unsupportedVersion }
++        guard baseline.url.isFileURL,
++              baseline.url.host == nil || baseline.url.host == "" || baseline.url.host == "localhost",
++              baseline.url.query == nil, baseline.url.fragment == nil,
++              updatedAt.timeIntervalSinceReferenceDate.isFinite else { throw DraftRecoveryError.invalidRecord }
++        _ = try NoteReader.localPath(baseline.url.path)
++        if case .present(let bytes) = baseline.content,
++           String(data: bytes, encoding: .utf8) == nil { throw DraftRecoveryError.invalidUTF8 }
++    }
++
++    static func == (lhs: Self, rhs: Self) -> Bool {
++        lhs.version == rhs.version && lhs.id == rhs.id && Data(lhs.draft.utf8) == Data(rhs.draft.utf8) &&
++            lhs.revision == rhs.revision && lhs.updatedAt == rhs.updatedAt &&
++            lhs.baseline.url == rhs.baseline.url && lhs.baseline.identity == rhs.baseline.identity &&
++            lhs.baseline.content == rhs.baseline.content
++    }
++}
++
++enum DraftRecoveryError: Error, LocalizedError, Equatable {
++    case invalidDirectory, insecureDirectory, insecureFile, storeBusy, directoryChanged
++    case invalidRecord, unsupportedVersion, invalidUTF8, staleRevision
++    case readbackMismatch, temporaryFileChanged, publicationUnconfirmed
++    case system(operation: String, code: Int32)
++
++    var errorDescription: String? {
++        switch self {
++        case .invalidDirectory: return "草稿恢复目录无效；不支持符号链接路径。"
++        case .insecureDirectory: return "草稿恢复目录必须由当前用户拥有，权限为 0700。"
++        case .insecureFile: return "草稿恢复文件的类型、所有者或权限不安全，已保留原文件。"
++        case .storeBusy: return "另一个 FinderNotes 实例正在使用草稿恢复目录。"
++        case .directoryChanged: return "草稿恢复目录或锁文件发生变化，已暂停恢复文件操作。"
++        case .invalidRecord: return "恢复文件损坏或内容不一致，已保留原文件。"
++        case .unsupportedVersion: return "恢复文件版本不受支持，已保留原文件。"
++        case .invalidUTF8: return "恢复文件的原始笔记不是有效 UTF-8，已保留原文件。"
++        case .staleRevision: return "已存在更新的恢复草稿，未覆盖它。"
++        case .readbackMismatch: return "恢复临时文件回读不一致，未替换上次草稿。"
++        case .temporaryFileChanged: return "恢复临时文件发生变化，未替换上次草稿。"
++        case .publicationUnconfirmed: return "恢复文件操作已提交，但无法确认最终落盘结果；请保留当前草稿。"
++        case .system(let operation, let code): return "草稿恢复失败（\(operation)，\(code)）。"
++        }
++    }
++}
++
++/// All calls are serialized by the actor. The directory lock lives until this store is released;
++/// another cooperating process cannot read, replace or delete records while this store owns it.
++/// Crash recovery covers successfully published files, not keystrokes still awaiting a put call.
++actor DraftRecoveryStore {
++    private let directory: URL
++    private var directoryFD: Int32 = -1
++    private var lockFD: Int32 = -1
++    private var directoryIdentity: FileIdentity?
++    private var lockIdentity: FileIdentity?
++
++    #if DEBUG
++    private let beforePublish: (@Sendable () throws -> Void)?
++    init(directory: URL, beforePublish: (@Sendable () throws -> Void)? = nil) {
++        self.directory = directory
++        self.beforePublish = beforePublish
++    }
++    #else
++    init(directory: URL) { self.directory = directory }
++    #endif
++
++    deinit {
++        if lockFD >= 0 { close(lockFD) }
++        if directoryFD >= 0 { close(directoryFD) }
++    }
++
++    static func defaultDirectory() -> URL {
++        FileManager.default.homeDirectoryForCurrentUser
++            .appendingPathComponent("Library/Application Support", isDirectory: true)
++            .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.findernotes.FinderNotes", isDirectory: true)
++            .appendingPathComponent("DraftRecovery/v1", isDirectory: true)
++    }
++
++    func put(_ record: DraftRecoveryRecord) throws {
++        try record.validate()
++        let fd = try openedDirectory()
++        let name = record.id.uuidString + ".json"
++        if let previous = try readRecord(named: name, directory: fd), previous.revision > record.revision {
++            throw DraftRecoveryError.staleRevision
++        }
++        let encoder = JSONEncoder()
++        encoder.outputFormatting = [.sortedKeys]
++        let bytes: Data
++        do { bytes = try encoder.encode(record) }
++        catch let error as DraftRecoveryError { throw error }
++        catch { throw DraftRecoveryError.invalidRecord }
++
++        let temporaryName = ".draft-\(UUID().uuidString).tmp"
++        let temporaryFD = openat(fd, temporaryName,
++                                 O_RDWR | O_CREAT | O_EXCL | O_NOFOLLOW | O_CLOEXEC, mode_t(0o600))
++        guard temporaryFD >= 0 else { throw Self.systemError("创建恢复临时文件") }
++        var temporaryIdentity: FileIdentity?
++        var published = false
++        defer {
++            close(temporaryFD)
++            if !published, let temporaryIdentity,
++               let current = try? Self.entryStatus(fd, name: temporaryName),
++               FileIdentity(current) == temporaryIdentity { _ = unlinkat(fd, temporaryName, 0) }
++        }
++        let temporaryStatus = try Self.secureFileStatus(temporaryFD)
++        temporaryIdentity = FileIdentity(temporaryStatus)
++        try Self.writeAll(bytes, to: temporaryFD)
++        try Self.sync(temporaryFD)
++        guard try Self.readAll(temporaryFD) == bytes else { throw DraftRecoveryError.readbackMismatch }
++        #if DEBUG
++        try beforePublish?()
++        #endif
++        try validateHeldDirectory()
++        guard let current = try Self.entryStatus(fd, name: temporaryName),
++              FileIdentity(current) == temporaryIdentity else { throw DraftRecoveryError.temporaryFileChanged }
++        _ = try Self.secureFileStatus(temporaryFD)
++        // Re-read the destination under our process lock. A corrupt or unsafe existing record
++        // must never be silently overwritten, even though rename itself would not follow a link.
++        if let previous = try readRecord(named: name, directory: fd), previous.revision > record.revision {
++            throw DraftRecoveryError.staleRevision
++        }
++        guard renameat(fd, temporaryName, fd, name) == 0 else { throw Self.systemError("替换恢复文件") }
++        published = true
++        do {
++            try Self.sync(fd)
++            try validateHeldDirectory()
++            guard let final = try Self.entryStatus(fd, name: name),
++                  FileIdentity(final) == temporaryIdentity,
++                  try readRecord(named: name, directory: fd) == record else {
++                throw DraftRecoveryError.publicationUnconfirmed
++            }
++        } catch { throw DraftRecoveryError.publicationUnconfirmed }
++    }
++
++    /// Call only after a confirmed save or explicit discard. Missing files make cleanup idempotent.
++    func remove(id: UUID) throws {
++        let fd = try openedDirectory()
++        let name = id.uuidString + ".json"
++        guard try readRecord(named: name, directory: fd) != nil else { return }
++        try validateHeldDirectory()
++        guard unlinkat(fd, name, 0) == 0 else { throw Self.systemError("清理恢复文件") }
++        do { try Self.sync(fd); try validateHeldDirectory() }
++        catch { throw DraftRecoveryError.publicationUnconfirmed }
++    }
++
++    /// A bad record fails closed and stays on disk. Temporary crash remnants stay untouched.
++    func records() throws -> [DraftRecoveryRecord] {
++        let fd = try openedDirectory()
++        // dup would share a directory offset; a fresh openat gives each enumeration its own offset.
++        let enumerationFD = openat(fd, ".", O_RDONLY | O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC)
++        guard enumerationFD >= 0 else { throw Self.systemError("枚举恢复文件") }
++        guard let stream = fdopendir(enumerationFD) else {
++            close(enumerationFD)
++            throw Self.systemError("枚举恢复文件")
++        }
++        defer { closedir(stream) }
++        var names: [String] = []
++        while true {
++            errno = 0
++            guard let entry = readdir(stream) else {
++                if errno != 0 { throw Self.systemError("枚举恢复文件") }
++                break
++            }
++            let name = withUnsafePointer(to: &entry.pointee.d_name) { pointer in
++                pointer.withMemoryRebound(to: CChar.self, capacity: Int(MAXNAMLEN) + 1) { String(cString: $0) }
++            }
++            if name.hasSuffix(".json") { names.append(name) }
++        }
++        var records: [DraftRecoveryRecord] = []
++        for name in names.sorted() {
++            guard let record = try readRecord(named: name, directory: fd) else {
++                throw DraftRecoveryError.directoryChanged
++            }
++            records.append(record)
++        }
++        try validateHeldDirectory()
++        return records.sorted { $0.updatedAt < $1.updatedAt }
++    }
++
++    private func openedDirectory() throws -> Int32 {
++        if directoryFD >= 0 {
++            try validateHeldDirectory()
++            return directoryFD
++        }
++        guard directory.isFileURL, directory.host == nil || directory.host == "" || directory.host == "localhost",
++              directory.query == nil, directory.fragment == nil else { throw DraftRecoveryError.invalidDirectory }
++        let path: String
++        do { path = try NoteReader.localPath(directory.path) }
++        catch { throw DraftRecoveryError.invalidDirectory }
++        let fd = try Self.openDirectory(path, create: true)
++        var acquiredLock: Int32 = -1
++        do {
++            let status = try Self.secureDirectoryStatus(fd)
++            acquiredLock = openat(fd, ".lock", O_RDWR | O_CREAT | O_NOFOLLOW | O_CLOEXEC, mode_t(0o600))
++            guard acquiredLock >= 0 else { throw Self.systemError("打开恢复目录锁") }
++            let lockStatus = try Self.secureFileStatus(acquiredLock)
++            guard flock(acquiredLock, LOCK_EX | LOCK_NB) == 0 else {
++                if errno == EWOULDBLOCK || errno == EAGAIN { throw DraftRecoveryError.storeBusy }
++                throw Self.systemError("锁定恢复目录")
++            }
++            directoryFD = fd
++            lockFD = acquiredLock
++            directoryIdentity = FileIdentity(status)
++            lockIdentity = FileIdentity(lockStatus)
++            try validateHeldDirectory()
++            return fd
++        } catch {
++            if acquiredLock >= 0 { close(acquiredLock) }
++            close(fd)
++            directoryFD = -1
++            lockFD = -1
++            directoryIdentity = nil
++            lockIdentity = nil
++            throw error
++        }
++    }
++
++    private func validateHeldDirectory() throws {
++        guard directoryFD >= 0, lockFD >= 0 else { throw DraftRecoveryError.directoryChanged }
++        let currentFD: Int32
++        do { currentFD = try Self.openDirectory(try NoteReader.localPath(directory.path), create: false) }
++        catch { throw DraftRecoveryError.directoryChanged }
++        defer { close(currentFD) }
++        let current = try Self.secureDirectoryStatus(currentFD)
++        let held = try Self.secureDirectoryStatus(directoryFD)
++        let lock = try Self.secureFileStatus(lockFD)
++        guard FileIdentity(current) == directoryIdentity, FileIdentity(held) == directoryIdentity,
++              FileIdentity(lock) == lockIdentity,
++              let entry = try Self.entryStatus(directoryFD, name: ".lock"),
++              FileIdentity(entry) == lockIdentity else { throw DraftRecoveryError.directoryChanged }
++    }
++
++    private func readRecord(named name: String, directory fd: Int32) throws -> DraftRecoveryRecord? {
++        guard name.hasSuffix(".json"), let expectedID = UUID(uuidString: String(name.dropLast(5))),
++              name == expectedID.uuidString + ".json" else { throw DraftRecoveryError.invalidRecord }
++        guard let entry = try Self.entryStatus(fd, name: name) else { return nil }
++        try Self.validateFile(entry)
++        let recordFD = openat(fd, name, O_RDONLY | O_NOFOLLOW | O_NONBLOCK | O_CLOEXEC)
++        guard recordFD >= 0 else { throw Self.systemError("打开恢复文件") }
++        defer { close(recordFD) }
++        let before = try Self.secureFileStatus(recordFD)
++        guard FileIdentity(before) == FileIdentity(entry) else { throw DraftRecoveryError.directoryChanged }
++        let bytes = try Self.readAll(recordFD)
++        let after = try Self.secureFileStatus(recordFD)
++        guard before.st_size == after.st_size,
++              before.st_mtimespec.tv_sec == after.st_mtimespec.tv_sec,
++              before.st_mtimespec.tv_nsec == after.st_mtimespec.tv_nsec,
++              before.st_ctimespec.tv_sec == after.st_ctimespec.tv_sec,
++              before.st_ctimespec.tv_nsec == after.st_ctimespec.tv_nsec,
++              let current = try Self.entryStatus(fd, name: name),
++              FileIdentity(current) == FileIdentity(before) else { throw DraftRecoveryError.directoryChanged }
++        do {
++            let record = try JSONDecoder().decode(DraftRecoveryRecord.self, from: bytes)
++            guard record.id == expectedID else { throw DraftRecoveryError.invalidRecord }
++            return record
++        } catch let error as DraftRecoveryError { throw error }
++        catch { throw DraftRecoveryError.invalidRecord }
++    }
++
++    private static func openDirectory(_ path: String, create: Bool) throws -> Int32 {
++        let components = path.split(separator: "/").map(String.init)
++        guard !components.isEmpty else { throw DraftRecoveryError.invalidDirectory }
++        var fd = open("/", O_RDONLY | O_DIRECTORY | O_CLOEXEC)
++        guard fd >= 0 else { throw systemError("打开根目录") }
++        do {
++            for component in components {
++                var next = openat(fd, component, O_RDONLY | O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC)
++                if next < 0, errno == ENOENT, create {
++                    guard mkdirat(fd, component, mode_t(0o700)) == 0 || errno == EEXIST else {
++                        throw systemError("创建恢复目录")
++                    }
++                    next = openat(fd, component, O_RDONLY | O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC)
++                }
++                guard next >= 0 else { throw systemError("打开恢复目录") }
++                close(fd)
++                fd = next
++            }
++            _ = try secureDirectoryStatus(fd)
++            return fd
++        } catch { close(fd); throw error }
++    }
++
++    private static func secureDirectoryStatus(_ fd: Int32) throws -> stat {
++        var status = stat()
++        guard fstat(fd, &status) == 0 else { throw systemError("检查恢复目录") }
++        guard status.st_mode & S_IFMT == S_IFDIR, status.st_uid == geteuid(),
++              status.st_mode & 0o7777 == 0o700 else { throw DraftRecoveryError.insecureDirectory }
++        return status
++    }
++
++    private static func secureFileStatus(_ fd: Int32) throws -> stat {
++        var status = stat()
++        guard fstat(fd, &status) == 0 else { throw systemError("检查恢复文件") }
++        try validateFile(status)
++        return status
++    }
++
++    private static func validateFile(_ status: stat) throws {
++        guard status.st_mode & S_IFMT == S_IFREG, status.st_nlink == 1,
++              status.st_uid == geteuid(), status.st_mode & 0o7777 == 0o600 else {
++            throw DraftRecoveryError.insecureFile
++        }
++    }
++
++    private static func entryStatus(_ fd: Int32, name: String) throws -> stat? {
++        var status = stat()
++        if fstatat(fd, name, &status, AT_SYMLINK_NOFOLLOW) == 0 { return status }
++        if errno == ENOENT { return nil }
++        throw systemError("检查恢复目录项")
++    }
++
++    private static func writeAll(_ bytes: Data, to fd: Int32) throws {
++        try bytes.withUnsafeBytes { buffer in
++            guard let base = buffer.baseAddress else { return }
++            var offset = 0
++            while offset < buffer.count {
++                let count = write(fd, base.advanced(by: offset), min(buffer.count - offset, Int(Int32.max)))
++                if count < 0, errno == EINTR { continue }
++                guard count > 0 else { throw systemError("写入恢复临时文件", fallback: EIO) }
++                offset += count
++            }
++        }
++    }
++
++    private static func readAll(_ fd: Int32) throws -> Data {
++        guard lseek(fd, 0, SEEK_SET) == 0 else { throw systemError("回读恢复文件") }
++        var bytes = Data()
++        var buffer = [UInt8](repeating: 0, count: 16_384)
++        while true {
++            let count = read(fd, &buffer, buffer.count)
++            if count < 0, errno == EINTR { continue }
++            guard count >= 0 else { throw systemError("回读恢复文件") }
++            if count == 0 { return bytes }
++            bytes.append(contentsOf: buffer.prefix(count))
++        }
++    }
++
++    private static func sync(_ fd: Int32) throws {
++        while fsync(fd) != 0 {
++            if errno == EINTR { continue }
++            throw systemError("同步恢复文件")
++        }
++    }
++
++    private static func systemError(_ operation: String, fallback: Int32? = nil) -> DraftRecoveryError {
++        .system(operation: operation, code: errno == 0 ? (fallback ?? EIO) : errno)
++    }
++}
+diff --git a/FinderNotes/Info-FN07Tests.plist b/FinderNotes/Info-FN07Tests.plist
+new file mode 100644
+index 0000000..6b02edd
+--- /dev/null
++++ b/FinderNotes/Info-FN07Tests.plist
+@@ -0,0 +1,32 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
++<plist version="1.0">
++<dict>
++	<key>CFBundleDevelopmentRegion</key>
++	<string>zh_CN</string>
++	<key>CFBundleExecutable</key>
++	<string>$(EXECUTABLE_NAME)</string>
++	<key>CFBundleIdentifier</key>
++	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
++	<key>CFBundleInfoDictionaryVersion</key>
++	<string>6.0</string>
++	<key>CFBundleName</key>
++	<string>FinderNotes FN07 Tests</string>
++	<key>CFBundlePackageType</key>
++	<string>APPL</string>
++	<key>CFBundleShortVersionString</key>
++	<string>0.1.0</string>
++	<key>CFBundleVersion</key>
++	<string>1</string>
++	<key>LSApplicationCategoryType</key>
++	<string>public.app-category.productivity</string>
++	<key>LSMinimumSystemVersion</key>
++	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
++	<key>LSUIElement</key>
++	<false/>
++	<key>NSHighResolutionCapable</key>
++	<true/>
++	<key>NSPrincipalClass</key>
++	<string>NSApplication</string>
++</dict>
++</plist>
+diff --git a/FinderNotes/Info-FN07Validation.plist b/FinderNotes/Info-FN07Validation.plist
+new file mode 100644
+index 0000000..50021c8
+--- /dev/null
++++ b/FinderNotes/Info-FN07Validation.plist
+@@ -0,0 +1,55 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
++<plist version="1.0">
++<dict>
++	<key>CFBundleDevelopmentRegion</key>
++	<string>zh_CN</string>
++	<key>CFBundleExecutable</key>
++	<string>$(EXECUTABLE_NAME)</string>
++	<key>CFBundleIdentifier</key>
++	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
++	<key>CFBundleInfoDictionaryVersion</key>
++	<string>6.0</string>
++	<key>CFBundleName</key>
++	<string>FinderNotes FN07 验收</string>
++	<key>CFBundlePackageType</key>
++	<string>APPL</string>
++	<key>CFBundleShortVersionString</key>
++	<string>0.1.0</string>
++	<key>CFBundleVersion</key>
++	<string>1</string>
++	<key>LSApplicationCategoryType</key>
++	<string>public.app-category.productivity</string>
++	<key>LSMinimumSystemVersion</key>
++	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
++	<key>LSUIElement</key>
++	<false/>
++	<key>NSHighResolutionCapable</key>
++	<true/>
++	<key>NSPrincipalClass</key>
++	<string>NSApplication</string>
++	<key>NSServices</key>
++	<array>
++		<dict>
++			<key>NSMenuItem</key>
++			<dict>
++				<key>default</key>
++				<string>FinderNotes FN07 验收编辑笔记</string>
++			</dict>
++			<key>NSMessage</key>
++			<string>receiveFiles</string>
++			<key>NSPortName</key>
++			<string>FinderNotesFN07Validation</string>
++			<key>NSRequiredContext</key>
++			<dict/>
++			<key>NSSendTypes</key>
++			<array>
++				<string>public.file-url</string>
++				<string>NSFilenamesPboardType</string>
++			</array>
++			<key>NSTimeout</key>
++			<string>10000</string>
++		</dict>
++	</array>
++</dict>
++</plist>
+diff --git a/FinderNotesTests/DraftRecoveryStoreTests.swift b/FinderNotesTests/DraftRecoveryStoreTests.swift
+new file mode 100644
+index 0000000..7ba382a
+--- /dev/null
++++ b/FinderNotesTests/DraftRecoveryStoreTests.swift
+@@ -0,0 +1,256 @@
++import Darwin
++import Foundation
++import XCTest
++@testable import FinderNotes
++
++@MainActor
++final class DraftRecoveryStoreTests: XCTestCase {
++    private struct Fixture {
++        let root: URL
++        let directory: URL
++        init() throws {
++            root = FileManager.default.temporaryDirectory.resolvingSymlinksInPath()
++                .appendingPathComponent("findernotes-fn07-recovery-\(UUID().uuidString)", isDirectory: true)
++            try FileManager.default.createDirectory(at: root, withIntermediateDirectories: false)
++            directory = root.appendingPathComponent("Recovery/v1", isDirectory: true)
++        }
++        func cleanup() { try? FileManager.default.removeItem(at: root) }
++        func file(_ id: UUID) -> URL { directory.appendingPathComponent(id.uuidString + ".json") }
++    }
++
++    private func record(_ fixture: Fixture, id: UUID = UUID(), content: NoteContent = .missing,
++                        draft: String = "本地草稿🙂\n  \0e\u{301}\r\n", revision: UInt64 = 3) -> DraftRecoveryRecord {
++        DraftRecoveryRecord(id: id,
++            baseline: NoteSnapshot(url: fixture.root.appendingPathComponent("original.png"),
++                identity: FileIdentity(device: 12, inode: 34, birthSeconds: 56, birthNanoseconds: 78),
++                content: content), draft: draft, revision: revision)
++    }
++
++    private func expect(_ error: DraftRecoveryError,
++                        operation: () async throws -> Void,
++                        file: StaticString = #filePath, line: UInt = #line) async {
++        do { try await operation(); XCTFail("Expected \(error)", file: file, line: line) }
++        catch let actual as DraftRecoveryError { XCTAssertEqual(actual, error, file: file, line: line) }
++        catch { XCTFail("Unexpected error type: \(type(of: error))", file: file, line: line) }
++    }
++
++    private func seed(_ record: DraftRecoveryRecord, fixture: Fixture) async throws {
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        try await store.put(record)
++    }
++
++    func testExactUTF8MissingAndEmptyBaselinesRoundTripAndCleanup() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        let missing = record(fixture)
++        let empty = record(fixture, content: .present(Data()), draft: "")
++        let text = record(fixture, content: .present(Data("外部基线\0🙂\r\n ".utf8)))
++        for value in [missing, empty, text] { try await store.put(value) }
++        let firstRead = try await store.records()
++        XCTAssertEqual(Data(try XCTUnwrap(firstRead.first(where: { $0.id == missing.id })).draft.utf8),
++                       Data(missing.draft.utf8))
++        let secondRead = try await store.records()
++        XCTAssertEqual(Set(firstRead.map(\.id)), Set([missing.id, empty.id, text.id]))
++        XCTAssertEqual(firstRead, secondRead, "enumerating twice must not retain a shared directory offset")
++        XCTAssertEqual(firstRead.first { $0.id == missing.id }?.snapshot.content, .missing)
++        XCTAssertEqual(firstRead.first { $0.id == empty.id }?.snapshot.content, .present(Data()))
++        XCTAssertEqual(firstRead.first { $0.id == text.id }, text)
++        XCTAssertEqual(firstRead.first { $0.id == text.id }?.snapshot.content.text, "外部基线\0🙂\r\n ")
++        let directoryMode = try FileManager.default.attributesOfItem(atPath: fixture.directory.path)[.posixPermissions] as? Int
++        let recordMode = try FileManager.default.attributesOfItem(atPath: fixture.file(missing.id).path)[.posixPermissions] as? Int
++        XCTAssertEqual(directoryMode, 0o700)
++        XCTAssertEqual(recordMode, 0o600)
++        for value in [missing, empty, text] { try await store.remove(id: value.id) }
++        try await store.remove(id: missing.id)
++        let remaining = try await store.records()
++        XCTAssertTrue(remaining.isEmpty)
++        XCTAssertEqual(try FileManager.default.contentsOfDirectory(atPath: fixture.directory.path), [".lock"])
++    }
++
++    func testReplacingPublishedRevisionAndRejectingOlderRevision() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        let first = record(fixture, revision: 7)
++        let next = record(fixture, id: first.id, draft: "后续编辑", revision: 8)
++        try await store.put(first)
++        try await store.put(next)
++        await expect(.staleRevision) { try await store.put(first) }
++        let stored = try await store.records()
++        XCTAssertEqual(stored, [next])
++        XCTAssertFalse(try FileManager.default.contentsOfDirectory(atPath: fixture.directory.path)
++            .contains { $0.hasSuffix(".tmp") })
++    }
++
++    func testFailureBeforeRenamePreservesPreviousFileByteForByte() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        let first = record(fixture)
++        try await seed(first, fixture: fixture)
++        let bytesBefore = try Data(contentsOf: fixture.file(first.id))
++        let store = DraftRecoveryStore(directory: fixture.directory, beforePublish: {
++            throw DraftRecoveryError.system(operation: "测试注入", code: EIO)
++        })
++        let next = record(fixture, id: first.id, draft: "不能发布的草稿", revision: 4)
++        await expect(.system(operation: "测试注入", code: EIO)) { try await store.put(next) }
++        XCTAssertEqual(try Data(contentsOf: fixture.file(first.id)), bytesBefore)
++        XCTAssertEqual(try FileManager.default.contentsOfDirectory(atPath: fixture.directory.path).sorted(),
++                       [".lock", first.id.uuidString + ".json"].sorted())
++    }
++
++    func testTemporaryReplacementIsNotPublishedOrDeleted() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        let first = record(fixture)
++        try await seed(first, fixture: fixture)
++        let directory = fixture.directory
++        let replacement = Data("replacement owned by test".utf8)
++        let store = DraftRecoveryStore(directory: directory, beforePublish: {
++            let names = try FileManager.default.contentsOfDirectory(atPath: directory.path)
++            let name = try XCTUnwrap(names.first { $0.hasPrefix(".draft-") && $0.hasSuffix(".tmp") })
++            let url = directory.appendingPathComponent(name)
++            try FileManager.default.removeItem(at: url)
++            try replacement.write(to: url, options: .withoutOverwriting)
++        })
++        await expect(.temporaryFileChanged) {
++            try await store.put(self.record(fixture, id: first.id, draft: "new", revision: 4))
++        }
++        let records = try await store.records()
++        XCTAssertEqual(records, [first])
++        let files = try FileManager.default.contentsOfDirectory(at: directory, includingPropertiesForKeys: nil)
++        let temporary = try XCTUnwrap(files.first { $0.pathExtension == "tmp" })
++        XCTAssertEqual(try Data(contentsOf: temporary), replacement)
++    }
++
++    func testLifetimeLockExcludesSecondInstanceAndReleasesWhenOwnerEnds() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        var first: DraftRecoveryStore? = DraftRecoveryStore(directory: fixture.directory)
++        weak var weakFirst = first
++        let value = record(fixture)
++        try await first?.put(value)
++        let second = DraftRecoveryStore(directory: fixture.directory)
++        await expect(.storeBusy) { _ = try await second.records() }
++        await expect(.storeBusy) { try await second.remove(id: value.id) }
++        first = nil
++        XCTAssertNil(weakFirst)
++        let recovered = try await second.records()
++        XCTAssertEqual(recovered, [value])
++    }
++
++    func testCorruptRecordRemainsAndBlocksOverwriteAndCleanup() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        let value = record(fixture)
++        try await store.put(value)
++        let corrupt = Data("{broken-json-with-private-text".utf8)
++        try corrupt.write(to: fixture.file(value.id))
++        await expect(.invalidRecord) { _ = try await store.records() }
++        await expect(.invalidRecord) { try await store.put(value) }
++        await expect(.invalidRecord) { try await store.remove(id: value.id) }
++        XCTAssertEqual(try Data(contentsOf: fixture.file(value.id)), corrupt)
++        XCTAssertFalse(DraftRecoveryError.invalidRecord.localizedDescription.contains("private-text"))
++    }
++
++    func testUnknownVersionInvalidUTF8AndRecordIDMismatchFailClosed() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        let value = record(fixture, content: .present(Data("baseline".utf8)))
++        try await store.put(value)
++        let original = try Data(contentsOf: fixture.file(value.id))
++        let object = try XCTUnwrap(JSONSerialization.jsonObject(with: original) as? [String: Any])
++        var version = object
++        version["version"] = 2
++        let unknown = try JSONSerialization.data(withJSONObject: version)
++        try unknown.write(to: fixture.file(value.id))
++        await expect(.unsupportedVersion) { _ = try await store.records() }
++        XCTAssertEqual(try Data(contentsOf: fixture.file(value.id)), unknown)
++
++        var invalid = object
++        var baseline = try XCTUnwrap(invalid["baseline"] as? [String: Any])
++        baseline["content"] = ["kind": "present", "bytes": Data([0xff]).base64EncodedString()]
++        invalid["baseline"] = baseline
++        try JSONSerialization.data(withJSONObject: invalid).write(to: fixture.file(value.id))
++        await expect(.invalidUTF8) { _ = try await store.records() }
++        var mismatch = object
++        mismatch["id"] = UUID().uuidString
++        try JSONSerialization.data(withJSONObject: mismatch).write(to: fixture.file(value.id))
++        await expect(.invalidRecord) { _ = try await store.records() }
++        XCTAssertTrue(FileManager.default.fileExists(atPath: fixture.file(value.id).path))
++    }
++
++    func testInvalidUTF8InputCannotPublishARecord() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        await expect(.invalidUTF8) { try await store.put(self.record(fixture, content: .present(Data([0xff])))) }
++        XCTAssertFalse(FileManager.default.fileExists(atPath: fixture.directory.path))
++    }
++
++    func testInsecureDirectoryAndFileModesAreRejectedWithoutRepair() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        let value = record(fixture)
++        try await store.put(value)
++        XCTAssertEqual(chmod(fixture.file(value.id).path, 0o644), 0)
++        await expect(.insecureFile) { _ = try await store.records() }
++        await expect(.insecureFile) { try await store.remove(id: value.id) }
++        XCTAssertEqual(chmod(fixture.file(value.id).path, 0o600), 0)
++        XCTAssertEqual(chmod(fixture.directory.path, 0o755), 0)
++        await expect(.directoryChanged) { _ = try await store.records() }
++        let attributes = try FileManager.default.attributesOfItem(atPath: fixture.directory.path)
++        XCTAssertEqual(attributes[.posixPermissions] as? Int, 0o755)
++        let another = DraftRecoveryStore(directory: fixture.directory)
++        await expect(.insecureDirectory) { _ = try await another.records() }
++    }
++
++    func testSymbolicLinkDirectoryAndRecordAndHardLinkAreRejected() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        let value = record(fixture)
++        try await store.put(value)
++        let linkedDirectory = fixture.root.appendingPathComponent("alias")
++        try FileManager.default.createSymbolicLink(at: linkedDirectory, withDestinationURL: fixture.directory)
++        let viaLink = DraftRecoveryStore(directory: linkedDirectory)
++        do { _ = try await viaLink.records(); XCTFail("symlink directory accepted") } catch { }
++        let external = fixture.root.appendingPathComponent("external.json")
++        try FileManager.default.moveItem(at: fixture.file(value.id), to: external)
++        let original = try Data(contentsOf: external)
++        try FileManager.default.createSymbolicLink(at: fixture.file(value.id), withDestinationURL: external)
++        await expect(.insecureFile) { _ = try await store.records() }
++        await expect(.insecureFile) { try await store.put(value) }
++        XCTAssertEqual(try Data(contentsOf: external), original)
++        try FileManager.default.removeItem(at: fixture.file(value.id))
++        try FileManager.default.linkItem(at: external, to: fixture.file(value.id))
++        await expect(.insecureFile) { _ = try await store.records() }
++        await expect(.insecureFile) { try await store.remove(id: value.id) }
++        XCTAssertEqual(try Data(contentsOf: external), original)
++    }
++
++    func testDirectoryReplacementIsDetectedAndOriginalRecordPreserved() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        let value = record(fixture)
++        try await store.put(value)
++        let moved = fixture.root.appendingPathComponent("moved")
++        try FileManager.default.moveItem(at: fixture.directory, to: moved)
++        try FileManager.default.createDirectory(at: fixture.directory, withIntermediateDirectories: false,
++                                               attributes: [.posixPermissions: 0o700])
++        await expect(.directoryChanged) { _ = try await store.records() }
++        await expect(.directoryChanged) { try await store.remove(id: value.id) }
++        XCTAssertTrue(FileManager.default.fileExists(atPath: moved.appendingPathComponent(value.id.uuidString + ".json").path))
++        XCTAssertTrue(try FileManager.default.contentsOfDirectory(atPath: fixture.directory.path).isEmpty)
++    }
++
++    func testSameContentWithDistinctIdentityRemainsSeparateAndDoesNotReadMedia() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        let first = record(fixture, content: .present(Data("same baseline".utf8)))
++        let copy = DraftRecoveryRecord(id: UUID(),
++            baseline: NoteSnapshot(url: fixture.root.appendingPathComponent("copy.png"),
++                identity: FileIdentity(device: 12, inode: 35, birthSeconds: 57, birthNanoseconds: 79),
++                content: first.snapshot.content), draft: first.draft, revision: first.revision)
++        try await store.put(first)
++        try await store.put(copy)
++        let records = try await store.records()
++        XCTAssertEqual(records.count, 2)
++        XCTAssertNotEqual(records[0].snapshot.identity, records[1].snapshot.identity)
++        XCTAssertFalse(FileManager.default.fileExists(atPath: first.snapshot.url.path))
++        XCTAssertFalse(FileManager.default.fileExists(atPath: copy.snapshot.url.path))
++    }
++}
+diff --git a/FinderNotesTests/EditorRecoverySessionTests.swift b/FinderNotesTests/EditorRecoverySessionTests.swift
+new file mode 100644
+index 0000000..fbe858d
+--- /dev/null
++++ b/FinderNotesTests/EditorRecoverySessionTests.swift
+@@ -0,0 +1,311 @@
++import XCTest
++@testable import FinderNotes
++
++@MainActor
++final class EditorRecoverySessionTests: XCTestCase {
++    private func note(_ name: String = "recovery.png", inode: UInt64 = 7,
++                      content: NoteContent = .present(Data("打开时正文".utf8))) -> NoteSnapshot {
++        NoteSnapshot(url: URL(fileURLWithPath: "/private/tmp/" + name),
++                     identity: FileIdentity(device: 1, inode: inode, birthSeconds: 100,
++                                            birthNanoseconds: 200), content: content)
++    }
++
++    private func record(baseline: NoteSnapshot? = nil, draft: String = "未保存草稿🙂\n",
++                        revision: UInt64 = 42) -> DraftRecoveryRecord {
++        DraftRecoveryRecord(id: UUID(), baseline: baseline ?? note(), draft: draft, revision: revision)
++    }
++
++    private func saved(_ ticket: EditorSession.SaveTicket) -> NoteSnapshot {
++        NoteSnapshot(url: ticket.request.baseline.url, identity: ticket.request.baseline.identity,
++                     content: ticket.request.desiredContent)
++    }
++
++    func testCleanTargetsHaveNoRecoveryRecordAndInstallChangesIdentifier() throws {
++        let session = EditorSession()
++        XCTAssertNil(session.recoveryRecord)
++        let emptyIdentifier = session.recoveryIdentifier
++        _ = session.resolve(note(), ticket: session.beginLoading())
++        let firstIdentifier = session.recoveryIdentifier
++        XCTAssertNotEqual(firstIdentifier, emptyIdentifier)
++        XCTAssertNil(session.recoveryRecord)
++        session.updateDraft("改动")
++        let first = try XCTUnwrap(session.recoveryRecord)
++        XCTAssertEqual(first.id, firstIdentifier)
++        XCTAssertEqual(first.snapshot.content, note().content)
++        XCTAssertEqual(first.draft, "改动")
++        XCTAssertEqual(first.revision, session.draftRevision)
++        session.updateDraft(note().content.text)
++        XCTAssertNil(session.recoveryRecord)
++        _ = session.resolve(note("second.png", inode: 8), ticket: session.beginLoading())
++        XCTAssertNotEqual(session.recoveryIdentifier, firstIdentifier)
++        let secondIdentifier = session.recoveryIdentifier
++        session.close()
++        XCTAssertNotEqual(session.recoveryIdentifier, secondIdentifier)
++        XCTAssertNil(session.recoveryRecord)
++    }
++
++    func testRestoringKeepsOpeningBaselineAndPausesAutosaveUntilManualSaveSucceeds() throws {
++        let session = EditorSession()
++        let recovery = record()
++        XCTAssertTrue(session.restoreRecovery(record: recovery, current: note()))
++        XCTAssertEqual(session.recoveryIdentifier, recovery.id)
++        XCTAssertEqual(session.draftRevision, recovery.revision)
++        XCTAssertEqual(session.draft, recovery.draft)
++        XCTAssertEqual(session.snapshot?.content, recovery.snapshot.content)
++        XCTAssertTrue(session.recoveryNeedsAttention)
++        XCTAssertTrue(session.requiresLeaveConfirmation)
++        XCTAssertFalse(session.recoveryWriteBlocked)
++        XCTAssertTrue(session.canBeginSave)
++        XCTAssertNil(session.autosaveTicket)
++        session.updateDraft("恢复后继续编辑")
++        XCTAssertNil(session.autosaveTicket)
++        let ticket = try XCTUnwrap(session.beginSaving())
++        XCTAssertEqual(ticket.request.baseline.content, recovery.snapshot.content)
++        XCTAssertTrue(session.completeSaving(saved(ticket), ticket: ticket))
++        XCTAssertFalse(session.recoveryNeedsAttention)
++        XCTAssertNil(session.recoveryRecord)
++        session.updateDraft("下一版")
++        XCTAssertNotNil(session.autosaveTicket)
++    }
++
++    func testExternalChangedBodyIsNotAdoptedAsRestoredBaseline() throws {
++        let session = EditorSession()
++        let recovery = record()
++        let external = note(content: .present(Data("外部新版本".utf8)))
++        XCTAssertTrue(session.restoreRecovery(record: recovery, current: external))
++        XCTAssertFalse(session.recoveryWriteBlocked)
++        XCTAssertEqual(session.snapshot?.content, recovery.snapshot.content)
++        XCTAssertTrue(session.saveIssue?.message.contains("正文基线与外部版本不同") ?? false)
++        let ticket = try XCTUnwrap(session.beginSaving())
++        XCTAssertEqual(ticket.request.baseline.content, recovery.snapshot.content,
++                       "NoteWriter must detect external changes against the original baseline")
++        XCTAssertTrue(session.failSaving("外部正文冲突", uncertain: false, ticket: ticket))
++        XCTAssertEqual(session.draft, recovery.draft)
++        XCTAssertNotNil(session.recoveryRecord)
++        XCTAssertTrue(session.recoveryNeedsAttention)
++        XCTAssertNil(session.autosaveTicket)
++    }
++
++    func testMissingReplacedOrCopiedTargetCannotReceiveRestoredDraft() {
++        let recovery = record()
++        let candidates: [NoteSnapshot?] = [
++            nil,
++            note(inode: 8),
++            note("copy.png", inode: 8),
++            note("different-path.png"),
++            NoteSnapshot(url: recovery.snapshot.url,
++                         identity: FileIdentity(device: 1, inode: 7, birthSeconds: 999,
++                                                birthNanoseconds: 200),
++                         content: recovery.snapshot.content)
++        ]
++        for candidate in candidates {
++            let session = EditorSession()
++            XCTAssertTrue(session.restoreRecovery(record: recovery, current: candidate))
++            XCTAssertTrue(session.recoveryWriteBlocked)
++            XCTAssertFalse(session.canBeginSave)
++            XCTAssertNil(session.beginSaving())
++            XCTAssertNil(session.autosaveTicket)
++            XCTAssertEqual(session.draft, recovery.draft)
++            XCTAssertNotNil(session.recoveryRecord)
++            XCTAssertTrue(session.status.contains("禁止写回"))
++        }
++    }
++
++    func testRestoreInvalidatesOldLoadTicketAndRefusesAnInFlightSave() throws {
++        let session = EditorSession()
++        let previousLoad = session.beginLoading()
++        let recovery = record()
++        XCTAssertTrue(session.restoreRecovery(record: recovery, current: note()))
++        XCTAssertFalse(session.isLoading)
++        XCTAssertEqual(session.resolve(note("old-result.png", inode: 8), ticket: previousLoad), .stale)
++        let ticket = try XCTUnwrap(session.beginSaving())
++        XCTAssertFalse(session.restoreRecovery(record: record(draft: "另一个恢复稿"), current: note()))
++        XCTAssertEqual(session.draft, recovery.draft)
++        XCTAssertTrue(session.completeSaving(saved(ticket), ticket: ticket))
++    }
++
++    func testEmptyRecoveryRetainsMissingVersusPresentEmptyBaselineAndNeedsExplicitDecision() throws {
++        for content in [NoteContent.missing, .present(Data())] {
++            let baseline = note(content: content)
++            let recovery = record(baseline: baseline, draft: "")
++            let session = EditorSession()
++            XCTAssertTrue(session.restoreRecovery(record: recovery, current: baseline))
++            XCTAssertFalse(session.isDirty)
++            XCTAssertTrue(session.requiresLeaveConfirmation)
++            XCTAssertEqual(session.recoveryRecord?.snapshot.content, content)
++            let ticket = try XCTUnwrap(session.beginSaving())
++            XCTAssertEqual(ticket.request.baseline.content, content)
++            XCTAssertEqual(ticket.request.desiredContent, .present(Data()))
++            XCTAssertTrue(session.completeSaving(saved(ticket), ticket: ticket))
++            XCTAssertNil(session.recoveryRecord)
++            XCTAssertFalse(session.requiresLeaveConfirmation)
++        }
++    }
++
++    func testRecoveryWriteFailurePausesAutosaveWithoutPreventingManualSave() throws {
++        let session = EditorSession()
++        _ = session.resolve(note(), ticket: session.beginLoading())
++        session.updateDraft("保留草稿")
++        XCTAssertNotNil(session.autosaveTicket)
++        session.setRecoveryIssue("测试磁盘失败")
++        XCTAssertNil(session.autosaveTicket)
++        XCTAssertNotNil(session.recoveryRecord)
++        XCTAssertTrue(session.status.contains("恢复文件更新失败"))
++        let ticket = try XCTUnwrap(session.beginSaving())
++        session.updateDraft("保存时继续编辑")
++        XCTAssertTrue(session.completeSaving(saved(ticket), ticket: ticket))
++        XCTAssertEqual(session.recoveryIssue, "测试磁盘失败",
++                       "An xattr success does not prove recovery storage is working")
++        XCTAssertNil(session.autosaveTicket)
++        session.setRecoveryIssue(nil)
++        XCTAssertNotNil(session.autosaveTicket)
++    }
++
++    func testSavingOlderRecoveredRevisionKeepsNewerRecoveryWithAdvancedBaseline() throws {
++        let session = EditorSession()
++        let recovery = record()
++        XCTAssertTrue(session.restoreRecovery(record: recovery, current: note()))
++        let ticket = try XCTUnwrap(session.beginSaving())
++        session.updateDraft("保存期间新的草稿🙂")
++        let newestRevision = session.draftRevision
++        XCTAssertTrue(session.completeSaving(saved(ticket), ticket: ticket))
++        let remaining = try XCTUnwrap(session.recoveryRecord)
++        XCTAssertEqual(remaining.id, recovery.id)
++        XCTAssertEqual(remaining.revision, newestRevision)
++        XCTAssertEqual(remaining.draft, "保存期间新的草稿🙂")
++        XCTAssertEqual(remaining.snapshot.content, ticket.request.desiredContent)
++        XCTAssertFalse(session.recoveryNeedsAttention)
++        XCTAssertTrue(session.isDirty)
++    }
++
++    func testApplyExternalCanPreserveDraftForExplicitSaveAndInvalidateOldAutosave() throws {
++        let session = EditorSession()
++        _ = session.resolve(note(), ticket: session.beginLoading())
++        session.updateDraft("本地草稿")
++        let oldTicket = try XCTUnwrap(session.autosaveTicket)
++        let oldIdentifier = session.recoveryIdentifier
++        let revision = session.draftRevision
++        let external = note(content: .present(Data("外部正文".utf8)))
++        XCTAssertTrue(session.applyExternal(external, replacingDraft: false, confirmedRevision: revision))
++        XCTAssertEqual(session.draft, "本地草稿")
++        XCTAssertEqual(session.draftRevision, revision)
++        XCTAssertEqual(session.recoveryIdentifier, oldIdentifier)
++        XCTAssertEqual(session.snapshot?.content, external.content)
++        XCTAssertTrue(session.recoveryNeedsAttention)
++        XCTAssertNil(session.autosaveTicket)
++        XCTAssertFalse(session.isCurrent(oldTicket))
++        let ticket = try XCTUnwrap(session.beginSaving())
++        XCTAssertEqual(ticket.request.baseline.content, external.content)
++        XCTAssertEqual(ticket.request.desiredContent, .present(Data("本地草稿".utf8)))
++    }
++
++    func testApplyExternalLoadClearsIssuesAndDistinguishesExternalDeletion() throws {
++        let session = EditorSession()
++        let recovery = record()
++        XCTAssertTrue(session.restoreRecovery(record: recovery, current: nil))
++        session.setRecoveryIssue("旧恢复错误")
++        let external = note(content: .missing)
++        XCTAssertTrue(session.applyExternal(external, replacingDraft: true,
++                                            confirmedRevision: session.draftRevision))
++        XCTAssertEqual(session.draft, "")
++        XCTAssertEqual(session.snapshot?.content, .missing)
++        XCTAssertFalse(session.recoveryNeedsAttention)
++        XCTAssertFalse(session.recoveryWriteBlocked)
++        XCTAssertNil(session.recoveryIssue)
++        XCTAssertNil(session.saveIssue)
++        XCTAssertNil(session.recoveryRecord)
++        XCTAssertNotEqual(session.recoveryIdentifier, recovery.id)
++        XCTAssertEqual(session.status, "尚无笔记 · 可在此编辑草稿")
++    }
++
++    func testApplyExternalRejectsStaleRevisionIdentityPathLoadingAndSaving() throws {
++        let session = EditorSession()
++        _ = session.resolve(note(), ticket: session.beginLoading())
++        session.updateDraft("本地草稿")
++        let revision = session.draftRevision
++        let external = note(content: .present(Data("外部版本".utf8)))
++        session.updateDraft("新草稿")
++        XCTAssertFalse(session.applyExternal(external, replacingDraft: true, confirmedRevision: revision))
++        for candidate in [note(inode: 8), note("copy.png")] {
++            XCTAssertFalse(session.applyExternal(candidate, replacingDraft: false,
++                                                 confirmedRevision: session.draftRevision))
++        }
++        _ = session.beginLoading()
++        XCTAssertFalse(session.applyExternal(external, replacingDraft: true,
++                                             confirmedRevision: session.draftRevision))
++        session.invalidateLoading()
++        let ticket = try XCTUnwrap(session.beginSaving())
++        XCTAssertFalse(session.applyExternal(external, replacingDraft: true,
++                                             confirmedRevision: session.draftRevision))
++        XCTAssertEqual(session.draft, "新草稿")
++        XCTAssertEqual(session.snapshot?.content, note().content)
++        XCTAssertTrue(session.failSaving("保留", uncertain: true, ticket: ticket))
++        XCTAssertNotNil(session.recoveryRecord)
++    }
++
++    func testCloseClearsRecoveryFlagsAndRejectsOldSaveCompletion() throws {
++        let session = EditorSession()
++        let recovery = record()
++        XCTAssertTrue(session.restoreRecovery(record: recovery, current: note()))
++        session.setRecoveryIssue("旧错误")
++        let ticket = try XCTUnwrap(session.beginSaving())
++        session.close()
++        XCTAssertFalse(session.completeSaving(saved(ticket), ticket: ticket))
++        XCTAssertNil(session.snapshot)
++        XCTAssertNil(session.recoveryRecord)
++        XCTAssertFalse(session.recoveryNeedsAttention)
++        XCTAssertFalse(session.recoveryWriteBlocked)
++        XCTAssertNil(session.recoveryIssue)
++        XCTAssertNotEqual(session.recoveryIdentifier, recovery.id)
++    }
++
++    func testLiveIdentityFailureBlocksAllWritesWithoutLosingEitherFailureDetail() throws {
++        let session = EditorSession()
++        _ = session.resolve(note(), ticket: session.beginLoading())
++        session.updateDraft("本地草稿")
++        let ticket = try XCTUnwrap(session.beginSaving())
++        XCTAssertTrue(session.failSaving("先前保存未确认", uncertain: true, ticket: ticket))
++        session.setRecoveryIssue("恢复目录写入失败")
++        XCTAssertTrue(session.status.contains("先前保存未确认"))
++        XCTAssertTrue(session.status.contains("恢复目录写入失败"))
++
++        session.blockRecoveryWrite("同名文件身份已替换")
++        XCTAssertTrue(session.recoveryWriteBlocked)
++        XCTAssertTrue(session.recoveryNeedsAttention)
++        XCTAssertEqual(session.recoveryIssue, "同名文件身份已替换")
++        XCTAssertFalse(session.canBeginSave)
++        XCTAssertNil(session.beginSaving())
++        XCTAssertNil(session.autosaveTicket)
++        XCTAssertNotNil(session.recoveryRecord)
++        XCTAssertTrue(session.status.contains("先前保存未确认"))
++        XCTAssertTrue(session.status.contains("同名文件身份已替换"))
++        XCTAssertEqual(session.draft, "本地草稿")
++    }
++
++    func testRestoreBaselineConflictReportsExternalMissingAndEmptySeparately() {
++        for (content, description) in [(NoteContent.missing, "属性已不存在"),
++                                        (.present(Data()), "为空正文")] {
++            let session = EditorSession()
++            let recovery = record()
++            XCTAssertTrue(session.restoreRecovery(record: recovery, current: note(content: content)))
++            XCTAssertFalse(session.recoveryWriteBlocked)
++            XCTAssertTrue(session.saveIssue?.message.contains("正文基线与外部版本不同") ?? false)
++            XCTAssertTrue(session.saveIssue?.message.contains(description) ?? false)
++            XCTAssertEqual(session.snapshot?.content, recovery.snapshot.content)
++            XCTAssertEqual(session.draft, recovery.draft)
++            XCTAssertNil(session.autosaveTicket)
++        }
++    }
++    func testRecoveryWithoutUsableBirthIdentityCannotBeReenabledForWriting() {
++        let unknown = NoteSnapshot(url: note().url, identity: FileIdentity(device: 1, inode: 7),
++                                   content: note().content)
++        let session = EditorSession()
++        XCTAssertTrue(session.restoreRecovery(record: record(baseline: unknown), current: unknown))
++        XCTAssertTrue(session.recoveryWriteBlocked)
++        XCTAssertNil(session.beginSaving())
++        XCTAssertFalse(session.applyExternal(unknown, replacingDraft: false,
++                                              confirmedRevision: session.draftRevision))
++        XCTAssertEqual(session.draft, "未保存草稿🙂\n")
++    }
++
++}
+diff --git a/FinderNotesTests/EditorRecoveryWindowTests.swift b/FinderNotesTests/EditorRecoveryWindowTests.swift
+new file mode 100644
+index 0000000..d67e06e
+--- /dev/null
++++ b/FinderNotesTests/EditorRecoveryWindowTests.swift
+@@ -0,0 +1,442 @@
++import AppKit
++import XCTest
++@testable import FinderNotes
++
++private final class RecoverySaveRecorder: @unchecked Sendable {
++    private let lock = NSLock()
++    private var values: [NoteSaveRequest] = []
++    private let firstSaveGate: DispatchSemaphore?
++
++    init(firstSaveGate: DispatchSemaphore? = nil) { self.firstSaveGate = firstSaveGate }
++    var requests: [NoteSaveRequest] { lock.withLock { values } }
++
++    func save(_ request: NoteSaveRequest) -> NoteSnapshot {
++        let count = lock.withLock { values.append(request); return values.count }
++        if count == 1 { firstSaveGate?.wait() }
++        return NoteSnapshot(url: request.baseline.url, identity: request.baseline.identity,
++                            content: request.desiredContent)
++    }
++}
++
++private final class RecoveryPublicationGate: @unchecked Sendable {
++    private let lock = NSLock()
++    private var entered = false
++    let gate = DispatchSemaphore(value: 0)
++    var isEntered: Bool { lock.withLock { entered } }
++
++    func beforePublish() {
++        let shouldWait = lock.withLock {
++            guard !entered else { return false }
++            entered = true
++            return true
++        }
++        if shouldWait { gate.wait() }
++    }
++}
++
++/// Controller scheduling and native sheets against a real, isolated recovery directory.
++/// Save/read callbacks are deterministic; these tests do not claim Finder or real IME coverage.
++@MainActor
++final class EditorRecoveryWindowTests: XCTestCase {
++    private struct Fixture {
++        let root: URL
++        var directory: URL { root.appendingPathComponent("recovery", isDirectory: true) }
++        init() throws {
++            root = FileManager.default.temporaryDirectory.resolvingSymlinksInPath()
++                .appendingPathComponent("findernotes-fn07-window-\(UUID().uuidString)", isDirectory: true)
++            try FileManager.default.createDirectory(at: root, withIntermediateDirectories: false,
++                                                    attributes: [.posixPermissions: 0o700])
++        }
++        func cleanup() { try? FileManager.default.removeItem(at: root) }
++    }
++
++    private func note(inode: UInt64 = 10, text: String = "打开时正文") -> NoteSnapshot {
++        NoteSnapshot(url: URL(fileURLWithPath: "/private/tmp/fn07-synthetic.png"),
++                     identity: FileIdentity(device: 1, inode: inode, birthSeconds: 100,
++                                            birthNanoseconds: 200),
++                     content: .present(Data(text.utf8)))
++    }
++
++    private func controller(store: DraftRecoveryStore, recorder: RecoverySaveRecorder,
++                            scheduler: TestAutosaveScheduler,
++                            read: (@Sendable ([URL]) throws -> NoteSnapshot)? = nil,
++                            export: @escaping @Sendable (MarkdownExportRequest) throws -> Void = { _ in },
++                            protectedExportDestination: (@MainActor (URL, String, String) async -> URL?)? = nil) -> EditorWindowController {
++        _ = NSApplication.shared
++        let baseline = note()
++        let session = EditorSession()
++        _ = session.resolve(baseline, ticket: session.beginLoading())
++        let preview = MediaPreviewController(validate: { _ in throw NoteReadError.unsupportedType })
++        return EditorWindowController(session: session, read: read ?? { _ in baseline },
++                                      save: { recorder.save($0) }, export: export,
++                                      autosaveScheduler: scheduler, preview: preview, recoveryStore: store,
++                                      protectedExportDestination: protectedExportDestination)
++    }
++
++    private func edit(_ text: String, _ controller: EditorWindowController) {
++        controller.editor.string = text
++        controller.textDidChange(Notification(name: NSText.didChangeNotification, object: controller.editor))
++    }
++
++    private func eventually(_ condition: () -> Bool, file: StaticString = #filePath,
++                            line: UInt = #line) async throws {
++        for _ in 0..<500 {
++            if condition() { return }
++            try await Task.sleep(for: .milliseconds(10))
++        }
++        XCTFail("Controller condition did not settle", file: file, line: line)
++    }
++
++    private func persist(_ controller: EditorWindowController, file: StaticString = #filePath,
++                         line: UInt = #line) async {
++        let result = await controller.queueCurrentRecovery()?.value
++        XCTAssertEqual(result, true, file: file, line: line)
++    }
++
++    func testEditingDuringSavePersistsNewDraftAgainstConfirmedNewBaseline() async throws {
++        let fixture = try Fixture()
++        defer { fixture.cleanup() }
++        let gate = DispatchSemaphore(value: 0)
++        defer { gate.signal() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        let recorder = RecoverySaveRecorder(firstSaveGate: gate)
++        let scheduler = TestAutosaveScheduler()
++        let controller = controller(store: store, recorder: recorder, scheduler: scheduler)
++        edit("先保存的正文", controller)
++        await persist(controller)
++        let identifier = controller.session.recoveryIdentifier
++        controller.saveNote(nil)
++        try await eventually { recorder.requests.count == 1 }
++        edit("保存途中继续输入🙂\n", controller)
++        await persist(controller)
++        let before = try await store.records()
++        XCTAssertEqual(before.first?.snapshot.content, note().content)
++        gate.signal()
++        try await eventually { !controller.session.isSaving }
++        await persist(controller)
++        let records = try await store.records()
++        XCTAssertEqual(records.count, 1)
++        XCTAssertEqual(records.first?.id, identifier)
++        XCTAssertEqual(records.first?.draft, "保存途中继续输入🙂\n")
++        XCTAssertEqual(records.first?.snapshot.content, .present(Data("先保存的正文".utf8)))
++        XCTAssertEqual(controller.editor.string, "保存途中继续输入🙂\n")
++        XCTAssertEqual(recorder.requests.count, 1)
++        XCTAssertNotNil(scheduler.pending)
++    }
++
++    func testExplicitDiscardWaitsForQueuedPutAndCannotResurrectItsRecord() async throws {
++        let fixture = try Fixture()
++        defer { fixture.cleanup() }
++        let publication = RecoveryPublicationGate()
++        defer { publication.gate.signal() }
++        let store = DraftRecoveryStore(directory: fixture.directory,
++                                       beforePublish: { publication.beforePublish() })
++        let controller = controller(store: store, recorder: RecoverySaveRecorder(),
++                                    scheduler: TestAutosaveScheduler())
++        edit("明确放弃的草稿", controller)
++        let writing = try XCTUnwrap(controller.queueCurrentRecovery())
++        try await eventually { publication.isEntered }
++        let discarding = Task { await controller.discardRecovery() }
++        publication.gate.signal()
++        let writeSucceeded = await writing.value
++        let discarded = await discarding.value
++        XCTAssertTrue(writeSucceeded)
++        XCTAssertTrue(discarded)
++        let records = try await store.records()
++        XCTAssertTrue(records.isEmpty)
++        XCTAssertEqual(controller.session.draft, "明确放弃的草稿",
++                       "Disk cleanup alone must not reset the native editor")
++    }
++
++    func testMarkedTextNeverReplacesLastCompletedPersistedDraft() async throws {
++        let fixture = try Fixture()
++        defer { fixture.cleanup() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        let scheduler = TestAutosaveScheduler()
++        let controller = controller(store: store, recorder: RecoverySaveRecorder(), scheduler: scheduler)
++        edit("上次已落盘的完整输入", controller)
++        await persist(controller)
++        let previous = try await store.records()
++        controller.editor.setSelectedRange(NSRange(location: (controller.editor.string as NSString).length,
++                                                    length: 0))
++        controller.editor.setMarkedText("zhongwen", selectedRange: NSRange(location: 8, length: 0),
++                                        replacementRange: NSRange(location: NSNotFound, length: 0))
++        XCTAssertTrue(controller.editor.hasMarkedText())
++        XCTAssertNil(controller.queueCurrentRecovery())
++        XCTAssertNil(scheduler.pending)
++        let current = try await store.records()
++        XCTAssertEqual(current, previous)
++        XCTAssertTrue(controller.session.draft.contains("zhongwen"))
++    }
++
++    func testRestoredDraftCanPersistFurtherEditsWithoutSchedulingAutosave() async throws {
++        let fixture = try Fixture()
++        defer { fixture.cleanup() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        let scheduler = TestAutosaveScheduler()
++        let recorder = RecoverySaveRecorder()
++        let controller = controller(store: store, recorder: recorder, scheduler: scheduler)
++        let record = DraftRecoveryRecord(id: UUID(), baseline: note(), draft: "已落盘恢复稿", revision: 3)
++        try await store.put(record)
++        XCTAssertTrue(controller.session.restoreRecovery(record: record, current: note()))
++        controller.renderInstalledSnapshot()
++        edit("恢复后继续输入", controller)
++        await persist(controller)
++        XCTAssertNil(scheduler.pending)
++        scheduler.fire()
++        XCTAssertTrue(recorder.requests.isEmpty)
++        XCTAssertTrue(controller.saveButton.isEnabled)
++        let records = try await store.records()
++        XCTAssertEqual(records.first?.id, record.id)
++        XCTAssertEqual(records.first?.draft, "恢复后继续输入")
++        XCTAssertEqual(records.first?.snapshot.content, record.snapshot.content)
++    }
++
++    func testExternalCheckRejectsReplacementBeforeOfferingOverwrite() async throws {
++        let fixture = try Fixture()
++        defer { fixture.cleanup() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        let recorder = RecoverySaveRecorder()
++        let replacement = note(inode: 999, text: "同名新文件正文")
++        let controller = controller(store: store, recorder: recorder, scheduler: TestAutosaveScheduler(),
++                                    read: { _ in replacement })
++        edit("旧文件草稿", controller)
++        await persist(controller)
++        controller.resolveConflict(nil)
++        try await eventually { !controller.isConfirming }
++        XCTAssertTrue(controller.session.recoveryWriteBlocked)
++        XCTAssertFalse(controller.saveButton.isEnabled)
++        XCTAssertTrue(controller.copyButton.isEnabled)
++        XCTAssertTrue(controller.exportButton.isEnabled)
++        XCTAssertNil(controller.window?.attachedSheet)
++        controller.saveNote(nil)
++        XCTAssertTrue(recorder.requests.isEmpty)
++        XCTAssertEqual(controller.session.snapshot?.identity, note().identity)
++        XCTAssertEqual(controller.editor.string, "旧文件草稿")
++        await persist(controller)
++        let records = try await store.records()
++        XCTAssertEqual(records.first?.snapshot.identity, note().identity)
++        XCTAssertEqual(records.first?.draft, "旧文件草稿")
++    }
++
++    func testCancellingProtectedExportKeepsDraftBaselineAndRecovery() async throws {
++        let fixture = try Fixture()
++        defer { fixture.cleanup() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        let external = note(text: "外部版本")
++        let recorder = RecoverySaveRecorder()
++        let controller = controller(store: store, recorder: recorder, scheduler: TestAutosaveScheduler(),
++                                    read: { _ in external })
++        controller.showEditor()
++        defer { controller.window?.orderOut(nil) }
++        edit("导出取消时的本地草稿", controller)
++        await persist(controller)
++        let previous = try await store.records()
++        controller.resolveConflict(nil)
++        try await eventually { controller.window?.attachedSheet != nil }
++        let alert = try XCTUnwrap(controller.window?.attachedSheet)
++        controller.window?.endSheet(alert, returnCode: .alertSecondButtonReturn)
++        try await eventually { controller.window?.attachedSheet is NSSavePanel }
++        let panel = try XCTUnwrap(controller.window?.attachedSheet as? NSSavePanel)
++        panel.cancel(nil)
++        try await eventually { !controller.isConfirming }
++        XCTAssertEqual(controller.editor.string, "导出取消时的本地草稿")
++        XCTAssertEqual(controller.session.snapshot?.content, note().content)
++        XCTAssertTrue(recorder.requests.isEmpty)
++        let current = try await store.records()
++        XCTAssertEqual(current, previous)
++    }
++
++    func testFailedProtectedExportKeepsDraftBaselineAndRecovery() async throws {
++        let fixture = try Fixture()
++        defer { fixture.cleanup() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        let external = note(text: "外部版本")
++        let recorder = RecoverySaveRecorder()
++        let destination = fixture.root.appendingPathComponent("failed-export.md")
++        let controller = controller(store: store, recorder: recorder, scheduler: TestAutosaveScheduler(),
++                                    read: { _ in external },
++                                    export: { _ in throw MarkdownExportError.system(operation: "合成导出失败", code: EIO) },
++                                    protectedExportDestination: { _, _, _ in destination })
++        controller.showEditor()
++        defer { controller.window?.orderOut(nil) }
++        edit("导出失败时的本地草稿", controller)
++        await persist(controller)
++        let previous = try await store.records()
++        controller.resolveConflict(nil)
++        try await eventually { controller.window?.attachedSheet != nil }
++        let choice = try XCTUnwrap(controller.window?.attachedSheet)
++        controller.window?.endSheet(choice, returnCode: .alertSecondButtonReturn)
++        try await eventually {
++            guard let sheet = controller.window?.attachedSheet else { return false }
++            return sheet !== choice && !(sheet is NSSavePanel)
++        }
++        let failure = try XCTUnwrap(controller.window?.attachedSheet)
++        controller.window?.endSheet(failure, returnCode: .alertFirstButtonReturn)
++        try await eventually { !controller.isConfirming }
++        XCTAssertEqual(controller.editor.string, "导出失败时的本地草稿")
++        XCTAssertEqual(controller.session.snapshot?.content, note().content)
++        XCTAssertTrue(recorder.requests.isEmpty)
++        let current = try await store.records()
++        XCTAssertEqual(current, previous)
++        XCTAssertFalse(FileManager.default.fileExists(atPath: destination.path))
++    }
++
++    func testCancellingRecoveryChooserDoesNotDiscardActiveRecovery() async throws {
++        let fixture = try Fixture()
++        defer { fixture.cleanup() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        let controller = controller(store: store, recorder: RecoverySaveRecorder(),
++                                    scheduler: TestAutosaveScheduler())
++        controller.showEditor()
++        defer { controller.window?.orderOut(nil) }
++        edit("当前正在编辑的草稿🙂\n", controller)
++        await persist(controller)
++        let activeIdentifier = controller.session.recoveryIdentifier
++        let activeURL = fixture.directory.appendingPathComponent(activeIdentifier.uuidString + ".json")
++        let activeBytes = try Data(contentsOf: activeURL)
++        let previousBaseline = controller.session.snapshot?.content
++        let older = DraftRecoveryRecord(id: UUID(), baseline: note(inode: 11),
++                                         draft: "另一个未保存草稿", revision: 5)
++        try await store.put(older)
++        controller.showRecovery(nil)
++        try await eventually { controller.window?.attachedSheet != nil }
++        let chooser = try XCTUnwrap(controller.window?.attachedSheet)
++        controller.window?.endSheet(chooser, returnCode: .alertFirstButtonReturn)
++        try await eventually { !controller.isConfirming }
++        XCTAssertEqual(controller.session.recoveryIdentifier, activeIdentifier)
++        XCTAssertEqual(controller.editor.string, "当前正在编辑的草稿🙂\n")
++        XCTAssertEqual(controller.session.snapshot?.content, previousBaseline)
++        XCTAssertEqual(try Data(contentsOf: activeURL), activeBytes)
++        let records = try await store.records()
++        XCTAssertEqual(Set(records.map(\.id)), Set([activeIdentifier, older.id]))
++    }
++
++    func testUndoToBaselineThenSwitchCleansThePreviousRecovery() async throws {
++        let fixture = try Fixture()
++        defer { fixture.cleanup() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        let next = note(inode: 12, text: "下一个文件正文")
++        let controller = controller(store: store, recorder: RecoverySaveRecorder(),
++                                    scheduler: TestAutosaveScheduler(), read: { _ in next })
++        defer { controller.window?.orderOut(nil) }
++        edit("曾经修改的草稿", controller)
++        await persist(controller)
++        let previousIdentifier = controller.session.recoveryIdentifier
++        edit(note().content.text, controller)
++        await persist(controller)
++        XCTAssertFalse(controller.session.requiresLeaveConfirmation)
++        let before = try await store.records()
++        XCTAssertEqual(before.first?.id, previousIdentifier)
++        XCTAssertEqual(before.first?.draft, note().content.text)
++        controller.receive([next.url])
++        try await eventually { !controller.session.isLoading && controller.session.snapshot?.identity == next.identity }
++        XCTAssertNil(controller.window?.attachedSheet)
++        XCTAssertEqual(controller.editor.string, next.content.text)
++        XCTAssertNotEqual(controller.session.recoveryIdentifier, previousIdentifier)
++        let records = try await store.records()
++        XCTAssertTrue(records.isEmpty)
++    }
++
++    func testLoadingExternalVersionFirstExportsExactLocalDraftThenCleansRecovery() async throws {
++        let fixture = try Fixture()
++        defer { fixture.cleanup() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        let external = note(text: "外部版本🙂\n")
++        let local = "  本地草稿e\u{301}\n"
++        let destination = fixture.root.appendingPathComponent("preserved-local.md")
++        let recorder = RecoverySaveRecorder()
++        let controller = controller(store: store, recorder: recorder, scheduler: TestAutosaveScheduler(),
++                                    read: { _ in external }, export: { try MarkdownExporter().export($0) },
++                                    protectedExportDestination: { _, _, _ in destination })
++        controller.showEditor()
++        defer { controller.window?.orderOut(nil) }
++        edit(local, controller)
++        await persist(controller)
++        let oldIdentifier = controller.session.recoveryIdentifier
++        controller.resolveConflict(nil)
++        try await eventually { controller.window?.attachedSheet != nil }
++        let choice = try XCTUnwrap(controller.window?.attachedSheet)
++        controller.window?.endSheet(choice, returnCode: .alertSecondButtonReturn)
++        try await eventually {
++            !controller.isConfirming && controller.session.snapshot?.content == external.content
++        }
++        XCTAssertEqual(try Data(contentsOf: destination), Data(local.utf8))
++        XCTAssertEqual(controller.editor.string, external.content.text)
++        XCTAssertEqual(controller.session.snapshot?.content, external.content)
++        XCTAssertFalse(controller.session.requiresLeaveConfirmation)
++        XCTAssertNotEqual(controller.session.recoveryIdentifier, oldIdentifier)
++        XCTAssertTrue(recorder.requests.isEmpty)
++        let records = try await store.records()
++        XCTAssertTrue(records.isEmpty)
++    }
++
++    func testExplicitOverwriteBacksUpExternalAndUsesItsConfirmedBaseline() async throws {
++        let fixture = try Fixture()
++        defer { fixture.cleanup() }
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        let external = note(text: "  外部版本e\u{301}\n")
++        let local = "本地决定保留的正文🙂\n"
++        let destination = fixture.root.appendingPathComponent("preserved-external.md")
++        let recorder = RecoverySaveRecorder()
++        let controller = controller(store: store, recorder: recorder, scheduler: TestAutosaveScheduler(),
++                                    read: { _ in external }, export: { try MarkdownExporter().export($0) },
++                                    protectedExportDestination: { _, _, _ in destination })
++        controller.showEditor()
++        defer { controller.window?.orderOut(nil) }
++        edit(local, controller)
++        await persist(controller)
++        controller.resolveConflict(nil)
++        try await eventually { controller.window?.attachedSheet != nil }
++        let choice = try XCTUnwrap(controller.window?.attachedSheet)
++        controller.window?.endSheet(choice, returnCode: .alertThirdButtonReturn)
++        try await eventually {
++            guard let sheet = controller.window?.attachedSheet else { return false }
++            return sheet !== choice
++        }
++        XCTAssertEqual(try Data(contentsOf: destination), Data(external.content.text.utf8))
++        XCTAssertTrue(recorder.requests.isEmpty, "Backup alone must not authorize overwrite")
++        let confirmation = try XCTUnwrap(controller.window?.attachedSheet)
++        controller.window?.endSheet(confirmation, returnCode: .alertSecondButtonReturn)
++        try await eventually {
++            recorder.requests.count == 1 && !controller.session.isSaving && !controller.isConfirming
++        }
++        XCTAssertEqual(recorder.requests.first?.baseline.identity, external.identity)
++        XCTAssertEqual(recorder.requests.first?.baseline.content, external.content)
++        XCTAssertEqual(recorder.requests.first?.desiredContent, .present(Data(local.utf8)))
++        XCTAssertEqual(controller.editor.string, local)
++        XCTAssertEqual(controller.session.snapshot?.content, .present(Data(local.utf8)))
++        XCTAssertFalse(controller.session.requiresLeaveConfirmation)
++        // The verified save queues its cleanup asynchronously; wait only for that operation.
++        var records = try await store.records()
++        for _ in 0..<500 where !records.isEmpty {
++            try await Task.sleep(for: .milliseconds(10))
++            records = try await store.records()
++        }
++        XCTAssertTrue(records.isEmpty)
++    }
++
++    func testCleanAndBlankWindowsCanQuitWithoutAcquiringAnotherStoresLock() async throws {
++        let fixture = try Fixture()
++        defer { fixture.cleanup() }
++        let owner = DraftRecoveryStore(directory: fixture.directory)
++        let initial = try await owner.records()
++        XCTAssertTrue(initial.isEmpty)
++        for blank in [false, true] {
++            let blockedStore = DraftRecoveryStore(directory: fixture.directory)
++            let controller = controller(store: blockedStore, recorder: RecoverySaveRecorder(),
++                                        scheduler: TestAutosaveScheduler())
++            if blank {
++                controller.session.close()
++                controller.renderInstalledSnapshot()
++            }
++            XCTAssertNil(controller.session.recoveryRecord)
++            let canQuit = await controller.prepareToQuit()
++            XCTAssertTrue(canQuit)
++            XCTAssertNil(controller.session.recoveryIssue)
++            XCTAssertNil(controller.window?.attachedSheet)
++        }
++        let remaining = try await owner.records()
++        XCTAssertTrue(remaining.isEmpty)
++    }
++}
+diff --git a/FinderNotesTests/RecoveryFileIntegrationTests.swift b/FinderNotesTests/RecoveryFileIntegrationTests.swift
+new file mode 100644
+index 0000000..1f139c9
+--- /dev/null
++++ b/FinderNotesTests/RecoveryFileIntegrationTests.swift
+@@ -0,0 +1,342 @@
++import AppKit
++import CryptoKit
++import Darwin
++import ImageIO
++import XCTest
++@testable import FinderNotes
++
++/// Real synthetic PNG/xattr/recovery I/O. Recreating a Store/Session simulates reopening;
++/// these tests do not claim an OS process crash, Finder interaction, or real IME coverage.
++@MainActor
++final class RecoveryFileIntegrationTests: XCTestCase {
++    private struct Fixture {
++        let root: URL
++        let url: URL
++        let directory: URL
++        let bytes: Data
++
++        init() throws {
++            root = FileManager.default.temporaryDirectory.resolvingSymlinksInPath()
++                .appendingPathComponent("findernotes-fn07-file-integration-\(UUID().uuidString)", isDirectory: true)
++            try FileManager.default.createDirectory(at: root, withIntermediateDirectories: false)
++            url = root.appendingPathComponent("original.png")
++            directory = root.appendingPathComponent("Recovery/v1", isDirectory: true)
++            let bitmap = try XCTUnwrap(NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: 8, pixelsHigh: 4,
++                bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false,
++                colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0))
++            memset(bitmap.bitmapData, 160, bitmap.bytesPerRow * bitmap.pixelsHigh)
++            bytes = try XCTUnwrap(bitmap.representation(using: .png, properties: [:]))
++            let source = try XCTUnwrap(CGImageSourceCreateWithData(bytes as CFData, nil))
++            XCTAssertNotNil(CGImageSourceCreateImageAtIndex(source, 0, nil))
++            try bytes.write(to: url, options: .withoutOverwriting)
++        }
++
++        func cleanup() { try? FileManager.default.removeItem(at: root) }
++        func recordURL(_ id: UUID) -> URL { directory.appendingPathComponent(id.uuidString + ".json") }
++    }
++
++    private let sentinel = "com.findernotes.fn07.integration"
++
++    private func set(_ url: URL, _ bytes: Data, name: String = NoteReader.attributeName) throws {
++        let result = bytes.withUnsafeBytes { setxattr(url.path, name, $0.baseAddress, bytes.count, 0, 0) }
++        guard result == 0 else { throw POSIXError(POSIXErrorCode(rawValue: errno)!) }
++    }
++
++    private func raw(_ url: URL, name: String = NoteReader.attributeName) throws -> Data? {
++        let size = getxattr(url.path, name, nil, 0, 0, XATTR_NOFOLLOW)
++        if size < 0 {
++            if errno == ENOATTR { return nil }
++            throw POSIXError(POSIXErrorCode(rawValue: errno)!)
++        }
++        var bytes = [UInt8](repeating: 0, count: max(1, size))
++        let count = getxattr(url.path, name, &bytes, bytes.count, 0, XATTR_NOFOLLOW)
++        guard count >= 0 else { throw POSIXError(POSIXErrorCode(rawValue: errno)!) }
++        return Data(bytes.prefix(count))
++    }
++
++    private func session(_ url: URL) throws -> EditorSession {
++        let result = EditorSession()
++        XCTAssertEqual(result.resolve(try NoteReader().read(urls: [url]), ticket: result.beginLoading()), .installed)
++        return result
++    }
++
++    /// The writer and its lock go out of scope before a new Store opens the on-disk record.
++    private func persist(_ session: EditorSession, fixture: Fixture) async throws -> DraftRecoveryRecord {
++        let record = try XCTUnwrap(session.recoveryRecord)
++        let store = DraftRecoveryStore(directory: fixture.directory)
++        try await store.put(record)
++        return record
++    }
++
++    private func restore(_ store: DraftRecoveryStore, current: NoteSnapshot?) async throws -> EditorSession {
++        let records = try await store.records()
++        XCTAssertEqual(records.count, 1)
++        let record = try XCTUnwrap(records.first)
++        let result = EditorSession()
++        XCTAssertTrue(result.restoreRecovery(record: record, current: current))
++        XCTAssertNil(result.autosaveTicket)
++        return result
++    }
++
++    private func controller(_ session: EditorSession, store: DraftRecoveryStore) -> EditorWindowController {
++        _ = NSApplication.shared
++        let preview = MediaPreviewController(validate: { _ in throw NoteReadError.unsupportedType })
++        return EditorWindowController(session: session, autosaveScheduler: TestAutosaveScheduler(),
++                                      preview: preview, recoveryStore: store)
++    }
++
++    private func awaitSavedAndCleaned(_ session: EditorSession, store: DraftRecoveryStore) async throws {
++        for _ in 0..<300 {
++            let records = try await store.records()
++            if !session.isDirty && !session.isSaving && records.isEmpty { return }
++            try await Task.sleep(for: .milliseconds(10))
++        }
++        XCTFail("Real save and recovery cleanup did not settle")
++    }
++
++    private func assertMediaPreserved(_ fixture: Fixture, file: StaticString = #filePath, line: UInt = #line) throws {
++        XCTAssertEqual(SHA256.hash(data: try Data(contentsOf: fixture.url)), SHA256.hash(data: fixture.bytes),
++                       file: file, line: line)
++    }
++
++    func testPublishedDraftSurvivesStoreAndSessionRecreationThenManualSaveCleansRecord() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        let baseline = Data("正式基线\r\n".utf8)
++        let local = "未保存草稿🙂\n  e\u{301}\0\r\n"
++        try set(fixture.url, baseline)
++        try set(fixture.url, Data([0, 255, 5]), name: sentinel)
++        let original = try session(fixture.url)
++        original.updateDraft(local)
++        let record = try await persist(original, fixture: fixture)
++        XCTAssertTrue(FileManager.default.fileExists(atPath: fixture.recordURL(record.id).path))
++        XCTAssertEqual(try raw(fixture.url), baseline)
++
++        let reopened = DraftRecoveryStore(directory: fixture.directory)
++        let recovered = try await restore(reopened, current: NoteReader().read(urls: [fixture.url]))
++        XCTAssertEqual(Data(recovered.draft.utf8), Data(local.utf8))
++        XCTAssertEqual(recovered.snapshot?.content, record.snapshot.content)
++        XCTAssertFalse(recovered.recoveryWriteBlocked)
++        XCTAssertTrue(recovered.recoveryNeedsAttention)
++        XCTAssertEqual(try raw(fixture.url), baseline, "Restoration itself must not write the formal note")
++        let controller = controller(recovered, store: reopened)
++        defer { controller.window?.orderOut(nil) }
++        controller.saveNote(nil)
++        try await awaitSavedAndCleaned(recovered, store: reopened)
++        XCTAssertEqual(try raw(fixture.url), Data(local.utf8))
++        XCTAssertNil(recovered.recoveryRecord)
++        XCTAssertFalse(FileManager.default.fileExists(atPath: fixture.recordURL(record.id).path))
++        XCTAssertEqual(try raw(fixture.url, name: sentinel), Data([0, 255, 5]))
++        try assertMediaPreserved(fixture)
++    }
++
++    func testExternalChangedDeletedAndEmptyBodiesKeepBothVersionsAndRejectUnconfirmedWrite() async throws {
++        let variants: [Data?] = [Data("外部更新🙂".utf8), nil, Data()]
++        for externalBytes in variants {
++            let fixture = try Fixture(); defer { fixture.cleanup() }
++            try set(fixture.url, Data("打开时正文".utf8))
++            let original = try session(fixture.url)
++            original.updateDraft("本地保护草稿")
++            let record = try await persist(original, fixture: fixture)
++            if let externalBytes { try set(fixture.url, externalBytes) }
++            else { XCTAssertEqual(removexattr(fixture.url.path, NoteReader.attributeName, XATTR_NOFOLLOW), 0) }
++            let current = try NoteReader().read(urls: [fixture.url])
++            XCTAssertEqual(current.content, externalBytes.map(NoteContent.present) ?? .missing)
++            let reopened = DraftRecoveryStore(directory: fixture.directory)
++            let recovered = try await restore(reopened, current: current)
++            XCTAssertNotNil(recovered.saveIssue)
++            XCTAssertFalse(recovered.recoveryWriteBlocked)
++            XCTAssertEqual(recovered.snapshot?.content, record.snapshot.content)
++            let ticket = try XCTUnwrap(recovered.beginSaving())
++            XCTAssertThrowsError(try NoteWriter().save(ticket.request)) {
++                XCTAssertEqual($0 as? NoteWriteError, .conflict)
++            }
++            XCTAssertTrue(recovered.failSaving("检测到真实外部正文冲突", uncertain: false, ticket: ticket))
++            XCTAssertEqual(try raw(fixture.url), externalBytes)
++            XCTAssertEqual(recovered.draft, record.draft)
++            let exported = fixture.root.appendingPathComponent("local-draft.md")
++            try MarkdownExporter().export(MarkdownExportRequest(source: fixture.url, destination: exported,
++                                                                bytes: Data(recovered.draft.utf8)))
++            XCTAssertEqual(try Data(contentsOf: exported), Data(record.draft.utf8))
++            let remaining = try await reopened.records()
++            XCTAssertEqual(remaining, [record], "Exporting alone must not discard the recovery record")
++            try assertMediaPreserved(fixture)
++        }
++    }
++
++    func testExternalBaselineCanBeAdoptedOnlyAfterPreservingBothVersionsThenManuallySaved() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        try set(fixture.url, Data("打开时版本".utf8))
++        let original = try session(fixture.url)
++        original.updateDraft("本地最终版本")
++        _ = try await persist(original, fixture: fixture)
++        let external = Data("外部应先导出的版本".utf8)
++        try set(fixture.url, external)
++        let reopened = DraftRecoveryStore(directory: fixture.directory)
++        let current = try NoteReader().read(urls: [fixture.url])
++        let recovered = try await restore(reopened, current: current)
++        let localCopy = fixture.root.appendingPathComponent("local.md")
++        let externalCopy = fixture.root.appendingPathComponent("external.md")
++        try MarkdownExporter().export(MarkdownExportRequest(source: fixture.url, destination: localCopy,
++                                                            bytes: Data(recovered.draft.utf8)))
++        try MarkdownExporter().export(MarkdownExportRequest(source: fixture.url, destination: externalCopy,
++                                                            bytes: external))
++        // This calls the model's explicit-confirmation boundary. It does not simulate a dialog click.
++        XCTAssertTrue(recovered.applyExternal(current, replacingDraft: false,
++                                               confirmedRevision: recovered.draftRevision))
++        XCTAssertEqual(recovered.snapshot?.content, current.content)
++        XCTAssertNil(recovered.autosaveTicket)
++        let controller = controller(recovered, store: reopened)
++        defer { controller.window?.orderOut(nil) }
++        controller.saveNote(nil)
++        try await awaitSavedAndCleaned(recovered, store: reopened)
++        XCTAssertEqual(try raw(fixture.url), Data("本地最终版本".utf8))
++        XCTAssertEqual(try Data(contentsOf: localCopy), Data("本地最终版本".utf8))
++        XCTAssertEqual(try Data(contentsOf: externalCopy), external)
++        try assertMediaPreserved(fixture)
++    }
++
++    func testMissingAndPresentEmptyBaselinesStayDistinctAcrossDiskRecovery() async throws {
++        for startsEmpty in [false, true] {
++            let fixture = try Fixture(); defer { fixture.cleanup() }
++            if startsEmpty { try set(fixture.url, Data()) }
++            let original = try session(fixture.url)
++            original.updateDraft("待恢复正文")
++            let record = try await persist(original, fixture: fixture)
++            XCTAssertEqual(record.snapshot.content, startsEmpty ? .present(Data()) : .missing)
++            if startsEmpty { XCTAssertEqual(removexattr(fixture.url.path, NoteReader.attributeName, XATTR_NOFOLLOW), 0) }
++            else { try set(fixture.url, Data()) }
++            let reopened = DraftRecoveryStore(directory: fixture.directory)
++            let current = try NoteReader().read(urls: [fixture.url])
++            let recovered = try await restore(reopened, current: current)
++            XCTAssertNotNil(recovered.saveIssue, "Empty and missing must conflict even though both display empty text")
++            XCTAssertEqual(recovered.snapshot?.content, record.snapshot.content)
++            XCTAssertEqual(current.content, startsEmpty ? .missing : .present(Data()))
++            let ticket = try XCTUnwrap(recovered.beginSaving())
++            XCTAssertThrowsError(try NoteWriter().save(ticket.request)) {
++                XCTAssertEqual($0 as? NoteWriteError, .conflict)
++            }
++            XCTAssertEqual(try raw(fixture.url), startsEmpty ? nil : Data())
++        }
++    }
++
++    func testUnrelatedAttributeChangeDoesNotCreateBodyConflictOrGetOverwritten() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        try set(fixture.url, Data("基线".utf8))
++        try set(fixture.url, Data("原哨兵".utf8), name: sentinel)
++        let original = try session(fixture.url)
++        original.updateDraft("恢复后手动保存正文")
++        _ = try await persist(original, fixture: fixture)
++        let externalSentinel = Data([255, 0, 1, 2, 3])
++        try set(fixture.url, externalSentinel, name: sentinel)
++        let reopened = DraftRecoveryStore(directory: fixture.directory)
++        let recovered = try await restore(reopened, current: NoteReader().read(urls: [fixture.url]))
++        XCTAssertNil(recovered.saveIssue)
++        let controller = controller(recovered, store: reopened)
++        defer { controller.window?.orderOut(nil) }
++        controller.saveNote(nil)
++        try await awaitSavedAndCleaned(recovered, store: reopened)
++        XCTAssertEqual(try raw(fixture.url), Data("恢复后手动保存正文".utf8))
++        XCTAssertEqual(try raw(fixture.url, name: sentinel), externalSentinel)
++        try assertMediaPreserved(fixture)
++    }
++
++    func testCopiedMediaAndBodyCannotReuseOriginalRecoveryIdentity() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        try set(fixture.url, Data("复制时正式正文".utf8))
++        let original = try session(fixture.url)
++        original.updateDraft("只属于原件的草稿")
++        let record = try await persist(original, fixture: fixture)
++        let copy = fixture.root.appendingPathComponent("copy.png")
++        try FileManager.default.copyItem(at: fixture.url, to: copy)
++        XCTAssertEqual(try Data(contentsOf: copy), fixture.bytes)
++        XCTAssertEqual(try raw(copy), try raw(fixture.url))
++        let copySnapshot = try NoteReader().read(urls: [copy])
++        XCTAssertNotEqual(copySnapshot.identity, record.snapshot.identity)
++        let reopened = DraftRecoveryStore(directory: fixture.directory)
++        let recovered = try await restore(reopened, current: copySnapshot)
++        XCTAssertTrue(recovered.recoveryWriteBlocked)
++        XCTAssertNil(recovered.beginSaving())
++        let copySession = try session(copy)
++        XCTAssertNil(copySession.recoveryRecord)
++        XCTAssertEqual(copySession.draft, "复制时正式正文")
++        XCTAssertEqual(recovered.draft, "只属于原件的草稿")
++        XCTAssertEqual(try raw(copy), Data("复制时正式正文".utf8))
++        try assertMediaPreserved(fixture)
++    }
++
++    func testSamePathReplacementIsBlockedEvenWithIdenticalMediaAndBody() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        let formal = Data("媒体和正文完全相同".utf8)
++        try set(fixture.url, formal)
++        let original = try session(fixture.url)
++        original.updateDraft("旧身份未保存草稿")
++        let record = try await persist(original, fixture: fixture)
++        let archived = fixture.root.appendingPathComponent("archived-original.png")
++        try FileManager.default.moveItem(at: fixture.url, to: archived)
++        try fixture.bytes.write(to: fixture.url, options: .withoutOverwriting)
++        try set(fixture.url, formal)
++        let replacement = try NoteReader().read(urls: [fixture.url])
++        XCTAssertNotEqual(replacement.identity, record.snapshot.identity)
++        XCTAssertEqual(replacement.content, record.snapshot.content)
++        let reopened = DraftRecoveryStore(directory: fixture.directory)
++        let recovered = try await restore(reopened, current: replacement)
++        XCTAssertTrue(recovered.recoveryWriteBlocked)
++        XCTAssertNil(recovered.beginSaving())
++        XCTAssertThrowsError(try NoteWriter().save(NoteSaveRequest(baseline: record.snapshot,
++            desiredContent: .present(Data(record.draft.utf8))))) {
++            XCTAssertEqual($0 as? NoteWriteError, .identityChanged)
++        }
++        XCTAssertEqual(try raw(fixture.url), formal)
++        XCTAssertEqual(try raw(archived), formal)
++        let remaining = try await reopened.records()
++        XCTAssertEqual(remaining, [record])
++        try assertMediaPreserved(fixture)
++    }
++
++    func testMissingOriginalStillExportsDraftAndKeepsRecoveryWithoutCreatingTarget() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        try set(fixture.url, Data("原始正式正文".utf8))
++        let original = try session(fixture.url)
++        original.updateDraft("原目标消失后仍可导出🙂")
++        let record = try await persist(original, fixture: fixture)
++        let archived = fixture.root.appendingPathComponent("moved-original.png")
++        try FileManager.default.moveItem(at: fixture.url, to: archived)
++        XCTAssertThrowsError(try NoteReader().read(urls: [fixture.url]))
++        let reopened = DraftRecoveryStore(directory: fixture.directory)
++        let recovered = try await restore(reopened, current: nil)
++        XCTAssertTrue(recovered.recoveryWriteBlocked)
++        XCTAssertNil(recovered.beginSaving())
++        let export = fixture.root.appendingPathComponent("orphan-draft.md")
++        try MarkdownExporter().export(MarkdownExportRequest(source: fixture.url, destination: export,
++                                                            bytes: Data(recovered.draft.utf8)))
++        XCTAssertEqual(try Data(contentsOf: export), Data(record.draft.utf8))
++        XCTAssertFalse(FileManager.default.fileExists(atPath: fixture.url.path))
++        XCTAssertEqual(try raw(archived), Data("原始正式正文".utf8))
++        XCTAssertEqual(try Data(contentsOf: archived), fixture.bytes)
++        let remaining = try await reopened.records()
++        XCTAssertEqual(remaining, [record])
++    }
++
++    func testUnreadableExternalUTF8IsAnErrorAndNeverAnEmptyBaseline() async throws {
++        let fixture = try Fixture(); defer { fixture.cleanup() }
++        try set(fixture.url, Data("有效的打开基线".utf8))
++        let original = try session(fixture.url)
++        original.updateDraft("读取失败也要保留的草稿")
++        let record = try await persist(original, fixture: fixture)
++        let invalid = Data([0xff, 0xfe, 0xfd])
++        try set(fixture.url, invalid)
++        XCTAssertThrowsError(try NoteReader().read(urls: [fixture.url])) {
++            XCTAssertEqual($0 as? NoteReadError, .invalidUTF8)
++        }
++        let reopened = DraftRecoveryStore(directory: fixture.directory)
++        let recovered = try await restore(reopened, current: nil)
++        XCTAssertTrue(recovered.recoveryWriteBlocked)
++        XCTAssertNil(recovered.beginSaving())
++        XCTAssertEqual(recovered.snapshot?.content, record.snapshot.content)
++        XCTAssertEqual(recovered.draft, record.draft)
++        XCTAssertEqual(try raw(fixture.url), invalid)
++        let remaining = try await reopened.records()
++        XCTAssertEqual(remaining, [record])
++        try assertMediaPreserved(fixture)
++    }
++}
+diff --git a/validation/fn07/README.md b/validation/fn07/README.md
+new file mode 100644
+index 0000000..8beee66
+--- /dev/null
++++ b/validation/fn07/README.md
+@@ -0,0 +1,81 @@
++# FN-07 隔离验证与 Dan 验收步骤
++
++本目录只生成并操作本轮独立合成样本。不会读取真实素材或复用 FN-04／FN-05／FN-06 验收目录。以下步骤是验收方法，不表示已经执行或通过；实际命令、输出、截图与失败项须另行留证。
++
++## 构建身份与恢复目录
++
++在本工作树使用 `FINDERNOTES_BUILD_PROFILE=fn07 scripts/test_app.sh` 运行确定性测试，使用 `FINDERNOTES_BUILD_PROFILE=fn07 scripts/build_app.sh` 生成 Release 验收应用。Debug 与 Release 的 bundle ID 分别为 `com.findernotes.FinderNotes.FN07Tests` 与 `com.findernotes.FinderNotes.FN07Validation`。Release 的 Finder 服务是“FinderNotes FN07 验收编辑笔记”，服务端口为 `FinderNotesFN07Validation`；Debug 不发布 Finder 服务。产物位于本工作树 `.build/DerivedData/Build/Products/`。
++
++恢复目录按当前应用的 bundle ID 隔离：
++
++```text
++~/Library/Application Support/<bundle ID>/DraftRecovery/v1/
++```
++
++因此 FN07 Release 的目录是 `~/Library/Application Support/com.findernotes.FinderNotes.FN07Validation/DraftRecovery/v1/`。每个编辑会话使用一个 UUID 命名的 `.json` 恢复文件，格式版本为 1。目录权限为 0700、文件权限为 0600；恢复文件包含未保存草稿、目标身份与打开时的自有 xattr 基线，属于本机明文恢复数据，不能写入普通日志或上传。仅自有 `com.findernotes.note.v1` 是正式笔记来源。
++
++草稿通过临时文件与原子替换写入；只承诺恢复已落盘的草稿，不承诺最后尚未落盘的击键，也不承诺突然断电的完整持久性。保存成功或明确放弃后清理对应恢复文件；导出本地草稿、取消对话框或导出失败不等于放弃。恢复时校验目标身份与原始基线；目标消失、同名替换、身份无法确认时保留导出路径，不自动写回。xattr 的“检查后写入”不是原子 CAS。
++
++## 全新合成样本与只读证据
++
++```sh
++python3 -B validation/fn07/prepare.py
++```
++
++脚本每次输出一个全新的 `findernotes-fn07-…` 临时根，只使用生成的 PNG 像素与 ffmpeg 合成视频／音轨。`work/` 包括 `recovery.png`、`conflict.png`、`deletion.png`、`unrelated.png`、`replace.png`、`moved.png`、`empty.png`、`missing.png`、`copy-source.png`、`copy.png`、`readonly.png`、`portrait.png` 和 30 秒的 `audio.mov`。`copy.png` 的媒体和 xattr 字节与 `copy-source.png` 相同，但文件身份独立；`readonly.png` 为 0444。`before.json` 保存原始身份、权限、媒体 SHA-256 与全部 xattr 字节；`.fn07-owned.json` 标识本轮所有权，`archive/` 保留故意移走或替换的原件。
++
++将本次输出填写到下方 `fixture_root`，不使用历史路径：
++
++```sh
++fixture_root=/absolute/path/to/findernotes-fn07-NEW
++python3 -B validation/fn07/verify.py "$fixture_root" > "$fixture_root/evidence/before-check.json"
++python3 -B validation/fn07/verify.py "$fixture_root" --file empty.png --expect-note empty.png=
++python3 -B validation/fn07/verify.py "$fixture_root" --file missing.png --expect-note missing.png=missing
++```
++
++`verify.py` 不修改样本。`--file` 可重复，`--expect-note NAME=HEX` 可重复；正文预期使用 UTF-8 原始十六进制，`NAME=` 表示已存在的空属性，`NAME=missing` 表示属性缺失。未指定预期时与原始笔记比较。输出包括所有 xattr 的原始十六进制，只可用于这些合成样本；读取失败单独报错，不折叠为空正文。独立哈希／xattr 回读只证明当次观察，不是跨文件系统／云同步或并发原子性证明。
++
++故意替换身份、移动文件或修改无关属性后，对原始 `before.json` 的全量检查会返回失败；这用于标出故意变化，不能直接写成应用回归。保留该输出，并使用 mutation 记录中的 `before`／`after` 与当前 `actual` 检查应用是否额外改变了文件。普通正文保存可用精确 `--expect-note` 核验，要求身份、媒体、权限和无关属性仍全部一致。
++
++## 受限的外部变更工具
++
++以下命令仅接受当前根原始清单内、身份及媒体内容仍匹配的普通文件，拒绝其他文件及已替换目标。每次会在 `evidence/` 保存独立 mutation JSON；正文默认是脚本内的合成文本。`replace` 保持媒体和全部 xattr 字节相同，故意改变身份并保留原件；`move` 将原件移入 `archive/`，不删除它。
++
++```sh
++python3 -B validation/fn07/mutate.py "$fixture_root" conflict.png note
++python3 -B validation/fn07/mutate.py "$fixture_root" deletion.png delete-note
++python3 -B validation/fn07/mutate.py "$fixture_root" empty.png note --hex ''
++python3 -B validation/fn07/mutate.py "$fixture_root" unrelated.png unrelated
++python3 -B validation/fn07/mutate.py "$fixture_root" replace.png replace
++python3 -B validation/fn07/mutate.py "$fixture_root" moved.png move
++```
++
++这些是顺序操作的测试工具，identity check 与变更之间仍存在时间窗口；不能用于真实素材或用作应用安全写入 API。
++
++## 三类证据分开记录
++
++1. **确定性测试：** 使用 FN07 Debug 身份，保存 xcodebuild 完整结果、xcresult 路径、测试数量、失败项和环境。重点包括原子草稿文件写入／读取／清理、损坏或不支持版本、保存失败与恢复写入失败、missing／empty／read error、身份不符／复制品、外部正文变化以及组合态与定时器。代码测试不等于 Finder／真实中文输入法验收。
++2. **真实文件集成：** 每组使用新合成根，保留 `before.json`、mutation、只读核验输出、导出的两方 Markdown 及恢复文件状态。使用本机 APFS 普通文件验证读写、外部 xattr 变更、同名替换、移动、复制品及异常结束重启。0444 测试只证明 Unix 文件权限失败，不等于 TCC 拒绝。
++3. **Finder／UI：** 从 Finder 对本轮 `work/` 中单文件调用 FN07 服务；记录实际页面、按钮、取消路径、保存后重新打开结果及截图。中文候选组合必须使用真实输入法，粘贴中文和程序 marked text 不能替代。
++
++### 真实子进程 SIGKILL 存储集成
++
++`run-crash-probe.py` 使用 `swiftc -O`、Swift 6、不定义 `DEBUG`，将生产 `NoteReader.swift`、`DraftRecoveryStore.swift` 与 `crash_probe.swift` 编译为独立命令行进程，不经过 xcodebuild 或应用 UI。它新建合成 PNG 与独立恢复目录，待子进程 `put` 成功返回并报告 ready 后，仅 SIGKILL 自己 spawn 的活跃 PID，并记录实际 `-9` 退出。接着三次启动新的只读 inspector：原身份／原基线匹配、外部正文改变后基线不匹配、同名替换且媒体／原始 xattr 相同但身份不匹配。每次均验证已落盘草稿精确字节以及目标和恢复文件未被 inspector 改动。
++
++```sh
++python3 -B validation/fn07/run-crash-probe.py
++# 保留既有证据，后续重跑必须指定一个尚不存在的输出路径。
++python3 -B validation/fn07/run-crash-probe.py --output /absolute/new/evidence/process-crash-rerun.json
++```
++
++首次默认报告为 `docs/evidence/fn07/process-crash.json`，报告包含命令、编译输出、生产源文件 SHA-256、退出信号和三个 inspector 的原始 JSON；正文不进入报告，只保存哈希、字节长度和布尔值。独立临时根及其中恢复 JSON 保留以便复核。这证明真实进程中已发布恢复记录可在 SIGKILL 后读取，以及生产 reader 的身份／基线校验结果；不证明 App/Finder 恢复交互、真实输入法、尚未落盘击键或突然断电。生产代码变化后应以新的源文件哈希重新执行并保留原报告。
++
++## Dan 的主要验收路径
++
++- **外部修改与两方保留：** 打开 `conflict.png`，运行其 `note` mutation，再输入本地合成草稿；触发手动保存或等待约 1 秒自动保存，确认暂停且未静默覆盖。点“核对外部版本…”后，“继续编辑”应保留草稿；“仅导出本地草稿…”应保留会话；“导出草稿并载入外部版…”应先成功导出本地，才载入外部。取消导出或导出失败不能替换草稿。另用新根验证“备份外部版并覆盖…”先导出外部，再经“明确覆盖”确认写入本地；确认前双方都保留。
++- **删除／空正文／无关属性：** 分别使用 `deletion.png` 的 `delete-note`、`empty.png` 和 `missing.png` 验证属性删除、空正文及缺失的区别。只对 `unrelated.png` 执行 `unrelated`，确认不因哨兵 xattr 变化直接判成正文冲突。核验时以 mutation 的外部修改为预期，并确认应用未再改哨兵或 Finder 原生注释。
++- **异常退出恢复：** 使用 `readonly.png` 使正式保存失败并暂停，输入合成草稿；先确认 FN07 专属恢复目录内已出现对应落盘记录，再仅对路径匹配本工作树 FN07 验收产物的进程执行强制结束。不要结束其他 FinderNotes 实例或 Finder。重启同一 FN07 应用，点“恢复草稿…”并选“恢复所选草稿”，确认内容来自已落盘记录，恢复后自动保存仍暂停。原目标仍存在且基线一致时，在恢复写入权限后手动保存；确认只更新自有 xattr，并清理对应恢复记录。权限恢复仅操作本轮 `readonly.png`：`chmod 644 "$fixture_root/work/readonly.png"`，同时记录这是预期权限变化。
++- **身份与基线：** 在保有已落盘草稿并结束 FN07 进程后，分别执行 `replace.png replace` 或 `moved.png move`，重启并恢复对应草稿。不得自动写回同名替换文件；目标消失或身份无法确认时只能保留／导出。用 `copy-source.png` 制造草稿后仅打开 `copy.png`，即使媒体和正文相同也不得给复制品套用原件草稿。另用新根在异常结束后外部改变原目标正文，恢复应保留本地和外部内容并进入冲突处理。
++- **与原编辑流程集成：** 分别观察手动保存、停止输入约 1 秒自动保存、保存失败后的暂停、真实中文组合态、关闭／切换与取消操作。未保存草稿不得被取消路径丢弃；“明确放弃”才清理对应恢复文件。用普通“导出 Markdown…”验证可随时导出当前本地草稿。
++
++声音、播放中收起停止、长文滚动和真实中文输入法若本轮未新增实测，应继续列为未验证；不能因 FN-06 Done 或已合并改写成通过。保留新建样本与原始证据给 Dan 复验，不清理既有验收资源；清理本轮资源前核对完整路径和 `.fn07-owned.json`。
+diff --git a/validation/fn07/crash_probe.swift b/validation/fn07/crash_probe.swift
+new file mode 100644
+index 0000000..29aa534
+--- /dev/null
++++ b/validation/fn07/crash_probe.swift
+@@ -0,0 +1,120 @@
++import CryptoKit
++import Darwin
++import Foundation
++
++/// A command-line process probe linked to the production reader and recovery store.
++/// It intentionally never prints note/draft text or raw encoded content.
++@main
++struct FN07CrashProbe {
++    private static let baseline = Data("FN07 process probe baseline\n中文🙂\n".utf8)
++    private static let draft = "FN07 process probe unsaved draft\n合成草稿🙂\0e\u{301}\r\n"
++    private static let external = Data("FN07 process probe external version\n外部合成正文\n".utf8)
++
++    private enum ProbeError: Error { case arguments, ownership, unexpectedRecords, unexpectedBaseline }
++
++    private static func hash(_ bytes: Data) -> String {
++        SHA256.hash(data: bytes).map { String(format: "%02x", $0) }.joined()
++    }
++
++    private static func metadata(_ content: NoteContent) -> [String: Any] {
++        switch content {
++        case .missing: return ["state": "missing"]
++        case .present(let bytes):
++            return ["state": bytes.isEmpty ? "empty" : "present",
++                    "byteCount": bytes.count, "sha256": hash(bytes)]
++        }
++    }
++
++    private static func metadata(_ identity: FileIdentity) -> [String: Any] {
++        ["device": identity.device, "inode": identity.inode,
++         "birthSeconds": identity.birthSeconds, "birthNanoseconds": identity.birthNanoseconds]
++    }
++
++    private static func emit(_ value: [String: Any]) throws {
++        var bytes = try JSONSerialization.data(withJSONObject: value, options: [.sortedKeys])
++        bytes.append(0x0a)
++        try FileHandle.standardOutput.write(contentsOf: bytes)
++    }
++
++    private static func ownedRoot(_ path: String) throws -> URL {
++        let root = URL(fileURLWithPath: path, isDirectory: true)
++        guard root.lastPathComponent.hasPrefix("findernotes-fn07-process-"),
++              try NoteReader.localPath(path) == path else { throw ProbeError.ownership }
++        let markerURL = root.appendingPathComponent(".fn07-process-owned.json")
++        let value = try JSONSerialization.jsonObject(with: Data(contentsOf: markerURL))
++        guard let marker = value as? [String: Any],
++              marker["schema"] as? String == "findernotes-fn07-process-crash-v1",
++              marker["root"] as? String == path else { throw ProbeError.ownership }
++        return root
++    }
++
++    private static func run() async throws {
++        let arguments = CommandLine.arguments
++        guard arguments.count >= 4, let id = UUID(uuidString: arguments[3]) else { throw ProbeError.arguments }
++        let root = try ownedRoot(arguments[2])
++        let target = root.appendingPathComponent("work/original.png")
++        let store = DraftRecoveryStore(directory: root.appendingPathComponent("Recovery/v1", isDirectory: true))
++        switch arguments[1] {
++        case "seed":
++            guard arguments.count == 4 else { throw ProbeError.arguments }
++            let current = try NoteReader().read(urls: [target])
++            guard current.content == .present(baseline) else { throw ProbeError.unexpectedBaseline }
++            let record = DraftRecoveryRecord(id: id, baseline: current, draft: draft, revision: 17)
++            try await store.put(record)
++            try emit(["event": "ready", "pid": getpid(), "recordID": id.uuidString,
++                      "putReturned": true, "draftByteCount": Data(draft.utf8).count,
++                      "draftSHA256": hash(Data(draft.utf8)), "baseline": metadata(current.content),
++                      "identity": metadata(current.identity)])
++            // Keep the production actor (and its real flock) alive until the parent kills us.
++            // No Swift defer/deinit cleanup occurs on SIGKILL.
++            withExtendedLifetime(store) {
++                while true { _ = Darwin.pause() }
++            }
++        case "inspect":
++            guard arguments.count == 5 else { throw ProbeError.arguments }
++            let expectedCase = arguments[4]
++            guard ["unchanged", "externalChanged", "replaced"].contains(expectedCase) else {
++                throw ProbeError.arguments
++            }
++            let records = try await store.records()
++            guard records.count == 1, let record = records.first, record.id == id else {
++                throw ProbeError.unexpectedRecords
++            }
++            let current = try NoteReader().read(urls: [target])
++            let identityMatches = current.identity == record.snapshot.identity && current.url == record.snapshot.url
++            let baselineMatches = current.content == record.snapshot.content
++            let draftMatches = Data(record.draft.utf8) == Data(draft.utf8)
++            let recordedBaselineMatches = record.snapshot.content == .present(baseline)
++            let caseMatches: Bool
++            switch expectedCase {
++            case "unchanged": caseMatches = identityMatches && baselineMatches
++            case "externalChanged":
++                caseMatches = identityMatches && !baselineMatches && current.content == .present(external)
++            default:
++                caseMatches = !identityMatches && baselineMatches
++            }
++            let passed = draftMatches && recordedBaselineMatches && record.revision == 17 && caseMatches
++            try emit(["event": "inspection", "case": expectedCase, "pid": getpid(),
++                      "recordID": record.id.uuidString, "recordCount": records.count,
++                      "recordVersion": record.version, "recordRevision": record.revision,
++                      "draftMatchesExpected": draftMatches, "draftByteCount": Data(record.draft.utf8).count,
++                      "draftSHA256": hash(Data(record.draft.utf8)),
++                      "recordedBaselineMatchesExpected": recordedBaselineMatches,
++                      "recordBaseline": metadata(record.snapshot.content), "currentNote": metadata(current.content),
++                      "recordIdentity": metadata(record.snapshot.identity), "currentIdentity": metadata(current.identity),
++                      "identityMatches": identityMatches, "baselineMatches": baselineMatches,
++                      "readSucceeded": true, "casePassed": passed, "formalNoteWriteAttempted": false])
++            if !passed { exit(1) }
++        default: throw ProbeError.arguments
++        }
++    }
++
++    static func main() async {
++        do { try await run() }
++        catch {
++            // The type, not its associated data, is enough for a failed probe report.
++            try? emit(["event": "error", "pid": getpid(), "errorType": String(reflecting: type(of: error))])
++            exit(2)
++        }
++    }
++}
+diff --git a/validation/fn07/mutate.py b/validation/fn07/mutate.py
+new file mode 100644
+index 0000000..80255c5
+--- /dev/null
++++ b/validation/fn07/mutate.py
+@@ -0,0 +1,78 @@
++#!/usr/bin/env python3
++"""Apply deliberate external changes ONLY to inventoried FN-07 synthetic files.
++
++This tool is for a sequential local fixture session; it is not an atomic CAS API.
++Removed/replaced originals are retained under archive/ for evidence.
++"""
++
++import argparse
++import json
++import os
++import subprocess
++import uuid
++
++from prepare import set_attribute
++from verify import NOTE, SENTINEL, fingerprint, identity, owned_root
++
++
++def mutate(value, name, action, hex_value=None):
++    root, marker, before = owned_root(value)
++    if name not in before["files"]:
++        raise ValueError("File must be in this run's original inventory")
++    path = root / "work" / name
++    current = fingerprint(path)
++    if identity(current) != identity(before["files"][name]):
++        raise ValueError("Refusing to mutate a replaced or unconfirmed target")
++    if current["mediaSHA256"] != before["files"][name]["mediaSHA256"]:
++        raise ValueError("Refusing to mutate a target with changed media bytes")
++    if hex_value is not None and action != "note":
++        raise ValueError("--hex is only valid with the note action")
++    archive = None
++    if action == "note":
++        body = bytes.fromhex(hex_value) if hex_value is not None else "FN07 外部版本\n仅合成验收正文🙂\n".encode()
++        body.decode("utf-8", errors="strict")
++        set_attribute(path, NOTE, body)
++    elif action == "delete-note":
++        subprocess.run(["/usr/bin/xattr", "-d", NOTE, str(path)], check=True)
++    elif action == "unrelated":
++        set_attribute(path, SENTINEL, b"fn07-external-unrelated-change\x00\xff")
++    elif action in ("replace", "move"):
++        archive = root / "archive" / (uuid.uuid4().hex + "-" + name)
++        if action == "replace":
++            replacement = root / "archive" / (uuid.uuid4().hex + "-replacement-" + name)
++            # Deliberately reproduce both media and xattrs while changing identity.
++            with replacement.open("xb") as handle:
++                handle.write(path.read_bytes())
++            for attribute, raw in current["xattrHex"].items():
++                set_attribute(replacement, attribute, bytes.fromhex(raw))
++            os.chmod(replacement, current["mode"])
++            if identity(fingerprint(path)) != identity(current):
++                raise ValueError("Target identity changed before replacement")
++            path.rename(archive)
++            replacement.rename(path)
++        else:
++            path.rename(archive)
++    else:
++        raise ValueError("Unsupported mutation action")
++    after = fingerprint(path) if path.exists() else None
++    result = {"schema": marker["schema"], "root": str(root), "runID": marker["runID"],
++              "action": action, "file": name, "before": current, "after": after,
++              "archivedOriginal": str(archive) if archive else None}
++    # Only synthetic test content is written to this explicit evidence file.
++    evidence = root / "evidence" / (uuid.uuid4().hex + "-mutation.json")
++    evidence.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
++    return result | {"evidence": str(evidence)}
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("root")
++    parser.add_argument("file")
++    parser.add_argument("action", choices=("note", "delete-note", "unrelated", "replace", "move"))
++    parser.add_argument("--hex", help="Synthetic UTF-8 note bytes; empty string writes an empty attribute")
++    args = parser.parse_args()
++    print(json.dumps(mutate(args.root, args.file, args.action, args.hex), ensure_ascii=False, indent=2))
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/validation/fn07/prepare.py b/validation/fn07/prepare.py
+new file mode 100644
+index 0000000..5838019
+--- /dev/null
++++ b/validation/fn07/prepare.py
+@@ -0,0 +1,67 @@
++#!/usr/bin/env python3
++"""Create a NEW FN-07 fixture directory using synthetic media bytes only."""
++import json
++import os
++import pathlib
++import plistlib
++import shutil
++import struct
++import subprocess
++import tempfile
++import uuid
++import zlib
++
++from verify import NOTE, SCHEMA, SENTINEL, fingerprint
++
++
++def chunk(kind, data):
++    return struct.pack(">I", len(data)) + kind + data + struct.pack(">I", zlib.crc32(kind + data))
++
++
++def png(width, height):
++    rows = [b"\0" + b"".join(bytes((x * 255 // width, y * 255 // height, 170))
++                              for x in range(width)) for y in range(height)]
++    return (b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", struct.pack(">IIBBBBB", width, height, 8, 2, 0, 0, 0))
++            + chunk(b"IDAT", zlib.compress(b"".join(rows))) + chunk(b"IEND", b""))
++
++
++def set_attribute(path, name, data):
++    subprocess.run(["/usr/bin/xattr", "-wx", name, data.hex(), str(path)], check=True)
++
++
++def prepare():
++    ffmpeg = shutil.which("ffmpeg")
++    if not ffmpeg:
++        raise RuntimeError("ffmpeg is required to create the synthetic MOV; no fixtures created")
++    root = pathlib.Path(tempfile.mkdtemp(prefix="findernotes-fn07-")).resolve()
++    work = root / "work"
++    for directory in (work, root / "archive", root / "evidence"):
++        directory.mkdir(mode=0o700)
++    wide = png(640, 360)
++    for name in ("recovery.png", "conflict.png", "deletion.png", "unrelated.png", "replace.png",
++                 "moved.png", "empty.png", "missing.png", "copy-source.png", "readonly.png"):
++        (work / name).write_bytes(wide)
++    (work / "portrait.png").write_bytes(png(240, 480))
++    subprocess.run([ffmpeg, "-hide_banner", "-loglevel", "error", "-f", "lavfi", "-i",
++                    "testsrc2=size=480x270:rate=24:duration=30", "-f", "lavfi", "-i",
++                    "sine=frequency=440:sample_rate=44100:duration=30", "-af", "volume=0.05",
++                    "-c:v", "mpeg4", "-c:a", "aac", "-shortest", "-n", str(work / "audio.mov")], check=True)
++    for path in sorted(work.iterdir()):
++        set_attribute(path, SENTINEL, b"preserve-fn07\x00\xff")
++        set_attribute(path, "com.apple.metadata:kMDItemFinderComment",
++                      plistlib.dumps("FN07 构造的原生注释 " + path.name, fmt=plistlib.FMT_BINARY))
++        if path.name != "missing.png":
++            note = b"" if path.name == "empty.png" else ("FN07 原有笔记 " + path.name + "\n中文🙂\n").encode()
++            set_attribute(path, NOTE, note)
++    # Same media AND note bytes, independently created file identity.
++    subprocess.run(["/bin/cp", "-p", str(work / "copy-source.png"), str(work / "copy.png")], check=True)
++    os.chmod(work / "readonly.png", 0o444)
++    marker = {"schema": SCHEMA, "root": str(root), "runID": str(uuid.uuid4())}
++    (root / ".fn07-owned.json").write_text(json.dumps(marker, ensure_ascii=False, indent=2) + "\n")
++    before = dict(marker, files={p.name: fingerprint(p) for p in sorted(work.iterdir())})
++    (root / "before.json").write_text(json.dumps(before, ensure_ascii=False, indent=2) + "\n")
++    return root
++
++
++if __name__ == "__main__":
++    print(prepare())
+diff --git a/validation/fn07/run-crash-probe.py b/validation/fn07/run-crash-probe.py
+new file mode 100644
+index 0000000..56edbab
+--- /dev/null
++++ b/validation/fn07/run-crash-probe.py
+@@ -0,0 +1,201 @@
++#!/usr/bin/env python3
++"""Run a real SIGKILL/reopen probe of production recovery storage, without App/Finder UI.
++
++Only newly generated synthetic bytes are used. The only killed PID is this runner's
++own live Popen child. All resources and a hash-only evidence report are retained.
++"""
++
++import argparse
++import datetime
++import hashlib
++import json
++import os
++import pathlib
++import platform
++import selectors
++import signal
++import subprocess
++import tempfile
++import uuid
++
++from prepare import png, set_attribute
++from verify import NOTE, SENTINEL, fingerprint
++
++SCHEMA = "findernotes-fn07-process-crash-v1"
++BASELINE = "FN07 process probe baseline\n中文🙂\n".encode()
++EXTERNAL = "FN07 process probe external version\n外部合成正文\n".encode()
++
++
++def sha256(data):
++    return hashlib.sha256(data).hexdigest()
++
++
++def require(condition, message):
++    if not condition:
++        raise RuntimeError(message)
++
++
++def metadata(path):
++    observed = fingerprint(path)
++    attrs = observed.pop("xattrHex")
++    observed["xattrs"] = {
++        name: {"byteCount": len(bytes.fromhex(value)), "sha256": sha256(bytes.fromhex(value))}
++        for name, value in attrs.items()
++    }
++    observed["noteState"] = "missing" if NOTE not in attrs else "empty" if attrs[NOTE] == "" else "present"
++    return observed
++
++
++def captured(command, **kwargs):
++    result = subprocess.run(command, capture_output=True, text=True, timeout=120, **kwargs)
++    return {"command": [str(value) for value in command], "exitCode": result.returncode,
++            "stdout": result.stdout, "stderr": result.stderr}
++
++
++def write_report(path, report):
++    path.parent.mkdir(parents=True, exist_ok=True)
++    # Never overwrite a prior evidence file, including on a rerun.
++    with path.open("x") as handle:
++        json.dump(report, handle, ensure_ascii=False, indent=2)
++        handle.write("\n")
++
++
++def run(output):
++    require(not output.exists(), "Evidence output already exists; choose a new --output path")
++    project = pathlib.Path(__file__).resolve().parents[2]
++    developer = pathlib.Path(os.environ.get("FINDERNOTES_DEVELOPER_DIR", "/Applications/Xcode.app/Contents/Developer"))
++    compiler = developer / "Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
++    require(compiler.is_file(), "Full Xcode Swift compiler is unavailable")
++    root = pathlib.Path(tempfile.mkdtemp(prefix="findernotes-fn07-process-")).resolve()
++    for name in ("work", "archive", "evidence", "bin", "module-cache"):
++        (root / name).mkdir(mode=0o700)
++    marker = {"schema": SCHEMA, "root": str(root), "runID": str(uuid.uuid4())}
++    (root / ".fn07-process-owned.json").write_text(json.dumps(marker, indent=2) + "\n")
++    report = dict(marker, startedAt=datetime.datetime.now(datetime.timezone.utc).isoformat(),
++                  status="failed", environment={"platform": platform.platform(), "machine": platform.machine(),
++                                                "macOS": platform.mac_ver()[0]},
++                  scope="real SIGKILL process and production recovery-store integration; no App/Finder UI",
++                  limitations=["Only a record for which put returned is covered; unflushed keystrokes and sudden power loss are not covered.",
++                               "Probe compares production NoteReader identity and baseline; it does not exercise App/Finder recovery UI.",
++                               "All media and note text are synthetic; no real material is read or changed."],
++                  killedPIDs=[], inspections=[])
++    child = None
++    try:
++        env = os.environ.copy()
++        env["DEVELOPER_DIR"] = str(developer)
++        sdk = subprocess.run(["/usr/bin/xcrun", "--show-sdk-path"], capture_output=True, text=True,
++                             check=True, env=env).stdout.strip()
++        sources = [project / "FinderNotes/NoteReader.swift", project / "FinderNotes/DraftRecoveryStore.swift",
++                   project / "validation/fn07/crash_probe.swift"]
++        report["sources"] = [{"path": str(path), "sha256": sha256(path.read_bytes())} for path in sources]
++        report["compilerVersion"] = captured([str(compiler), "--version"], env=env)
++        binary = root / "bin/fn07-crash-probe"
++        command = [str(compiler), "-O", "-whole-module-optimization", "-parse-as-library", "-swift-version", "6",
++                   "-sdk", sdk, "-module-cache-path", str(root / "module-cache"),
++                   *map(str, sources), "-o", str(binary)]
++        report["compile"] = captured(command, env=env)
++        report["releaseSemantics"] = {"optimization": "-O", "DEBUGDefined": False,
++                                      "productionSourcesUnmodifiedByProbe": True}
++        require(report["compile"]["exitCode"] == 0, "Probe compilation failed; see compile diagnostics")
++        target = root / "work/original.png"
++        media = png(96, 54)
++        with target.open("xb") as handle:
++            handle.write(media)
++        set_attribute(target, NOTE, BASELINE)
++        set_attribute(target, SENTINEL, b"fn07-process-sentinel\x00\xff")
++        report["beforeSeed"] = metadata(target)
++        record_id = str(uuid.uuid4()).upper()
++        seed_command = [str(binary), "seed", str(root), record_id]
++        child = subprocess.Popen(seed_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
++                                 text=True, bufsize=1, env=env)
++        require(child.stdout is not None, "Child stdout is unavailable")
++        with selectors.DefaultSelector() as selector:
++            selector.register(child.stdout, selectors.EVENT_READ)
++            require(bool(selector.select(timeout=20)), "Timed out waiting for published-record readiness")
++            ready_line = child.stdout.readline()
++        ready = json.loads(ready_line)
++        require(ready.get("event") == "ready" and ready.get("pid") == child.pid and
++                ready.get("recordID") == record_id and ready.get("putReturned") is True,
++                "Child did not confirm the expected completed publication")
++        record_path = root / "Recovery/v1" / (record_id + ".json")
++        published = record_path.read_bytes()
++        report["seed"] = {"command": seed_command, "pid": child.pid, "readyStdout": ready_line,
++                          "ready": ready, "publishedRecordByteCount": len(published),
++                          "publishedRecordSHA256": sha256(published)}
++        require(child.poll() is None, "Child exited before the requested SIGKILL")
++        killed_pid = child.pid
++        # Popen.kill targets this still-live child, whose PID cannot be recycled before wait/reap.
++        child.kill()
++        remaining_stdout, stderr = child.communicate(timeout=20)
++        report["killedPIDs"].append(killed_pid)
++        report["seed"].update({"requestedSignal": "SIGKILL", "signalNumber": signal.SIGKILL,
++                               "exitCode": child.returncode, "terminatedBySIGKILL": child.returncode == -signal.SIGKILL,
++                               "remainingStdout": remaining_stdout, "stderr": stderr})
++        require(child.returncode == -signal.SIGKILL, "Child was not observed to exit from SIGKILL")
++        require(remaining_stdout == "" and stderr == "", "Child emitted unexpected additional output")
++        report["afterKill"] = metadata(target)
++        require(report["afterKill"] == report["beforeSeed"], "Seeding or killing changed the formal target")
++
++        def inspect(case):
++            before = metadata(target)
++            record_before = record_path.read_bytes()
++            result = captured([str(binary), "inspect", str(root), record_id, case], env=env)
++            require(result["exitCode"] == 0, "Recovery inspector returned failure: " + case)
++            observed = json.loads(result["stdout"])
++            after = metadata(target)
++            unchanged_record = record_path.read_bytes() == record_before == published
++            result.update({"result": observed, "targetBefore": before, "targetAfter": after,
++                           "targetUnchangedByInspection": before == after,
++                           "recoveryFileUnchangedByInspection": unchanged_record,
++                           "recoveryFileSHA256": sha256(record_path.read_bytes())})
++            report["inspections"].append(result)
++            require(observed.get("casePassed") is True and observed.get("recordID") == record_id,
++                    "Recovery inspection did not match expectations: " + case)
++            require(before == after and unchanged_record, "Read-only recovery inspection changed source or record")
++
++        inspect("unchanged")
++        set_attribute(target, NOTE, EXTERNAL)
++        report["externalMutation"] = {"operation": "replace owned note xattr with known synthetic external bytes",
++                                      "after": metadata(target)}
++        inspect("externalChanged")
++        archive = root / "archive/original-before-replacement.png"
++        target.rename(archive)
++        with target.open("xb") as handle:
++            handle.write(media)
++        set_attribute(target, NOTE, BASELINE)
++        set_attribute(target, SENTINEL, b"fn07-process-sentinel\x00\xff")
++        report["replacementMutation"] = {"operation": "retain original and create same-path copy of original media/baseline",
++                                         "archivedOriginal": str(archive), "archive": metadata(archive),
++                                         "replacement": metadata(target)}
++        require(report["replacementMutation"]["replacement"]["mediaSHA256"] == report["beforeSeed"]["mediaSHA256"],
++                "Replacement media must match the original synthetic bytes")
++        require(report["replacementMutation"]["replacement"]["xattrs"] == report["beforeSeed"]["xattrs"],
++                "Replacement xattrs must match the original baseline exactly")
++        inspect("replaced")
++        report["status"] = "passed"
++    except Exception as error:
++        report["failure"] = {"type": type(error).__name__, "message": str(error)}
++    finally:
++        if child is not None and child.poll() is None:
++            owned_pid = child.pid
++            child.kill()
++            child.communicate(timeout=20)
++            report["killedPIDs"].append(owned_pid)
++            report["failureCleanup"] = {"pid": owned_pid, "exitCode": child.returncode,
++                                        "onlyOwnSpawnedChild": True}
++        report["finishedAt"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
++        report["resourcesRetained"] = True
++        write_report(root / "evidence/process-crash.json", report)
++        write_report(output, report)
++    print(json.dumps({"status": report["status"], "root": str(root), "evidence": str(output),
++                      "processExitCode": report.get("seed", {}).get("exitCode"),
++                      "inspections": len(report["inspections"])}, ensure_ascii=False))
++    return 0 if report["status"] == "passed" else 1
++
++
++if __name__ == "__main__":
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--output", type=pathlib.Path,
++                        default=pathlib.Path(__file__).resolve().parents[2] / "docs/evidence/fn07/process-crash.json")
++    arguments = parser.parse_args()
++    raise SystemExit(run(arguments.output.resolve()))
+diff --git a/validation/fn07/verify.py b/validation/fn07/verify.py
+new file mode 100644
+index 0000000..1cf5dbf
+--- /dev/null
++++ b/validation/fn07/verify.py
+@@ -0,0 +1,150 @@
++#!/usr/bin/env python3
++"""Read-only evidence for FN-07's freshly generated synthetic fixtures."""
++
++import argparse
++import ctypes
++import errno
++import hashlib
++import json
++import os
++import pathlib
++import stat
++
++SCHEMA = "findernotes-fn07-fixtures-v1"
++NOTE = "com.findernotes.note.v1"
++SENTINEL = "com.findernotes.fn07.sentinel"
++LIBC = ctypes.CDLL("/usr/lib/libSystem.B.dylib", use_errno=True)
++LIBC.fgetxattr.argtypes = [ctypes.c_int, ctypes.c_char_p, ctypes.c_void_p,
++                          ctypes.c_size_t, ctypes.c_uint32, ctypes.c_int]
++LIBC.fgetxattr.restype = ctypes.c_ssize_t
++LIBC.flistxattr.argtypes = [ctypes.c_int, ctypes.c_void_p, ctypes.c_size_t, ctypes.c_int]
++LIBC.flistxattr.restype = ctypes.c_ssize_t
++
++
++def read_bytes(call):
++    for _ in range(4):
++        size = call(None, 0)
++        if size < 0:
++            code = ctypes.get_errno()
++            raise OSError(code, os.strerror(code))
++        buffer = ctypes.create_string_buffer(max(1, size))
++        count = call(buffer, len(buffer))
++        if 0 <= count <= len(buffer):
++            return buffer.raw[:count]
++        if count > len(buffer) or ctypes.get_errno() == errno.ERANGE:
++            continue
++        code = ctypes.get_errno()
++        raise OSError(code, os.strerror(code))
++    raise RuntimeError("Attribute changed during independent verification")
++
++
++def fingerprint(path):
++    fd = os.open(str(path), os.O_RDONLY | os.O_NOFOLLOW | os.O_CLOEXEC)
++    try:
++        info = os.fstat(fd)
++        if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1:
++            raise ValueError("Expected a regular file with one link")
++        digest = hashlib.sha256()
++        while chunk := os.read(fd, 65536):
++            digest.update(chunk)
++        names = read_bytes(lambda buffer, size: LIBC.flistxattr(fd, buffer, size, 0))
++        attrs = {}
++        for name in names.split(b"\0"):
++            if name:
++                value = read_bytes(lambda buffer, size: LIBC.fgetxattr(fd, name, buffer, size, 0, 0))
++                attrs[name.decode()] = value.hex()
++        current = os.stat(path, follow_symlinks=False)
++        if (info.st_dev, info.st_ino) != (current.st_dev, current.st_ino):
++            raise ValueError("File identity changed while checking")
++        return {"mediaSHA256": digest.hexdigest(), "xattrHex": dict(sorted(attrs.items())),
++                "device": info.st_dev, "inode": info.st_ino,
++                "birthtime": info.st_birthtime, "mode": stat.S_IMODE(info.st_mode)}
++    finally:
++        os.close(fd)
++
++
++def identity(value):
++    return value["device"], value["inode"], value["birthtime"]
++
++
++def owned_root(value):
++    root = pathlib.Path(value).resolve(strict=True)
++    if not root.name.startswith("findernotes-fn07-"):
++        raise ValueError("Not an FN-07 fixture root")
++    marker = json.loads((root / ".fn07-owned.json").read_text())
++    before = json.loads((root / "before.json").read_text())
++    for document in (marker, before):
++        if document["schema"] != SCHEMA or document["root"] != str(root):
++            raise ValueError("Fixture ownership or schema mismatch")
++    if before["runID"] != marker["runID"]:
++        raise ValueError("Fixture run ID mismatch")
++    for directory in ("work", "archive", "evidence"):
++        if (root / directory).is_symlink() or not (root / directory).is_dir():
++            raise ValueError("Expected an owned ordinary fixture subdirectory")
++    for name in before["files"]:
++        if pathlib.Path(name).name != name or name in (".", ".."):
++            raise ValueError("Invalid fixture name")
++    return root, marker, before
++
++
++def verify(value, expected_notes, selected=None):
++    root, marker, before = owned_root(value)
++    selected = list(before["files"]) if not selected else selected
++    if set(expected_notes) - set(selected) or set(selected) - set(before["files"]):
++        raise ValueError("Expected-note entry or selected file does not match fixture inventory")
++    checks = []
++    for name in selected:
++        original = before["files"][name]
++        try:
++            current = fingerprint(root / "work" / name)
++        except (OSError, ValueError, RuntimeError) as error:
++            checks.append({"file": name, "readSucceeded": False, "error": str(error)})
++            continue
++        expected = dict(original["xattrHex"])
++        note = expected_notes.get(name, expected.get(NOTE))
++        if note is None:
++            expected.pop(NOTE, None)
++        else:
++            expected[NOTE] = note
++        checks.append({"file": name, "readSucceeded": True,
++                       "modeMatches": original["mode"] == current["mode"],
++                       "identityMatches": identity(original) == identity(current),
++                       "mediaSHA256Matches": original["mediaSHA256"] == current["mediaSHA256"],
++                       "noteMatches": current["xattrHex"].get(NOTE) == expected.get(NOTE),
++                       "unrelatedXattrsMatch": {k: v for k, v in current["xattrHex"].items() if k != NOTE} ==
++                                                {k: v for k, v in expected.items() if k != NOTE},
++                       "actualNoteState": "missing" if NOTE not in current["xattrHex"] else
++                                          "empty" if current["xattrHex"][NOTE] == "" else "present",
++                       "actual": current})
++    flags = ("readSucceeded", "modeMatches", "identityMatches", "mediaSHA256Matches",
++             "noteMatches", "unrelatedXattrsMatch")
++    failures = [check["file"] for check in checks if not all(check.get(key, False) for key in flags)]
++    return {"schema": SCHEMA, "root": str(root), "runID": marker["runID"],
++            "status": "passed" if not failures else "failed", "failures": failures,
++            "fixtureMutationsByVerifier": [], "checks": checks}
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("root")
++    parser.add_argument("--file", action="append", help="Check only this inventoried file; repeatable")
++    parser.add_argument("--expect-note", action="append", default=[], metavar="NAME=HEX",
++                        help="Expected raw note bytes in hex; use NAME=missing for no attribute")
++    args = parser.parse_args()
++    expected = {}
++    for item in args.expect_note:
++        name, separator, value = item.partition("=")
++        if not separator or name in expected:
++            raise ValueError("Expected one unique NAME=HEX per --expect-note")
++        expected[name] = None if value == "missing" else bytes.fromhex(value).hex()
++    result = verify(args.root, expected, args.file)
++    print(json.dumps(result, ensure_ascii=False, indent=2))
++    return 0 if result["status"] == "passed" else 1
++
++
++if __name__ == "__main__":
++    try:
++        raise SystemExit(main())
++    except (OSError, ValueError, KeyError, RuntimeError) as error:
++        print(json.dumps({"status": "failed", "error": str(error)}, ensure_ascii=False))
++        raise SystemExit(1)

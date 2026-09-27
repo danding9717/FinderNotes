@@ -1,0 +1,464 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/FinderNotes.xcodeproj -scheme FinderNotes -configuration Debug -destination platform=macOS,arch=arm64 -derivedDataPath /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData -resultBundlePath /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/TestResults/FinderNotes-20260927-195236-53857.xcresult -parallel-testing-enabled NO FINDERNOTES_APP_SUFFIX=.FN07Tests FINDERNOTES_INFO_SUFFIX=-FN07Tests FINDERNOTES_TEST_SUFFIX=.FN07Tests "-only-testing:FinderNotesTests/EditorWindowTests" "-only-testing:FinderNotesTests/EditorAutosaveTests" "-only-testing:FinderNotesTests/EditorRecoveryWindowTests" "-only-testing:FinderNotesTests/EditorRecoverySessionTests" "-only-testing:FinderNotesTests/DraftRecoveryStoreTests" "-only-testing:FinderNotesTests/RecoveryFileIntegrationTests" "-only-testing:FinderNotesTests/PreviewWindowTests" test
+
+Build settings from command line:
+    FINDERNOTES_APP_SUFFIX = .FN07Tests
+    FINDERNOTES_INFO_SUFFIX = -FN07Tests
+    FINDERNOTES_TEST_SUFFIX = .FN07Tests
+
+Writing result bundle at path:
+	/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/TestResults/FinderNotes-20260927-195236-53857.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (2 targets)
+    Target 'FinderNotesTests' in project 'FinderNotes'
+        ➜ Explicit dependency on target 'FinderNotes' in project 'FinderNotes'
+    Target 'FinderNotes' in project 'FinderNotes' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: cd10e9f7d3d605c71a0c92d16cc1b465
+Build description path: /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/XCBuildData/cd10e9f7d3d605c71a0c92d16cc1b465.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-7231f6df4def33e022ae2eb8f782df1a.sdkstatcache
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/FinderNotes.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -o /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-7231f6df4def33e022ae2eb8f782df1a.sdkstatcache
+
+ProcessInfoPlistFile /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/Info.plist /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/FinderNotes/Info-FN07Tests.plist (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    builtin-infoPlistUtility /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/FinderNotes/Info-FN07Tests.plist -producttype com.apple.product-type.application -genpkginfo /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/Info.plist
+
+SwiftDriver FinderNotes normal arm64 com.apple.xcode.tools.swift.compiler (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name FinderNotes -Onone @/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes.SwiftFileList -DDEBUG -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -target arm64-apple-macos26.0 -g -module-cache-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug -F /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-7231f6df4def33e022ae2eb8f782df1a.sdkstatcache -output-file-map /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes_const_extract_protocols.json -Xcc -iquote -Xcc /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes-generated-files.hmap -Xcc -I/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes-own-target-headers.hmap -Xcc -I/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes-all-target-headers.hmap -Xcc -iquote -Xcc /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes-project-headers.hmap -Xcc -I/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/include -Xcc -I/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/DerivedSources-normal/arm64 -Xcc -I/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/DerivedSources/arm64 -Xcc -I/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes-Swift.h -working-directory /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes -experimental-emit-module-separately -disable-cmo
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ FinderNotes (in target 'FinderNotes' from project 'FinderNotes')
+
+SwiftCompile normal arm64 (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    
+
+SwiftCompile normal arm64 Compiling\ EditorWindowController.swift /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/FinderNotes/EditorWindowController.swift (in target 'FinderNotes' from project 'FinderNotes')
+
+SwiftCompile normal arm64 /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/FinderNotes/EditorWindowController.swift (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    builtin-SwiftPerFileCompile EditorWindowController.swift
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for FinderNotes (in target 'FinderNotes' from project 'FinderNotes')
+
+SwiftDriver\ Compilation\ Requirements FinderNotes normal arm64 com.apple.xcode.tools.swift.compiler (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name FinderNotes -Onone @/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes.SwiftFileList -DDEBUG -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -target arm64-apple-macos26.0 -g -module-cache-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug -F /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-7231f6df4def33e022ae2eb8f782df1a.sdkstatcache -output-file-map /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes_const_extract_protocols.json -Xcc -iquote -Xcc /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes-generated-files.hmap -Xcc -I/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes-own-target-headers.hmap -Xcc -I/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes-all-target-headers.hmap -Xcc -iquote -Xcc /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes-project-headers.hmap -Xcc -I/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/include -Xcc -I/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/DerivedSources-normal/arm64 -Xcc -I/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/DerivedSources/arm64 -Xcc -I/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes-Swift.h -working-directory /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes -experimental-emit-module-separately -disable-cmo
+
+Copy /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.swiftmodule/arm64-apple-macos.abi.json /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes.abi.json (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes.abi.json /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.swiftmodule/arm64-apple-macos.abi.json
+
+Copy /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes.swiftsourceinfo (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes.swiftsourceinfo /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo
+
+SwiftDriverJobDiscovery normal arm64 Compiling EditorWindowController.swift (in target 'FinderNotes' from project 'FinderNotes')
+
+SwiftDriver\ Compilation FinderNotes normal arm64 com.apple.xcode.tools.swift.compiler (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name FinderNotes -Onone @/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes.SwiftFileList -DDEBUG -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -target arm64-apple-macos26.0 -g -module-cache-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug -F /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/SDKStatCaches.noindex/macosx27.0-26A425-7231f6df4def33e022ae2eb8f782df1a.sdkstatcache -output-file-map /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes_const_extract_protocols.json -Xcc -iquote -Xcc /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes-generated-files.hmap -Xcc -I/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes-own-target-headers.hmap -Xcc -I/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes-all-target-headers.hmap -Xcc -iquote -Xcc /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes-project-headers.hmap -Xcc -I/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/include -Xcc -I/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/DerivedSources-normal/arm64 -Xcc -I/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/DerivedSources/arm64 -Xcc -I/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes-Swift.h -working-directory /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/MacOS/FinderNotes.debug.dylib normal (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos26.0 -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -O0 -Xlinker -no_warn_duplicate_libraries -L/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -L/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug -F/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -F/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug -filelist /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes.LinkFileList -install_name @rpath/FinderNotes.debug.dylib -Xlinker -rpath -Xlinker @executable_path/../Frameworks -Xlinker -object_path_lto -Xlinker /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -dependency_info -Xlinker /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes.swiftmodule -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -Xlinker -no_adhoc_codesign -o /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/MacOS/FinderNotes.debug.dylib
+
+ConstructStubExecutorLinkFileList /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes-ExecutorLinkFileList-normal-arm64.txt (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    construct-stub-executor-link-file-list /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/MacOS/FinderNotes.debug.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes-ExecutorLinkFileList-normal-arm64.txt
+note: Using stub executor library with Swift entry point. (in target 'FinderNotes' from project 'FinderNotes')
+
+Ld /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/MacOS/FinderNotes normal (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos26.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -O0 -Xlinker -no_warn_duplicate_libraries -L/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug -F/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/../Frameworks -rdynamic -Xlinker -no_deduplicate -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes-ExecutorLinkFileList-normal-arm64.txt /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/MacOS/FinderNotes.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/MacOS/FinderNotes
+
+CopySwiftLibs /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/MacOS/FinderNotes.debug.dylib --scan-folder /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/Frameworks --scan-folder /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/PlugIns --scan-folder /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/Library/SystemExtensions --scan-folder /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/Extensions --platform macosx --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+ExtractAppIntentsMetadata (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name FinderNotes --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk --xcode-version 27A266a --platform-family macOS --deployment-target 26.0 --bundle-identifier com.findernotes.FinderNotes.FN07Tests --output /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/Resources --target-triple arm64-apple-macos26.0 --binary-file /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/MacOS/FinderNotes --dependency-file /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes_dependency_info.dat --stringsdata-file /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes.SwiftFileList --metadata-file-list /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes.DependencyMetadataFileList --static-metadata-file-list /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes.DependencyStaticMetadataFileList --swift-const-vals-list /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/Objects-normal/arm64/FinderNotes.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-09-27 19:52:42.782 appintentsmetadataprocessor[53927:2250809] Starting appintentsmetadataprocessor export
+2026-09-27 19:52:42.791 appintentsmetadataprocessor[53927:2250809] warning: Metadata extraction skipped, no AppIntents.framework dependency found
+
+ProcessInfoPlistFile /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/PlugIns/FinderNotesTests.xctest/Contents/Info.plist /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotesTests.build/empty-FinderNotesTests.plist (in target 'FinderNotesTests' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    builtin-infoPlistUtility /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotesTests.build/empty-FinderNotesTests.plist -producttype com.apple.product-type.bundle.unit-test -expandbuildsettings -platform macosx -o /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/PlugIns/FinderNotesTests.xctest/Contents/Info.plist
+
+Ld /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/PlugIns/FinderNotesTests.xctest/Contents/MacOS/FinderNotesTests normal (in target 'FinderNotesTests' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos26.0 -bundle -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk -O0 -Xlinker -no_warn_duplicate_libraries -L/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -L/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib -F/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -F/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks -filelist /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotesTests.build/Objects-normal/arm64/FinderNotesTests.LinkFileList -Xlinker -rpath -Xlinker @loader_path/../Frameworks -Xlinker -rpath -Xlinker @executable_path/../Frameworks -bundle_loader /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/MacOS/FinderNotes -Xlinker -object_path_lto -Xlinker /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotesTests.build/Objects-normal/arm64/FinderNotesTests_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -dependency_info -Xlinker /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotesTests.build/Objects-normal/arm64/FinderNotesTests_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotesTests.build/Objects-normal/arm64/FinderNotesTests.swiftmodule -Xlinker -needed_framework -Xlinker XCTest -framework XCTest -Xlinker -needed-lXCTestSwiftSupport -lXCTestSwiftSupport /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/MacOS/FinderNotes.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/PlugIns/FinderNotesTests.xctest/Contents/MacOS/FinderNotesTests
+
+CopySwiftLibs /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/PlugIns/FinderNotesTests.xctest (in target 'FinderNotesTests' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/PlugIns/FinderNotesTests.xctest/Contents/MacOS/FinderNotesTests --scan-folder /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/PlugIns/FinderNotesTests.xctest/Contents/Frameworks --scan-folder /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/PlugIns/FinderNotesTests.xctest/Contents/PlugIns --scan-folder /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/PlugIns/FinderNotesTests.xctest/Contents/Library/SystemExtensions --scan-folder /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/PlugIns/FinderNotesTests.xctest/Contents/Extensions --platform macosx --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/PlugIns/FinderNotesTests.xctest/Contents/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotesTests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+ExtractAppIntentsMetadata (in target 'FinderNotesTests' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name FinderNotesTests --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX27.0.sdk --xcode-version 27A266a --platform-family macOS --deployment-target 26.0 --bundle-identifier com.findernotes.FinderNotesTests.FN07Tests --output /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/PlugIns/FinderNotesTests.xctest/Contents/Resources --target-triple arm64-apple-macos26.0 --binary-file /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/PlugIns/FinderNotesTests.xctest/Contents/MacOS/FinderNotesTests --dependency-file /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotesTests.build/Objects-normal/arm64/FinderNotesTests_dependency_info.dat --stringsdata-file /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotesTests.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotesTests.build/Objects-normal/arm64/FinderNotesTests.SwiftFileList --metadata-file-list /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotesTests.build/FinderNotesTests.DependencyMetadataFileList --static-metadata-file-list /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotesTests.build/FinderNotesTests.DependencyStaticMetadataFileList --swift-const-vals-list /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotesTests.build/Objects-normal/arm64/FinderNotesTests.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-09-27 19:52:43.035 appintentsmetadataprocessor[53931:2250826] Starting appintentsmetadataprocessor export
+2026-09-27 19:52:43.036 appintentsmetadataprocessor[53931:2250826] warning: Metadata extraction skipped, no AppIntents.framework dependency found
+
+CodeSign /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/PlugIns/FinderNotesTests.xctest (in target 'FinderNotesTests' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/PlugIns/FinderNotesTests.xctest
+
+CodeSign /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/MacOS/FinderNotes.debug.dylib (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/MacOS/FinderNotes.debug.dylib
+
+CodeSign /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/MacOS/__preview.dylib (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/MacOS/__preview.dylib
+/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app/Contents/MacOS/__preview.dylib: replacing existing signature
+
+CodeSign /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --entitlements /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/FinderNotes.build/Debug/FinderNotes.build/FinderNotes.app.xcent --timestamp\=none --generate-entitlement-der /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app
+
+Validate /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    builtin-validationUtility /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app -no-validate-extension -infoplist-subpath Contents/Info.plist
+
+RegisterWithLaunchServices /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app (in target 'FinderNotes' from project 'FinderNotes')
+    cd /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes
+    builtin-lsregisterurl --record-path /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/XCBuildData/registered-launchservices.txt -- /System/Library/Frameworks/CoreServices.framework/Versions/Current/Frameworks/LaunchServices.framework/Versions/Current/Support/lsregister -f -R -trusted /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Products/Debug/FinderNotes.app
+
+PruneExplicitPrecompiledModules /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/SDKExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/DerivedData/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+2026-09-27 19:52:44.831345+0800 FinderNotes[53942:2250947] [Connection] Unable to get synchronousRemoteObjectProxy, error: Error Domain=NSCocoaErrorDomain Code=4097 "connection to service named com.apple.linkd.autoShortcut" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}
+2026-09-27 19:52:44.831972+0800 FinderNotes[53942:2250948] [Connection] Unable to get synchronousRemoteObjectProxy, error: Error Domain=NSCocoaErrorDomain Code=4097 "connection to service named com.apple.linkd.autoShortcut" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}
+2026-09-27 19:52:44.832256+0800 FinderNotes[53942:2250948] [Connection] Unable to re-register with Process Instance Registry, error: Error Domain=NSCocoaErrorDomain Code=4097 "connection to service named com.apple.linkd.autoShortcut" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}
+2026-09-27 19:52:44.832313+0800 FinderNotes[53942:2250974] [Connection] Unable to get synchronousRemoteObjectProxy, error: Error Domain=NSCocoaErrorDomain Code=4097 "connection to service named com.apple.linkd.autoShortcut" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}
+2026-09-27 19:52:44.832328+0800 FinderNotes[53942:2250974] [Connection] Unable to re-register with Process Instance Registry, error: Error Domain=NSCocoaErrorDomain Code=4097 "connection to service named com.apple.linkd.autoShortcut" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}
+2026-09-27 19:52:44.832236+0800 FinderNotes[53942:2250947] [Application] Error registering app with intents framework: Error Domain=NSCocoaErrorDomain Code=4097 "connection to service named com.apple.linkd.autoShortcut" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}
+2026-09-27 19:52:44.832801+0800 FinderNotes[53942:2250974] [Connection] Will NOT re-try to establish the connection
+2026-09-27 19:52:44.834067+0800 FinderNotes[53942:2250948] [Connection] Unable to get synchronousRemoteObjectProxy, error: Error Domain=NSCocoaErrorDomain Code=4097 "connection to service named com.apple.linkd.autoShortcut" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}
+2026-09-27 19:52:44.834077+0800 FinderNotes[53942:2250948] [Connection] Unable to re-register with Process Instance Registry, error: Error Domain=NSCocoaErrorDomain Code=4097 "connection to service named com.apple.linkd.autoShortcut" UserInfo={NSDebugDescription=connection to service named com.apple.linkd.autoShortcut}
+2026-09-27 19:52:45.006298+0800 FinderNotes[53942:2250904] ApplePersistenceIgnoreState: Existing state will not be touched. New state will be written to /var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/com.findernotes.FinderNotes.FN07Tests.savedState
+Test Suite 'Selected tests' started at 2026-09-27 19:52:45.115.
+Test Suite 'FinderNotesTests.xctest' started at 2026-09-27 19:52:45.115.
+Test Suite 'DraftRecoveryStoreTests' started at 2026-09-27 19:52:45.115.
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testCorruptRecordRemainsAndBlocksOverwriteAndCleanup]' started.
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testCorruptRecordRemainsAndBlocksOverwriteAndCleanup]' passed (0.007 seconds).
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testDirectoryReplacementIsDetectedAndOriginalRecordPreserved]' started.
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testDirectoryReplacementIsDetectedAndOriginalRecordPreserved]' passed (0.003 seconds).
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testExactUTF8MissingAndEmptyBaselinesRoundTripAndCleanup]' started.
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testExactUTF8MissingAndEmptyBaselinesRoundTripAndCleanup]' passed (0.007 seconds).
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testFailureBeforeRenamePreservesPreviousFileByteForByte]' started.
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testFailureBeforeRenamePreservesPreviousFileByteForByte]' passed (0.003 seconds).
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testInsecureDirectoryAndFileModesAreRejectedWithoutRepair]' started.
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testInsecureDirectoryAndFileModesAreRejectedWithoutRepair]' passed (0.003 seconds).
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testInvalidUTF8InputCannotPublishARecord]' started.
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testInvalidUTF8InputCannotPublishARecord]' passed (0.001 seconds).
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testLifetimeLockExcludesSecondInstanceAndReleasesWhenOwnerEnds]' started.
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testLifetimeLockExcludesSecondInstanceAndReleasesWhenOwnerEnds]' passed (0.003 seconds).
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testReplacingPublishedRevisionAndRejectingOlderRevision]' started.
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testReplacingPublishedRevisionAndRejectingOlderRevision]' passed (0.003 seconds).
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testSameContentWithDistinctIdentityRemainsSeparateAndDoesNotReadMedia]' started.
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testSameContentWithDistinctIdentityRemainsSeparateAndDoesNotReadMedia]' passed (0.003 seconds).
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testSymbolicLinkDirectoryAndRecordAndHardLinkAreRejected]' started.
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testSymbolicLinkDirectoryAndRecordAndHardLinkAreRejected]' passed (0.004 seconds).
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testTemporaryReplacementIsNotPublishedOrDeleted]' started.
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testTemporaryReplacementIsNotPublishedOrDeleted]' passed (0.004 seconds).
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testUnknownVersionInvalidUTF8AndRecordIDMismatchFailClosed]' started.
+Test Case '-[FinderNotesTests.DraftRecoveryStoreTests testUnknownVersionInvalidUTF8AndRecordIDMismatchFailClosed]' passed (0.003 seconds).
+Test Suite 'DraftRecoveryStoreTests' passed at 2026-09-27 19:52:45.162.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.044 (0.047) seconds
+Test Suite 'EditorAutosaveTests' started at 2026-09-27 19:52:45.163.
+Test Case '-[FinderNotesTests.EditorAutosaveTests testAutosavePreservesNativeSelectionScrollUndoAndRedo]' started.
+Test Case '-[FinderNotesTests.EditorAutosaveTests testAutosavePreservesNativeSelectionScrollUndoAndRedo]' passed (0.663 seconds).
+Test Case '-[FinderNotesTests.EditorAutosaveTests testCompositionCancelsCountdownAndUnmarkSchedulesEvenWithoutByteChange]' started.
+Test Case '-[FinderNotesTests.EditorAutosaveTests testCompositionCancelsCountdownAndUnmarkSchedulesEvenWithoutByteChange]' passed (0.061 seconds).
+Test Case '-[FinderNotesTests.EditorAutosaveTests testDiscardSwitchInvalidatesOldCountdownAndSavesOnlyNewIdentity]' started.
+Test Case '-[FinderNotesTests.EditorAutosaveTests testDiscardSwitchInvalidatesOldCountdownAndSavesOnlyNewIdentity]' passed (0.686 seconds).
+Test Case '-[FinderNotesTests.EditorAutosaveTests testEditDuringSaveWaitsForVerifiedBaselineThenSavesNewerDraft]' started.
+Test Case '-[FinderNotesTests.EditorAutosaveTests testEditDuringSaveWaitsForVerifiedBaselineThenSavesNewerDraft]' passed (0.069 seconds).
+Test Case '-[FinderNotesTests.EditorAutosaveTests testEverySaveFailurePausesUntilSuccessfulManualRetry]' started.
+2026-09-27 19:52:46.858486+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:46.858779+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:46.858786+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:46.858815+0800 FinderNotes[53942:2250904] [NSCGS] Entangling fence requested after pre-commit
+2026-09-27 19:52:46.863396+0800 FinderNotes[53942:2250904] [API] cannot add handler to 2 from 2 - dropping
+2026-09-27 19:52:46.864044+0800 FinderNotes[53942:2250904] [NSCGS] Warning: Invalid attempt to open a new transaction during CA commit. This is likely to break AppKit transactional behavior. Break on NSCGSTransactionCreatedDuringCommitError to debug.
+Test Case '-[FinderNotesTests.EditorAutosaveTests testEverySaveFailurePausesUntilSuccessfulManualRetry]' passed (0.288 seconds).
+Test Case '-[FinderNotesTests.EditorAutosaveTests testMismatchedSaveResultNeverReportsSavedOrRetries]' started.
+Test Case '-[FinderNotesTests.EditorAutosaveTests testMismatchedSaveResultNeverReportsSavedOrRetries]' passed (0.039 seconds).
+Test Case '-[FinderNotesTests.EditorAutosaveTests testQuitConfirmationCancelsCountdownAndReturnToEditingRestartsIt]' started.
+Test Case '-[FinderNotesTests.EditorAutosaveTests testQuitConfirmationCancelsCountdownAndReturnToEditingRestartsIt]' passed (0.626 seconds).
+Test Case '-[FinderNotesTests.EditorAutosaveTests testRapidEditsSaveOnlyLatestRevisionAndDoNotRepeatUnchangedBody]' started.
+Test Case '-[FinderNotesTests.EditorAutosaveTests testRapidEditsSaveOnlyLatestRevisionAndDoNotRepeatUnchangedBody]' passed (0.075 seconds).
+Test Case '-[FinderNotesTests.EditorAutosaveTests testRepeatServiceRestartsCountdownWithoutLosingDraft]' started.
+Test Case '-[FinderNotesTests.EditorAutosaveTests testRepeatServiceRestartsCountdownWithoutLosingDraft]' passed (0.052 seconds).
+Test Case '-[FinderNotesTests.EditorAutosaveTests testUndoToBaselineCancelsPendingWriteAndMissingEmptyDoesNotAutosave]' started.
+Test Case '-[FinderNotesTests.EditorAutosaveTests testUndoToBaselineCancelsPendingWriteAndMissingEmptyDoesNotAutosave]' passed (0.055 seconds).
+Test Suite 'EditorAutosaveTests' passed at 2026-09-27 19:52:47.783.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 2.613 (2.621) seconds
+Test Suite 'EditorRecoverySessionTests' started at 2026-09-27 19:52:47.784.
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testApplyExternalCanPreserveDraftForExplicitSaveAndInvalidateOldAutosave]' started.
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testApplyExternalCanPreserveDraftForExplicitSaveAndInvalidateOldAutosave]' passed (0.001 seconds).
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testApplyExternalLoadClearsIssuesAndDistinguishesExternalDeletion]' started.
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testApplyExternalLoadClearsIssuesAndDistinguishesExternalDeletion]' passed (0.000 seconds).
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testApplyExternalRejectsStaleRevisionIdentityPathLoadingAndSaving]' started.
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testApplyExternalRejectsStaleRevisionIdentityPathLoadingAndSaving]' passed (0.002 seconds).
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testCleanTargetsHaveNoRecoveryRecordAndInstallChangesIdentifier]' started.
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testCleanTargetsHaveNoRecoveryRecordAndInstallChangesIdentifier]' passed (0.001 seconds).
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testCloseClearsRecoveryFlagsAndRejectsOldSaveCompletion]' started.
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testCloseClearsRecoveryFlagsAndRejectsOldSaveCompletion]' passed (0.001 seconds).
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testEmptyRecoveryRetainsMissingVersusPresentEmptyBaselineAndNeedsExplicitDecision]' started.
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testEmptyRecoveryRetainsMissingVersusPresentEmptyBaselineAndNeedsExplicitDecision]' passed (0.001 seconds).
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testExternalChangedBodyIsNotAdoptedAsRestoredBaseline]' started.
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testExternalChangedBodyIsNotAdoptedAsRestoredBaseline]' passed (0.001 seconds).
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testLiveIdentityFailureBlocksAllWritesWithoutLosingEitherFailureDetail]' started.
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testLiveIdentityFailureBlocksAllWritesWithoutLosingEitherFailureDetail]' passed (0.000 seconds).
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testMissingReplacedOrCopiedTargetCannotReceiveRestoredDraft]' started.
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testMissingReplacedOrCopiedTargetCannotReceiveRestoredDraft]' passed (0.001 seconds).
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testRecoveryWithoutUsableBirthIdentityCannotBeReenabledForWriting]' started.
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testRecoveryWithoutUsableBirthIdentityCannotBeReenabledForWriting]' passed (0.000 seconds).
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testRecoveryWriteFailurePausesAutosaveWithoutPreventingManualSave]' started.
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testRecoveryWriteFailurePausesAutosaveWithoutPreventingManualSave]' passed (0.001 seconds).
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testRestoreBaselineConflictReportsExternalMissingAndEmptySeparately]' started.
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testRestoreBaselineConflictReportsExternalMissingAndEmptySeparately]' passed (0.001 seconds).
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testRestoreInvalidatesOldLoadTicketAndRefusesAnInFlightSave]' started.
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testRestoreInvalidatesOldLoadTicketAndRefusesAnInFlightSave]' passed (0.001 seconds).
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testRestoringKeepsOpeningBaselineAndPausesAutosaveUntilManualSaveSucceeds]' started.
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testRestoringKeepsOpeningBaselineAndPausesAutosaveUntilManualSaveSucceeds]' passed (0.000 seconds).
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testSavingOlderRecoveredRevisionKeepsNewerRecoveryWithAdvancedBaseline]' started.
+Test Case '-[FinderNotesTests.EditorRecoverySessionTests testSavingOlderRecoveredRevisionKeepsNewerRecoveryWithAdvancedBaseline]' passed (0.001 seconds).
+Test Suite 'EditorRecoverySessionTests' passed at 2026-09-27 19:52:47.796.
+	 Executed 15 tests, with 0 failures (0 unexpected) in 0.009 (0.012) seconds
+Test Suite 'EditorRecoveryWindowTests' started at 2026-09-27 19:52:47.796.
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testCancellingProtectedExportKeepsDraftBaselineAndRecovery]' started.
+2026-09-27 19:52:48.149576+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:48.149636+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:48.149651+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:48.149739+0800 FinderNotes[53942:2250904] [NSCGS] Entangling fence requested after pre-commit
+2026-09-27 19:52:48.157112+0800 FinderNotes[53942:2250904] [API] cannot add handler to 2 from 2 - dropping
+2026-09-27 19:52:48.157169+0800 FinderNotes[53942:2250904] [NSCGS] Warning: Invalid attempt to open a new transaction during CA commit. This is likely to break AppKit transactional behavior. Break on NSCGSTransactionCreatedDuringCommitError to debug.
+2026-09-27 19:52:48.467345+0800 FinderNotes[53942:2251023] [Common] Unable to obtain a task name port right for pid 400: (os/kern) failure (0x5)
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testCancellingProtectedExportKeepsDraftBaselineAndRecovery]' passed (2.231 seconds).
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testCancellingRecoveryChooserDoesNotDiscardActiveRecovery]' started.
+2026-09-27 19:52:50.399874+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:50.399964+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:50.399986+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:50.400078+0800 FinderNotes[53942:2250904] [NSCGS] Entangling fence requested after pre-commit
+2026-09-27 19:52:50.406532+0800 FinderNotes[53942:2250904] [API] cannot add handler to 2 from 2 - dropping
+2026-09-27 19:52:50.406571+0800 FinderNotes[53942:2250904] [NSCGS] Warning: Invalid attempt to open a new transaction during CA commit. This is likely to break AppKit transactional behavior. Break on NSCGSTransactionCreatedDuringCommitError to debug.
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testCancellingRecoveryChooserDoesNotDiscardActiveRecovery]' passed (0.675 seconds).
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testCleanAndBlankWindowsCanQuitWithoutAcquiringAnotherStoresLock]' started.
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testCleanAndBlankWindowsCanQuitWithoutAcquiringAnotherStoresLock]' passed (0.053 seconds).
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testEditingDuringSavePersistsNewDraftAgainstConfirmedNewBaseline]' started.
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testEditingDuringSavePersistsNewDraftAgainstConfirmedNewBaseline]' passed (0.063 seconds).
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testExplicitDiscardWaitsForQueuedPutAndCannotResurrectItsRecord]' started.
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testExplicitDiscardWaitsForQueuedPutAndCannotResurrectItsRecord]' passed (0.040 seconds).
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testExplicitOverwriteBacksUpExternalAndUsesItsConfirmedBaseline]' started.
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testExplicitOverwriteBacksUpExternalAndUsesItsConfirmedBaseline]' passed (1.246 seconds).
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testExternalCheckRejectsReplacementBeforeOfferingOverwrite]' started.
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testExternalCheckRejectsReplacementBeforeOfferingOverwrite]' passed (0.081 seconds).
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testFailedProtectedExportKeepsDraftBaselineAndRecovery]' started.
+2026-09-27 19:52:52.538321+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:52.538372+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:52.538389+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:52.538454+0800 FinderNotes[53942:2250904] [NSCGS] Entangling fence requested after pre-commit
+2026-09-27 19:52:52.544102+0800 FinderNotes[53942:2250904] [API] cannot add handler to 2 from 2 - dropping
+2026-09-27 19:52:52.544225+0800 FinderNotes[53942:2250904] [NSCGS] Warning: Invalid attempt to open a new transaction during CA commit. This is likely to break AppKit transactional behavior. Break on NSCGSTransactionCreatedDuringCommitError to debug.
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testFailedProtectedExportKeepsDraftBaselineAndRecovery]' passed (1.273 seconds).
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testLoadingExternalVersionFirstExportsExactLocalDraftThenCleansRecovery]' started.
+2026-09-27 19:52:53.816748+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:53.816828+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:53.816847+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:53.816947+0800 FinderNotes[53942:2250904] [NSCGS] Entangling fence requested after pre-commit
+2026-09-27 19:52:53.824342+0800 FinderNotes[53942:2250904] [API] cannot add handler to 2 from 2 - dropping
+2026-09-27 19:52:53.824411+0800 FinderNotes[53942:2250904] [NSCGS] Warning: Invalid attempt to open a new transaction during CA commit. This is likely to break AppKit transactional behavior. Break on NSCGSTransactionCreatedDuringCommitError to debug.
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testLoadingExternalVersionFirstExportsExactLocalDraftThenCleansRecovery]' passed (0.690 seconds).
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testMarkedTextNeverReplacesLastCompletedPersistedDraft]' started.
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testMarkedTextNeverReplacesLastCompletedPersistedDraft]' passed (0.052 seconds).
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testRestoredDraftCanPersistFurtherEditsWithoutSchedulingAutosave]' started.
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testRestoredDraftCanPersistFurtherEditsWithoutSchedulingAutosave]' passed (0.044 seconds).
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testUndoToBaselineThenSwitchCleansThePreviousRecovery]' started.
+Test Case '-[FinderNotesTests.EditorRecoveryWindowTests testUndoToBaselineThenSwitchCleansThePreviousRecovery]' passed (0.058 seconds).
+Test Suite 'EditorRecoveryWindowTests' passed at 2026-09-27 19:52:54.305.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 6.505 (6.509) seconds
+Test Suite 'EditorWindowTests' started at 2026-09-27 19:52:54.305.
+Test Case '-[FinderNotesTests.EditorWindowTests testLastWindowCloseRequestsNormalApplicationTermination]' started.
+Test Case '-[FinderNotesTests.EditorWindowTests testLastWindowCloseRequestsNormalApplicationTermination]' passed (0.001 seconds).
+Test Case '-[FinderNotesTests.EditorWindowTests testLeavePromptRemindsToSaveAndRequiresExplicitDiscard]' started.
+Test Case '-[FinderNotesTests.EditorWindowTests testLeavePromptRemindsToSaveAndRequiresExplicitDiscard]' passed (0.038 seconds).
+Test Case '-[FinderNotesTests.EditorWindowTests testLongPathIsSelectableAndRetainsFullHoverValue]' started.
+Test Case '-[FinderNotesTests.EditorWindowTests testLongPathIsSelectableAndRetainsFullHoverValue]' passed (0.026 seconds).
+Test Case '-[FinderNotesTests.EditorWindowTests testMarkedTextRefusesSaveAndExportBeforeWriting]' started.
+Test Case '-[FinderNotesTests.EditorWindowTests testMarkedTextRefusesSaveAndExportBeforeWriting]' passed (0.028 seconds).
+Test Case '-[FinderNotesTests.EditorWindowTests testMarkedTextSurvivesRepeatWithoutResettingEditor]' started.
+2026-09-27 19:52:54.439596+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:54.439623+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:54.439629+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:54.439662+0800 FinderNotes[53942:2250904] [NSCGS] Entangling fence requested after pre-commit
+2026-09-27 19:52:54.442674+0800 FinderNotes[53942:2250904] [API] cannot add handler to 2 from 2 - dropping
+2026-09-27 19:52:54.442693+0800 FinderNotes[53942:2250904] [NSCGS] Warning: Invalid attempt to open a new transaction during CA commit. This is likely to break AppKit transactional behavior. Break on NSCGSTransactionCreatedDuringCommitError to debug.
+Test Case '-[FinderNotesTests.EditorWindowTests testMarkedTextSurvivesRepeatWithoutResettingEditor]' passed (0.068 seconds).
+Test Case '-[FinderNotesTests.EditorWindowTests testNativeUndoRedoSelectionAndRepeatServicePreserveText]' started.
+Test Case '-[FinderNotesTests.EditorWindowTests testNativeUndoRedoSelectionAndRepeatServicePreserveText]' passed (0.058 seconds).
+Test Case '-[FinderNotesTests.EditorWindowTests testNoTargetCannotEditAndFailureNeverLooksLikeEmptyNote]' started.
+Test Case '-[FinderNotesTests.EditorWindowTests testNoTargetCannotEditAndFailureNeverLooksLikeEmptyNote]' passed (0.011 seconds).
+Test Case '-[FinderNotesTests.EditorWindowTests testPlainEditorAndReadOnlyInformationAndSaveAvailability]' started.
+Test Case '-[FinderNotesTests.EditorWindowTests testPlainEditorAndReadOnlyInformationAndSaveAvailability]' passed (0.027 seconds).
+Test Case '-[FinderNotesTests.EditorWindowTests testSaveFailurePreservesDraftAndCopyExportAvailability]' started.
+Test Case '-[FinderNotesTests.EditorWindowTests testSaveFailurePreservesDraftAndCopyExportAvailability]' passed (0.041 seconds).
+Test Case '-[FinderNotesTests.EditorWindowTests testSaveUsesCapturedBytesAndKeepsNewerDraftAndSelection]' started.
+2026-09-27 19:52:54.708559+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:54.708589+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:54.708596+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:54.708642+0800 FinderNotes[53942:2250904] [NSCGS] Entangling fence requested after pre-commit
+2026-09-27 19:52:54.712661+0800 FinderNotes[53942:2250904] [API] cannot add handler to 2 from 2 - dropping
+2026-09-27 19:52:54.712686+0800 FinderNotes[53942:2250904] [NSCGS] Warning: Invalid attempt to open a new transaction during CA commit. This is likely to break AppKit transactional behavior. Break on NSCGSTransactionCreatedDuringCommitError to debug.
+2026-09-27 19:52:54.722296+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:54.722318+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:54.722324+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:54.722365+0800 FinderNotes[53942:2250904] [NSCGS] Entangling fence requested after pre-commit
+2026-09-27 19:52:54.725328+0800 FinderNotes[53942:2250904] [API] cannot add handler to 2 from 2 - dropping
+2026-09-27 19:52:54.725345+0800 FinderNotes[53942:2250904] [NSCGS] Warning: Invalid attempt to open a new transaction during CA commit. This is likely to break AppKit transactional behavior. Break on NSCGSTransactionCreatedDuringCommitError to debug.
+Test Case '-[FinderNotesTests.EditorWindowTests testSaveUsesCapturedBytesAndKeepsNewerDraftAndSelection]' passed (0.167 seconds).
+Test Case '-[FinderNotesTests.EditorWindowTests testServiceReadsOnlyGivenPasteboardAndPreservesMultipleURLs]' started.
+2026-09-27 19:52:54.773083+0800 FinderNotes[53942:2250904] [sandbox] Failed sandbox check for path.
+2026-09-27 19:52:54.773445+0800 FinderNotes[53942:2250904] [sandbox] Sandbox extension creation failed: client lacks entitlements? for path: [/private/tmp/one.png] [/private/tmp/one.png] [-1]
+2026-09-27 19:52:54.773453+0800 FinderNotes[53942:2250904] [general] Sandbox extension data required immediately for flavor public.file-url, but failed to obtain. (-20)
+2026-09-27 19:52:54.773545+0800 FinderNotes[53942:2250904] [sandbox] Failed sandbox check for path.
+2026-09-27 19:52:54.773549+0800 FinderNotes[53942:2250904] [sandbox] Sandbox extension creation failed: client lacks entitlements? for path: [/private/tmp/two.mov] [/private/tmp/two.mov] [-1]
+2026-09-27 19:52:54.773553+0800 FinderNotes[53942:2250904] [general] Sandbox extension data required immediately for flavor public.file-url, but failed to obtain. (-20)
+2026-09-27 19:52:54.774205+0800 FinderNotes[53942:2250904] [sandbox] No sandbox extension entry in cache when one was expected for item 789514 flavor: public.file-url (error: -9)
+2026-09-27 19:52:54.774213+0800 FinderNotes[53942:2250904] [sandbox] Failed to get a sandbox extension (-9)
+2026-09-27 19:52:54.774222+0800 FinderNotes[53942:2250904] [sandbox] No sandbox extension entry in cache when one was expected for item 1 flavor: public.file-url (error: -9)
+2026-09-27 19:52:54.774226+0800 FinderNotes[53942:2250904] [sandbox] Failed to get a sandbox extension (-9)
+2026-09-27 19:52:54.774459+0800 FinderNotes[53942:2251022] [sandbox] Failed sandbox check for path.
+2026-09-27 19:52:54.774464+0800 FinderNotes[53942:2251022] [sandbox] Sandbox extension creation failed: client lacks entitlements? for path: [/private/tmp/two.mov] [/private/tmp/two.mov] [-1]
+2026-09-27 19:52:54.774468+0800 FinderNotes[53942:2250904] [sandbox] Failed sandbox check for path.
+2026-09-27 19:52:54.774475+0800 FinderNotes[53942:2250904] [sandbox] Sandbox extension creation failed: client lacks entitlements? for path: [/private/tmp/one.png] [/private/tmp/one.png] [-1]
+2026-09-27 19:52:54.774480+0800 FinderNotes[53942:2250904] [general] Sandbox extension data required immediately for flavor dyn.ah62d4rv4gu8y6y4grf0gn5xbrzw1gydcr7u1e3cytf2gn, but failed to obtain. (-20)
+2026-09-27 19:52:54.774545+0800 FinderNotes[53942:2250904] [sandbox] Failed sandbox check for path.
+2026-09-27 19:52:54.774549+0800 FinderNotes[53942:2250904] [sandbox] Sandbox extension creation failed: client lacks entitlements? for path: [/private/tmp/one.png] [/private/tmp/one.png] [-1]
+2026-09-27 19:52:54.775086+0800 FinderNotes[53942:2250904] [general] Sandbox extension data required immediately for flavor public.file-url, but failed to obtain. (-20)
+2026-09-27 19:52:54.775146+0800 FinderNotes[53942:2250904] [sandbox] Failed sandbox check for path.
+2026-09-27 19:52:54.775150+0800 FinderNotes[53942:2250904] [sandbox] Sandbox extension creation failed: client lacks entitlements? for path: [/private/tmp/two.mov] [/private/tmp/two.mov] [-1]
+2026-09-27 19:52:54.775153+0800 FinderNotes[53942:2250904] [general] Sandbox extension data required immediately for flavor public.file-url, but failed to obtain. (-20)
+2026-09-27 19:52:54.775225+0800 FinderNotes[53942:2250904] [sandbox] No sandbox extension entry in cache when one was expected for item 789514 flavor: dyn.ah62d4rv4gu8y6y4grf0gn5xbrzw1gydcr7u1e3cytf2gn (error: -9)
+2026-09-27 19:52:54.775229+0800 FinderNotes[53942:2250904] [sandbox] Failed to get a sandbox extension (-9)
+Test Case '-[FinderNotesTests.EditorWindowTests testServiceReadsOnlyGivenPasteboardAndPreservesMultipleURLs]' passed (0.004 seconds).
+Test Suite 'EditorWindowTests' passed at 2026-09-27 19:52:54.776.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.469 (0.471) seconds
+Test Suite 'PreviewWindowTests' started at 2026-09-27 19:52:54.776.
+Test Case '-[FinderNotesTests.PreviewWindowTests testCollapseFillsEditorWithoutChangingNativeInputState]' started.
+2026-09-27 19:52:54.819577+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:54.819604+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:54.819611+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:54.819646+0800 FinderNotes[53942:2250904] [NSCGS] Entangling fence requested after pre-commit
+2026-09-27 19:52:54.822785+0800 FinderNotes[53942:2250904] [API] cannot add handler to 2 from 2 - dropping
+2026-09-27 19:52:54.822813+0800 FinderNotes[53942:2250904] [NSCGS] Warning: Invalid attempt to open a new transaction during CA commit. This is likely to break AppKit transactional behavior. Break on NSCGSTransactionCreatedDuringCommitError to debug.
+Test Case '-[FinderNotesTests.PreviewWindowTests testCollapseFillsEditorWithoutChangingNativeInputState]' passed (0.075 seconds).
+Test Case '-[FinderNotesTests.PreviewWindowTests testCollapsingFocusedPreviewReturnsKeyboardToEditor]' started.
+Test Case '-[FinderNotesTests.PreviewWindowTests testCollapsingFocusedPreviewReturnsKeyboardToEditor]' passed (0.047 seconds).
+Test Case '-[FinderNotesTests.PreviewWindowTests testRepeatReadFailureAndSaveKeepPreviewUntilInstalledTargetChanges]' started.
+2026-09-27 19:52:55.050042+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:55.050070+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:55.050076+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:55.050117+0800 FinderNotes[53942:2250904] [NSCGS] Entangling fence requested after pre-commit
+2026-09-27 19:52:55.052828+0800 FinderNotes[53942:2250904] [API] cannot add handler to 2 from 2 - dropping
+2026-09-27 19:52:55.052910+0800 FinderNotes[53942:2250904] [NSCGS] Warning: Invalid attempt to open a new transaction during CA commit. This is likely to break AppKit transactional behavior. Break on NSCGSTransactionCreatedDuringCommitError to debug.
+Test Case '-[FinderNotesTests.PreviewWindowTests testRepeatReadFailureAndSaveKeepPreviewUntilInstalledTargetChanges]' passed (0.179 seconds).
+Test Case '-[FinderNotesTests.PreviewWindowTests testUnavailablePreviewStillAllowsEditingSavingAndExport]' started.
+Test Case '-[FinderNotesTests.PreviewWindowTests testUnavailablePreviewStillAllowsEditingSavingAndExport]' passed (0.070 seconds).
+Test Suite 'PreviewWindowTests' passed at 2026-09-27 19:52:55.148.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.370 (0.371) seconds
+Test Suite 'RecoveryFileIntegrationTests' started at 2026-09-27 19:52:55.148.
+Test Case '-[FinderNotesTests.RecoveryFileIntegrationTests testCopiedMediaAndBodyCannotReuseOriginalRecoveryIdentity]' started.
+2026-09-27 19:52:55.162502+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:55.162525+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:55.162531+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:55.162564+0800 FinderNotes[53942:2250904] [NSCGS] Entangling fence requested after pre-commit
+2026-09-27 19:52:55.165121+0800 FinderNotes[53942:2250904] [API] cannot add handler to 2 from 2 - dropping
+2026-09-27 19:52:55.165137+0800 FinderNotes[53942:2250904] [NSCGS] Warning: Invalid attempt to open a new transaction during CA commit. This is likely to break AppKit transactional behavior. Break on NSCGSTransactionCreatedDuringCommitError to debug.
+Test Case '-[FinderNotesTests.RecoveryFileIntegrationTests testCopiedMediaAndBodyCannotReuseOriginalRecoveryIdentity]' passed (0.030 seconds).
+Test Case '-[FinderNotesTests.RecoveryFileIntegrationTests testExternalBaselineCanBeAdoptedOnlyAfterPreservingBothVersionsThenManuallySaved]' started.
+Test Case '-[FinderNotesTests.RecoveryFileIntegrationTests testExternalBaselineCanBeAdoptedOnlyAfterPreservingBothVersionsThenManuallySaved]' passed (0.054 seconds).
+Test Case '-[FinderNotesTests.RecoveryFileIntegrationTests testExternalChangedDeletedAndEmptyBodiesKeepBothVersionsAndRejectUnconfirmedWrite]' started.
+2026-09-27 19:52:55.235924+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:55.235944+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:55.235949+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:55.235978+0800 FinderNotes[53942:2250904] [NSCGS] Entangling fence requested after pre-commit
+2026-09-27 19:52:55.238863+0800 FinderNotes[53942:2250904] [API] cannot add handler to 2 from 2 - dropping
+2026-09-27 19:52:55.238881+0800 FinderNotes[53942:2250904] [NSCGS] Warning: Invalid attempt to open a new transaction during CA commit. This is likely to break AppKit transactional behavior. Break on NSCGSTransactionCreatedDuringCommitError to debug.
+Test Case '-[FinderNotesTests.RecoveryFileIntegrationTests testExternalChangedDeletedAndEmptyBodiesKeepBothVersionsAndRejectUnconfirmedWrite]' passed (0.019 seconds).
+Test Case '-[FinderNotesTests.RecoveryFileIntegrationTests testMissingAndPresentEmptyBaselinesStayDistinctAcrossDiskRecovery]' started.
+Test Case '-[FinderNotesTests.RecoveryFileIntegrationTests testMissingAndPresentEmptyBaselinesStayDistinctAcrossDiskRecovery]' passed (0.006 seconds).
+Test Case '-[FinderNotesTests.RecoveryFileIntegrationTests testMissingOriginalStillExportsDraftAndKeepsRecoveryWithoutCreatingTarget]' started.
+Test Case '-[FinderNotesTests.RecoveryFileIntegrationTests testMissingOriginalStillExportsDraftAndKeepsRecoveryWithoutCreatingTarget]' passed (0.004 seconds).
+Test Case '-[FinderNotesTests.RecoveryFileIntegrationTests testPublishedDraftSurvivesStoreAndSessionRecreationThenManualSaveCleansRecord]' started.
+Test Case '-[FinderNotesTests.RecoveryFileIntegrationTests testPublishedDraftSurvivesStoreAndSessionRecreationThenManualSaveCleansRecord]' passed (0.053 seconds).
+Test Case '-[FinderNotesTests.RecoveryFileIntegrationTests testSamePathReplacementIsBlockedEvenWithIdenticalMediaAndBody]' started.
+Test Case '-[FinderNotesTests.RecoveryFileIntegrationTests testSamePathReplacementIsBlockedEvenWithIdenticalMediaAndBody]' passed (0.005 seconds).
+Test Case '-[FinderNotesTests.RecoveryFileIntegrationTests testUnreadableExternalUTF8IsAnErrorAndNeverAnEmptyBaseline]' started.
+Test Case '-[FinderNotesTests.RecoveryFileIntegrationTests testUnreadableExternalUTF8IsAnErrorAndNeverAnEmptyBaseline]' passed (0.004 seconds).
+Test Case '-[FinderNotesTests.RecoveryFileIntegrationTests testUnrelatedAttributeChangeDoesNotCreateBodyConflictOrGetOverwritten]' started.
+2026-09-27 19:52:55.378350+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:55.378381+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:55.378387+0800 FinderNotes[53942:2250904] [NSCGS] Ignoring request to entangle context after pre-commit
+2026-09-27 19:52:55.378417+0800 FinderNotes[53942:2250904] [NSCGS] Entangling fence requested after pre-commit
+2026-09-27 19:52:55.381091+0800 FinderNotes[53942:2250904] [API] cannot add handler to 2 from 2 - dropping
+2026-09-27 19:52:55.381109+0800 FinderNotes[53942:2250904] [NSCGS] Warning: Invalid attempt to open a new transaction during CA commit. This is likely to break AppKit transactional behavior. Break on NSCGSTransactionCreatedDuringCommitError to debug.
+Test Case '-[FinderNotesTests.RecoveryFileIntegrationTests testUnrelatedAttributeChangeDoesNotCreateBodyConflictOrGetOverwritten]' passed (0.065 seconds).
+Test Suite 'RecoveryFileIntegrationTests' passed at 2026-09-27 19:52:55.390.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.240 (0.242) seconds
+Test Suite 'FinderNotesTests.xctest' passed at 2026-09-27 19:52:55.390.
+	 Executed 73 tests, with 0 failures (0 unexpected) in 10.250 (10.275) seconds
+Test Suite 'Selected tests' passed at 2026-09-27 19:52:55.390.
+	 Executed 73 tests, with 0 failures (0 unexpected) in 10.250 (10.276) seconds
+2026-09-27 19:52:55.763 xcodebuild[53861:2250521] [MT] IDETestOperationsObserverDebug: 12.348 elapsed -- Testing started completed.
+2026-09-27 19:52:55.763 xcodebuild[53861:2250521] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-09-27 19:52:55.763 xcodebuild[53861:2250521] [MT] IDETestOperationsObserverDebug: 12.348 sec, +12.348 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/TestResults/FinderNotes-20260927-195236-53857.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started
+/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/TestResults/FinderNotes-20260927-195236-53857.xcresult

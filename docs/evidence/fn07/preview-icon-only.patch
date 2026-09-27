@@ -1,0 +1,175 @@
+--- previous-fn07/FinderNotes/EditorWindowController.swift
++++ current-fn07/FinderNotes/EditorWindowController.swift
+@@ -11,9 +11,9 @@
+     let filePath = NSTextField(wrappingLabelWithString: "")
+     let statusLabel = NSTextField(wrappingLabelWithString: "")
+     let saveButton = NSButton(title: "保存", target: nil, action: nil)
+-    let copyButton = NSButton(title: "复制草稿", target: nil, action: nil)
+-    let exportButton = NSButton(title: "导出 Markdown…", target: nil, action: nil)
+-    let previewButton = NSButton(title: "收起预览", target: nil, action: nil)
++    let copyButton = NSButton(title: "复制", target: nil, action: nil)
++    let exportButton = NSButton(title: "导出", target: nil, action: nil)
++    let previewButton = NSButton(title: "", target: nil, action: nil)
+     let advancedButton = NSPopUpButton(frame: .zero, pullsDown: true)
+     let recoveryMenuItem = NSMenuItem(title: "恢复草稿…", action: nil, keyEquivalent: "")
+     let conflictMenuItem = NSMenuItem(title: "核对外部版本…", action: nil, keyEquivalent: "")
+@@ -23,7 +23,10 @@
+     private var recoveryIO: Task<Bool, Never>?
+     private var lastRecoveryRecord: DraftRecoveryRecord?
+     private var recoveryOperation: UInt64 = 0
++    private let previewPane = NSView()
+     private var previewWidth: NSLayoutConstraint?
++    private var collapsedPreviewWidth: NSLayoutConstraint?
++    private var previewContentConstraints: [NSLayoutConstraint] = []
+     private(set) var isConfirming = false
+     private var readingTask: Task<Void, Never>?
+     private var savingTask: Task<Void, Never>?
+@@ -118,20 +121,44 @@
+         scroll.hasVerticalScroller = true
+         scroll.borderType = .bezelBorder
+         scroll.documentView = editor
+-        let body = NSStackView(views: [preview.view, scroll])
++        previewButton.target = self
++        previewButton.action = #selector(togglePreview(_:))
++        previewButton.refusesFirstResponder = true
++        previewButton.isBordered = false
++        previewButton.imagePosition = .imageOnly
++        previewButton.image = NSImage(systemSymbolName: "sidebar.left", accessibilityDescription: nil)?
++            .withSymbolConfiguration(.init(pointSize: 16, weight: .regular))
++        previewButton.contentTintColor = .secondaryLabelColor
++        previewButton.setAccessibilityIdentifier("fn-toggle-preview")
++        previewButton.translatesAutoresizingMaskIntoConstraints = false
++        previewPane.addSubview(previewButton)
++        preview.view.translatesAutoresizingMaskIntoConstraints = false
++        previewContentConstraints = [
++            preview.view.leadingAnchor.constraint(equalTo: previewPane.leadingAnchor),
++            preview.view.trailingAnchor.constraint(equalTo: previewPane.trailingAnchor),
++            preview.view.topAnchor.constraint(equalTo: previewPane.topAnchor, constant: 32),
++            preview.view.bottomAnchor.constraint(equalTo: previewPane.bottomAnchor)
++        ]
++        NSLayoutConstraint.activate([
++            previewButton.topAnchor.constraint(equalTo: previewPane.topAnchor, constant: 2),
++            previewButton.trailingAnchor.constraint(equalTo: previewPane.trailingAnchor, constant: -2),
++            previewButton.widthAnchor.constraint(equalToConstant: 28),
++            previewButton.heightAnchor.constraint(equalToConstant: 28)
++        ])
++        let body = NSStackView(views: [previewPane, scroll])
+         body.orientation = .horizontal
+         body.alignment = .top
+         body.distribution = .fill
+         body.spacing = 12
+         body.detachesHiddenViews = true
+         stack.addArrangedSubview(body)
+-        previewWidth = preview.view.widthAnchor.constraint(equalTo: body.widthAnchor, multiplier: 0.4, constant: -4.8)
+-        previewWidth?.isActive = preview.isExpanded
++        previewWidth = previewPane.widthAnchor.constraint(equalTo: body.widthAnchor, multiplier: 0.4, constant: -4.8)
++        collapsedPreviewWidth = previewPane.widthAnchor.constraint(equalToConstant: 32)
+         NSLayoutConstraint.activate([
+             body.widthAnchor.constraint(equalTo: stack.widthAnchor),
+             body.heightAnchor.constraint(greaterThanOrEqualToConstant: 130),
+             scroll.heightAnchor.constraint(equalTo: body.heightAnchor),
+-            preview.view.heightAnchor.constraint(equalTo: body.heightAnchor)
++            previewPane.heightAnchor.constraint(equalTo: body.heightAnchor)
+         ])
+         let controls = NSStackView()
+         controls.spacing = 6
+@@ -140,20 +167,17 @@
+         saveButton.setAccessibilityIdentifier("fn-save")
+         copyButton.target = self
+         copyButton.action = #selector(copyDraft(_:))
++        copyButton.toolTip = "复制完整草稿"
+         exportButton.target = self
+         exportButton.action = #selector(exportMarkdown(_:))
++        exportButton.toolTip = "导出 Markdown 快照"
+         exportButton.setAccessibilityIdentifier("fn-export-markdown")
+         controls.addArrangedSubview(saveButton)
+         controls.addArrangedSubview(copyButton)
+         controls.addArrangedSubview(exportButton)
+-        previewButton.target = self
+-        previewButton.action = #selector(togglePreview(_:))
+-        previewButton.refusesFirstResponder = true
+-        previewButton.setAccessibilityIdentifier("fn-toggle-preview")
+-        controls.addArrangedSubview(previewButton)
+         let spacer = NSView()
+         controls.addArrangedSubview(spacer)
+-        controls.setCustomSpacing(0, after: previewButton)
++        controls.setCustomSpacing(0, after: exportButton)
+         spacer.widthAnchor.constraint(greaterThanOrEqualToConstant: 0).isActive = true
+         let advancedMenu = NSMenu()
+         // Preserve the same explicit busy-state rules as the original buttons.
+@@ -179,6 +203,7 @@
+         statusLabel.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
+         stack.addArrangedSubview(filePath)
+         filePath.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
++        setPreviewExpanded(preview.isExpanded)
+     }
+ 
+     func showEditor() {
+@@ -296,9 +321,25 @@
+ 
+     private func setPreviewExpanded(_ expanded: Bool) {
+         let focusWasInPreview = (window?.firstResponder as? NSView)?.isDescendant(of: preview.view) == true
+-        previewWidth?.isActive = expanded
++        // The control stays mounted while hidden preview content leaves the layout entirely.
++        // This also keeps the placeholder's minimum width from widening the collapsed rail.
++        if expanded {
++            collapsedPreviewWidth?.isActive = false
++            previewWidth?.isActive = true
++            if preview.view.superview == nil {
++                previewPane.addSubview(preview.view)
++                NSLayoutConstraint.activate(previewContentConstraints)
++            }
++        } else {
++            NSLayoutConstraint.deactivate(previewContentConstraints)
++            preview.view.removeFromSuperview()
++            previewWidth?.isActive = false
++            collapsedPreviewWidth?.isActive = true
++        }
+         preview.setExpanded(expanded)
+-        previewButton.title = expanded ? "收起预览" : "展开预览"
++        let previewAction = expanded ? "收起预览" : "展开预览"
++        previewButton.toolTip = previewAction
++        previewButton.setAccessibilityLabel(previewAction)
+         if !expanded, focusWasInPreview { window?.makeFirstResponder(editor) }
+         // Keep the native editor and its input state intact while only the layout changes.
+         window?.contentView?.layoutSubtreeIfNeeded()
+--- previous-fn07/README.md
++++ current-fn07/README.md
+@@ -39,7 +39,9 @@
+ 
+ 恢复文件以同目录临时文件完整写入、fsync、回读、原子 rename 替换并核验；恢复写入与清理串行，目录锁阻止同一应用身份的第二个实例同时操作。只保证恢复成功落盘的草稿，不保证未落盘的最后击键或突然断电。保存成功只清理该版草稿；保存途中有新输入则继续保护新版。明确丢弃关闭／切换／退出会等待清理结果；清理失败保留当前编辑器。完整撤销回已确认基线后，成功切换文件也清理已无未保存内容的记录。
+ 
+-底部保留“保存、复制草稿、导出 Markdown、收起预览”，右侧“高级选项”原生下拉菜单集中提供“核对外部版本…”与“恢复草稿…”；有恢复记录时显示数量。没有打开文件时仍可从该菜单恢复草稿；核对外部版本须已打开文件，读取、保存、导出或确认期间两项均禁用。
++底部保留“保存、复制、导出”，右侧“高级选项”原生下拉菜单集中提供“核对外部版本…”与“恢复草稿…”；有恢复记录时显示数量。“复制”仍复制当前草稿，“导出”仍生成独立的 Markdown 快照。没有打开文件时仍可从该菜单恢复草稿；核对外部版本须已打开文件，读取、保存、导出或确认期间两项均禁用。
++
++预览开关位于左侧预览区顶部靠正文一侧，使用无文字的侧栏图标；悬停提示及无障碍名称分别为“收起预览”或“展开预览”。图标使用 16 点的 `sidebar.left` 系统符号，点击区域为 28×28 点，置于独立的 32 点头部，不遮盖预览或正文。收起后保留 32 点窄栏及展开入口，正文使用其余空间；切换预览不重置正文、选区或撤销状态。
+ 
+ 异常退出后打开相同应用，点击“高级选项 → 恢复草稿…”选择记录。恢复先核对原路径、身份和基线，默认暂停自动保存，需要手动保存或处理冲突。原目标消失、被替换或读取失败时禁止写回，草稿仍可复制、编辑与导出。副本不通过媒体或正文内容匹配草稿；移动后的目标也不自动重新关联。损坏、不支持的版本或不安全权限会明确报错并保留原文件；目前一个损坏记录会使整个恢复列表停止读取，需人工保留并移出该损坏文件后重试，不会自动删除。未完成发布的 `.draft-*.tmp` 保留原地，不当作有效恢复记录。
+ 
+@@ -55,7 +57,7 @@
+ 
+ 使用新建样本，在 Finder 单选图片或视频，经 **访达 → 服务 → FinderNotes FN06 验收编辑笔记** 打开。Release 身份为 `com.findernotes.FinderNotes.FN06Validation`；Debug 测试宿主为 `.FN06Tests`，不声明服务。构建产物留在该工作树 `.build/DerivedData`，不覆盖历史验收应用。测试样本及独立核对方法见 [FN-06 验证说明](validation/fn06/README.md)。
+ 
+-预览默认展开，位于正文左侧，可用“收起预览”按钮让文字区填满主体。系统异步加载预览，视频不自动播放；收起、切换或关窗时释放预览，重新展开从新的预览实例开始。预览不可用时仍可编辑、保存、复制和导出。Quick Look 没有公开的加载成功／解码失败回调，设置文件 URL 不等于预览已成功；系统内部的渲染失败由系统占位承接。
++预览默认展开，位于正文左侧。FN-06 原交付通过“收起预览”按钮让文字区填满主体；当前 FN-07 的图标开关与折叠布局见上节。系统异步加载预览，视频不自动播放；收起、切换或关窗时释放预览，重新展开从新的预览实例开始。预览不可用时仍可编辑、保存、复制和导出。Quick Look 没有公开的加载成功／解码失败回调，设置文件 URL 不等于预览已成功；系统内部的渲染失败由系统占位承接。
+ 
+ 停止输入约 1 秒后自动保存；中文输入组合态期间不启动保存，完成输入后重新计时。保存按钮和 Command-S 仍立即请求同一条安全保存链路。只有身份与完整正文回读一致才显示已保存；保存期间的新输入继续保留，并在上一笔完成后安排下一笔。保存完成不重新设置编辑器正文、光标、选区、滚动或撤销栈。
+ 
+--- previous-fn07/validation/fn07/README.md
++++ current-fn07/validation/fn07/README.md
+@@ -72,12 +72,13 @@
+ 
+ ## Dan 的主要验收路径
+ 
+-- **高级选项与布局：** 底部只保留一行“保存、复制草稿、导出 Markdown、收起预览、高级选项”。点击原生“高级选项”下拉菜单，确认两项为“核对外部版本…”和“恢复草稿…”（有记录时含数量）；选择后按钮仍显示“高级选项”。在没有打开文件的空窗口中，外部核对禁用、恢复可用，并可打开恢复列表或无记录提示。打开合成文件后核对可用；读取、保存、导出与确认期间相关入口禁用，取消后恢复正确状态。将窗口缩到最小 500 点宽，展开／收起预览时所有底部操作完整显示且不重叠；冲突／暂停提示留在状态区，指向“高级选项 → 核对外部版本”。UI 被锁屏阻挡时单独记未验证，不用 AppKit 测试替代点击或目视检查。
++- **高级选项与底部布局：** 底部只保留一行“保存、复制、导出、高级选项”，“复制”仍复制当前草稿，“导出”仍打开 Markdown 导出流程。点击原生“高级选项”下拉菜单，确认两项为“核对外部版本…”和“恢复草稿…”（有记录时含数量）；选择后按钮仍显示“高级选项”。在没有打开文件的空窗口中，外部核对禁用、恢复可用，并可打开恢复列表或无记录提示。打开合成文件后核对可用；读取、保存、导出与确认期间相关入口禁用，取消后恢复正确状态。将窗口缩到最小 500 点宽，展开／收起预览时所有底部操作完整显示且不重叠；冲突／暂停提示留在状态区，指向“高级选项 → 核对外部版本”。UI 被锁屏阻挡时单独记未验证，不用 AppKit 测试替代点击或目视检查。
++- **预览图标与输入状态：** 左侧预览区上方靠正文一侧应显示无文字的 `sidebar.left` 图标（16 点图形、28×28 点点击区域），置于独立 32 点头部，不覆盖 Quick Look 或正文。悬停提示及无障碍名称随状态显示“收起预览”或“展开预览”。点击收起后左侧保留 32 点窄栏与图标，正文扩宽，再次点击可重新展开；在最小 500 点宽和空窗口中均检查入口可见、可点且不重叠。带选区、撤销记录及长文滚动位置切换预览，确认草稿和输入状态保留；预览获得焦点后收起，应可继续在正文输入。真实中文组合态与合成视频播放中的收起停止、声音须分别实测，未实际观察的边界继续记未验证，不能由程序化测试或历史任务状态替代。
+ 
+ - **外部修改与两方保留：** 打开 `conflict.png`，运行其 `note` mutation，再输入本地合成草稿；触发手动保存或等待约 1 秒自动保存，确认暂停且未静默覆盖。点“高级选项 → 核对外部版本…”后，“继续编辑”应保留草稿；“仅导出本地草稿…”应保留会话；“导出草稿并载入外部版…”应先成功导出本地，才载入外部。取消导出或导出失败不能替换草稿。另用新根验证“备份外部版并覆盖…”先导出外部，再经“明确覆盖”确认写入本地；确认前双方都保留。
+ - **删除／空正文／无关属性：** 分别使用 `deletion.png` 的 `delete-note`、`empty.png` 和 `missing.png` 验证属性删除、空正文及缺失的区别。只对 `unrelated.png` 执行 `unrelated`，确认不因哨兵 xattr 变化直接判成正文冲突。核验时以 mutation 的外部修改为预期，并确认应用未再改哨兵或 Finder 原生注释。
+ - **异常退出恢复：** 使用 `readonly.png` 使正式保存失败并暂停，输入合成草稿；先确认 FN07 专属恢复目录内已出现对应落盘记录，再仅对路径匹配本工作树 FN07 验收产物的进程执行强制结束。不要结束其他 FinderNotes 实例或 Finder。重启同一 FN07 应用，点“高级选项 → 恢复草稿…”并选“恢复所选草稿”，确认内容来自已落盘记录，恢复后自动保存仍暂停。原目标仍存在且基线一致时，在恢复写入权限后手动保存；确认只更新自有 xattr，并清理对应恢复记录。权限恢复仅操作本轮 `readonly.png`：`chmod 644 "$fixture_root/work/readonly.png"`，同时记录这是预期权限变化。
+ - **身份与基线：** 在保有已落盘草稿并结束 FN07 进程后，分别执行 `replace.png replace` 或 `moved.png move`，重启并恢复对应草稿。不得自动写回同名替换文件；目标消失或身份无法确认时只能保留／导出。用 `copy-source.png` 制造草稿后仅打开 `copy.png`，即使媒体和正文相同也不得给复制品套用原件草稿。另用新根在异常结束后外部改变原目标正文，恢复应保留本地和外部内容并进入冲突处理。
+-- **与原编辑流程集成：** 分别观察手动保存、停止输入约 1 秒自动保存、保存失败后的暂停、真实中文组合态、关闭／切换与取消操作。未保存草稿不得被取消路径丢弃；“明确放弃”才清理对应恢复文件。用普通“导出 Markdown…”验证可随时导出当前本地草稿。
++- **与原编辑流程集成：** 分别观察手动保存、停止输入约 1 秒自动保存、保存失败后的暂停、真实中文组合态、关闭／切换与取消操作。未保存草稿不得被取消路径丢弃；“明确放弃”才清理对应恢复文件。用底部“导出”验证可导出当前本地草稿的 Markdown 快照。
+ 
+ 声音、播放中收起停止、长文滚动和真实中文输入法若本轮未新增实测，应继续列为未验证；不能因 FN-06 Done 或已合并改写成通过。保留新建样本与原始证据给 Dan 复验，不清理既有验收资源；清理本轮资源前核对完整路径和 `.fn07-owned.json`。

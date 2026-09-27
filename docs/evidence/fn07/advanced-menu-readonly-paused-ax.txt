@@ -1,0 +1,4 @@
+The following is a diff from the previous accessibility tree for Window: "readonly.png — FinderNotes" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+~	31 text ID: fn-status, Value: 保存失败：写入失败（打开文件，13：Permission denied）；当前草稿仍在编辑器中。 · 自动保存已暂停 · 草稿仍保留，可复制或导出 /private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-f3mu6lvu/work/readonly.png
+The focused UI element is 24 文本输入区 (settable) Description: 笔记正文, ID: fn-note-editor, Value: FN07 高级选项恢复验证
+合成草稿🙂

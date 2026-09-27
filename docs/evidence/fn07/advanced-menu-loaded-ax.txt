@@ -1,0 +1,8 @@
+The following is a diff from the previous accessibility tree for Window: "readonly.png — FinderNotes" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 21
++	24 滚动区 Description: “readonly.png”的预览, ID: Image Preview: readonly.png
++		25 菜单 Secondary Actions: Cancel
++			26 核对外部版本…, ID: fn-resolve-conflict
++			27 恢复草稿…, ID: fn-recover-draft
+The focused UI element is 4 文本输入区 (settable) Description: 笔记正文, ID: fn-note-editor, Value: FN07 原有笔记 readonly.png
+中文🙂

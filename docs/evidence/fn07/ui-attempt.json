@@ -1,0 +1,11 @@
+{
+  "validation": "Finder/UI",
+  "status": "not_verified",
+  "surface": "Finder macOS CUA",
+  "attempt": "Navigate using Command-Shift-G to this run synthetic work directory",
+  "tool_error": "The Mac is locked and automatic unlock could not unlock it. Ask the user to unlock the Mac manually before continuing.",
+  "user_input_requested": true,
+  "actual_fn07_app_ui_operations_completed": false,
+  "fixture_root": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-1vjrsbo4",
+  "note": "Initial read-only Finder observation succeeded; subsequent navigation was blocked. No FN07 GUI result or screenshot is claimed."
+}

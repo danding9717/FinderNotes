@@ -1,0 +1,25 @@
+{
+  "time": "2026-09-27T20:38:57.056392+08:00",
+  "branch": "codex/fn-07-conflict-recovery",
+  "head": "708c3f5a7b1ff31219ac53f339876fa7d793f890",
+  "source_changes_since_menu": [
+    "FinderNotes/EditorWindowController.swift",
+    "README.md",
+    "validation/fn07/README.md",
+    ".build/DerivedData/Build/Products/Release/FinderNotes.app/Contents/MacOS/FinderNotes"
+  ],
+  "checks": {
+    "codesign": 0,
+    "diff_check": 0
+  },
+  "notion_readback": {
+    "Check": "Review",
+    "List": "Action List",
+    "Project": "PRO-FinderNotes",
+    "new_record_verified": true,
+    "prior_record_retained": true
+  },
+  "original_AGENTS_sha256": "9b57a4f067e71f6554fee66e26f9551e2531e0bf9b32e5fe723d13ba0b237492",
+  "commit_push_merge": "not performed",
+  "FN08": "not started"
+}

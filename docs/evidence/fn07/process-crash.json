@@ -1,0 +1,526 @@
+{
+  "schema": "findernotes-fn07-process-crash-v1",
+  "root": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-process-ca9doblo",
+  "runID": "d62171ec-11c8-4725-a05f-37407f5584c2",
+  "startedAt": "2026-09-27T11:09:59.331186+00:00",
+  "status": "passed",
+  "environment": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "macOS": "26.6.2"
+  },
+  "scope": "real SIGKILL process and production recovery-store integration; no App/Finder UI",
+  "limitations": [
+    "Only a record for which put returned is covered; unflushed keystrokes and sudden power loss are not covered.",
+    "Probe compares production NoteReader identity and baseline; it does not exercise App/Finder recovery UI.",
+    "All media and note text are synthetic; no real material is read or changed."
+  ],
+  "killedPIDs": [
+    35945
+  ],
+  "inspections": [
+    {
+      "command": [
+        "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-process-ca9doblo/bin/fn07-crash-probe",
+        "inspect",
+        "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-process-ca9doblo",
+        "162803AF-72A3-4DC3-80F1-30E19CCD44F3",
+        "unchanged"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"baselineMatches\":true,\"case\":\"unchanged\",\"casePassed\":true,\"currentIdentity\":{\"birthNanoseconds\":149137171,\"birthSeconds\":1790507404,\"device\":16777234,\"inode\":9590941},\"currentNote\":{\"byteCount\":39,\"sha256\":\"132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9\",\"state\":\"present\"},\"draftByteCount\":55,\"draftMatchesExpected\":true,\"draftSHA256\":\"952a9ce37178e6d95d07396ac598a471093ba2790fbac07f1eeb040f39380050\",\"event\":\"inspection\",\"formalNoteWriteAttempted\":false,\"identityMatches\":true,\"pid\":35954,\"readSucceeded\":true,\"recordBaseline\":{\"byteCount\":39,\"sha256\":\"132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9\",\"state\":\"present\"},\"recordCount\":1,\"recordedBaselineMatchesExpected\":true,\"recordID\":\"162803AF-72A3-4DC3-80F1-30E19CCD44F3\",\"recordIdentity\":{\"birthNanoseconds\":149137171,\"birthSeconds\":1790507404,\"device\":16777234,\"inode\":9590941},\"recordRevision\":17,\"recordVersion\":1}\n",
+      "stderr": "",
+      "result": {
+        "baselineMatches": true,
+        "case": "unchanged",
+        "casePassed": true,
+        "currentIdentity": {
+          "birthNanoseconds": 149137171,
+          "birthSeconds": 1790507404,
+          "device": 16777234,
+          "inode": 9590941
+        },
+        "currentNote": {
+          "byteCount": 39,
+          "sha256": "132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9",
+          "state": "present"
+        },
+        "draftByteCount": 55,
+        "draftMatchesExpected": true,
+        "draftSHA256": "952a9ce37178e6d95d07396ac598a471093ba2790fbac07f1eeb040f39380050",
+        "event": "inspection",
+        "formalNoteWriteAttempted": false,
+        "identityMatches": true,
+        "pid": 35954,
+        "readSucceeded": true,
+        "recordBaseline": {
+          "byteCount": 39,
+          "sha256": "132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9",
+          "state": "present"
+        },
+        "recordCount": 1,
+        "recordedBaselineMatchesExpected": true,
+        "recordID": "162803AF-72A3-4DC3-80F1-30E19CCD44F3",
+        "recordIdentity": {
+          "birthNanoseconds": 149137171,
+          "birthSeconds": 1790507404,
+          "device": 16777234,
+          "inode": 9590941
+        },
+        "recordRevision": 17,
+        "recordVersion": 1
+      },
+      "targetBefore": {
+        "mediaSHA256": "3b8ed28cfaa0d322622b5025e73dc421f7be4dae719363edf6e671c99acb389f",
+        "device": 16777234,
+        "inode": 9590941,
+        "birthtime": 1790507404.1491373,
+        "mode": 420,
+        "xattrs": {
+          "com.apple.provenance": {
+            "byteCount": 11,
+            "sha256": "f638237853372dcaa9fa9863457d364b8ad0fda1f0ce7ab2ceffc5ae787e787b"
+          },
+          "com.findernotes.fn07.sentinel": {
+            "byteCount": 23,
+            "sha256": "cf6fb129ceb39d688352edba621a1db06526d7738c92292feb2fc09d4921666e"
+          },
+          "com.findernotes.note.v1": {
+            "byteCount": 39,
+            "sha256": "132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9"
+          }
+        },
+        "noteState": "present"
+      },
+      "targetAfter": {
+        "mediaSHA256": "3b8ed28cfaa0d322622b5025e73dc421f7be4dae719363edf6e671c99acb389f",
+        "device": 16777234,
+        "inode": 9590941,
+        "birthtime": 1790507404.1491373,
+        "mode": 420,
+        "xattrs": {
+          "com.apple.provenance": {
+            "byteCount": 11,
+            "sha256": "f638237853372dcaa9fa9863457d364b8ad0fda1f0ce7ab2ceffc5ae787e787b"
+          },
+          "com.findernotes.fn07.sentinel": {
+            "byteCount": 23,
+            "sha256": "cf6fb129ceb39d688352edba621a1db06526d7738c92292feb2fc09d4921666e"
+          },
+          "com.findernotes.note.v1": {
+            "byteCount": 39,
+            "sha256": "132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9"
+          }
+        },
+        "noteState": "present"
+      },
+      "targetUnchangedByInspection": true,
+      "recoveryFileUnchangedByInspection": true,
+      "recoveryFileSHA256": "90f6a110e2dcad50c8f837849f45ab27a97cdfcb33b758f2a5761af41d30c639"
+    },
+    {
+      "command": [
+        "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-process-ca9doblo/bin/fn07-crash-probe",
+        "inspect",
+        "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-process-ca9doblo",
+        "162803AF-72A3-4DC3-80F1-30E19CCD44F3",
+        "externalChanged"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"baselineMatches\":false,\"case\":\"externalChanged\",\"casePassed\":true,\"currentIdentity\":{\"birthNanoseconds\":149137171,\"birthSeconds\":1790507404,\"device\":16777234,\"inode\":9590941},\"currentNote\":{\"byteCount\":55,\"sha256\":\"f2b77719494106a69e215dfec22dfa2135bf21f9335c6ed66892a0e946898efd\",\"state\":\"present\"},\"draftByteCount\":55,\"draftMatchesExpected\":true,\"draftSHA256\":\"952a9ce37178e6d95d07396ac598a471093ba2790fbac07f1eeb040f39380050\",\"event\":\"inspection\",\"formalNoteWriteAttempted\":false,\"identityMatches\":true,\"pid\":35956,\"readSucceeded\":true,\"recordBaseline\":{\"byteCount\":39,\"sha256\":\"132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9\",\"state\":\"present\"},\"recordCount\":1,\"recordedBaselineMatchesExpected\":true,\"recordID\":\"162803AF-72A3-4DC3-80F1-30E19CCD44F3\",\"recordIdentity\":{\"birthNanoseconds\":149137171,\"birthSeconds\":1790507404,\"device\":16777234,\"inode\":9590941},\"recordRevision\":17,\"recordVersion\":1}\n",
+      "stderr": "",
+      "result": {
+        "baselineMatches": false,
+        "case": "externalChanged",
+        "casePassed": true,
+        "currentIdentity": {
+          "birthNanoseconds": 149137171,
+          "birthSeconds": 1790507404,
+          "device": 16777234,
+          "inode": 9590941
+        },
+        "currentNote": {
+          "byteCount": 55,
+          "sha256": "f2b77719494106a69e215dfec22dfa2135bf21f9335c6ed66892a0e946898efd",
+          "state": "present"
+        },
+        "draftByteCount": 55,
+        "draftMatchesExpected": true,
+        "draftSHA256": "952a9ce37178e6d95d07396ac598a471093ba2790fbac07f1eeb040f39380050",
+        "event": "inspection",
+        "formalNoteWriteAttempted": false,
+        "identityMatches": true,
+        "pid": 35956,
+        "readSucceeded": true,
+        "recordBaseline": {
+          "byteCount": 39,
+          "sha256": "132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9",
+          "state": "present"
+        },
+        "recordCount": 1,
+        "recordedBaselineMatchesExpected": true,
+        "recordID": "162803AF-72A3-4DC3-80F1-30E19CCD44F3",
+        "recordIdentity": {
+          "birthNanoseconds": 149137171,
+          "birthSeconds": 1790507404,
+          "device": 16777234,
+          "inode": 9590941
+        },
+        "recordRevision": 17,
+        "recordVersion": 1
+      },
+      "targetBefore": {
+        "mediaSHA256": "3b8ed28cfaa0d322622b5025e73dc421f7be4dae719363edf6e671c99acb389f",
+        "device": 16777234,
+        "inode": 9590941,
+        "birthtime": 1790507404.1491373,
+        "mode": 420,
+        "xattrs": {
+          "com.apple.provenance": {
+            "byteCount": 11,
+            "sha256": "f638237853372dcaa9fa9863457d364b8ad0fda1f0ce7ab2ceffc5ae787e787b"
+          },
+          "com.findernotes.fn07.sentinel": {
+            "byteCount": 23,
+            "sha256": "cf6fb129ceb39d688352edba621a1db06526d7738c92292feb2fc09d4921666e"
+          },
+          "com.findernotes.note.v1": {
+            "byteCount": 55,
+            "sha256": "f2b77719494106a69e215dfec22dfa2135bf21f9335c6ed66892a0e946898efd"
+          }
+        },
+        "noteState": "present"
+      },
+      "targetAfter": {
+        "mediaSHA256": "3b8ed28cfaa0d322622b5025e73dc421f7be4dae719363edf6e671c99acb389f",
+        "device": 16777234,
+        "inode": 9590941,
+        "birthtime": 1790507404.1491373,
+        "mode": 420,
+        "xattrs": {
+          "com.apple.provenance": {
+            "byteCount": 11,
+            "sha256": "f638237853372dcaa9fa9863457d364b8ad0fda1f0ce7ab2ceffc5ae787e787b"
+          },
+          "com.findernotes.fn07.sentinel": {
+            "byteCount": 23,
+            "sha256": "cf6fb129ceb39d688352edba621a1db06526d7738c92292feb2fc09d4921666e"
+          },
+          "com.findernotes.note.v1": {
+            "byteCount": 55,
+            "sha256": "f2b77719494106a69e215dfec22dfa2135bf21f9335c6ed66892a0e946898efd"
+          }
+        },
+        "noteState": "present"
+      },
+      "targetUnchangedByInspection": true,
+      "recoveryFileUnchangedByInspection": true,
+      "recoveryFileSHA256": "90f6a110e2dcad50c8f837849f45ab27a97cdfcb33b758f2a5761af41d30c639"
+    },
+    {
+      "command": [
+        "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-process-ca9doblo/bin/fn07-crash-probe",
+        "inspect",
+        "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-process-ca9doblo",
+        "162803AF-72A3-4DC3-80F1-30E19CCD44F3",
+        "replaced"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"baselineMatches\":true,\"case\":\"replaced\",\"casePassed\":true,\"currentIdentity\":{\"birthNanoseconds\":904569142,\"birthSeconds\":1790507404,\"device\":16777234,\"inode\":9590951},\"currentNote\":{\"byteCount\":39,\"sha256\":\"132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9\",\"state\":\"present\"},\"draftByteCount\":55,\"draftMatchesExpected\":true,\"draftSHA256\":\"952a9ce37178e6d95d07396ac598a471093ba2790fbac07f1eeb040f39380050\",\"event\":\"inspection\",\"formalNoteWriteAttempted\":false,\"identityMatches\":false,\"pid\":35959,\"readSucceeded\":true,\"recordBaseline\":{\"byteCount\":39,\"sha256\":\"132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9\",\"state\":\"present\"},\"recordCount\":1,\"recordedBaselineMatchesExpected\":true,\"recordID\":\"162803AF-72A3-4DC3-80F1-30E19CCD44F3\",\"recordIdentity\":{\"birthNanoseconds\":149137171,\"birthSeconds\":1790507404,\"device\":16777234,\"inode\":9590941},\"recordRevision\":17,\"recordVersion\":1}\n",
+      "stderr": "",
+      "result": {
+        "baselineMatches": true,
+        "case": "replaced",
+        "casePassed": true,
+        "currentIdentity": {
+          "birthNanoseconds": 904569142,
+          "birthSeconds": 1790507404,
+          "device": 16777234,
+          "inode": 9590951
+        },
+        "currentNote": {
+          "byteCount": 39,
+          "sha256": "132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9",
+          "state": "present"
+        },
+        "draftByteCount": 55,
+        "draftMatchesExpected": true,
+        "draftSHA256": "952a9ce37178e6d95d07396ac598a471093ba2790fbac07f1eeb040f39380050",
+        "event": "inspection",
+        "formalNoteWriteAttempted": false,
+        "identityMatches": false,
+        "pid": 35959,
+        "readSucceeded": true,
+        "recordBaseline": {
+          "byteCount": 39,
+          "sha256": "132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9",
+          "state": "present"
+        },
+        "recordCount": 1,
+        "recordedBaselineMatchesExpected": true,
+        "recordID": "162803AF-72A3-4DC3-80F1-30E19CCD44F3",
+        "recordIdentity": {
+          "birthNanoseconds": 149137171,
+          "birthSeconds": 1790507404,
+          "device": 16777234,
+          "inode": 9590941
+        },
+        "recordRevision": 17,
+        "recordVersion": 1
+      },
+      "targetBefore": {
+        "mediaSHA256": "3b8ed28cfaa0d322622b5025e73dc421f7be4dae719363edf6e671c99acb389f",
+        "device": 16777234,
+        "inode": 9590951,
+        "birthtime": 1790507404.9045691,
+        "mode": 420,
+        "xattrs": {
+          "com.apple.provenance": {
+            "byteCount": 11,
+            "sha256": "f638237853372dcaa9fa9863457d364b8ad0fda1f0ce7ab2ceffc5ae787e787b"
+          },
+          "com.findernotes.fn07.sentinel": {
+            "byteCount": 23,
+            "sha256": "cf6fb129ceb39d688352edba621a1db06526d7738c92292feb2fc09d4921666e"
+          },
+          "com.findernotes.note.v1": {
+            "byteCount": 39,
+            "sha256": "132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9"
+          }
+        },
+        "noteState": "present"
+      },
+      "targetAfter": {
+        "mediaSHA256": "3b8ed28cfaa0d322622b5025e73dc421f7be4dae719363edf6e671c99acb389f",
+        "device": 16777234,
+        "inode": 9590951,
+        "birthtime": 1790507404.9045691,
+        "mode": 420,
+        "xattrs": {
+          "com.apple.provenance": {
+            "byteCount": 11,
+            "sha256": "f638237853372dcaa9fa9863457d364b8ad0fda1f0ce7ab2ceffc5ae787e787b"
+          },
+          "com.findernotes.fn07.sentinel": {
+            "byteCount": 23,
+            "sha256": "cf6fb129ceb39d688352edba621a1db06526d7738c92292feb2fc09d4921666e"
+          },
+          "com.findernotes.note.v1": {
+            "byteCount": 39,
+            "sha256": "132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9"
+          }
+        },
+        "noteState": "present"
+      },
+      "targetUnchangedByInspection": true,
+      "recoveryFileUnchangedByInspection": true,
+      "recoveryFileSHA256": "90f6a110e2dcad50c8f837849f45ab27a97cdfcb33b758f2a5761af41d30c639"
+    }
+  ],
+  "sources": [
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/FinderNotes/NoteReader.swift",
+      "sha256": "515178eb365b4d218ef3e064522b9b6efb1efb817819f1c570e036205e09ea40"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/FinderNotes/DraftRecoveryStore.swift",
+      "sha256": "7253eeb051bfb449752eeda7ea6953670c202f59f93c416980e7fe034e09fc88"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/validation/fn07/crash_probe.swift",
+      "sha256": "9f5ea5feb570b0cb4f2d06a0bb08e0e35b11998b6d23651645847c37c24c49b2"
+    }
+  ],
+  "compilerVersion": {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "--version"
+    ],
+    "exitCode": 0,
+    "stdout": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx26.0\n",
+    "stderr": "swift-driver version: 1.168.6 "
+  },
+  "compile": {
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-O",
+      "-whole-module-optimization",
+      "-parse-as-library",
+      "-swift-version",
+      "6",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk",
+      "-module-cache-path",
+      "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-process-ca9doblo/module-cache",
+      "/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/FinderNotes/NoteReader.swift",
+      "/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/FinderNotes/DraftRecoveryStore.swift",
+      "/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/validation/fn07/crash_probe.swift",
+      "-o",
+      "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-process-ca9doblo/bin/fn07-crash-probe"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "releaseSemantics": {
+    "optimization": "-O",
+    "DEBUGDefined": false,
+    "productionSourcesUnmodifiedByProbe": true
+  },
+  "beforeSeed": {
+    "mediaSHA256": "3b8ed28cfaa0d322622b5025e73dc421f7be4dae719363edf6e671c99acb389f",
+    "device": 16777234,
+    "inode": 9590941,
+    "birthtime": 1790507404.1491373,
+    "mode": 420,
+    "xattrs": {
+      "com.apple.provenance": {
+        "byteCount": 11,
+        "sha256": "f638237853372dcaa9fa9863457d364b8ad0fda1f0ce7ab2ceffc5ae787e787b"
+      },
+      "com.findernotes.fn07.sentinel": {
+        "byteCount": 23,
+        "sha256": "cf6fb129ceb39d688352edba621a1db06526d7738c92292feb2fc09d4921666e"
+      },
+      "com.findernotes.note.v1": {
+        "byteCount": 39,
+        "sha256": "132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9"
+      }
+    },
+    "noteState": "present"
+  },
+  "seed": {
+    "command": [
+      "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-process-ca9doblo/bin/fn07-crash-probe",
+      "seed",
+      "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-process-ca9doblo",
+      "162803AF-72A3-4DC3-80F1-30E19CCD44F3"
+    ],
+    "pid": 35945,
+    "readyStdout": "{\"baseline\":{\"byteCount\":39,\"sha256\":\"132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9\",\"state\":\"present\"},\"draftByteCount\":55,\"draftSHA256\":\"952a9ce37178e6d95d07396ac598a471093ba2790fbac07f1eeb040f39380050\",\"event\":\"ready\",\"identity\":{\"birthNanoseconds\":149137171,\"birthSeconds\":1790507404,\"device\":16777234,\"inode\":9590941},\"pid\":35945,\"putReturned\":true,\"recordID\":\"162803AF-72A3-4DC3-80F1-30E19CCD44F3\"}\n",
+    "ready": {
+      "baseline": {
+        "byteCount": 39,
+        "sha256": "132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9",
+        "state": "present"
+      },
+      "draftByteCount": 55,
+      "draftSHA256": "952a9ce37178e6d95d07396ac598a471093ba2790fbac07f1eeb040f39380050",
+      "event": "ready",
+      "identity": {
+        "birthNanoseconds": 149137171,
+        "birthSeconds": 1790507404,
+        "device": 16777234,
+        "inode": 9590941
+      },
+      "pid": 35945,
+      "putReturned": true,
+      "recordID": "162803AF-72A3-4DC3-80F1-30E19CCD44F3"
+    },
+    "publishedRecordByteCount": 508,
+    "publishedRecordSHA256": "90f6a110e2dcad50c8f837849f45ab27a97cdfcb33b758f2a5761af41d30c639",
+    "requestedSignal": "SIGKILL",
+    "signalNumber": 9,
+    "exitCode": -9,
+    "terminatedBySIGKILL": true,
+    "remainingStdout": "",
+    "stderr": ""
+  },
+  "afterKill": {
+    "mediaSHA256": "3b8ed28cfaa0d322622b5025e73dc421f7be4dae719363edf6e671c99acb389f",
+    "device": 16777234,
+    "inode": 9590941,
+    "birthtime": 1790507404.1491373,
+    "mode": 420,
+    "xattrs": {
+      "com.apple.provenance": {
+        "byteCount": 11,
+        "sha256": "f638237853372dcaa9fa9863457d364b8ad0fda1f0ce7ab2ceffc5ae787e787b"
+      },
+      "com.findernotes.fn07.sentinel": {
+        "byteCount": 23,
+        "sha256": "cf6fb129ceb39d688352edba621a1db06526d7738c92292feb2fc09d4921666e"
+      },
+      "com.findernotes.note.v1": {
+        "byteCount": 39,
+        "sha256": "132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9"
+      }
+    },
+    "noteState": "present"
+  },
+  "externalMutation": {
+    "operation": "replace owned note xattr with known synthetic external bytes",
+    "after": {
+      "mediaSHA256": "3b8ed28cfaa0d322622b5025e73dc421f7be4dae719363edf6e671c99acb389f",
+      "device": 16777234,
+      "inode": 9590941,
+      "birthtime": 1790507404.1491373,
+      "mode": 420,
+      "xattrs": {
+        "com.apple.provenance": {
+          "byteCount": 11,
+          "sha256": "f638237853372dcaa9fa9863457d364b8ad0fda1f0ce7ab2ceffc5ae787e787b"
+        },
+        "com.findernotes.fn07.sentinel": {
+          "byteCount": 23,
+          "sha256": "cf6fb129ceb39d688352edba621a1db06526d7738c92292feb2fc09d4921666e"
+        },
+        "com.findernotes.note.v1": {
+          "byteCount": 55,
+          "sha256": "f2b77719494106a69e215dfec22dfa2135bf21f9335c6ed66892a0e946898efd"
+        }
+      },
+      "noteState": "present"
+    }
+  },
+  "replacementMutation": {
+    "operation": "retain original and create same-path copy of original media/baseline",
+    "archivedOriginal": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-process-ca9doblo/archive/original-before-replacement.png",
+    "archive": {
+      "mediaSHA256": "3b8ed28cfaa0d322622b5025e73dc421f7be4dae719363edf6e671c99acb389f",
+      "device": 16777234,
+      "inode": 9590941,
+      "birthtime": 1790507404.1491373,
+      "mode": 420,
+      "xattrs": {
+        "com.apple.provenance": {
+          "byteCount": 11,
+          "sha256": "f638237853372dcaa9fa9863457d364b8ad0fda1f0ce7ab2ceffc5ae787e787b"
+        },
+        "com.findernotes.fn07.sentinel": {
+          "byteCount": 23,
+          "sha256": "cf6fb129ceb39d688352edba621a1db06526d7738c92292feb2fc09d4921666e"
+        },
+        "com.findernotes.note.v1": {
+          "byteCount": 55,
+          "sha256": "f2b77719494106a69e215dfec22dfa2135bf21f9335c6ed66892a0e946898efd"
+        }
+      },
+      "noteState": "present"
+    },
+    "replacement": {
+      "mediaSHA256": "3b8ed28cfaa0d322622b5025e73dc421f7be4dae719363edf6e671c99acb389f",
+      "device": 16777234,
+      "inode": 9590951,
+      "birthtime": 1790507404.9045691,
+      "mode": 420,
+      "xattrs": {
+        "com.apple.provenance": {
+          "byteCount": 11,
+          "sha256": "f638237853372dcaa9fa9863457d364b8ad0fda1f0ce7ab2ceffc5ae787e787b"
+        },
+        "com.findernotes.fn07.sentinel": {
+          "byteCount": 23,
+          "sha256": "cf6fb129ceb39d688352edba621a1db06526d7738c92292feb2fc09d4921666e"
+        },
+        "com.findernotes.note.v1": {
+          "byteCount": 39,
+          "sha256": "132067b66d548ebd2e31f136a3ba73a2611b4936557f166ae45adfe513b073e9"
+        }
+      },
+      "noteState": "present"
+    }
+  },
+  "finishedAt": "2026-09-27T11:10:04.919995+00:00",
+  "resourcesRetained": true
+}

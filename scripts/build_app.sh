@@ -31,6 +31,13 @@ case "$profile" in
       profile_settings=(FINDERNOTES_APP_SUFFIX=.FN06Tests FINDERNOTES_INFO_SUFFIX=-FN06Tests FINDERNOTES_TEST_SUFFIX=.FN06Tests)
     fi
     ;;
+  fn07)
+    if [[ "$configuration" == Release ]]; then
+      profile_settings=(FINDERNOTES_APP_SUFFIX=.FN07Validation FINDERNOTES_INFO_SUFFIX=-FN07Validation FINDERNOTES_TEST_SUFFIX=.FN07Tests)
+    else
+      profile_settings=(FINDERNOTES_APP_SUFFIX=.FN07Tests FINDERNOTES_INFO_SUFFIX=-FN07Tests FINDERNOTES_TEST_SUFFIX=.FN07Tests)
+    fi
+    ;;
   m1fix)
     if [[ "$configuration" == Release ]]; then
       profile_settings=(FINDERNOTES_APP_SUFFIX=.M1FixValidation FINDERNOTES_INFO_SUFFIX=-M1FixValidation FINDERNOTES_TEST_SUFFIX=.M1FixTests)
@@ -38,7 +45,7 @@ case "$profile" in
       profile_settings=(FINDERNOTES_APP_SUFFIX=.M1FixTests FINDERNOTES_INFO_SUFFIX=-M1FixTests FINDERNOTES_TEST_SUFFIX=.M1FixTests)
     fi
     ;;
-  *) print -u2 'FINDERNOTES_BUILD_PROFILE must be standard, fn05, fn06, or m1fix.'; exit 2 ;;
+  *) print -u2 'FINDERNOTES_BUILD_PROFILE must be standard, fn05, fn06, fn07, or m1fix.'; exit 2 ;;
 esac
 project_root="${0:A:h:h}"
 derived_data="$project_root/.build/DerivedData"
@@ -50,13 +57,15 @@ xcodebuild -project "$project_root/FinderNotes.xcodeproj" \
 
 app_path="$derived_data/Build/Products/$configuration/FinderNotes.app"
 codesign --verify --deep --strict "$app_path"
-if [[ "$profile" == fn05 || "$profile" == fn06 || "$profile" == m1fix ]]; then
+if [[ "$profile" == fn05 || "$profile" == fn06 || "$profile" == fn07 || "$profile" == m1fix ]]; then
   actual_id="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$app_path/Contents/Info.plist")"
   if [[ "$configuration" == Debug ]]; then
     if [[ "$profile" == fn05 ]]; then
       expected_id=com.findernotes.FinderNotes.FN05Tests
     elif [[ "$profile" == fn06 ]]; then
       expected_id=com.findernotes.FinderNotes.FN06Tests
+    elif [[ "$profile" == fn07 ]]; then
+      expected_id=com.findernotes.FinderNotes.FN07Tests
     else
       expected_id=com.findernotes.FinderNotes.M1FixTests
     fi
@@ -64,6 +73,8 @@ if [[ "$profile" == fn05 || "$profile" == fn06 || "$profile" == m1fix ]]; then
     expected_id=com.findernotes.FinderNotes.FN05Validation
   elif [[ "$profile" == fn06 ]]; then
     expected_id=com.findernotes.FinderNotes.FN06Validation
+  elif [[ "$profile" == fn07 ]]; then
+    expected_id=com.findernotes.FinderNotes.FN07Validation
   else
     expected_id=com.findernotes.FinderNotes.M1FixValidation
   fi

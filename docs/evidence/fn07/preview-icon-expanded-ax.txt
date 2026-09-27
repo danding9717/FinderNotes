@@ -1,0 +1,15 @@
+The following is a diff from the previous accessibility tree for Window: "portrait.png — FinderNotes" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+~0 标准窗口 portrait.png — FinderNotes, Secondary Actions: Raise, URL: file:///private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-6yh80imx/work/portrait.png
+~	24 滚动区 Description: “portrait.png”的预览, ID: Image Preview: portrait.png
+~		5 文本输入区 (settable) Description: 笔记正文, ID: fn-note-editor, Value: FN07 原有笔记 portrait.png
+中文🙂
+
+~	7 按钮 保存, ID: fn-save
+~	8 按钮 复制, Help: 复制完整草稿
+~	9 按钮 导出, Help: 导出 Markdown 快照, ID: fn-export-markdown
+~	10 菜单按钮 高级选项, ID: fn-advanced-options
+~	11 text ID: fn-status, Value: 笔记已加载 /private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-6yh80imx/work/portrait.png
++	25 图像 portrait.png
+~	23 文本 portrait.png — FinderNotes
+The focused UI element is 5 文本输入区 (settable) Description: 笔记正文, ID: fn-note-editor, Value: FN07 原有笔记 portrait.png
+中文🙂

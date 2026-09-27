@@ -1,0 +1,22 @@
+The following is a diff from the previous accessibility tree for Window: "readonly.png — FinderNotes" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 23-31
+~21 标准窗口 readonly.png — FinderNotes, Secondary Actions: Raise, URL: file:///private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-f3mu6lvu/work/readonly.png
+~	22 滚动区 Description: “readonly.png”的预览, ID: Image Preview: readonly.png
++	23 滚动区 Secondary Actions: Scroll Up, Scroll Down
++		24 文本输入区 (settable) Description: 笔记正文, ID: fn-note-editor, Value: FN07 高级选项恢复验证
+合成草稿🙂
+
++		25 滚动条 (disabled, settable, float) 0
++	26 按钮 保存, ID: fn-save
++	27 按钮 复制草稿
++	28 按钮 导出 Markdown…, ID: fn-export-markdown
++	29 按钮 收起预览, ID: fn-toggle-preview
++	30 菜单按钮 高级选项, ID: fn-advanced-options
++	31 text ID: fn-status, Value: 保存失败：写入失败（打开文件，13：Permission denied）；当前草稿仍在编辑器中。 · 自动保存已暂停 · 草稿仍保留，可复制或导出 /private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-f3mu6lvu/work/readonly.png
++	32 关闭按钮
++	33 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
++	34 最小化按钮
++	35 图像 readonly.png
++	36 文本 readonly.png — FinderNotes
+The focused UI element is 24 文本输入区 (settable) Description: 笔记正文, ID: fn-note-editor, Value: FN07 高级选项恢复验证
+合成草稿🙂

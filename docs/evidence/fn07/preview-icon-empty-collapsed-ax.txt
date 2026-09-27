@@ -1,0 +1,5 @@
+The following is a diff from the previous accessibility tree for Window: "FinderNotes" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 2-3, 15
+~	1 按钮 Description: 展开预览, ID: fn-toggle-preview
++	21 文本 FinderNotes
+The focused UI element is 0 标准窗口 FinderNotes, Secondary Actions: Raise
