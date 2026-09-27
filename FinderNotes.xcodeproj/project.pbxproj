@@ -14,34 +14,11 @@
 		B00000000000000000000005 /* NoteReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000005 /* NoteReader.swift */; };
 		B00000000000000000000006 /* NoteWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000007 /* NoteWriter.swift */; };
 		B00000000000000000000007 /* MarkdownExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000008 /* MarkdownExporter.swift */; };
-		B00000000000000000000011 /* NoteReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000011 /* NoteReaderTests.swift */; };
-		B00000000000000000000012 /* EditorSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000012 /* EditorSessionTests.swift */; };
-		B00000000000000000000013 /* EditorWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000013 /* EditorWindowTests.swift */; };
-		B00000000000000000000014 /* NoteWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000014 /* NoteWriterTests.swift */; };
-		B00000000000000000000015 /* MarkdownExporterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000015 /* MarkdownExporterTests.swift */; };
 		B00000000000000000000031 /* EditorAutosaveScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000031 /* EditorAutosaveScheduler.swift */; };
 		B00000000000000000000032 /* CompositionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000032 /* CompositionTextView.swift */; };
 		B00000000000000000000033 /* MediaPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000033 /* MediaPreviewController.swift */; };
-		B00000000000000000000041 /* EditorAutosaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000041 /* EditorAutosaveTests.swift */; };
-		B00000000000000000000042 /* MediaPreviewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000042 /* MediaPreviewControllerTests.swift */; };
-		B00000000000000000000043 /* PreviewWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000043 /* PreviewWindowTests.swift */; };
-		B00000000000000000000044 /* AutosaveFileIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000044 /* AutosaveFileIntegrationTests.swift */; };
 		B00000000000000000000051 /* DraftRecoveryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000051 /* DraftRecoveryStore.swift */; };
-		B00000000000000000000052 /* DraftRecoveryStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000052 /* DraftRecoveryStoreTests.swift */; };
-		B00000000000000000000053 /* EditorRecoverySessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000053 /* EditorRecoverySessionTests.swift */; };
-		B00000000000000000000054 /* EditorRecoveryWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000054 /* EditorRecoveryWindowTests.swift */; };
-		B00000000000000000000055 /* RecoveryFileIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000055 /* RecoveryFileIntegrationTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D00000000000000000000001 = {
-			isa = PBXContainerItemProxy;
-			containerPortal = P00000000000000000000001 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A00000000000000000000001;
-			remoteInfo = FinderNotes;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F00000000000000000000061 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,36 +30,21 @@
 		F00000000000000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F00000000000000000000007 /* NoteWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteWriter.swift; sourceTree = "<group>"; };
 		F00000000000000000000008 /* MarkdownExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownExporter.swift; sourceTree = "<group>"; };
-		F00000000000000000000011 /* NoteReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteReaderTests.swift; sourceTree = "<group>"; };
-		F00000000000000000000012 /* EditorSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorSessionTests.swift; sourceTree = "<group>"; };
-		F00000000000000000000013 /* EditorWindowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorWindowTests.swift; sourceTree = "<group>"; };
-		F00000000000000000000014 /* NoteWriterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteWriterTests.swift; sourceTree = "<group>"; };
-		F00000000000000000000015 /* MarkdownExporterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownExporterTests.swift; sourceTree = "<group>"; };
 		F00000000000000000000021 /* FinderNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinderNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F00000000000000000000022 /* FinderNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinderNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F00000000000000000000031 /* EditorAutosaveScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorAutosaveScheduler.swift; sourceTree = "<group>"; };
 		F00000000000000000000032 /* CompositionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionTextView.swift; sourceTree = "<group>"; };
 		F00000000000000000000033 /* MediaPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewController.swift; sourceTree = "<group>"; };
-		F00000000000000000000041 /* EditorAutosaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorAutosaveTests.swift; sourceTree = "<group>"; };
-		F00000000000000000000042 /* MediaPreviewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewControllerTests.swift; sourceTree = "<group>"; };
-		F00000000000000000000043 /* PreviewWindowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewWindowTests.swift; sourceTree = "<group>"; };
-		F00000000000000000000044 /* AutosaveFileIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutosaveFileIntegrationTests.swift; sourceTree = "<group>"; };
 		F00000000000000000000051 /* DraftRecoveryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftRecoveryStore.swift; sourceTree = "<group>"; };
-		F00000000000000000000052 /* DraftRecoveryStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftRecoveryStoreTests.swift; sourceTree = "<group>"; };
-		F00000000000000000000053 /* EditorRecoverySessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorRecoverySessionTests.swift; sourceTree = "<group>"; };
-		F00000000000000000000054 /* EditorRecoveryWindowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorRecoveryWindowTests.swift; sourceTree = "<group>"; };
-		F00000000000000000000055 /* RecoveryFileIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryFileIntegrationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		H00000000000000000000001 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
-		H00000000000000000000002 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		G00000000000000000000001 = {
 			isa = PBXGroup;
-			children = (G00000000000000000000002 /* FinderNotes */, G00000000000000000000003 /* FinderNotesTests */, G00000000000000000000004 /* Products */);
+			children = (G00000000000000000000002 /* FinderNotes */, G00000000000000000000004 /* Products */);
 			sourceTree = "<group>";
 		};
 		G00000000000000000000002 /* FinderNotes */ = {
@@ -91,15 +53,9 @@
 			path = FinderNotes;
 			sourceTree = "<group>";
 		};
-		G00000000000000000000003 /* FinderNotesTests */ = {
-			isa = PBXGroup;
-			children = (F00000000000000000000011, F00000000000000000000012, F00000000000000000000013, F00000000000000000000014, F00000000000000000000015, F00000000000000000000041, F00000000000000000000042, F00000000000000000000043, F00000000000000000000044, F00000000000000000000052, F00000000000000000000053, F00000000000000000000054, F00000000000000000000055);
-			path = FinderNotesTests;
-			sourceTree = "<group>";
-		};
 		G00000000000000000000004 /* Products */ = {
 			isa = PBXGroup;
-			children = (F00000000000000000000021, F00000000000000000000022);
+			children = (F00000000000000000000021);
 			name = Products;
 			sourceTree = "<group>";
 		};
@@ -117,17 +73,6 @@
 			productReference = F00000000000000000000021;
 			productType = "com.apple.product-type.application";
 		};
-		A00000000000000000000002 /* FinderNotesTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C00000000000000000000003;
-			buildPhases = (S00000000000000000000002, H00000000000000000000002, R00000000000000000000002);
-			buildRules = ();
-			dependencies = (D00000000000000000000002);
-			name = FinderNotesTests;
-			productName = FinderNotesTests;
-			productReference = F00000000000000000000022;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -139,7 +84,6 @@
 				LastUpgradeCheck = 2700;
 				TargetAttributes = {
 					A00000000000000000000001 = {CreatedOnToolsVersion = 27.0; };
-					A00000000000000000000002 = {CreatedOnToolsVersion = 27.0; TestTargetID = A00000000000000000000001; };
 				};
 			};
 			buildConfigurationList = C00000000000000000000001;
@@ -151,13 +95,12 @@
 			productRefGroup = G00000000000000000000004;
 			projectDirPath = "";
 			projectRoot = "";
-			targets = (A00000000000000000000001, A00000000000000000000002);
+			targets = (A00000000000000000000001);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		R00000000000000000000001 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (B00000000000000000000061); runOnlyForDeploymentPostprocessing = 0; };
-		R00000000000000000000002 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -167,17 +110,7 @@
 			files = (B00000000000000000000001, B00000000000000000000002, B00000000000000000000003, B00000000000000000000004, B00000000000000000000005, B00000000000000000000006, B00000000000000000000007, B00000000000000000000031, B00000000000000000000032, B00000000000000000000033, B00000000000000000000051);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		S00000000000000000000002 = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (B00000000000000000000011, B00000000000000000000012, B00000000000000000000013, B00000000000000000000014, B00000000000000000000015, B00000000000000000000041, B00000000000000000000042, B00000000000000000000043, B00000000000000000000044, B00000000000000000000052, B00000000000000000000053, B00000000000000000000054, B00000000000000000000055);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D00000000000000000000002 = {isa = PBXTargetDependency; target = A00000000000000000000001; targetProxy = D00000000000000000000001; };
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C00000000000000000000011 /* Debug */ = {
@@ -188,7 +121,6 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
@@ -254,42 +186,11 @@
 			};
 			name = Release;
 		};
-		C00000000000000000000031 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks", "@loader_path/../Frameworks");
-				PRODUCT_BUNDLE_IDENTIFIER = "com.findernotes.FinderNotesTests$(FINDERNOTES_TEST_SUFFIX)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinderNotes.app/Contents/MacOS/FinderNotes";
-			};
-			name = Debug;
-		};
-		C00000000000000000000032 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks", "@loader_path/../Frameworks");
-				PRODUCT_BUNDLE_IDENTIFIER = "com.findernotes.FinderNotesTests$(FINDERNOTES_TEST_SUFFIX)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinderNotes.app/Contents/MacOS/FinderNotes";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		C00000000000000000000001 = {isa = XCConfigurationList; buildConfigurations = (C00000000000000000000011, C00000000000000000000012); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
 		C00000000000000000000002 = {isa = XCConfigurationList; buildConfigurations = (C00000000000000000000021, C00000000000000000000022); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
-		C00000000000000000000003 = {isa = XCConfigurationList; buildConfigurations = (C00000000000000000000031, C00000000000000000000032); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
 /* End XCConfigurationList section */
 	};
 	rootObject = P00000000000000000000001 /* Project object */;

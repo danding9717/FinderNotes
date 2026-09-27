@@ -40,19 +40,7 @@ enum NoteWriteError: Error, LocalizedError, Equatable {
 
 /// Writes only FinderNotes' own xattr. A successful result is a new baseline, not an editor update.
 struct NoteWriter: Sendable {
-    #if DEBUG
-    /// Test hooks exercise races on either side of the write; release builds have no hooks.
-    private let beforeFinalValidation: (@Sendable () throws -> Void)?
-    private let beforeReadback: (@Sendable () throws -> Void)?
-
-    init(beforeFinalValidation: (@Sendable () throws -> Void)? = nil,
-         beforeReadback: (@Sendable () throws -> Void)? = nil) {
-        self.beforeFinalValidation = beforeFinalValidation
-        self.beforeReadback = beforeReadback
-    }
-    #else
     init() {}
-    #endif
 
     func save(_ request: NoteSaveRequest) throws -> NoteSnapshot {
         let desired: Data
@@ -89,9 +77,6 @@ struct NoteWriter: Sendable {
         try validateTarget(fd: fd, path: path, expected: request.baseline.identity)
         try validateBaseline(fd: fd, expected: request.baseline.content)
 
-        #if DEBUG
-        try beforeFinalValidation?()
-        #endif
         // This check is as close to fsetxattr as the API permits. It is not a bytewise CAS:
         // another process may change existing bytes between this check and the write.
         try validateTarget(fd: fd, path: path, expected: request.baseline.identity)
@@ -118,9 +103,6 @@ struct NoteWriter: Sendable {
 
         // From this point a failed check cannot assert that the old bytes survived.
         do {
-            #if DEBUG
-            try beforeReadback?()
-            #endif
             guard try NoteReader.attribute(fd, name: NoteReader.attributeName) == desired else {
                 throw NoteWriteError.resultUnconfirmed
             }

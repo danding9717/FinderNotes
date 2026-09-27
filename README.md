@@ -1,133 +1,46 @@
 # FinderNotes
 
-## v0.1 个人本地试用（FN-08）
+FinderNotes 为 Finder 中的单份图片或视频提供原生笔记编辑入口，文件仍由 Finder 管理。正式笔记只写自有 xattr `com.findernotes.note.v1` 的原始 UTF-8 正文；不与 Finder 原生注释同步，不自动迁移旧注释。
 
-[安装、使用、恢复与卸载手册](docs/LOCAL_TRIAL.md) · [新合成样本与 Dan 验收清单](validation/fn08/README.md) · [本轮原始证据](docs/evidence/fn08/)。当前名称更新使用 `local-trial` 构建 profile、身份 `com.findernotes.FinderNotes.LocalTrial`、版本 `0.1.0 (11)`，安装到 `~/Applications/FinderNotes.app`，已有同名应用时拒绝覆盖。原 build 8／9／10 应用保留；这些副本共用 LocalTrial 身份、服务端口和恢复目录；新版服务显示名为“用 FinderNotes 编辑笔记”，旧版标签保留，不迁移或清理草稿，不并行运行这些副本。既有 140 项测试及 Finder/UI 结果属于 build 8，名称更新不把这些结果记为 build 11 重跑。这是个人本机试用，实际支持范围和结果以对应构建的证据与 Dan 判断为准，不是公开发布或 M2／项目整体验收。
+## v0.1 本地交付
 
-FinderNotes 为 Finder 中的单份图片或视频提供原生笔记编辑入口，文件仍由 Finder 管理。FN-07 在现有预览、手动／自动保存和 Markdown 导出基础上加入冲突处理与最小草稿恢复。正式笔记只写自有 xattr `com.findernotes.note.v1` 的原始 UTF-8 正文；不与 Finder 原生注释同步，不自动迁移旧注释。M0 探针与历史证据独立保留。
+当前使用版为 `0.1.0 (11)`，身份 `com.findernotes.FinderNotes.LocalTrial`，安装位置 `~/Applications/FinderNotes.app`，Finder 服务为“用 FinderNotes 编辑笔记”。[安装、使用、恢复与卸载手册](docs/LOCAL_TRIAL.md)说明当前功能、构建方式和限制。
 
-## 项目入口
+Dan 于 2026-09-27 明确确认 FinderNotes v0.1、M2 和项目整体交付通过。整体验收不改变已有失败、未验证项或 FN08-I07／FN08-I08 的结论；项目状态与清理结果以 [Notion 项目首页](https://app.notion.com/p/3e4e7607d6498038adeee4c1069f2bb9)当前记录为准。本次交付仍为个人本机使用，未公开发布。
+
+交付后的本地清理移除测试代码、测试 target/profile、合成样本和本地历史验收证据。Git 历史与 Notion 记录保留；清理不代表历史问题已修复，也不构成当前构建的新一轮功能验收。
+
+## 构建当前版本
+
+需要与当前 macOS 兼容的完整 Xcode；工具链配置可用 `./scripts/verify_toolchain.sh` 查看。如 Xcode 位于其他位置，为当前命令设置 `FINDERNOTES_DEVELOPER_DIR`，不切换系统全局开发目录。
+
+```sh
+FINDERNOTES_DERIVED_DATA="$PWD/.build/DerivedData-build11" \
+  FINDERNOTES_BUILD_PROFILE=local-trial ./scripts/build_app.sh
+```
+
+`local-trial` 只接受 Release；脚本检查签名、bundle ID、版本、名称及服务配置，输出 `.build/DerivedData-build11/Build/Products/Release/FinderNotes.app`。构建不安装或覆盖当前应用。保留的 `standard` profile 使用工程基础身份，与当前安装件不同；重建当前使用版请明确使用 `local-trial`。
+
+应用图标的正式资源位于 `FinderNotes/Assets.xcassets`；`scripts/prepare_app_icon.sh` 从 `design/app-icon/FinderNotes-fullbleed.png` 重建图标尺寸。保留的旧设计源与说明见 [图标设计记录](design/app-icon/README.md)。安装脚本 `scripts/install_local_trial.py` 拒绝覆盖任何已存在的目标，使用与卸载步骤见手册。
+
+## 功能与数据边界
+
+- 单份本地图片／视频的原生编辑、预览、手动保存和空闲自动保存；视频不自动播放，预览不可用时仍可编辑。
+- Markdown 导出是独立快照，不覆盖已有目标，不与 xattr 双向同步；复制与导出保留编辑会话和恢复草稿。
+- 保存只有在身份与完整正文回读确认后才显示成功。权限、身份或冲突失败会暂停自动保存；最后核对与写入之间仍不是原子 CAS。
+- 关闭、切换、退出遇到未保存内容或错误时默认继续编辑；明确丢弃才离开。高级选项提供外部版本核对与已落盘草稿恢复。
+- 恢复数据位于 `~/Library/Application Support/com.findernotes.FinderNotes.LocalTrial/DraftRecovery/v1/`，是本机明文未保存草稿，不是笔记历史库。卸载应用不默认删除恢复记录或媒体 xattr。
+- 可用 `scripts/read_note.py` 独立读取或安全导出已保存的正式笔记；该工具从原验证目录迁出，读取与导出逻辑不变。
+
+完整操作、权限说明和传输限制见[使用手册](docs/LOCAL_TRIAL.md)。本机 ad hoc 签名、非沙盒、未公证，deployment target 不代表所有 macOS、Intel、图片／视频格式或传输路径已经实测支持。
+
+## 项目入口与历史记录
 
 - [项目首页 · PRO-FinderNotes](https://app.notion.com/p/3e4e7607d6498038adeee4c1069f2bb9)
 - [设计与决策](https://app.notion.com/p/3e4e7607d6498101ae7cede78291e918)
 - [开发与验收约定](https://app.notion.com/p/3e4e7607d6498155b515fd03212b3437)
+- [历史原始证据（固定 Git 提交）](https://github.com/danding9717/FinderNotes/tree/868a4160cdb10f234ad3ec3cf94f631bd7d80591/docs/evidence)
+- [FN-08 验收记录与 I07／I08 保留结论](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/docs/evidence/fn08/ACCEPTANCE.md)
+- [FN-08 实测报告及失败／未验证项](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/docs/evidence/fn08/2026-09-27.md)
 
-需求、任务状态与验收结论以 Notion 的当前记录为准。开发前先阅读 [AGENTS.md](AGENTS.md)、本轮任务卡和实际 Git 状态。[初始设计说明](Finder_Notes_Codex_Design.md)作为历史归档保留，其中的 Finder 原生注释路线已由 D-006 替代。
-
-## 本机准备
-
-目标工具链是与当前 macOS 兼容的 Xcode 27 正式版，安装前核对 [Apple 官方兼容要求](https://developer.apple.com/xcode/system-requirements)。只安装 Command Line Tools 不足以验证完整 `.app`、Finder 服务和应用权限。Xcode 安装、许可和首次启动完成后，在项目命令中指定其开发目录，不切换系统全局设置：
-
-```sh
-export DEVELOPER_DIR="${FINDERNOTES_DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Developer}"
-xcodebuild -version
-xcrun --sdk macosx --show-sdk-version
-swift --version
-```
-
-若 Xcode 安装在别处，先设置 `FINDERNOTES_DEVELOPER_DIR` 为该 `.app` 内的 `Contents/Developer`。各阶段的实际工具链、签名和权限结果分别保存在对应证据中。下述探针构建与隔离测试不代替产品 `.app`、系统服务或应用身份下的权限验收。
-
-安装完成后运行 `./scripts/verify_toolchain.sh`。脚本仅在系统临时目录编译一个导入 AppKit 的最小程序，并在退出时清理；成功运行后才把工具链记为已验证。
-
-## FN-07 冲突与草稿恢复
-
-```sh
-FINDERNOTES_BUILD_PROFILE=fn07 ./scripts/test_app.sh
-FINDERNOTES_BUILD_PROFILE=fn07 ./scripts/build_app.sh
-python3 -B validation/fn07/prepare.py
-```
-
-本轮独立 Release 身份为 `com.findernotes.FinderNotes.FN07Validation`，从 Finder 的“FinderNotes FN07 验收编辑笔记”服务打开合成样本；Debug 为 `.FN07Tests`，不声明服务。完整复现步骤见 [FN-07 验证说明](validation/fn07/README.md)，实际结果见 [FN-07 证据](docs/evidence/fn07/2026-09-27.md)。
-
-完成输入并空闲约 250 毫秒后，草稿进入串行恢复写入队列；中文组合态保留上一份完整输入。恢复数据在 `~/Library/Application Support/<当前 bundle ID>/DraftRecovery/v1/`，目录 0700、文件 0600，每个编辑会话一份 `<UUID>.json`。版本 1 JSON 包含原路径、device/inode/出生时间身份、原始自定义属性基线（区分不存在和空字节）、UTF-8 草稿、修订号和时间。它是本机明文草稿，不是笔记历史库；应用不上传或在普通日志中记录正文。正式笔记仍只有自定义 xattr。
-
-恢复文件以同目录临时文件完整写入、fsync、回读、原子 rename 替换并核验；恢复写入与清理串行，目录锁阻止同一应用身份的第二个实例同时操作。只保证恢复成功落盘的草稿，不保证未落盘的最后击键或突然断电。保存成功只清理该版草稿；保存途中有新输入则继续保护新版。明确丢弃关闭／切换／退出会等待清理结果；清理失败保留当前编辑器。完整撤销回已确认基线后，成功切换文件也清理已无未保存内容的记录。
-
-底部保留“保存、复制、导出”，右侧“高级选项”原生下拉菜单集中提供“核对外部版本…”与“恢复草稿…”；有恢复记录时显示数量。“复制”仍复制当前草稿，“导出”仍生成独立的 Markdown 快照。没有打开文件时仍可从该菜单恢复草稿；核对外部版本须已打开文件，读取、保存、导出或确认期间两项均禁用。
-
-预览开关位于左侧预览区顶部靠正文一侧，使用无文字的侧栏图标；悬停提示及无障碍名称分别为“收起预览”或“展开预览”。图标使用 16 点的 `sidebar.left` 系统符号，点击区域为 28×28 点，置于独立的 32 点头部，不遮盖预览或正文。收起后保留 32 点窄栏及展开入口，正文使用其余空间；切换预览不重置正文、选区或撤销状态。
-
-异常退出后打开相同应用，点击“高级选项 → 恢复草稿…”选择记录。恢复先核对原路径、身份和基线，默认暂停自动保存，需要手动保存或处理冲突。原目标消失、被替换或读取失败时禁止写回，草稿仍可复制、编辑与导出。副本不通过媒体或正文内容匹配草稿；移动后的目标也不自动重新关联。损坏、不支持的版本或不安全权限会明确报错并保留原文件；目前一个损坏记录会使整个恢复列表停止读取，需人工保留并移出该损坏文件后重试，不会自动删除。未完成发布的 `.draft-*.tmp` 保留原地，不当作有效恢复记录。
-
-“高级选项 → 核对外部版本…”只读取自有笔记属性。载入外部版前必须成功导出本地草稿；覆盖前必须成功导出外部版，并再次点击“明确覆盖”。外部属性缺失会导出一份标明“属性不存在”的状态文件，外部空正文保留零字节快照。取消或导出失败不替换本地草稿。导出后重新核对，保存仍走原身份／基线检查及完整回读链；检查加写入不是原子 CAS。复制与普通 Markdown 导出不会清理恢复记录。
-
-## FN-06 预览与自动保存（继承行为）
-
-```sh
-FINDERNOTES_BUILD_PROFILE=fn06 ./scripts/test_app.sh
-FINDERNOTES_BUILD_PROFILE=fn06 ./scripts/build_app.sh
-python3 validation/fn06/prepare.py
-```
-
-使用新建样本，在 Finder 单选图片或视频，经 **访达 → 服务 → FinderNotes FN06 验收编辑笔记** 打开。Release 身份为 `com.findernotes.FinderNotes.FN06Validation`；Debug 测试宿主为 `.FN06Tests`，不声明服务。构建产物留在该工作树 `.build/DerivedData`，不覆盖历史验收应用。测试样本及独立核对方法见 [FN-06 验证说明](validation/fn06/README.md)。
-
-预览默认展开，位于正文左侧。FN-06 原交付通过“收起预览”按钮让文字区填满主体；当前 FN-07 的图标开关与折叠布局见上节。系统异步加载预览，视频不自动播放；收起、切换或关窗时释放预览，重新展开从新的预览实例开始。预览不可用时仍可编辑、保存、复制和导出。Quick Look 没有公开的加载成功／解码失败回调，设置文件 URL 不等于预览已成功；系统内部的渲染失败由系统占位承接。
-
-停止输入约 1 秒后自动保存；中文输入组合态期间不启动保存，完成输入后重新计时。保存按钮和 Command-S 仍立即请求同一条安全保存链路。只有身份与完整正文回读一致才显示已保存；保存期间的新输入继续保留，并在上一笔完成后安排下一笔。保存完成不重新设置编辑器正文、光标、选区、滚动或撤销栈。
-
-权限失败、文件身份不确定、外部正文冲突或写入结果未确认会暂停自动保存，继续输入也不会后台反复重试。可复制或导出草稿；排除问题后手动保存成功才恢复自动保存，冲突不会因为点击保存而强制覆盖。未改动正文的显式保存只重新核验，不重复写入；尚无属性的空白文件只在首次显式保存时创建零字节笔记，打开或原样关闭不会创建笔记。
-
-关闭、切换和退出先取消等待中的自动保存；仍有草稿或错误时提醒返回编辑或明确丢弃，不执行“保存并关闭”。已经开始的写入不会被伪装成可取消的操作，结果返回前暂缓离开。FN-07 的恢复与冲突交互见上节。xattr 最后核对与写入之间仍非原子操作，不承诺任意跨进程并发安全。
-
-实际环境、自动测试、真实 Finder/UI 结果及未验证项见 [FN-06 交付证据](docs/evidence/fn06/2026-09-26.md)。各层证据分别记录；程序化 marked text 不能代替真实中文输入法，模拟权限错误不能代替 TCC 验收。
-
-## FN-05 隔离验收应用（历史阶段）
-
-在仓库根目录执行：
-
-```sh
-FINDERNOTES_BUILD_PROFILE=fn05 ./scripts/build_app.sh
-FINDERNOTES_BUILD_PROFILE=fn05 ./scripts/test_app.sh
-```
-
-`build_app.sh` 构建 Release 并核对代码签名，产物为 `.build/DerivedData/Build/Products/Release/FinderNotes.app`；`test_app.sh` 构建独立 Debug 测试宿主，结果包在 `.build/TestResults/`。`fn05` profile 的 Release 身份为 `com.findernotes.FinderNotes.FN05Validation`，服务菜单为“FinderNotes FN05 验收编辑笔记”；Debug 身份为 `.FN05Tests`，不声明服务。`m1fix` profile 为本轮界面与生命周期回归验收使用独立的 `com.findernotes.FinderNotes.M1FixValidation` Release 身份、`com.findernotes.FinderNotes.M1FixTests` Debug 身份；服务只由 Release 提供，菜单为“FinderNotes M1 修正验收编辑笔记”。脚本不安装应用，但 Xcode 构建会注册产物；保留 FN-04/FN-05 验收应用及原服务，正式应用身份的服务派发仍待单独验证。
-
-本轮环境为 Xcode 27、macOS 26.6.2、arm64 和内置 APFS。工程的 deployment target 为 macOS 26.0，只是构建设置，不表示该版本已实测。隔离验收构建为非沙盒、ad hoc 本机签名，未公证；不代表可分发版本。
-
-使用 [FN-05 新建的独立样本](validation/fn05/README.md)验收。先记录 `prepare.py` 输出的临时目录，在 Finder 单选其中一张图片或一段视频，再经 **访达 → 服务 → FinderNotes FN05 验收编辑笔记** 打开。服务使用本次文件 URL，固定目标；多选、目录、符号链接、硬链接及 Finder 替身按已有规则拒绝。
-
-窗口保留文件名、路径的只读显示及原生纯文本编辑、查找和撤销重做。保存按钮与 Command-S 共用手动保存：写前核对当前文件身份及自有属性基线，写后完整回读原始字节并复核身份，成功才显示已保存。无正文的首次显式保存创建零字节属性；将已有正文删空后保存也保留零字节属性，以区别“尚无笔记”。已知外部修改、文件消失或被替换时停止覆盖并保留草稿。检查与写入不是原子操作，不能据此承诺任意并发安全；整理或移动文件前请结束编辑。
-
-“导出 Markdown…”把点击时的草稿存为独立 UTF-8 快照，默认文件名为完整原文件名加 `.note.md`，例如 `photo.PNG.note.md`。导出不改变笔记保存状态；目标必须是新文件，重名时改名或换目录，应用不会执行覆盖。写入失败或结果未能确认时，草稿仍可复制、导出。有未保存内容或保存错误时，切换、关闭、退出会提醒先完成输入并保存；默认返回编辑器，只有明确丢弃才离开。编辑器的“复制草稿”按钮仍可使用，复制本身不会离开。保存及导出期间仍可编辑、复制，但暂缓切换、关闭、退出；中文输入组合期间请先完成输入再保存或导出。
-
-FN-05 历史交付没有预览、自动保存或异常退出草稿恢复。应用不默认要求自动化、辅助功能或完全磁盘访问权限，不修改 TCC。受保护目录、云盘、NAS、外置卷、正式身份及分发行为未由临时副本验证代替。
-
-实际测试、限制和 Dan 的图片／视频往返步骤见 [FN-05 交付证据](docs/evidence/fn05/2026-09-25.md)。FN-04 的真实中文输入法、完整缩放和外观、有效截图等未验证项继续保留于 [FN-04 报告](docs/evidence/fn04/2026-09-24.md)。
-
-## M1 界面与生命周期回归验收应用
-
-使用独立的 M1 修正 profile 构建，避免覆盖历史验收身份：
-
-```sh
-FINDERNOTES_BUILD_PROFILE=m1fix ./scripts/build_app.sh
-FINDERNOTES_BUILD_PROFILE=m1fix ./scripts/test_app.sh
-```
-
-从 Finder 选择临时样本，运行 **访达 → 服务 → FinderNotes M1 修正验收编辑笔记**。关闭最后一个已确认可丢弃的窗口后，应用退出；之后再从同一服务打开下一样本，记录进程 PID 和 Dock 状态。该隔离验收身份及服务只用于本地 M1 回归验证。
-
-## FN-01 历史验证入口
-
-- [build-xattr.sh](validation/fn01/build-xattr.sh)：构建自定义 xattr 最小探针。
-- [run-xattr.py](validation/fn01/run-xattr.py)：运行合成样本的隔离验证；运行方法及 Finder 人工步骤见[探针说明](validation/fn01/README.md)。
-- [证据目录](docs/evidence/fn01/)：保存实际环境、命令、结果与未验证项。旧 Finder 原生注释实验保留为历史证据，不作为自定义 xattr 的通过结论。
-
-在仓库根目录执行：
-
-```sh
-./validation/fn01/build-xattr.sh
-python3 validation/fn01/run-xattr.py
-```
-
-每次运行新建独立临时目录并输出 JSONL 结果；Finder 界面操作按探针说明单独执行和记录。自定义探针路径可通过 `run-xattr.py --probe /absolute/path` 指定。
-
-探针使用自有属性 `com.findernotes.note.v1` 保存原始 UTF-8 正文，验证文本完整性、持久化、文件操作后的保留情况及原件保护。路线选择不等于验证通过；结果以 FN-01 任务卡与对应证据为准。FN-02 的系统服务与权限验证有独立记录，不由存储探针代替。
-
-## 验证与协作
-
-[M0 验证方案](docs/M0_VALIDATION.md)规定隔离样本和证据格式。仅在独立临时目录对测试副本写入；旧 Orbit 的服务、数据库与真实素材库不作为测试对象。
-
-一个已授权的任务使用一个分支与 PR；PR 写明对应 Notion 任务、实际执行的检查、失败与未验证项及 Dan 的验收步骤。`Review` 表示待验收，只有 Dan 明确确认后才能将任务设为 `Done`。首次 PR 模板位于 [.github/pull_request_template.md](.github/pull_request_template.md)。
-
-## FN-02 历史验证入口
-
-原生 AppKit 系统服务验证应用、独立合成样本与构建／验收方法见 [validation/fn02](validation/fn02/README.md)，本机结果见 [FN-02 实测证据](docs/evidence/fn02/2026-09-24.md)。仅为 M0 验证，不代表 M1 产品或正式权限配置已交付。
+后续工作先阅读 [AGENTS.md](AGENTS.md)、Notion 的当前授权范围和实际 Git 状态。[初始设计说明](Finder_Notes_Codex_Design.md)作为设计历史保留，其中的 Finder 原生注释路线已由 D-006 替代。本轮不启动下一版本。

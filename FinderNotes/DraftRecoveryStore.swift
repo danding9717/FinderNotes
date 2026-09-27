@@ -148,15 +148,7 @@ actor DraftRecoveryStore {
     private var directoryIdentity: FileIdentity?
     private var lockIdentity: FileIdentity?
 
-    #if DEBUG
-    private let beforePublish: (@Sendable () throws -> Void)?
-    init(directory: URL, beforePublish: (@Sendable () throws -> Void)? = nil) {
-        self.directory = directory
-        self.beforePublish = beforePublish
-    }
-    #else
     init(directory: URL) { self.directory = directory }
-    #endif
 
     deinit {
         if lockFD >= 0 { close(lockFD) }
@@ -201,9 +193,6 @@ actor DraftRecoveryStore {
         try Self.writeAll(bytes, to: temporaryFD)
         try Self.sync(temporaryFD)
         guard try Self.readAll(temporaryFD) == bytes else { throw DraftRecoveryError.readbackMismatch }
-        #if DEBUG
-        try beforePublish?()
-        #endif
         try validateHeldDirectory()
         guard let current = try Self.entryStatus(fd, name: temporaryName),
               FileIdentity(current) == temporaryIdentity else { throw DraftRecoveryError.temporaryFileChanged }

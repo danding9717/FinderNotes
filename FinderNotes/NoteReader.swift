@@ -82,15 +82,7 @@ enum NoteReadError: Error, LocalizedError, Equatable {
 struct NoteReader: Sendable {
     static let attributeName = "com.findernotes.note.v1"
 
-    #if DEBUG
-    /// Deterministic race injection for isolated tests; absent from release builds.
-    private let beforeFinalValidation: (@Sendable () throws -> Void)?
-    init(beforeFinalValidation: (@Sendable () throws -> Void)? = nil) {
-        self.beforeFinalValidation = beforeFinalValidation
-    }
-    #else
     init() {}
-    #endif
 
     func read(urls: [URL]) throws -> NoteSnapshot {
         guard urls.count == 1 else { throw NoteReadError.selectionCount }
@@ -129,9 +121,6 @@ struct NoteReader: Sendable {
         } else {
             content = .missing
         }
-        #if DEBUG
-        try beforeFinalValidation?()
-        #endif
         // Re-walk the entire path, including parents, to detect rename/replacement of a directory.
         // Both descriptors stay open until this check completes, so inode reuse cannot hide a swap.
         let currentFD: Int32

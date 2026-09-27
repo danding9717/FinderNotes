@@ -5,8 +5,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
     private(set) var controller: EditorWindowController?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        // Hosted tests create their own controllers and must not register another service.
-        guard ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil else { return }
         setupMenu()
         NSApp.servicesProvider = self
         NSUpdateDynamicServices()
@@ -51,7 +49,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil
+        true
     }
 
     @objc func saveNote(_ sender: Any?) { controller?.saveNote(sender) }

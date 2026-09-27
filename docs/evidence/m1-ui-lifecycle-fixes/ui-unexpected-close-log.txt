@@ -1,8 +1,0 @@
-Timestamp               Ty Process[PID:TID]
-2026-09-25 16:04:47.822 Df FinderNotes[79474:5b316] [com.apple.AppKit:Window] window <NSWindow: 0xb0cdb1680> windowNumber=b7a windowShouldClose: prevented close
-2026-09-25 16:04:47.880 Df FinderNotes[79474:5b316] [com.apple.AppKit:Application] terminate:
-2026-09-25 16:04:47.880 Df FinderNotes[79474:5b316] [com.apple.AppKit:StateRestoration] -[NSApplication _pushPersistentStateTerminationGeneration] sPersistentStateTerminateStackHeight -> 1
-2026-09-25 16:04:47.881 Df FinderNotes[79474:5b316] [com.apple.AppKit:Application] Checking whether app should terminate
-2026-09-25 16:04:47.882 Df FinderNotes[79474:5b316] [com.apple.AppKit:Application] Asking app delegate whether applicationShouldTerminate:
-2026-09-25 16:04:47.882 Df FinderNotes[79474:5b316] [com.apple.AppKit:Application] applicationShouldTerminate: NSTerminateLater
-2026-09-25 16:04:47.882 Df FinderNotes[79474:5b316] [com.apple.AppKit:Application] replyToApplicationShouldTerminate:YES

@@ -1,8 +1,0 @@
-The following is a diff from the previous accessibility tree for Window: "Unknown" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
-Removed element IDs: 0-18
-+24 表单 Description: 警告, Secondary Actions: Raise
-+	25 text 选择已落盘的草稿 恢复后暂停自动保存。将重新核对原文件身份及正文基线；原件消失或被替换时，只保留和导出草稿。
-+	26 弹出式按钮 /private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-f3mu6lvu/work/readonly.png · 2026/9/27 19:54 · C4F09640
-+	27 按钮 恢复所选草稿, ID: action-button-2
-+	28 按钮 返回编辑, ID: action-button-1
-The focused UI element is 24 表单 Description: 警告, Secondary Actions: Raise

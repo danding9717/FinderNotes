@@ -1,3 +1,0 @@
-There has been no change in the accessibility tree for Window: "readonly.png — FinderNotes".
-The focused UI element is 25 文本输入区 (settable) Description: 笔记正文, ID: fn-note-editor, Value: FN08 已落盘恢复草稿
-只读失败后保留🙂

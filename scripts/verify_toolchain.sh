@@ -12,14 +12,3 @@ export DEVELOPER_DIR="$developer_dir"
 xcodebuild -version
 xcrun --sdk macosx --show-sdk-version
 xcrun swift --version
-
-scratch_dir="$(mktemp -d "${TMPDIR:-/tmp}/findernotes-toolchain.XXXXXX")"
-trap 'rm -rf -- "$scratch_dir"' EXIT
-cat > "$scratch_dir/Smoke.swift" <<'SWIFT'
-import AppKit
-
-print("FinderNotes macOS toolchain ready")
-SWIFT
-xcrun swiftc -sdk "$(xcrun --sdk macosx --show-sdk-path)" \
-  "$scratch_dir/Smoke.swift" -o "$scratch_dir/smoke"
-"$scratch_dir/smoke"

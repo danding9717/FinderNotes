@@ -53,16 +53,7 @@ enum MarkdownExportError: Error, LocalizedError, Equatable {
 }
 
 struct MarkdownExporter: Sendable {
-    #if DEBUG
-    /// Called after verifying the temporary file, for a deterministic destination race test.
-    private let beforePublish: (@Sendable () throws -> Void)?
-
-    init(beforePublish: (@Sendable () throws -> Void)? = nil) {
-        self.beforePublish = beforePublish
-    }
-    #else
     init() {}
-    #endif
 
     static func defaultFileName(for source: URL) -> String {
         source.lastPathComponent + ".note.md"
@@ -100,9 +91,6 @@ struct MarkdownExporter: Sendable {
         try Self.writeAll(request.bytes, to: temporaryFD)
         try Self.sync(temporaryFD)
         try Self.verify(request.bytes, in: temporaryFD)
-        #if DEBUG
-        try beforePublish?()
-        #endif
         guard let temporaryIdentity,
               let current = try Self.entryStatus(directory: directory, name: temporaryName),
               Self.sameFile(current, temporaryIdentity) else {
