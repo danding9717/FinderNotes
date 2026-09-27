@@ -1,0 +1,26 @@
+{
+  "appArchive": "/Users/danding/.codex/worktrees/fn-08-local-trial/FinderNotes/.build/Delivery/FinderNotes-0.1.0-8/FinderNotes-0.1.0-8-local-trial.zip",
+  "archiveSHA256": "0c2f9cd1afb614785b98271dbab6468b4e49bb0e3d113bb7e4f70d8d4f9fc059",
+  "commands": [
+    [
+      "/usr/bin/ditto",
+      "-c",
+      "-k",
+      "--sequesterRsrc",
+      "--keepParent",
+      "/Users/danding/Applications/FinderNotes v0.1 Local Trial.app",
+      ".build/Delivery/FinderNotes-0.1.0-8/FinderNotes-0.1.0-8-local-trial.zip"
+    ],
+    [
+      "/usr/bin/ditto",
+      "-x",
+      "-k",
+      ".build/Delivery/FinderNotes-0.1.0-8/FinderNotes-0.1.0-8-local-trial.zip",
+      "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-package-q92p71wh"
+    ]
+  ],
+  "verificationRoot": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-package-q92p71wh",
+  "extractedBytesMatchInstalled": true,
+  "strictCodesignPassed": true,
+  "extractedAppNotLaunched": true
+}

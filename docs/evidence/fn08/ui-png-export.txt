@@ -1,0 +1,4 @@
+There has been no change in the accessibility tree for Window: "portrait.png — FinderNotes".
+The focused UI element is 25 文本输入区 (settable) Description: 笔记正文, ID: fn-note-editor, Value: FN08 图片本地试用
+中文🙂 引号“测试” \ 路径
+第二行

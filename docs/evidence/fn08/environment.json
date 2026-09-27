@@ -1,0 +1,93 @@
+{
+  "recordedAt": "2026-09-27T21:09:42.309840+08:00",
+  "commands": [
+    {
+      "command": [
+        "sw_vers"
+      ],
+      "exit": 0,
+      "stdout": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6.2\nBuildVersion:\t\t25G83\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uname",
+        "-m"
+      ],
+      "exit": 0,
+      "stdout": "arm64\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "sysctl",
+        "-n",
+        "machdep.cpu.brand_string"
+      ],
+      "exit": 0,
+      "stdout": "Apple M2\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild",
+        "-version"
+      ],
+      "exit": 0,
+      "stdout": "Xcode 27.0\nBuild version 27A266a\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx26.0\n",
+      "stderr": "swift-driver version: 1.168.6 "
+    },
+    {
+      "command": [
+        "diskutil",
+        "info",
+        "/"
+      ],
+      "exit": 0,
+      "stdout": "   Device Identifier:         disk3s1s1\n   Device Node:               /dev/disk3s1s1\n   Whole:                     No\n   Part of Whole:             disk3\n\n   Volume Name:               Macintosh HD\n   Mounted:                   Yes\n   Mount Point:               /\n\n   Partition Type:            41504653-0000-11AA-AA11-00306543ECAC\n   File System Personality:   APFS\n   Type (Bundle):             apfs\n   Name (User Visible):       APFS\n   Owners:                    Enabled\n\n   OS Can Be Installed:       No\n   Booter Disk:               disk3s2\n   Recovery Disk:             disk3s3\n   Media Type:                通用\n   Protocol:                  Apple Fabric\n   SMART Status:              Verified\n   Volume UUID:               97D0AF96-6EA4-4768-90DE-ABA6C4CCFC58\n   Disk / Partition UUID:     97D0AF96-6EA4-4768-90DE-ABA6C4CCFC58\n\n   Disk Size:                 245.1 GB (245107195904 Bytes) (exactly 478724992 512-Byte-Units)\n   Device Block Size:         4096 Bytes\n\n   Volume Used Space:         12.6 GB (12640210944 Bytes) (exactly 24687912 512-Byte-Units)\n   Container Total Space:     245.1 GB (245107195904 Bytes) (exactly 478724992 512-Byte-Units)\n   Container Free Space:      112.4 GB (112420175872 Bytes) (exactly 219570656 512-Byte-Units)\n   Allocation Block Size:     4096 Bytes\n\n   Media OS Use Only:         No\n   Media Read-Only:           Yes\n   Volume Read-Only:          Yes (read-only mount flag set)\n\n   Device Location:           Internal\n   Removable Media:           Fixed\n\n   Solid State:               Yes\n   Hardware AES Support:      Yes\n\n   This disk is an APFS Volume Snapshot.  APFS Information:\n   APFS Snapshot Name:        com.apple.os.update-60587424F5399FC05D957DF05B4D2F65543462495C77AEF520F790FBB57CB212\n   APFS Snapshot UUID:        97D0AF96-6EA4-4768-90DE-ABA6C4CCFC58\n   APFS Container:            disk3\n   APFS Physical Store:       disk0s2\n   APFS Volume Group:         57B9B88C-DD6C-4F40-A936-0FE0248A0A05\n   EFI Driver In macOS:       2811160007000004\n   Encrypted:                 No\n   FileVault:                 Yes\n   Sealed:                    Yes\n   Locked:                    No\n\n   APFS Snapshots are defined upon this APFS Volume.  Snapshot list:\n   Snapshot UUID:             97D0AF96-6EA4-4768-90DE-ABA6C4CCFC58\n   Name:                      com.apple.os.update-60587424F5399FC05D957DF05B4D2F65543462495C77AEF520F790FBB57CB212\n   XID:                       13863501\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "ls-remote",
+        "origin",
+        "refs/heads/main"
+      ],
+      "exit": 0,
+      "stdout": "c57139c98e6b11bb41aa7c3a35e3ccd57bd6b01f\trefs/heads/main\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "exit": 0,
+      "stdout": "## codex/fn-08-local-trial\n M scripts/build_app.sh\n M scripts/test_app.sh\n?? FinderNotes/Info-FN08Tests.plist\n?? FinderNotes/Info-LocalTrial.plist\n?? docs/evidence/fn08/\n?? scripts/install_local_trial.py\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "log",
+        "-1",
+        "--format=fuller"
+      ],
+      "exit": 0,
+      "stdout": "commit c57139c98e6b11bb41aa7c3a35e3ccd57bd6b01f\nMerge: 708c3f5 8d6e388\nAuthor:     但丁 <104247678+danding9717@users.noreply.github.com>\nAuthorDate: Sun Sep 27 20:58:02 2026 +0800\nCommit:     GitHub <noreply@github.com>\nCommitDate: Sun Sep 27 20:58:02 2026 +0800\n\n    Merge pull request #9: FN-07 conflict handling and draft recovery\n    \n    FN-07: protect drafts and resolve external note conflicts\n",
+      "stderr": ""
+    }
+  ]
+}

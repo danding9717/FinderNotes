@@ -38,6 +38,13 @@ case "$profile" in
       profile_settings=(FINDERNOTES_APP_SUFFIX=.FN07Tests FINDERNOTES_INFO_SUFFIX=-FN07Tests FINDERNOTES_TEST_SUFFIX=.FN07Tests)
     fi
     ;;
+  local-trial)
+    if [[ "$configuration" == Release ]]; then
+      profile_settings=(FINDERNOTES_APP_SUFFIX=.LocalTrial FINDERNOTES_INFO_SUFFIX=-LocalTrial FINDERNOTES_TEST_SUFFIX=.FN08Tests)
+    else
+      profile_settings=(FINDERNOTES_APP_SUFFIX=.FN08Tests FINDERNOTES_INFO_SUFFIX=-FN08Tests FINDERNOTES_TEST_SUFFIX=.FN08Tests)
+    fi
+    ;;
   m1fix)
     if [[ "$configuration" == Release ]]; then
       profile_settings=(FINDERNOTES_APP_SUFFIX=.M1FixValidation FINDERNOTES_INFO_SUFFIX=-M1FixValidation FINDERNOTES_TEST_SUFFIX=.M1FixTests)
@@ -45,10 +52,10 @@ case "$profile" in
       profile_settings=(FINDERNOTES_APP_SUFFIX=.M1FixTests FINDERNOTES_INFO_SUFFIX=-M1FixTests FINDERNOTES_TEST_SUFFIX=.M1FixTests)
     fi
     ;;
-  *) print -u2 'FINDERNOTES_BUILD_PROFILE must be standard, fn05, fn06, fn07, or m1fix.'; exit 2 ;;
+  *) print -u2 'FINDERNOTES_BUILD_PROFILE must be standard, fn05, fn06, fn07, local-trial, or m1fix.'; exit 2 ;;
 esac
 project_root="${0:A:h:h}"
-derived_data="$project_root/.build/DerivedData"
+derived_data="${FINDERNOTES_DERIVED_DATA:-$project_root/.build/DerivedData}"
 
 xcodebuild -project "$project_root/FinderNotes.xcodeproj" \
   -scheme FinderNotes -configuration "$configuration" \
@@ -79,5 +86,38 @@ if [[ "$profile" == fn05 || "$profile" == fn06 || "$profile" == fn07 || "$profil
     expected_id=com.findernotes.FinderNotes.M1FixValidation
   fi
   [[ "$actual_id" == "$expected_id" ]] || { print -u2 "Unexpected $profile app identity: $actual_id"; exit 2; }
+fi
+if [[ "$profile" == local-trial ]]; then
+  /usr/bin/python3 - "$app_path/Contents/Info.plist" "$configuration" <<'PY'
+import plistlib
+import sys
+
+with open(sys.argv[1], 'rb') as source:
+    info = plistlib.load(source)
+release = sys.argv[2] == 'Release'
+expected = {
+    'CFBundleIdentifier': 'com.findernotes.FinderNotes.' + ('LocalTrial' if release else 'FN08Tests'),
+    'CFBundleName': 'FinderNotes' if release else 'FinderNotes FN08 Tests',
+    'CFBundleShortVersionString': '0.1.0',
+    'CFBundleVersion': '11',
+}
+if release:
+    expected['CFBundleDisplayName'] = 'FinderNotes'
+for key, value in expected.items():
+    if info.get(key) != value:
+        sys.exit(f'Unexpected local-trial {key}: {info.get(key)!r}; expected {value!r}')
+if release:
+    services = info.get('NSServices', [])
+    if len(services) != 1:
+        sys.exit('local-trial must register exactly one Finder service.')
+    service = services[0]
+    if (service.get('NSMenuItem') != {'default': '用 FinderNotes 编辑笔记'}
+            or service.get('NSPortName') != 'FinderNotesLocalTrial'
+            or service.get('NSMessage') != 'receiveFiles'):
+        sys.exit('Unexpected local-trial Finder service identity.')
+elif 'NSServices' in info:
+    sys.exit('FN08Tests must not register Finder services.')
+print('Verified local-trial identity: ' + expected['CFBundleIdentifier'] + ' 0.1.0 (11)')
+PY
 fi
 print -r -- "$app_path"

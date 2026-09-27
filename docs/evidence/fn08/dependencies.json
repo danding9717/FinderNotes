@@ -1,0 +1,26 @@
+[
+  {
+    "baseRefName": "main",
+    "headRefOid": "c393f613a20afd0919d4a48ba3b903a74bf2f26e",
+    "mergeCommit": {
+      "oid": "708c3f5a7b1ff31219ac53f339876fa7d793f890"
+    },
+    "mergedAt": "2026-09-27T10:39:14Z",
+    "number": 8,
+    "state": "MERGED",
+    "url": "https://github.com/danding9717/FinderNotes/pull/8",
+    "headIsAncestorOfBaseline": true
+  },
+  {
+    "baseRefName": "main",
+    "headRefOid": "8d6e3884839496375c5b106e398757c447c41382",
+    "mergeCommit": {
+      "oid": "c57139c98e6b11bb41aa7c3a35e3ccd57bd6b01f"
+    },
+    "mergedAt": "2026-09-27T12:58:02Z",
+    "number": 9,
+    "state": "MERGED",
+    "url": "https://github.com/danding9717/FinderNotes/pull/9",
+    "headIsAncestorOfBaseline": true
+  }
+]

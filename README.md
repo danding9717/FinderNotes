@@ -1,5 +1,9 @@
 # FinderNotes
 
+## v0.1 个人本地试用（FN-08）
+
+[安装、使用、恢复与卸载手册](docs/LOCAL_TRIAL.md) · [新合成样本与 Dan 验收清单](validation/fn08/README.md) · [本轮原始证据](docs/evidence/fn08/)。当前名称更新使用 `local-trial` 构建 profile、身份 `com.findernotes.FinderNotes.LocalTrial`、版本 `0.1.0 (11)`，安装到 `~/Applications/FinderNotes.app`，已有同名应用时拒绝覆盖。原 build 8／9／10 应用保留；这些副本共用 LocalTrial 身份、服务端口和恢复目录；新版服务显示名为“用 FinderNotes 编辑笔记”，旧版标签保留，不迁移或清理草稿，不并行运行这些副本。既有 140 项测试及 Finder/UI 结果属于 build 8，名称更新不把这些结果记为 build 11 重跑。这是个人本机试用，实际支持范围和结果以对应构建的证据与 Dan 判断为准，不是公开发布或 M2／项目整体验收。
+
 FinderNotes 为 Finder 中的单份图片或视频提供原生笔记编辑入口，文件仍由 Finder 管理。FN-07 在现有预览、手动／自动保存和 Markdown 导出基础上加入冲突处理与最小草稿恢复。正式笔记只写自有 xattr `com.findernotes.note.v1` 的原始 UTF-8 正文；不与 Finder 原生注释同步，不自动迁移旧注释。M0 探针与历史证据独立保留。
 
 ## 项目入口

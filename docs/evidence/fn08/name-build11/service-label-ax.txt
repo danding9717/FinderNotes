@@ -1,0 +1,153 @@
+Window: "work", App: 访达.
+0 标准窗口 work, ID: FinderWindow, Secondary Actions: Raise
+	1 分离组
+		2 滚动区
+			3 外框 边栏
+				4 row (selectable, expanded) Value: 个人收藏, Secondary Actions: Collapse
+				5 row (selectable) 应用程序
+				6 row (selectable) 桌面
+				7 row (selectable) 文稿
+				8 row (selectable) Downloads
+				9 row (selectable) 影片
+				10 row (selectable, expanded) Value: 位置, Secondary Actions: Collapse
+				11 row (selectable) iCloud云盘
+				12 row (selectable) OneDrive
+				13 row (selectable) danding
+				14 row (selectable) Macintosh HD
+				15 row (selectable) 网络
+				16 row (selectable) 废纸篓
+				17 row (selectable, expanded) Value: 标签, Secondary Actions: Collapse
+				18 row (selectable) 红色
+				19 row (selectable) 橙色
+				20 row (selectable) 黄色
+				21 row (selectable) 绿色
+				22 row (selectable) 蓝色
+				23 row (selectable) 紫色
+				24 row (selectable) 灰色
+				25 row (selectable) 所有标签…
+		26 分离器 (disabled, settable, float) 167
+		27 滚动区
+			28 集合 Description: 图标视图, ID: IconView
+				29 节 (disabled)
+					30 图像 audio.mov, Secondary Actions: 打开
+					31 图像 conflict.png, Secondary Actions: 打开
+					32 图像 copy-source.png, Secondary Actions: 打开
+					33 图像 copy.png, Secondary Actions: 打开
+					34 图像 corrupt.mov, Secondary Actions: 打开
+					35 图像 corrupt.png, Secondary Actions: 打开
+					36 图像 deletion.png, Secondary Actions: 打开
+					37 图像 empty.png, Secondary Actions: 打开
+					38 图像 missing.png, Secondary Actions: 打开
+					39 图像 moved.png, Secondary Actions: 打开
+					40 图像 (selected) portrait.png, Secondary Actions: 打开
+					41 图像 readonly.png, Secondary Actions: 打开
+					42 图像 recovery.png, Secondary Actions: 打开
+					43 图像 replace.png, Secondary Actions: 打开
+					44 图像 unrelated.png, Secondary Actions: 打开
+				45 菜单 Secondary Actions: Cancel
+					46 打开, ID: cmdOpen:
+					47 打开方式, ID: cmdOpenWith:
+						48 菜单 Secondary Actions: Cancel
+							49 预览.app（默认）, ID: invoke
+							50 百度网盘.app, ID: invoke
+							51 色彩同步实用工具.app, ID: invoke
+							52 Google Chrome for Testing.app (153.0.8010.12), ID: invoke
+							53 Google Chrome for Testing.app (152.0.7977.54), ID: invoke
+							54 Google Chrome.app, ID: invoke
+							55 LibreOfficeDev.app, ID: invoke
+							56 QuickTime Player.app, ID: invoke
+							57 Safari浏览器.app, ID: invoke
+							58 App Store…, ID: action:
+							59 其他…, ID: action:
+					60 始终以此方式打开, ID: cmdAlwaysOpenWith:
+						61 菜单 Secondary Actions: Cancel
+							62 预览.app（默认）, ID: invoke
+							63 百度网盘.app, ID: invoke
+							64 色彩同步实用工具.app, ID: invoke
+							65 Google Chrome for Testing.app (153.0.8010.12), ID: invoke
+							66 Google Chrome for Testing.app (152.0.7977.54), ID: invoke
+							67 Google Chrome.app, ID: invoke
+							68 LibreOfficeDev.app, ID: invoke
+							69 QuickTime Player.app, ID: invoke
+							70 Safari浏览器.app, ID: invoke
+							71 App Store…, ID: action:
+							72 其他…, ID: action:
+					73 移到废纸篓, ID: cmdMoveToTrash:
+					74 显示简介, ID: cmdShowStaticInfo:
+					75 显示检查器, ID: cmdShowInspector:
+					76 重新命名, ID: cmdRename:
+					77 压缩“portrait.png”, ID: cmdArchive:
+					78 压缩“portrait.png”, ID: cmdArchiveWithOptions:
+					79 复制, ID: cmdDuplicate:
+					80 精确复制, ID: cmdDuplicateExactly:
+					81 制作替身, ID: cmdMakeAlias:
+					82 快速查看, Description: 快速查看“portrait.png”, ID: cmdQuickLook:
+					83 幻灯片放映“portrait.png”, ID: cmdSlideshow:
+					84 拷贝, Description: 拷贝“portrait.png”, ID: copy:
+					85 将“portrait.png”拷贝为路径名称, ID: cmdCopyAsPathname:
+					86 共享…, ID: cmdShare:
+					87 标签, ID: cmdSetLabel:
+						88 Tags View
+							89 单选按钮 Description: 添加“”标签, Value: 0
+							90 单选按钮 Description: 添加“红色”标签, Value: 0
+							91 单选按钮 Description: 添加“橙色”标签, Value: 0
+							92 单选按钮 Description: 添加“黄色”标签, Value: 0
+							93 单选按钮 Description: 添加“绿色”标签, Value: 0
+							94 单选按钮 Description: 添加“蓝色”标签, Value: 0
+							95 单选按钮 Description: 添加“紫色”标签, Value: 0
+							96 单选按钮 Description: 添加“灰色”标签, Value: 0
+						97 按钮 标签…
+						98 图像 标记
+					99 快速操作
+						100 菜单 Secondary Actions: Cancel
+							101 向左旋转, ID: cmdPerformQuickActionFromMenuItem:
+							102 向右旋转, ID: cmdPerformQuickActionFromMenuItem:
+							103 标记, ID: cmdPerformQuickActionFromMenuItem:
+							104 创建PDF, ID: cmdPerformQuickActionFromMenuItem:
+							105 转换图像, ID: cmdPerformQuickActionFromMenuItem:
+							106 移除背景, ID: cmdPerformQuickActionFromMenuItem:
+							107 自定义…, ID: cmdOpenQuickActionsPrefPane:
+					108 服务
+						109 菜单 Secondary Actions: Cancel
+							110 设定桌面图片
+							111 使用 ToDesk 快传文件
+							112 用 FinderNotes 编辑笔记
+							113 FinderNotes 编辑笔记
+							114 FinderNotes FN02 验证笔记
+							115 FinderNotes FN05 验收编辑笔记
+							116 FinderNotes FN06 验收编辑笔记
+							117 FinderNotes FN07 验收编辑笔记
+							118 FinderNotes M1 修正验收编辑笔记
+		119 未知 Details: 状态栏, ID: statusBar
+			120 文本 Value: 选择了1项（共15项），127.71 GB可用, ID: statusBarText
+			121 滑块 (settable, float) Description: 调整大小图标, Value: 24
+				122 值指示器 (settable, float) 24
+		123 列表 路径
+			124 text URL: file:///, Secondary Actions: 打开, Value: Macintosh HD private var folders j_ l8s7fghx6q73l51666cwkdw00000gn T findernotes-fn08-vbrd10vl work portrait.png
+	125 工具栏
+		126 container 返回/前进
+			127 按钮 返回
+			128 按钮 (disabled) 前进
+		129 单选按钮 Description: 图标视图, Value: 1
+		130 单选按钮 Description: 列表视图, Value: 0
+		131 单选按钮 Description: 分栏视图, Value: 0
+		132 单选按钮 Description: 画廊视图, Value: 0
+		133 菜单按钮 Description: 群组, Help: 更改项目的分组方式（按住Option键来更改排列顺序）, Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+		134 按钮 Description: 隔空投送, Help: 使用隔空投送共享所选项目, Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+		135 按钮 Description: 添加标签, Help: 编辑标签, Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+		136 按钮 Description: 共享, Help: 共享所选项目, Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+		137 菜单按钮 Description: 操作, Help: 用所选项执行任务, Secondary Actions: 移到上一项, 移到下一项, 从工具栏移除
+		138 搜索文本栏
+			139 按钮 搜索
+	140 关闭按钮
+	141 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	142 最小化按钮
+	143 文本 work
+144 menu bar
+	145 访达
+	146 文件
+	147 编辑
+	148 显示
+	149 前往
+	150 窗口
+	151 帮助

@@ -1,0 +1,64 @@
+{
+  "recordedAt": "2026-09-27T21:32:35.628524+08:00",
+  "version": "0.1.0",
+  "build": "8",
+  "bundleID": "com.findernotes.FinderNotes.LocalTrial",
+  "branch": "codex/fn-08-local-trial",
+  "baseCommit": "c57139c98e6b11bb41aa7c3a35e3ccd57bd6b01f",
+  "changes": "uncommitted; no PR, push, merge or public release",
+  "installedApp": "/Users/danding/Applications/FinderNotes v0.1 Local Trial.app",
+  "appExecutableSHA256": "bdadacb8433ffffc291622a2b7df47472590beee0568f9a4d25608a93e8d7369",
+  "appArchive": "/Users/danding/.codex/worktrees/fn-08-local-trial/FinderNotes/.build/Delivery/FinderNotes-0.1.0-8/FinderNotes-0.1.0-8-local-trial.zip",
+  "appArchiveSHA256": "0c2f9cd1afb614785b98271dbab6468b4e49bb0e3d113bb7e4f70d8d4f9fc059",
+  "sourceArchive": "/Users/danding/.codex/worktrees/fn-08-local-trial/FinderNotes/.build/Delivery/FinderNotes-0.1.0-8/FinderNotes-0.1.0-8-source-and-evidence.tar.gz",
+  "sourceArchiveSHA256": "e86f6123ce41a8ab6acc07d9e8e377f3086a4a58e804d0b3e12b8a7c9bd8764c",
+  "sourceArchiveFilesVerified": 284,
+  "sourceHashList": "/Users/danding/.codex/worktrees/fn-08-local-trial/FinderNotes/docs/evidence/fn08/source-files.json",
+  "sourceArchiveExclusions": [
+    "docs/evidence/fn08/delivery-manifest.json",
+    "docs/evidence/fn08/notion-final-verification.json",
+    "docs/evidence/fn08/source-files.json"
+  ],
+  "support": "Actually run: macOS 26.6.2 (25G83), Apple M2 arm64, internal APFS. Universal binary Intel slice built but untested. Ad hoc, not notarized.",
+  "report": "/Users/danding/.codex/worktrees/fn-08-local-trial/FinderNotes/docs/evidence/fn08/2026-09-27.md",
+  "manual": "/Users/danding/.codex/worktrees/fn-08-local-trial/FinderNotes/docs/LOCAL_TRIAL.md",
+  "acceptanceChecklist": "/Users/danding/.codex/worktrees/fn-08-local-trial/FinderNotes/validation/fn08/README.md",
+  "xcresult": "/Users/danding/.codex/worktrees/fn-08-local-trial/FinderNotes/.build/TestResults/FinderNotes-20260927-210925-85786.xcresult",
+  "uiFixtures": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-vbrd10vl",
+  "uiMarkdownExports": [
+    "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-vbrd10vl/archive/portrait.png.note.md",
+    "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-vbrd10vl/archive/audio.mov.note.md"
+  ],
+  "preservedTrialRecoveryFile": "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.LocalTrial/DraftRecovery/v1/B34273B6-7568-4D81-B469-D171057CCCFD.json",
+  "transferRoot": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-transfer-goritg74",
+  "independentExportRegressionRoot": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q",
+  "originalEvidence": "/Users/danding/.codex/worktrees/fn-08-local-trial/FinderNotes/docs/evidence/fn08",
+  "packageRoundtrip": {
+    "appArchive": "/Users/danding/.codex/worktrees/fn-08-local-trial/FinderNotes/.build/Delivery/FinderNotes-0.1.0-8/FinderNotes-0.1.0-8-local-trial.zip",
+    "archiveSHA256": "0c2f9cd1afb614785b98271dbab6468b4e49bb0e3d113bb7e4f70d8d4f9fc059",
+    "commands": [
+      [
+        "/usr/bin/ditto",
+        "-c",
+        "-k",
+        "--sequesterRsrc",
+        "--keepParent",
+        "/Users/danding/Applications/FinderNotes v0.1 Local Trial.app",
+        ".build/Delivery/FinderNotes-0.1.0-8/FinderNotes-0.1.0-8-local-trial.zip"
+      ],
+      [
+        "/usr/bin/ditto",
+        "-x",
+        "-k",
+        ".build/Delivery/FinderNotes-0.1.0-8/FinderNotes-0.1.0-8-local-trial.zip",
+        "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-package-q92p71wh"
+      ]
+    ],
+    "verificationRoot": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-package-q92p71wh",
+    "extractedBytesMatchInstalled": true,
+    "strictCodesignPassed": true,
+    "extractedAppNotLaunched": true
+  },
+  "gitStatus": " M README.md\n M scripts/build_app.sh\n M scripts/test_app.sh\n?? FinderNotes/Info-FN08Tests.plist\n?? FinderNotes/Info-LocalTrial.plist\n?? docs/LOCAL_TRIAL.md\n?? docs/evidence/fn08/\n?? scripts/install_local_trial.py\n?? validation/fn08/\n",
+  "DanAcceptance": "pending; M2/project acceptance not implied"
+}

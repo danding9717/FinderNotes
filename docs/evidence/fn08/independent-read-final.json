@@ -1,0 +1,573 @@
+{
+  "schema": "findernotes-fn08-independent-read-final-v1",
+  "recordedUTC": "2026-09-27T13:28:59.781199+00:00",
+  "root": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q",
+  "status": "passed",
+  "testsRun": 11,
+  "failures": 0,
+  "errors": 0,
+  "argv": [
+    "validation/fn08/test_read_note.py",
+    "--report",
+    "docs/evidence/fn08/independent-read-final.json"
+  ],
+  "helperSHA256": "d762f9d223f1704d45912a11585d65d9b2cf87b1f4a467961d3a95ce81b373c4",
+  "testsSHA256": "faa4a843b6fabc2324c2c3ed6cd7debc5bffb8b815932ee8dfecbec15775701b",
+  "allSyntheticSourcesUnchanged": true,
+  "observations": [
+    {
+      "test": "test_deleted_after_publication_is_unconfirmed",
+      "source": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_deleted_after_publication_is_unconfirmed/synthetic.png",
+      "before": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9638926,
+        "birthtime": 1790515739.4666643,
+        "mode": 420
+      },
+      "result": {
+        "path": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_deleted_after_publication_is_unconfirmed/deleted.md",
+        "byteLength": 41,
+        "sha256": "5ce5bb09a30335d2fb47259494366fdb3ee730090526d7807a2ec422c8b8e382",
+        "exclusiveCreate": true,
+        "temporaryPath": null,
+        "status": "publication_unconfirmed",
+        "error": "[Errno 2] No such file or directory: '/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_deleted_after_publication_is_unconfirmed/deleted.md'",
+        "errno": 2,
+        "publicationAttemptCompleted": true,
+        "evidencePath": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_deleted_after_publication_is_unconfirmed/.deleted.md.fn08-export-evidence-h3n0yrwf"
+      },
+      "after": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9638926,
+        "birthtime": 1790515739.4666643,
+        "mode": 420
+      },
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_empty_export",
+      "source": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_empty_export/synthetic.png",
+      "before": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": ""
+        },
+        "device": 16777234,
+        "inode": 9638930,
+        "birthtime": 1790515739.4738798,
+        "mode": 420
+      },
+      "commands": [
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.14/bin/python3.14",
+            "/Users/danding/.codex/worktrees/fn-08-local-trial/FinderNotes/validation/fn08/read_note.py",
+            "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_empty_export/synthetic.png",
+            "--export",
+            "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_empty_export/empty.md"
+          ],
+          "exitCode": 0,
+          "stdout": "{\n  \"path\": \"/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_empty_export/synthetic.png\",\n  \"attribute\": \"com.findernotes.note.v1\",\n  \"format\": \"raw UTF-8, no wrapper\",\n  \"mediaModified\": false,\n  \"byteLength\": 0,\n  \"rawHex\": \"\",\n  \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\",\n  \"state\": \"empty\",\n  \"text\": \"\",\n  \"export\": {\n    \"path\": \"/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_empty_export/empty.md\",\n    \"byteLength\": 0,\n    \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\",\n    \"exclusiveCreate\": true,\n    \"temporaryPath\": null,\n    \"status\": \"created\",\n    \"readbackConfirmed\": true,\n    \"finalPathIdentityConfirmed\": true\n  }\n}\n",
+          "stderr": "",
+          "result": {
+            "path": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_empty_export/synthetic.png",
+            "attribute": "com.findernotes.note.v1",
+            "format": "raw UTF-8, no wrapper",
+            "mediaModified": false,
+            "byteLength": 0,
+            "rawHex": "",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "state": "empty",
+            "text": "",
+            "export": {
+              "path": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_empty_export/empty.md",
+              "byteLength": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "exclusiveCreate": true,
+              "temporaryPath": null,
+              "status": "created",
+              "readbackConfirmed": true,
+              "finalPathIdentityConfirmed": true
+            }
+          }
+        }
+      ],
+      "after": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": ""
+        },
+        "device": 16777234,
+        "inode": 9638930,
+        "birthtime": 1790515739.4738798,
+        "mode": 420
+      },
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_existing_target_is_preserved",
+      "source": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_existing_target_is_preserved/synthetic.png",
+      "before": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9638933,
+        "birthtime": 1790515739.532232,
+        "mode": 420
+      },
+      "commands": [
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.14/bin/python3.14",
+            "/Users/danding/.codex/worktrees/fn-08-local-trial/FinderNotes/validation/fn08/read_note.py",
+            "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_existing_target_is_preserved/synthetic.png",
+            "--export",
+            "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_existing_target_is_preserved/existing.md"
+          ],
+          "exitCode": 1,
+          "stdout": "{\n  \"path\": \"/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_existing_target_is_preserved/synthetic.png\",\n  \"attribute\": \"com.findernotes.note.v1\",\n  \"format\": \"raw UTF-8, no wrapper\",\n  \"mediaModified\": false,\n  \"byteLength\": 41,\n  \"rawHex\": \"464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a\",\n  \"sha256\": \"5ce5bb09a30335d2fb47259494366fdb3ee730090526d7807a2ec422c8b8e382\",\n  \"state\": \"present\",\n  \"text\": \"FN08 独立导出最终回归\\n中文🙂\\n\",\n  \"export\": {\n    \"path\": \"/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_existing_target_is_preserved/existing.md\",\n    \"byteLength\": 41,\n    \"sha256\": \"5ce5bb09a30335d2fb47259494366fdb3ee730090526d7807a2ec422c8b8e382\",\n    \"exclusiveCreate\": true,\n    \"temporaryPath\": \"/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_existing_target_is_preserved/.existing.md.fn08-export-n_apinjy\",\n    \"status\": \"failed\",\n    \"error\": \"[Errno 17] File exists: '/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_existing_target_is_preserved/existing.md'\",\n    \"errno\": 17,\n    \"publicationAttemptCompleted\": false\n  }\n}\n",
+          "stderr": "",
+          "result": {
+            "path": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_existing_target_is_preserved/synthetic.png",
+            "attribute": "com.findernotes.note.v1",
+            "format": "raw UTF-8, no wrapper",
+            "mediaModified": false,
+            "byteLength": 41,
+            "rawHex": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a",
+            "sha256": "5ce5bb09a30335d2fb47259494366fdb3ee730090526d7807a2ec422c8b8e382",
+            "state": "present",
+            "text": "FN08 独立导出最终回归\n中文🙂\n",
+            "export": {
+              "path": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_existing_target_is_preserved/existing.md",
+              "byteLength": 41,
+              "sha256": "5ce5bb09a30335d2fb47259494366fdb3ee730090526d7807a2ec422c8b8e382",
+              "exclusiveCreate": true,
+              "temporaryPath": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_existing_target_is_preserved/.existing.md.fn08-export-n_apinjy",
+              "status": "failed",
+              "error": "[Errno 17] File exists: '/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_existing_target_is_preserved/existing.md'",
+              "errno": 17,
+              "publicationAttemptCompleted": false
+            }
+          }
+        }
+      ],
+      "after": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9638933,
+        "birthtime": 1790515739.532232,
+        "mode": 420
+      },
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_missing_attribute",
+      "source": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_missing_attribute/synthetic.png",
+      "before": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff"
+        },
+        "device": 16777234,
+        "inode": 9638937,
+        "birthtime": 1790515739.58758,
+        "mode": 420
+      },
+      "commands": [
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.14/bin/python3.14",
+            "/Users/danding/.codex/worktrees/fn-08-local-trial/FinderNotes/validation/fn08/read_note.py",
+            "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_missing_attribute/synthetic.png",
+            "--export",
+            "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_missing_attribute/missing.md"
+          ],
+          "exitCode": 1,
+          "stdout": "{\n  \"path\": \"/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_missing_attribute/synthetic.png\",\n  \"attribute\": \"com.findernotes.note.v1\",\n  \"format\": \"raw UTF-8, no wrapper\",\n  \"mediaModified\": false,\n  \"state\": \"missing\",\n  \"export\": {\n    \"status\": \"refused\",\n    \"reason\": \"A readable UTF-8 note is required\"\n  }\n}\n",
+          "stderr": "",
+          "result": {
+            "path": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_missing_attribute/synthetic.png",
+            "attribute": "com.findernotes.note.v1",
+            "format": "raw UTF-8, no wrapper",
+            "mediaModified": false,
+            "state": "missing",
+            "export": {
+              "status": "refused",
+              "reason": "A readable UTF-8 note is required"
+            }
+          }
+        }
+      ],
+      "after": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff"
+        },
+        "device": 16777234,
+        "inode": 9638937,
+        "birthtime": 1790515739.58758,
+        "mode": 420
+      },
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_nonempty_export",
+      "source": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_nonempty_export/synthetic.png",
+      "before": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9638939,
+        "birthtime": 1790515739.6437466,
+        "mode": 420
+      },
+      "commands": [
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.14/bin/python3.14",
+            "/Users/danding/.codex/worktrees/fn-08-local-trial/FinderNotes/validation/fn08/read_note.py",
+            "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_nonempty_export/synthetic.png",
+            "--export",
+            "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_nonempty_export/note.md"
+          ],
+          "exitCode": 0,
+          "stdout": "{\n  \"path\": \"/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_nonempty_export/synthetic.png\",\n  \"attribute\": \"com.findernotes.note.v1\",\n  \"format\": \"raw UTF-8, no wrapper\",\n  \"mediaModified\": false,\n  \"byteLength\": 41,\n  \"rawHex\": \"464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a\",\n  \"sha256\": \"5ce5bb09a30335d2fb47259494366fdb3ee730090526d7807a2ec422c8b8e382\",\n  \"state\": \"present\",\n  \"text\": \"FN08 独立导出最终回归\\n中文🙂\\n\",\n  \"export\": {\n    \"path\": \"/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_nonempty_export/note.md\",\n    \"byteLength\": 41,\n    \"sha256\": \"5ce5bb09a30335d2fb47259494366fdb3ee730090526d7807a2ec422c8b8e382\",\n    \"exclusiveCreate\": true,\n    \"temporaryPath\": null,\n    \"status\": \"created\",\n    \"readbackConfirmed\": true,\n    \"finalPathIdentityConfirmed\": true\n  }\n}\n",
+          "stderr": "",
+          "result": {
+            "path": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_nonempty_export/synthetic.png",
+            "attribute": "com.findernotes.note.v1",
+            "format": "raw UTF-8, no wrapper",
+            "mediaModified": false,
+            "byteLength": 41,
+            "rawHex": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a",
+            "sha256": "5ce5bb09a30335d2fb47259494366fdb3ee730090526d7807a2ec422c8b8e382",
+            "state": "present",
+            "text": "FN08 独立导出最终回归\n中文🙂\n",
+            "export": {
+              "path": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_nonempty_export/note.md",
+              "byteLength": 41,
+              "sha256": "5ce5bb09a30335d2fb47259494366fdb3ee730090526d7807a2ec422c8b8e382",
+              "exclusiveCreate": true,
+              "temporaryPath": null,
+              "status": "created",
+              "readbackConfirmed": true,
+              "finalPathIdentityConfirmed": true
+            }
+          }
+        }
+      ],
+      "after": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9638939,
+        "birthtime": 1790515739.6437466,
+        "mode": 420
+      },
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_partial_writes_are_completed",
+      "source": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_partial_writes_are_completed/synthetic.png",
+      "before": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9638942,
+        "birthtime": 1790515739.6994517,
+        "mode": 420
+      },
+      "result": {
+        "path": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_partial_writes_are_completed/partial.md",
+        "byteLength": 41,
+        "sha256": "5ce5bb09a30335d2fb47259494366fdb3ee730090526d7807a2ec422c8b8e382",
+        "exclusiveCreate": true,
+        "temporaryPath": null,
+        "status": "created",
+        "readbackConfirmed": true,
+        "finalPathIdentityConfirmed": true
+      },
+      "after": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9638942,
+        "birthtime": 1790515739.6994517,
+        "mode": 420
+      },
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_replaced_after_publication_is_unconfirmed",
+      "source": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_replaced_after_publication_is_unconfirmed/synthetic.png",
+      "before": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9638945,
+        "birthtime": 1790515739.7054956,
+        "mode": 420
+      },
+      "result": {
+        "path": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_replaced_after_publication_is_unconfirmed/replaced.md",
+        "byteLength": 41,
+        "sha256": "5ce5bb09a30335d2fb47259494366fdb3ee730090526d7807a2ec422c8b8e382",
+        "exclusiveCreate": true,
+        "temporaryPath": null,
+        "status": "publication_unconfirmed",
+        "error": "[Errno 70] Export pathname no longer identifies the created file",
+        "errno": 70,
+        "publicationAttemptCompleted": true,
+        "evidencePath": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_replaced_after_publication_is_unconfirmed/.replaced.md.fn08-export-evidence-olah0x9k"
+      },
+      "after": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9638945,
+        "birthtime": 1790515739.7054956,
+        "mode": 420
+      },
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_same_path_is_rejected_before_read",
+      "source": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_same_path_is_rejected_before_read/synthetic.png",
+      "before": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9638950,
+        "birthtime": 1790515739.710637,
+        "mode": 420
+      },
+      "result": {
+        "path": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_same_path_is_rejected_before_read/synthetic.png",
+        "attribute": "com.findernotes.note.v1",
+        "state": "not_read",
+        "mediaModified": false,
+        "export": {
+          "status": "refused",
+          "reason": "Source and export destination resolve to the same path"
+        }
+      },
+      "after": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9638950,
+        "birthtime": 1790515739.710637,
+        "mode": 420
+      },
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_symlink_alias_is_rejected_before_read",
+      "source": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_symlink_alias_is_rejected_before_read/synthetic.png",
+      "before": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9638952,
+        "birthtime": 1790515739.7155626,
+        "mode": 420
+      },
+      "result": {
+        "path": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_symlink_alias_is_rejected_before_read/synthetic.png",
+        "attribute": "com.findernotes.note.v1",
+        "state": "not_read",
+        "mediaModified": false,
+        "export": {
+          "status": "refused",
+          "reason": "Source and export destination resolve to the same path"
+        }
+      },
+      "after": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9638952,
+        "birthtime": 1790515739.7155626,
+        "mode": 420
+      },
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_var_private_var_alias_is_rejected_before_read",
+      "source": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_var_private_var_alias_is_rejected_before_read/synthetic.png",
+      "before": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9638955,
+        "birthtime": 1790515739.7200546,
+        "mode": 420
+      },
+      "alias": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_var_private_var_alias_is_rejected_before_read/synthetic.png",
+      "result": {
+        "path": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_var_private_var_alias_is_rejected_before_read/synthetic.png",
+        "attribute": "com.findernotes.note.v1",
+        "state": "not_read",
+        "mediaModified": false,
+        "export": {
+          "status": "refused",
+          "reason": "Source and export destination resolve to the same path"
+        }
+      },
+      "commands": [
+        {
+          "argv": [
+            "/opt/homebrew/opt/python@3.14/bin/python3.14",
+            "/Users/danding/.codex/worktrees/fn-08-local-trial/FinderNotes/validation/fn08/read_note.py",
+            "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_var_private_var_alias_is_rejected_before_read/synthetic.png",
+            "--export",
+            "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_var_private_var_alias_is_rejected_before_read/synthetic.png"
+          ],
+          "exitCode": 1,
+          "stdout": "{\n  \"path\": \"/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_var_private_var_alias_is_rejected_before_read/synthetic.png\",\n  \"attribute\": \"com.findernotes.note.v1\",\n  \"state\": \"not_read\",\n  \"mediaModified\": false,\n  \"export\": {\n    \"status\": \"refused\",\n    \"reason\": \"Source and export destination resolve to the same path\"\n  }\n}\n",
+          "stderr": "",
+          "result": {
+            "path": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_var_private_var_alias_is_rejected_before_read/synthetic.png",
+            "attribute": "com.findernotes.note.v1",
+            "state": "not_read",
+            "mediaModified": false,
+            "export": {
+              "status": "refused",
+              "reason": "Source and export destination resolve to the same path"
+            }
+          }
+        }
+      ],
+      "after": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9638955,
+        "birthtime": 1790515739.7200546,
+        "mode": 420
+      },
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_write_failure_retains_temporary_and_never_publishes",
+      "source": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_write_failure_retains_temporary_and_never_publishes/synthetic.png",
+      "before": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9638959,
+        "birthtime": 1790515739.7756772,
+        "mode": 420
+      },
+      "result": {
+        "path": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_write_failure_retains_temporary_and_never_publishes/failed.md",
+        "byteLength": 41,
+        "sha256": "5ce5bb09a30335d2fb47259494366fdb3ee730090526d7807a2ec422c8b8e382",
+        "exclusiveCreate": true,
+        "temporaryPath": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn08-read-final-kxxgmv_q/test_write_failure_retains_temporary_and_never_publishes/.failed.md.fn08-export-dib3f7_1",
+        "status": "failed",
+        "error": "[Errno 28] injected disk full",
+        "errno": 28,
+        "publicationAttemptCompleted": false
+      },
+      "after": {
+        "mediaSHA256": "dc5e60aef59e927ad677f8e8703d719b51ffffaeb3267132087989a63f0aba66",
+        "xattrHex": {
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn08.sentinel": "666e30382d726561642d66696e616c00ff",
+          "com.findernotes.note.v1": "464e303820e78bace7ab8be5afbce587bae69c80e7bb88e59b9ee5bd920ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9638959,
+        "birthtime": 1790515739.7756772,
+        "mode": 420
+      },
+      "sourceUnchanged": true
+    }
+  ],
+  "limitations": [
+    "Race/failure cases are deterministic helper-level injections, not product UI tests.",
+    "Path identity and bytes are confirmed at the observed check, not protected from later mutation.",
+    "All test files are new synthetic copies; no historical or UI fixtures were changed.",
+    "Failed temporary and diagnostic files are retained; no concurrent replacement is deleted."
+  ]
+}
