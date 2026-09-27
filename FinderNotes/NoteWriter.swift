@@ -67,6 +67,10 @@ struct NoteWriter: Sendable {
             throw NoteWriteError.invalidContent
         }
         let input = request.baseline.url
+        // A manual save with identical existing bytes still verifies the target and baseline,
+        // but requires only read access and must not update the xattr or its metadata.
+        // Missing -> present(empty) remains an explicit write.
+        let isVerifiedNoOp = request.baseline.content == request.desiredContent
         guard input.isFileURL,
               input.host == nil || input.host == "" || input.host?.lowercased() == "localhost",
               input.query == nil, input.fragment == nil,
@@ -75,7 +79,7 @@ struct NoteWriter: Sendable {
         }
 
         let fd: Int32
-        do { fd = try NoteReader.openPath(path, access: O_RDWR) }
+        do { fd = try NoteReader.openPath(path, access: isVerifiedNoOp ? O_RDONLY : O_RDWR) }
         catch NoteReadError.system(let operation, let code) where code == EACCES || code == EPERM || code == EROFS {
             throw NoteWriteError.writeFailed(operation: operation, code: code)
         }
@@ -92,6 +96,11 @@ struct NoteWriter: Sendable {
         // another process may change existing bytes between this check and the write.
         try validateTarget(fd: fd, path: path, expected: request.baseline.identity)
         try validateBaseline(fd: fd, expected: request.baseline.content)
+
+        if isVerifiedNoOp {
+            return NoteSnapshot(url: URL(fileURLWithPath: path), identity: request.baseline.identity,
+                                content: .present(desired))
+        }
 
         let flags: Int32
         switch request.baseline.content {

@@ -183,4 +183,47 @@ final class EditorSessionTests: XCTestCase {
         XCTAssertNil(session.snapshot)
         XCTAssertEqual(session.draft, "")
     }
+
+    func testAutosaveTicketsBindDocumentGenerationIdentityAndDraftRevision() throws {
+        let session = EditorSession()
+        _ = session.resolve(note(), ticket: session.beginLoading())
+        XCTAssertNil(session.autosaveTicket)
+        session.updateDraft("待保存")
+        let first = try XCTUnwrap(session.autosaveTicket)
+        XCTAssertTrue(session.isCurrent(first))
+        session.updateDraft("较新的草稿")
+        XCTAssertFalse(session.isCurrent(first))
+        let second = try XCTUnwrap(session.autosaveTicket)
+        let repeatLoad = session.beginLoading()
+        XCTAssertNil(session.autosaveTicket)
+        XCTAssertEqual(session.resolve(note(), ticket: repeatLoad), .reused)
+        XCTAssertFalse(session.isCurrent(second), "Repeating the service invalidates an earlier countdown")
+        let repeated = try XCTUnwrap(session.autosaveTicket)
+        session.close()
+        _ = session.resolve(note(inode: 2), ticket: session.beginLoading())
+        session.updateDraft("较新的草稿")
+        XCTAssertFalse(session.isCurrent(repeated))
+        XCTAssertEqual(session.autosaveTicket?.identity.inode, 2)
+    }
+
+    func testSaveIssueKeepsAutosavePausedAcrossEditsAndRepeatedService() throws {
+        let session = EditorSession()
+        _ = session.resolve(note(), ticket: session.beginLoading())
+        session.updateDraft("保留草稿")
+        let save = try XCTUnwrap(session.beginSaving())
+        XCTAssertTrue(session.failSaving("未确认结果", uncertain: true, ticket: save))
+        XCTAssertNil(session.autosaveTicket)
+        session.updateDraft("继续编辑")
+        _ = session.resolve(note(), ticket: session.beginLoading())
+        XCTAssertNil(session.autosaveTicket)
+        XCTAssertNotNil(session.saveIssue)
+        let manual = try XCTUnwrap(session.beginSaving())
+        XCTAssertNil(session.autosaveTicket)
+        let saved = NoteSnapshot(url: manual.request.baseline.url,
+                                 identity: manual.request.baseline.identity,
+                                 content: manual.request.desiredContent)
+        XCTAssertTrue(session.completeSaving(saved, ticket: manual))
+        session.updateDraft("成功后再编辑")
+        XCTAssertNotNil(session.autosaveTicket)
+    }
 }

@@ -14,7 +14,10 @@ final class EditorWindowTests: XCTestCase {
         let snapshot = snapshot ?? note()
         let session = EditorSession()
         _ = session.resolve(snapshot, ticket: session.beginLoading())
-        return EditorWindowController(session: session, read: { _ in snapshot })
+        return EditorWindowController(session: session, read: { _ in snapshot }, save: { request in
+            NoteSnapshot(url: request.baseline.url, identity: request.baseline.identity,
+                         content: request.desiredContent)
+        }, autosaveScheduler: TestAutosaveScheduler())
     }
 
     private func finishRead(_ controller: EditorWindowController) async throws {
@@ -136,7 +139,7 @@ final class EditorWindowTests: XCTestCase {
     func testNoTargetCannotEditAndFailureNeverLooksLikeEmptyNote() {
         let session = EditorSession()
         session.reject("已有正文不是 UTF-8", ticket: session.beginLoading())
-        let controller = EditorWindowController(session: session)
+        let controller = EditorWindowController(session: session, autosaveScheduler: TestAutosaveScheduler())
         XCTAssertFalse(controller.editor.isEditable)
         XCTAssertFalse(controller.copyButton.isEnabled)
         XCTAssertFalse(controller.exportButton.isEnabled)
@@ -161,7 +164,7 @@ final class EditorWindowTests: XCTestCase {
             return NoteSnapshot(url: request.baseline.url,
                                 identity: request.baseline.identity,
                                 content: request.desiredContent)
-        })
+        }, autosaveScheduler: TestAutosaveScheduler())
         defer { controller.window?.orderOut(nil) }
         controller.editor.string = "第一版🙂\n"
         controller.captureDraft()
@@ -192,7 +195,8 @@ final class EditorWindowTests: XCTestCase {
         let session = EditorSession()
         _ = session.resolve(snapshot, ticket: session.beginLoading())
         let controller = EditorWindowController(session: session,
-                                                save: { _ in throw NoteWriteError.conflict })
+                                                save: { _ in throw NoteWriteError.conflict },
+                                                autosaveScheduler: TestAutosaveScheduler())
         controller.editor.string = "冲突时保留🙂"
         controller.captureDraft()
         controller.saveNote(nil)
