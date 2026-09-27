@@ -36,6 +36,10 @@ final class EditorSession {
     private(set) var failure: String?
     private(set) var saveIssue: SaveIssue?
     private(set) var isSaving = false
+    private(set) var recoveryIdentifier = UUID()
+    private(set) var recoveryNeedsAttention = false
+    private(set) var recoveryWriteBlocked = false
+    private(set) var recoveryIssue: String?
     private var generation: UInt64 = 0
     private var nextSaveIdentifier: UInt64 = 0
     private var pendingSaveIdentifier: UInt64?
@@ -45,10 +49,16 @@ final class EditorSession {
         Data(draft.utf8) != Data((snapshot?.content.text ?? "").utf8)
     }
 
-    var requiresLeaveConfirmation: Bool { isDirty || saveIssue != nil }
-    var canBeginSave: Bool { snapshot != nil && !isLoading && !isSaving }
+    var requiresLeaveConfirmation: Bool { isDirty || saveIssue != nil || recoveryNeedsAttention }
+    var canBeginSave: Bool { snapshot != nil && !isLoading && !isSaving && !recoveryWriteBlocked }
+    var recoveryRecord: DraftRecoveryRecord? {
+        guard let snapshot, isDirty || saveIssue != nil || recoveryNeedsAttention else { return nil }
+        return DraftRecoveryRecord(id: recoveryIdentifier, baseline: snapshot,
+                                   draft: draft, revision: draftRevision)
+    }
     var autosaveTicket: AutosaveTicket? {
-        guard canBeginSave, isDirty, saveIssue == nil, let snapshot else { return nil }
+        guard canBeginSave, isDirty, saveIssue == nil, !recoveryNeedsAttention,
+              recoveryIssue == nil, let snapshot else { return nil }
         return AutosaveTicket(generation: generation, draftRevision: draftRevision,
                               url: snapshot.url, identity: snapshot.identity)
     }
@@ -60,7 +70,19 @@ final class EditorSession {
         if isLoading { return "正在读取笔记…" }
         guard let snapshot else { return "从 Finder 选择一份图片或视频，运行本应用的编辑笔记服务。" }
         if isSaving { return "正在保存笔记… 可以继续编辑或导出当前草稿" }
-        if let saveIssue { return saveIssue.message + " · 自动保存已暂停 · 草稿仍保留，可复制或导出" }
+        if recoveryWriteBlocked {
+            let detail = [saveIssue?.message, recoveryIssue].compactMap { $0 }.joined(separator: " · ")
+            return "草稿的原文件身份无法确认 · 已禁止写回 · 草稿仍保留，可复制或导出" +
+                (detail.isEmpty ? "" : " · " + detail)
+        }
+        if saveIssue != nil || recoveryIssue != nil {
+            let recoveryDetail = recoveryIssue.map { "草稿恢复文件更新失败：\($0)" }
+            let detail = [saveIssue?.message, recoveryDetail].compactMap { $0 }.joined(separator: " · ")
+            return detail + " · 自动保存已暂停 · 草稿仍保留，可复制或导出"
+        }
+        if recoveryNeedsAttention {
+            return "恢复或冲突草稿待确认 · 自动保存已暂停 · 请通过“高级选项 → 核对外部版本”核对后手动保存，或复制、导出草稿"
+        }
         if isDirty {
             return lastSaveStatus == nil ? "草稿有改动 · 尚未保存" : "上一版已保存 · 当前草稿尚未保存"
         }
@@ -75,6 +97,74 @@ final class EditorSession {
         guard Data(text.utf8) != Data(draft.utf8) else { return }
         draft = text
         draftRevision &+= 1
+    }
+
+    func setRecoveryIssue(_ message: String?) {
+        recoveryIssue = message
+    }
+
+    func pauseForExternalIssue(_ message: String) {
+        saveIssue = .failed(message)
+        recoveryNeedsAttention = true
+    }
+
+    func blockRecoveryWrite(_ message: String) {
+        recoveryWriteBlocked = true
+        recoveryNeedsAttention = true
+        recoveryIssue = message
+    }
+
+    /// Restore the original storage baseline, never silently adopt newer external bytes.
+    /// The caller must first protect or explicitly discard any currently open draft.
+    @discardableResult
+    func restoreRecovery(record: DraftRecoveryRecord, current: NoteSnapshot?) -> Bool {
+        guard !isSaving else { return false }
+        invalidateLoading()
+        pendingSaveIdentifier = nil
+        snapshot = record.snapshot
+        draft = record.draft
+        draftRevision = record.revision
+        recoveryIdentifier = record.id
+        recoveryNeedsAttention = true
+        recoveryWriteBlocked = !Self.hasRecoveryIdentity(record.snapshot.identity) ||
+            current?.url.path != record.snapshot.url.path ||
+            current?.identity != record.snapshot.identity
+        recoveryIssue = nil
+        failure = nil
+        saveIssue = nil
+        if !recoveryWriteBlocked, let current, current.content != record.snapshot.content {
+            let externalState: String
+            switch current.content {
+            case .missing: externalState = "外部自定义笔记属性已不存在"
+            case .present(let bytes): externalState = bytes.isEmpty ? "外部自定义笔记为空正文" : "外部自定义笔记正文已改变"
+            }
+            saveIssue = .failed("已落盘草稿的正文基线与外部版本不同；\(externalState)，请先使用“高级选项 → 核对外部版本”。")
+        }
+        lastSaveStatus = nil
+        return true
+    }
+
+    /// Only a user-confirmed external snapshot can replace this session's baseline.
+    /// Saving still checks that baseline against the xattr; this does not provide a CAS.
+    @discardableResult
+    func applyExternal(_ candidate: NoteSnapshot, replacingDraft: Bool,
+                       confirmedRevision: UInt64) -> Bool {
+        guard !isSaving, !isLoading, draftRevision == confirmedRevision,
+              let snapshot, candidate.url.path == snapshot.url.path,
+              candidate.identity == snapshot.identity,
+              !recoveryWriteBlocked || Self.hasRecoveryIdentity(candidate.identity) else { return false }
+        generation &+= 1
+        if replacingDraft {
+            install(candidate)
+        } else {
+            self.snapshot = candidate
+            recoveryNeedsAttention = true
+            recoveryWriteBlocked = false
+            failure = nil
+            saveIssue = nil
+            lastSaveStatus = nil
+        }
+        return true
     }
 
     func beginSaving() -> SaveTicket? {
@@ -103,6 +193,8 @@ final class EditorSession {
         isSaving = false
         snapshot = candidate
         saveIssue = nil
+        recoveryNeedsAttention = false
+        recoveryWriteBlocked = false
         if bytes.isEmpty {
             if case .present(let previous) = ticket.request.baseline.content, !previous.isEmpty {
                 lastSaveStatus = "笔记已清空并保存"
@@ -177,6 +269,7 @@ final class EditorSession {
         failure = nil
         saveIssue = nil
         lastSaveStatus = nil
+        resetRecoveryState()
     }
 
     private func install(_ candidate: NoteSnapshot) {
@@ -186,5 +279,18 @@ final class EditorSession {
         failure = nil
         saveIssue = nil
         lastSaveStatus = nil
+        resetRecoveryState()
+    }
+
+    private static func hasRecoveryIdentity(_ identity: FileIdentity) -> Bool {
+        identity.inode != 0 && identity.birthSeconds > 0 &&
+            (0..<1_000_000_000).contains(identity.birthNanoseconds)
+    }
+
+    private func resetRecoveryState() {
+        recoveryIdentifier = UUID()
+        recoveryNeedsAttention = false
+        recoveryWriteBlocked = false
+        recoveryIssue = nil
     }
 }

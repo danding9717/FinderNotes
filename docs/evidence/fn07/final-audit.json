@@ -1,0 +1,91 @@
+{
+  "time": "2026-09-27T11:13:18.818782+00:00",
+  "head": "708c3f5a7b1ff31219ac53f339876fa7d793f890",
+  "branch": "codex/fn-07-conflict-recovery",
+  "codeState": "uncommitted; no push or merge; no PR",
+  "appBundleID": "com.findernotes.FinderNotes.FN07Validation",
+  "codesign": "passed ad hoc",
+  "test": {
+    "executed": 140,
+    "passed": 139,
+    "skipped": 1,
+    "failed": 0,
+    "suites": {
+      "AutosaveFileIntegrationTests": {
+        "executed": 6,
+        "result": "0 failures"
+      },
+      "DraftRecoveryStoreTests": {
+        "executed": 12,
+        "result": "0 failures"
+      },
+      "EditorAutosaveTests": {
+        "executed": 10,
+        "result": "0 failures"
+      },
+      "EditorRecoverySessionTests": {
+        "executed": 15,
+        "result": "0 failures"
+      },
+      "EditorRecoveryWindowTests": {
+        "executed": 12,
+        "result": "0 failures"
+      },
+      "EditorSessionTests": {
+        "executed": 15,
+        "result": "0 failures"
+      },
+      "EditorWindowTests": {
+        "executed": 11,
+        "result": "0 failures"
+      },
+      "MarkdownExporterTests": {
+        "executed": 9,
+        "result": "0 failures"
+      },
+      "MediaPreviewControllerTests": {
+        "executed": 9,
+        "result": "0 failures"
+      },
+      "NoteReaderTests": {
+        "executed": 14,
+        "result": "1 test skipped and 0 failures"
+      },
+      "NoteWriterTests": {
+        "executed": 14,
+        "result": "0 failures"
+      },
+      "PreviewWindowTests": {
+        "executed": 4,
+        "result": "0 failures"
+      },
+      "RecoveryFileIntegrationTests": {
+        "executed": 9,
+        "result": "0 failures"
+      },
+      "FinderNotesTests.xctest": {
+        "executed": 140,
+        "result": "1 test skipped and 0 failures"
+      },
+      "All tests": {
+        "executed": 140,
+        "result": "1 test skipped and 0 failures"
+      }
+    },
+    "xcresult": "/Users/danding/.codex/worktrees/fn-07-conflict-recovery/FinderNotes/.build/TestResults/FinderNotes-20260927-191052-36361.xcresult"
+  },
+  "realFileFN07Tests": 9,
+  "processCrash": "passed",
+  "finderUI": "not_verified; blocked by lock screen",
+  "originalAGENTSSHA256": "9b57a4f067e71f6554fee66e26f9551e2531e0bf9b32e5fe723d13ba0b237492",
+  "implementationPatchSHA256": "c056bf20bacd7c480e98145008710eecfb085afcbde9db418b5b22fddb17cff3",
+  "validationBoundaries": [
+    "real Chinese IME",
+    "sound",
+    "collapse while actively playing video",
+    "long-text scrolling",
+    "TCC",
+    "distribution",
+    "cross-volume/cloud/NAS"
+  ]
+}

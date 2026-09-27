@@ -1,0 +1,11 @@
+The following is a diff from the previous accessibility tree for Window: "portrait.png — FinderNotes" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 23-24
+~	1 按钮 Description: 展开预览, ID: fn-toggle-preview
++	26 文本 portrait.png — FinderNotes
+Selected text: ```
+FN07 原有笔记 portrait.png
+中文🙂
+
+```
+
+Note: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too).

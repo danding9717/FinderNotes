@@ -1,0 +1,308 @@
+{
+  "schema": "findernotes-fn07-fixtures-v1",
+  "root": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn07-f3mu6lvu",
+  "runID": "70349d75-589d-4d8a-9708-5612149b8f08",
+  "status": "passed",
+  "failures": [],
+  "fixtureMutationsByVerifier": [],
+  "checks": [
+    {
+      "file": "audio.mov",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteState": "present",
+      "actual": {
+        "mediaSHA256": "eaf4f94061950b51d53a6c1851b56649a8a009feea2c48fa9e16723549d9e0cb",
+        "xattrHex": {
+          "com.apple.metadata:kMDItemFinderComment": "62706c69737430306f10160046004e003000370020678490207684539f751f6ce891ca00200061007500640069006f002e006d006f0076080000000000000101000000000000000100000000000000000000000000000037",
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn07.sentinel": "70726573657276652d666e303700ff",
+          "com.findernotes.note.v1": "464e303720e58e9fe69c89e7ac94e8aeb020617564696f2e6d6f760ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9601964,
+        "birthtime": 1790509981.4313786,
+        "mode": 420
+      }
+    },
+    {
+      "file": "conflict.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteState": "present",
+      "actual": {
+        "mediaSHA256": "dd7e6869e84e82cc20696c2bedcef38ffadd45b6a1fa2f153c908c9844a72cb7",
+        "xattrHex": {
+          "com.apple.metadata:kMDItemFinderComment": "62706c69737430306f10190046004e003000370020678490207684539f751f6ce891ca00200063006f006e0066006c006900630074002e0070006e006708000000000000010100000000000000010000000000000000000000000000003d",
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn07.sentinel": "70726573657276652d666e303700ff",
+          "com.findernotes.note.v1": "464e303720e58e9fe69c89e7ac94e8aeb020636f6e666c6963742e706e670ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9601952,
+        "birthtime": 1790509981.2118115,
+        "mode": 420
+      }
+    },
+    {
+      "file": "copy-source.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteState": "present",
+      "actual": {
+        "mediaSHA256": "dd7e6869e84e82cc20696c2bedcef38ffadd45b6a1fa2f153c908c9844a72cb7",
+        "xattrHex": {
+          "com.apple.metadata:kMDItemFinderComment": "62706c69737430306f101c0046004e003000370020678490207684539f751f6ce891ca00200063006f00700079002d0073006f0075007200630065002e0070006e0067080000000000000101000000000000000100000000000000000000000000000043",
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn07.sentinel": "70726573657276652d666e303700ff",
+          "com.findernotes.note.v1": "464e303720e58e9fe69c89e7ac94e8aeb020636f70792d736f757263652e706e670ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9601959,
+        "birthtime": 1790509981.212798,
+        "mode": 420
+      }
+    },
+    {
+      "file": "copy.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteState": "present",
+      "actual": {
+        "mediaSHA256": "dd7e6869e84e82cc20696c2bedcef38ffadd45b6a1fa2f153c908c9844a72cb7",
+        "xattrHex": {
+          "com.apple.metadata:kMDItemFinderComment": "62706c69737430306f101c0046004e003000370020678490207684539f751f6ce891ca00200063006f00700079002d0073006f0075007200630065002e0070006e0067080000000000000101000000000000000100000000000000000000000000000043",
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn07.sentinel": "70726573657276652d666e303700ff",
+          "com.findernotes.note.v1": "464e303720e58e9fe69c89e7ac94e8aeb020636f70792d736f757263652e706e670ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9601965,
+        "birthtime": 1790509981.212846,
+        "mode": 420
+      }
+    },
+    {
+      "file": "deletion.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteState": "present",
+      "actual": {
+        "mediaSHA256": "dd7e6869e84e82cc20696c2bedcef38ffadd45b6a1fa2f153c908c9844a72cb7",
+        "xattrHex": {
+          "com.apple.metadata:kMDItemFinderComment": "62706c69737430306f10190046004e003000370020678490207684539f751f6ce891ca002000640065006c006500740069006f006e002e0070006e006708000000000000010100000000000000010000000000000000000000000000003d",
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn07.sentinel": "70726573657276652d666e303700ff",
+          "com.findernotes.note.v1": "464e303720e58e9fe69c89e7ac94e8aeb02064656c6574696f6e2e706e670ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9601953,
+        "birthtime": 1790509981.212066,
+        "mode": 420
+      }
+    },
+    {
+      "file": "empty.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteState": "empty",
+      "actual": {
+        "mediaSHA256": "dd7e6869e84e82cc20696c2bedcef38ffadd45b6a1fa2f153c908c9844a72cb7",
+        "xattrHex": {
+          "com.apple.metadata:kMDItemFinderComment": "62706c69737430306f10160046004e003000370020678490207684539f751f6ce891ca00200065006d007000740079002e0070006e0067080000000000000101000000000000000100000000000000000000000000000037",
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn07.sentinel": "70726573657276652d666e303700ff",
+          "com.findernotes.note.v1": ""
+        },
+        "device": 16777234,
+        "inode": 9601957,
+        "birthtime": 1790509981.2125874,
+        "mode": 420
+      }
+    },
+    {
+      "file": "missing.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteState": "missing",
+      "actual": {
+        "mediaSHA256": "dd7e6869e84e82cc20696c2bedcef38ffadd45b6a1fa2f153c908c9844a72cb7",
+        "xattrHex": {
+          "com.apple.metadata:kMDItemFinderComment": "62706c69737430306f10180046004e003000370020678490207684539f751f6ce891ca0020006d0069007300730069006e0067002e0070006e006708000000000000010100000000000000010000000000000000000000000000003b",
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn07.sentinel": "70726573657276652d666e303700ff"
+        },
+        "device": 16777234,
+        "inode": 9601958,
+        "birthtime": 1790509981.2126856,
+        "mode": 420
+      }
+    },
+    {
+      "file": "moved.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteState": "present",
+      "actual": {
+        "mediaSHA256": "dd7e6869e84e82cc20696c2bedcef38ffadd45b6a1fa2f153c908c9844a72cb7",
+        "xattrHex": {
+          "com.apple.metadata:kMDItemFinderComment": "62706c69737430306f10160046004e003000370020678490207684539f751f6ce891ca0020006d006f007600650064002e0070006e0067080000000000000101000000000000000100000000000000000000000000000037",
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn07.sentinel": "70726573657276652d666e303700ff",
+          "com.findernotes.note.v1": "464e303720e58e9fe69c89e7ac94e8aeb0206d6f7665642e706e670ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9601956,
+        "birthtime": 1790509981.2124877,
+        "mode": 420
+      }
+    },
+    {
+      "file": "portrait.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteState": "present",
+      "actual": {
+        "mediaSHA256": "631ed737577dbce028cd0af2e302fdf9cb26b6747fedd2825a9d4091204d4cf4",
+        "xattrHex": {
+          "com.apple.metadata:kMDItemFinderComment": "62706c69737430306f10190046004e003000370020678490207684539f751f6ce891ca00200070006f007200740072006100690074002e0070006e006708000000000000010100000000000000010000000000000000000000000000003d",
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn07.sentinel": "70726573657276652d666e303700ff",
+          "com.findernotes.note.v1": "464e303720e58e9fe69c89e7ac94e8aeb020706f7274726169742e706e670ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9601961,
+        "birthtime": 1790509981.2314157,
+        "mode": 420
+      }
+    },
+    {
+      "file": "readonly.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteState": "present",
+      "actual": {
+        "mediaSHA256": "dd7e6869e84e82cc20696c2bedcef38ffadd45b6a1fa2f153c908c9844a72cb7",
+        "xattrHex": {
+          "com.apple.metadata:kMDItemFinderComment": "62706c69737430306f10190046004e003000370020678490207684539f751f6ce891ca00200072006500610064006f006e006c0079002e0070006e006708000000000000010100000000000000010000000000000000000000000000003d",
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn07.sentinel": "70726573657276652d666e303700ff",
+          "com.findernotes.note.v1": "464e303720e58e9fe69c89e7ac94e8aeb020726561646f6e6c792e706e670ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9601960,
+        "birthtime": 1790509981.2128928,
+        "mode": 292
+      }
+    },
+    {
+      "file": "recovery.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteState": "present",
+      "actual": {
+        "mediaSHA256": "dd7e6869e84e82cc20696c2bedcef38ffadd45b6a1fa2f153c908c9844a72cb7",
+        "xattrHex": {
+          "com.apple.metadata:kMDItemFinderComment": "62706c69737430306f10190046004e003000370020678490207684539f751f6ce891ca0020007200650063006f0076006500720079002e0070006e006708000000000000010100000000000000010000000000000000000000000000003d",
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn07.sentinel": "70726573657276652d666e303700ff",
+          "com.findernotes.note.v1": "464e303720e58e9fe69c89e7ac94e8aeb0207265636f766572792e706e670ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9601951,
+        "birthtime": 1790509981.2116103,
+        "mode": 420
+      }
+    },
+    {
+      "file": "replace.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteState": "present",
+      "actual": {
+        "mediaSHA256": "dd7e6869e84e82cc20696c2bedcef38ffadd45b6a1fa2f153c908c9844a72cb7",
+        "xattrHex": {
+          "com.apple.metadata:kMDItemFinderComment": "62706c69737430306f10180046004e003000370020678490207684539f751f6ce891ca0020007200650070006c006100630065002e0070006e006708000000000000010100000000000000010000000000000000000000000000003b",
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn07.sentinel": "70726573657276652d666e303700ff",
+          "com.findernotes.note.v1": "464e303720e58e9fe69c89e7ac94e8aeb0207265706c6163652e706e670ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9601955,
+        "birthtime": 1790509981.2123764,
+        "mode": 420
+      }
+    },
+    {
+      "file": "unrelated.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteState": "present",
+      "actual": {
+        "mediaSHA256": "dd7e6869e84e82cc20696c2bedcef38ffadd45b6a1fa2f153c908c9844a72cb7",
+        "xattrHex": {
+          "com.apple.metadata:kMDItemFinderComment": "62706c69737430306f101a0046004e003000370020678490207684539f751f6ce891ca00200075006e00720065006c0061007400650064002e0070006e006708000000000000010100000000000000010000000000000000000000000000003f",
+          "com.apple.provenance": "0102000c1e3e8e78b74184",
+          "com.findernotes.fn07.sentinel": "70726573657276652d666e303700ff",
+          "com.findernotes.note.v1": "464e303720e58e9fe69c89e7ac94e8aeb020756e72656c617465642e706e670ae4b8ade69687f09f99820a"
+        },
+        "device": 16777234,
+        "inode": 9601954,
+        "birthtime": 1790509981.2122576,
+        "mode": 420
+      }
+    }
+  ]
+}

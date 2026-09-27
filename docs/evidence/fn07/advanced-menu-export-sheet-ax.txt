@@ -1,0 +1,18 @@
+The following is a diff from the previous accessibility tree for Window: "导出 Markdown 快照" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 23-36
+~21 表单 Description: 导出 markdown 快照, ID: save-panel, Secondary Actions: Raise
+~	22 分离组
++		23 文本 Value: 位置：, ID: whereLabel
++		24 弹出式按钮 位置：, Value: work, ID: where popup
++		25 显示三角形 Description: 显示更多选项, Value: 0
++		26 文本 Value: 保存为：, ID: nameFieldLabel
++		27 文本栏 (settable) Value: readonly.png.note.md, ID: saveAsNameTextField
++		28 文本 Value: 标签：, ID: tagsLabel
++		29 文本栏 (settable) 标签编辑器
++		30 按钮 取消, ID: CancelButton
++		31 按钮 导出, ID: OKButton
+Selected text: ```
+readonly.png.note
+```
+
+Note: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too).

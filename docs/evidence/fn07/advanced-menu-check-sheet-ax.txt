@@ -1,0 +1,10 @@
+The following is a diff from the previous accessibility tree for Window: "Unknown" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 0, 3-14, 22-27
++21 表单 Description: 警告, Secondary Actions: Raise
++	22 text 核对文件中的笔记 已读取外部自定义笔记正文。
+载入外部版前先导出本地草稿；覆盖前先导出外部版，再确认写入。取消或导出失败会保留当前草稿。
++	23 按钮 继续编辑, ID: action-button-1
++	24 按钮 导出草稿并载入外部版…, ID: action-button-2
++	25 按钮 备份外部版并覆盖…, ID: action-button-3
++	26 按钮 仅导出本地草稿…, ID: action-button-4
+The focused UI element is 21 表单 Description: 警告, Secondary Actions: Raise

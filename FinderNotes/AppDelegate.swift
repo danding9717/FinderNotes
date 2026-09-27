@@ -15,7 +15,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
 
     private func editorController() -> EditorWindowController {
         if let controller { return controller }
-        let created = EditorWindowController()
+        let created = EditorWindowController(recoveryStore: DraftRecoveryStore(directory: DraftRecoveryStore.defaultDirectory()))
+        created.refreshRecoveryAvailability()
         controller = created
         return created
     }
