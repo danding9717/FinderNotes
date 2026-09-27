@@ -10,6 +10,12 @@ final class EditorSession {
         let draftRevision: UInt64
         let request: NoteSaveRequest
     }
+    struct AutosaveTicket: Equatable {
+        fileprivate let generation: UInt64
+        let draftRevision: UInt64
+        let url: URL
+        let identity: FileIdentity
+    }
     enum Resolution: Equatable { case stale, reused, installed, needsDiscard }
     enum SaveIssue: Equatable {
         case failed(String)
@@ -41,13 +47,20 @@ final class EditorSession {
 
     var requiresLeaveConfirmation: Bool { isDirty || saveIssue != nil }
     var canBeginSave: Bool { snapshot != nil && !isLoading && !isSaving }
+    var autosaveTicket: AutosaveTicket? {
+        guard canBeginSave, isDirty, saveIssue == nil, let snapshot else { return nil }
+        return AutosaveTicket(generation: generation, draftRevision: draftRevision,
+                              url: snapshot.url, identity: snapshot.identity)
+    }
+
+    func isCurrent(_ ticket: AutosaveTicket) -> Bool { autosaveTicket == ticket }
 
     var status: String {
         if let failure { return "读取失败：\(failure)" }
         if isLoading { return "正在读取笔记…" }
         guard let snapshot else { return "从 Finder 选择一份图片或视频，运行本应用的编辑笔记服务。" }
         if isSaving { return "正在保存笔记… 可以继续编辑或导出当前草稿" }
-        if let saveIssue { return saveIssue.message + " · 草稿仍保留，可复制或导出" }
+        if let saveIssue { return saveIssue.message + " · 自动保存已暂停 · 草稿仍保留，可复制或导出" }
         if isDirty {
             return lastSaveStatus == nil ? "草稿有改动 · 尚未保存" : "上一版已保存 · 当前草稿尚未保存"
         }

@@ -216,6 +216,60 @@ final class NoteWriterTests: XCTestCase {
         XCTAssertEqual(try reader.read(urls: [copy]).content.text, "副本")
     }
 
+    func testUnchangedManualSaveVerifiesReadOnlyFileWithoutWritingAgain() throws {
+        try XCTSkipIf(geteuid() == 0, "root bypasses file permissions")
+        let url = try media("unchanged.png")
+        let baseline = try NoteWriter().save(request(try reader.read(urls: [url]), "不变的中文🙂"))
+        XCTAssertEqual(chmod(url.path, 0o400), 0)
+        defer { _ = chmod(url.path, 0o600) }
+        let verified = try NoteWriter().save(request(baseline, "不变的中文🙂"))
+        XCTAssertEqual(verified.content, baseline.content)
+        XCTAssertEqual(verified.identity, baseline.identity)
+        XCTAssertThrowsError(try NoteWriter().save(request(baseline, "真的改动")))
+        XCTAssertEqual(try attribute(url, NoteReader.attributeName), Data("不变的中文🙂".utf8))
+    }
+
+    func testUnchangedManualSaveStillRejectsChangedBodyAndIdentity() throws {
+        let url = try media("unchanged.png")
+        let baseline = try NoteWriter().save(request(try reader.read(urls: [url]), "原文"))
+        try Self.setAttribute(url, NoteReader.attributeName, Data("外改".utf8))
+        XCTAssertThrowsError(try NoteWriter().save(request(baseline, "原文"))) { error in
+            XCTAssertEqual(error as? NoteWriteError, .conflict)
+        }
+        XCTAssertEqual(try attribute(url, NoteReader.attributeName), Data("外改".utf8))
+        try FileManager.default.moveItem(at: url, to: root.appendingPathComponent("retained.png"))
+        _ = try media("unchanged.png")
+        XCTAssertThrowsError(try NoteWriter().save(request(baseline, "原文"))) { error in
+            XCTAssertEqual(error as? NoteWriteError, .identityChanged)
+        }
+        XCTAssertNil(try attribute(url, NoteReader.attributeName))
+    }
+
+    #if DEBUG
+    func testUnchangedManualSaveDoesNotEnterPostwritePhase() throws {
+        let url = try media("unchanged.png")
+        let baseline = try NoteWriter().save(request(try reader.read(urls: [url]), "原文"))
+        enum Unexpected: Error { case wrote }
+        let writer = NoteWriter(beforeReadback: { throw Unexpected.wrote })
+        let result = try writer.save(request(baseline, "原文"))
+        XCTAssertEqual(result.content, baseline.content)
+    }
+
+    func testUnconfirmedWriteCannotBeRetriedAgainstOldBaseline() throws {
+        let url = try media("unconfirmed.png")
+        let baseline = try reader.read(urls: [url])
+        enum Injected: Error { case readback }
+        let writer = NoteWriter(beforeReadback: { throw Injected.readback })
+        XCTAssertThrowsError(try writer.save(request(baseline, "已实际写入"))) { error in
+            XCTAssertEqual(error as? NoteWriteError, .resultUnconfirmed)
+        }
+        XCTAssertThrowsError(try NoteWriter().save(request(baseline, "已实际写入"))) { error in
+            XCTAssertEqual(error as? NoteWriteError, .conflict)
+        }
+        XCTAssertEqual(try attribute(url, NoteReader.attributeName), Data("已实际写入".utf8))
+    }
+    #endif
+
     private func request(_ baseline: NoteSnapshot, _ text: String) -> NoteSaveRequest {
         NoteSaveRequest(baseline: baseline, desiredContent: .present(Data(text.utf8)))
     }

@@ -6,17 +6,22 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
     enum DraftDecision { case keepEditing, discard }
 
     let session: EditorSession
-    let editor = NSTextView()
+    let preview: MediaPreviewController
+    let editor = CompositionTextView()
     let filePath = NSTextField(wrappingLabelWithString: "")
     let statusLabel = NSTextField(wrappingLabelWithString: "")
     let saveButton = NSButton(title: "保存", target: nil, action: nil)
     let copyButton = NSButton(title: "复制草稿", target: nil, action: nil)
     let exportButton = NSButton(title: "导出 Markdown…", target: nil, action: nil)
+    let previewButton = NSButton(title: "收起预览", target: nil, action: nil)
+    private var previewWidth: NSLayoutConstraint?
     private(set) var isConfirming = false
     private var readingTask: Task<Void, Never>?
     private var savingTask: Task<Void, Never>?
     private var isExporting = false
     private var allowClosing = false
+    private var autosaveGeneration: UInt64 = 0
+    private let autosaveScheduler: any EditorAutosaveScheduling
     private let read: @Sendable ([URL]) throws -> NoteSnapshot
     private let save: @Sendable (NoteSaveRequest) throws -> NoteSnapshot
     private let export: @Sendable (MarkdownExportRequest) throws -> Void
@@ -24,11 +29,15 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
     init(session: EditorSession = EditorSession(),
          read: @escaping @Sendable ([URL]) throws -> NoteSnapshot = { try NoteReader().read(urls: $0) },
          save: @escaping @Sendable (NoteSaveRequest) throws -> NoteSnapshot = { try NoteWriter().save($0) },
-         export: @escaping @Sendable (MarkdownExportRequest) throws -> Void = { try MarkdownExporter().export($0) }) {
+         export: @escaping @Sendable (MarkdownExportRequest) throws -> Void = { try MarkdownExporter().export($0) },
+         autosaveScheduler: any EditorAutosaveScheduling = EditorAutosaveScheduler(),
+         preview: MediaPreviewController = MediaPreviewController()) {
         self.session = session
+        self.preview = preview
         self.read = read
         self.save = save
         self.export = export
+        self.autosaveScheduler = autosaveScheduler
         let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 760, height: 560),
                               styleMask: [.titled, .closable, .miniaturizable, .resizable],
                               backing: .buffered, defer: false)
@@ -84,16 +93,31 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
         editor.textContainer?.widthTracksTextView = true
         editor.textContainer?.containerSize = NSSize(width: 0, height: CGFloat.greatestFiniteMagnitude)
         editor.delegate = self
+        editor.inputStateDidChange = { [weak self] in
+            self?.captureDraft()
+            self?.scheduleAutosave()
+            self?.renderStatus()
+        }
         editor.setAccessibilityIdentifier("fn-note-editor")
         editor.setAccessibilityLabel("笔记正文")
         let scroll = NSScrollView()
         scroll.hasVerticalScroller = true
         scroll.borderType = .bezelBorder
         scroll.documentView = editor
-        stack.addArrangedSubview(scroll)
+        let body = NSStackView(views: [preview.view, scroll])
+        body.orientation = .horizontal
+        body.alignment = .top
+        body.distribution = .fill
+        body.spacing = 12
+        body.detachesHiddenViews = true
+        stack.addArrangedSubview(body)
+        previewWidth = preview.view.widthAnchor.constraint(equalTo: body.widthAnchor, multiplier: 0.4, constant: -4.8)
+        previewWidth?.isActive = preview.isExpanded
         NSLayoutConstraint.activate([
-            scroll.widthAnchor.constraint(equalTo: stack.widthAnchor),
-            scroll.heightAnchor.constraint(greaterThanOrEqualToConstant: 130)
+            body.widthAnchor.constraint(equalTo: stack.widthAnchor),
+            body.heightAnchor.constraint(greaterThanOrEqualToConstant: 130),
+            scroll.heightAnchor.constraint(equalTo: body.heightAnchor),
+            preview.view.heightAnchor.constraint(equalTo: body.heightAnchor)
         ])
         let controls = NSStackView()
         controls.spacing = 10
@@ -108,6 +132,11 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
         controls.addArrangedSubview(saveButton)
         controls.addArrangedSubview(copyButton)
         controls.addArrangedSubview(exportButton)
+        previewButton.target = self
+        previewButton.action = #selector(togglePreview(_:))
+        previewButton.refusesFirstResponder = true
+        previewButton.setAccessibilityIdentifier("fn-toggle-preview")
+        controls.addArrangedSubview(previewButton)
         stack.addArrangedSubview(controls)
         statusLabel.font = .systemFont(ofSize: 12)
         statusLabel.setAccessibilityIdentifier("fn-status")
@@ -131,6 +160,7 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
             if isExporting { showActionMessage("正在导出 Markdown，请等待结果后再切换文件。") }
             return
         }
+        cancelAutosave()
         captureDraft()
         let ticket = session.beginLoading()
         renderStatus()
@@ -162,6 +192,7 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
                 }
             }
             self.renderStatus()
+            self.scheduleAutosave()
         }
     }
 
@@ -171,11 +202,31 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
 
     func textDidChange(_ notification: Notification) {
         captureDraft()
+        scheduleAutosave()
         renderStatus()
+    }
+
+    private func cancelAutosave() {
+        autosaveGeneration &+= 1
+        autosaveScheduler.cancel()
+    }
+
+    private func scheduleAutosave() {
+        cancelAutosave()
+        guard !isConfirming, !editor.hasMarkedText(), let ticket = session.autosaveTicket else { return }
+        let generation = autosaveGeneration
+        autosaveScheduler.schedule { [weak self] in
+            guard let self, self.autosaveGeneration == generation else { return }
+            self.captureDraft()
+            guard !self.isConfirming, !self.editor.hasMarkedText(), self.session.isCurrent(ticket) else { return }
+            self.performSave(automatically: true)
+        }
     }
 
     /// Called only after changing the target (never for status changes or repeated services).
     func renderInstalledSnapshot() {
+        preview.install(snapshot: session.snapshot)
+        if session.snapshot != nil { setPreviewExpanded(true) }
         editor.string = session.draft
         editor.undoManager?.removeAllActions()
         editor.setSelectedRange(NSRange(location: 0, length: 0))
@@ -188,6 +239,20 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
         window?.representedURL = session.snapshot?.url
         renderStatus()
         if session.snapshot != nil { window?.makeFirstResponder(editor) }
+    }
+
+    @objc func togglePreview(_ sender: Any?) {
+        setPreviewExpanded(!preview.isExpanded)
+    }
+
+    private func setPreviewExpanded(_ expanded: Bool) {
+        let focusWasInPreview = (window?.firstResponder as? NSView)?.isDescendant(of: preview.view) == true
+        previewWidth?.isActive = expanded
+        preview.setExpanded(expanded)
+        previewButton.title = expanded ? "收起预览" : "展开预览"
+        if !expanded, focusWasInPreview { window?.makeFirstResponder(editor) }
+        // Keep the native editor and its input state intact while only the layout changes.
+        window?.contentView?.layoutSubtreeIfNeeded()
     }
 
     func renderStatus() {
@@ -208,14 +273,21 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
     }
 
     @objc func saveNote(_ sender: Any?) {
+        performSave(automatically: false)
+    }
+
+    private func performSave(automatically: Bool) {
         guard !isConfirming else { return }
         guard !editor.hasMarkedText() else {
-            showActionMessage("请先完成中文输入，再保存笔记。")
+            cancelAutosave()
+            if !automatically { showActionMessage("请先完成中文输入，再保存笔记。") }
             return
         }
         captureDraft()
+        if automatically, session.autosaveTicket == nil { return }
+        cancelAutosave()
         guard let ticket = session.beginSaving() else {
-            NSSound.beep()
+            if !automatically { NSSound.beep() }
             return
         }
         renderStatus()
@@ -237,6 +309,7 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
             }
             self.savingTask = nil
             self.renderStatus()
+            self.scheduleAutosave()
         }
     }
 
@@ -322,6 +395,7 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
 
     func confirmLeaving(_ action: LeaveAction) async -> Bool {
         guard !session.isSaving else { return false }
+        cancelAutosave()
         captureDraft()
         guard session.requiresLeaveConfirmation || editor.hasMarkedText() else { return true }
         guard !isConfirming, let window else { return false }
@@ -334,13 +408,18 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
         let response = await makeDiscardAlert(for: action).beginSheetModal(for: window)
         switch response {
         case .alertSecondButtonReturn: return applyDecision(.discard)
-        default: return applyDecision(.keepEditing)
+        default:
+            // Returning to editing starts a fresh quiet period, without flushing on leave.
+            isConfirming = false
+            scheduleAutosave()
+            return applyDecision(.keepEditing)
         }
     }
 
     func windowShouldClose(_ sender: NSWindow) -> Bool {
         if allowClosing { return true }
         guard !isConfirming, !session.isSaving, !isExporting else { return false }
+        cancelAutosave()
         session.invalidateLoading()
         readingTask?.cancel()
         Task {
@@ -356,8 +435,11 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
 
     func prepareToQuit() async -> Bool {
         guard !isConfirming, !session.isSaving, !isExporting else { return false }
+        cancelAutosave()
         session.invalidateLoading()
         readingTask?.cancel()
-        return await confirmLeaving(.quit)
+        let canQuit = await confirmLeaving(.quit)
+        if canQuit { preview.close() }
+        return canQuit
     }
 }

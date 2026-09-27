@@ -18,6 +18,13 @@
 		B00000000000000000000013 /* EditorWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000013 /* EditorWindowTests.swift */; };
 		B00000000000000000000014 /* NoteWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000014 /* NoteWriterTests.swift */; };
 		B00000000000000000000015 /* MarkdownExporterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000015 /* MarkdownExporterTests.swift */; };
+		B00000000000000000000031 /* EditorAutosaveScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000031 /* EditorAutosaveScheduler.swift */; };
+		B00000000000000000000032 /* CompositionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000032 /* CompositionTextView.swift */; };
+		B00000000000000000000033 /* MediaPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000033 /* MediaPreviewController.swift */; };
+		B00000000000000000000041 /* EditorAutosaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000041 /* EditorAutosaveTests.swift */; };
+		B00000000000000000000042 /* MediaPreviewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000042 /* MediaPreviewControllerTests.swift */; };
+		B00000000000000000000043 /* PreviewWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000043 /* PreviewWindowTests.swift */; };
+		B00000000000000000000044 /* AutosaveFileIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000044 /* AutosaveFileIntegrationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +53,13 @@
 		F00000000000000000000015 /* MarkdownExporterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownExporterTests.swift; sourceTree = "<group>"; };
 		F00000000000000000000021 /* FinderNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinderNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F00000000000000000000022 /* FinderNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinderNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F00000000000000000000031 /* EditorAutosaveScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorAutosaveScheduler.swift; sourceTree = "<group>"; };
+		F00000000000000000000032 /* CompositionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionTextView.swift; sourceTree = "<group>"; };
+		F00000000000000000000033 /* MediaPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewController.swift; sourceTree = "<group>"; };
+		F00000000000000000000041 /* EditorAutosaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorAutosaveTests.swift; sourceTree = "<group>"; };
+		F00000000000000000000042 /* MediaPreviewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewControllerTests.swift; sourceTree = "<group>"; };
+		F00000000000000000000043 /* PreviewWindowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewWindowTests.swift; sourceTree = "<group>"; };
+		F00000000000000000000044 /* AutosaveFileIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutosaveFileIntegrationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +75,13 @@
 		};
 		G00000000000000000000002 /* FinderNotes */ = {
 			isa = PBXGroup;
-			children = (F00000000000000000000001, F00000000000000000000002, F00000000000000000000003, F00000000000000000000004, F00000000000000000000005, F00000000000000000000007, F00000000000000000000008, F00000000000000000000006);
+			children = (F00000000000000000000001, F00000000000000000000002, F00000000000000000000003, F00000000000000000000004, F00000000000000000000005, F00000000000000000000007, F00000000000000000000008, F00000000000000000000006, F00000000000000000000031, F00000000000000000000032, F00000000000000000000033);
 			path = FinderNotes;
 			sourceTree = "<group>";
 		};
 		G00000000000000000000003 /* FinderNotesTests */ = {
 			isa = PBXGroup;
-			children = (F00000000000000000000011, F00000000000000000000012, F00000000000000000000013, F00000000000000000000014, F00000000000000000000015);
+			children = (F00000000000000000000011, F00000000000000000000012, F00000000000000000000013, F00000000000000000000014, F00000000000000000000015, F00000000000000000000041, F00000000000000000000042, F00000000000000000000043, F00000000000000000000044);
 			path = FinderNotesTests;
 			sourceTree = "<group>";
 		};
@@ -138,13 +152,13 @@
 		S00000000000000000000001 = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
-			files = (B00000000000000000000001, B00000000000000000000002, B00000000000000000000003, B00000000000000000000004, B00000000000000000000005, B00000000000000000000006, B00000000000000000000007);
+			files = (B00000000000000000000001, B00000000000000000000002, B00000000000000000000003, B00000000000000000000004, B00000000000000000000005, B00000000000000000000006, B00000000000000000000007, B00000000000000000000031, B00000000000000000000032, B00000000000000000000033);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		S00000000000000000000002 = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
-			files = (B00000000000000000000011, B00000000000000000000012, B00000000000000000000013, B00000000000000000000014, B00000000000000000000015);
+			files = (B00000000000000000000011, B00000000000000000000012, B00000000000000000000013, B00000000000000000000014, B00000000000000000000015, B00000000000000000000041, B00000000000000000000042, B00000000000000000000043, B00000000000000000000044);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */

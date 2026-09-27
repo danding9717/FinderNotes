@@ -1,0 +1,110 @@
+{
+  "schema": "findernotes-fn06-fixtures-v1",
+  "root": "/private/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/findernotes-fn06-13ax_a4n",
+  "runID": "211e763a-09d2-4504-9cc6-4d6d657fbbc1",
+  "status": "passed",
+  "failures": [],
+  "fixtureMutationsByVerifier": [],
+  "checks": [
+    {
+      "file": "audio.mov",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteHex": "464e303620e58e9fe69c89e7ac94e8aeb020617564696f2e6d6f760ae4b8ade69687f09f99820a"
+    },
+    {
+      "file": "broken.mov",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteHex": "464e303620e58e9fe69c89e7ac94e8aeb02062726f6b656e2e6d6f760ae4b8ade69687f09f99820a"
+    },
+    {
+      "file": "broken.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteHex": "464e303620e58e9fe69c89e7ac94e8aeb02062726f6b656e2e706e670ae4b8ade69687f09f99820a"
+    },
+    {
+      "file": "conflict.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteHex": "464e303620e58e9fe69c89e7ac94e8aeb020636f6e666c6963742e706e670ae4b8ade69687f09f99820a"
+    },
+    {
+      "file": "copy.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteHex": "464e303620e58e9fe69c89e7ac94e8aeb020776964652e706e670ae4b8ade69687f09f99820a"
+    },
+    {
+      "file": "empty.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteHex": ""
+    },
+    {
+      "file": "missing.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteHex": null
+    },
+    {
+      "file": "portrait.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteHex": "464e303620e58e9fe69c89e7ac94e8aeb020706f7274726169742e706e670ae4b8ade69687f09f99820a"
+    },
+    {
+      "file": "readonly.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteHex": "464e303620e58e9fe69c89e7ac94e8aeb020726561646f6e6c792e706e670ae4b8ade69687f09f99820a"
+    },
+    {
+      "file": "wide.png",
+      "readSucceeded": true,
+      "modeMatches": true,
+      "identityMatches": true,
+      "mediaSHA256Matches": true,
+      "noteMatches": true,
+      "unrelatedXattrsMatch": true,
+      "actualNoteHex": "464e303620e58e9fe69c89e7ac94e8aeb020776964652e706e670ae4b8ade69687f09f99820a"
+    }
+  ]
+}
