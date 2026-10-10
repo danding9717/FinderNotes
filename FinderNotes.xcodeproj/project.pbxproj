@@ -18,6 +18,12 @@
 		B00000000000000000000032 /* CompositionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000032 /* CompositionTextView.swift */; };
 		B00000000000000000000033 /* MediaPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000033 /* MediaPreviewController.swift */; };
 		B00000000000000000000051 /* DraftRecoveryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000051 /* DraftRecoveryStore.swift */; };
+		B00000000000000000000071 /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = K00000000000000000000071 /* Markdown */; };
+		B00000000000000000000072 /* MarkdownPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000072 /* MarkdownPresentation.swift */; };
+		B00000000000000000000073 /* MarkdownLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000073 /* MarkdownLayoutController.swift */; };
+		B00000000000000000000074 /* MarkdownDisplayPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000074 /* MarkdownDisplayPlan.swift */; };
+		B00000000000000000000075 /* MarkdownTextEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000075 /* MarkdownTextEdit.swift */; };
+		B00000000000000000000076 /* MarkdownListContinuation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000076 /* MarkdownListContinuation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,10 +41,15 @@
 		F00000000000000000000032 /* CompositionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionTextView.swift; sourceTree = "<group>"; };
 		F00000000000000000000033 /* MediaPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewController.swift; sourceTree = "<group>"; };
 		F00000000000000000000051 /* DraftRecoveryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftRecoveryStore.swift; sourceTree = "<group>"; };
+		F00000000000000000000072 /* MarkdownPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownPresentation.swift; sourceTree = "<group>"; };
+		F00000000000000000000073 /* MarkdownLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownLayoutController.swift; sourceTree = "<group>"; };
+		F00000000000000000000074 /* MarkdownDisplayPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDisplayPlan.swift; sourceTree = "<group>"; };
+		F00000000000000000000075 /* MarkdownTextEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownTextEdit.swift; sourceTree = "<group>"; };
+		F00000000000000000000076 /* MarkdownListContinuation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownListContinuation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		H00000000000000000000001 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		H00000000000000000000001 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (B00000000000000000000071); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -49,7 +60,7 @@
 		};
 		G00000000000000000000002 /* FinderNotes */ = {
 			isa = PBXGroup;
-			children = (F00000000000000000000001, F00000000000000000000002, F00000000000000000000003, F00000000000000000000004, F00000000000000000000005, F00000000000000000000007, F00000000000000000000008, F00000000000000000000006, F00000000000000000000031, F00000000000000000000032, F00000000000000000000033, F00000000000000000000051, F00000000000000000000061);
+			children = (F00000000000000000000001, F00000000000000000000002, F00000000000000000000003, F00000000000000000000004, F00000000000000000000005, F00000000000000000000007, F00000000000000000000008, F00000000000000000000006, F00000000000000000000031, F00000000000000000000032, F00000000000000000000033, F00000000000000000000051, F00000000000000000000072, F00000000000000000000073, F00000000000000000000074, F00000000000000000000075, F00000000000000000000076, F00000000000000000000061);
 			path = FinderNotes;
 			sourceTree = "<group>";
 		};
@@ -69,6 +80,7 @@
 			buildRules = ();
 			dependencies = ();
 			name = FinderNotes;
+			packageProductDependencies = (K00000000000000000000071 /* Markdown */);
 			productName = FinderNotes;
 			productReference = F00000000000000000000021;
 			productType = "com.apple.product-type.application";
@@ -93,6 +105,7 @@
 			knownRegions = (zh_CN, en, Base);
 			mainGroup = G00000000000000000000001;
 			productRefGroup = G00000000000000000000004;
+			packageReferences = (K00000000000000000000070 /* swift-markdown */);
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (A00000000000000000000001);
@@ -107,7 +120,7 @@
 		S00000000000000000000001 = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
-			files = (B00000000000000000000001, B00000000000000000000002, B00000000000000000000003, B00000000000000000000004, B00000000000000000000005, B00000000000000000000006, B00000000000000000000007, B00000000000000000000031, B00000000000000000000032, B00000000000000000000033, B00000000000000000000051);
+			files = (B00000000000000000000001, B00000000000000000000002, B00000000000000000000003, B00000000000000000000004, B00000000000000000000005, B00000000000000000000006, B00000000000000000000007, B00000000000000000000031, B00000000000000000000032, B00000000000000000000033, B00000000000000000000072, B00000000000000000000073, B00000000000000000000074, B00000000000000000000075, B00000000000000000000076, B00000000000000000000051);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
@@ -192,6 +205,21 @@
 		C00000000000000000000001 = {isa = XCConfigurationList; buildConfigurations = (C00000000000000000000011, C00000000000000000000012); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
 		C00000000000000000000002 = {isa = XCConfigurationList; buildConfigurations = (C00000000000000000000021, C00000000000000000000022); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
 /* End XCConfigurationList section */
+/* Begin XCRemoteSwiftPackageReference section */
+		K00000000000000000000070 /* swift-markdown */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftlang/swift-markdown.git";
+			requirement = { kind = exactVersion; version = 0.9.0; };
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		K00000000000000000000071 /* Markdown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = K00000000000000000000070 /* swift-markdown */;
+			productName = Markdown;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = P00000000000000000000001 /* Project object */;
 }

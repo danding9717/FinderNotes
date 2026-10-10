@@ -1,0 +1,6 @@
+Empty EOF task component bitmap: /Users/danding/Project/AI/FinderNotes/.build/FN11Verification/task-checkbox-empty-eof.png
+AppKit component bitmap: /Users/danding/Project/AI/FinderNotes/.build/FN11Verification/layout.png
+EOF rule component bitmap: /Users/danding/Project/AI/FinderNotes/.build/FN11Verification/rule-eof-1.png
+EOF rule component bitmap: /Users/danding/Project/AI/FinderNotes/.build/FN11Verification/rule-eof-2.png
+FN-11 component verification passed: 2155 assertions
+Evidence boundary: programmatic AppKit + temporary-file storage; real UI, Chinese IME, Finder/TCC and long-session performance require manual acceptance.
