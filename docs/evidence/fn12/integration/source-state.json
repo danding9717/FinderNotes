@@ -1,0 +1,62 @@
+{
+  "capturedAtUTC": "2026-10-10T07:12:14.847783+00:00",
+  "worktree": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes",
+  "headBeforeIntegrationCommit": "886f282e673c9d027c70e07866c1543c522ce38d",
+  "mergeHead": "74e5428484e08a3406a0ffd443d3a3008d2f59d1",
+  "state": "Three conflict resolutions present in working tree; integration not committed when captured.",
+  "productAndProjectSHA256": {
+    "FinderNotes/AppDelegate.swift": "9985d3290eec422799bf78e2010eea07a02f3f70561b3e08d36cfa8663d21a0a",
+    "FinderNotes/CompositionTextView.swift": "f458c79d333d1759cbb8936ffe3bd5ff2f264d1c03aae8a6c6af23d97e5a5175",
+    "FinderNotes/DraftRecoveryStore.swift": "9e181e108d86909b2a5b2ffc0202bebcc6d31a4ba3a2913d37990c1793ab73e8",
+    "FinderNotes/EditorAutosaveScheduler.swift": "a6adf9cc9df5f8bb3105a0fff89ab48cf56d4c1dc4e6023be7ae044b76aa43cd",
+    "FinderNotes/EditorSession.swift": "f5ed89d9b9c7ca83b421b36b1daeb911fbfcba9b3e19a6452ade1cfdfbd082ed",
+    "FinderNotes/EditorWindowController.swift": "f29408d65f07d0f9979d2f53a55eaf481fba8bf2eb01f9280e020aa3f8381ad2",
+    "FinderNotes/MarkdownDisplayPlan.swift": "89e3388f5b8d3b12b332098537f91de2fa9e2661644ee659c77dc07fd1253516",
+    "FinderNotes/MarkdownExporter.swift": "53ada2b5f768a856890e2a004841bb6476eb098d125c97462863d8f5046c2e7a",
+    "FinderNotes/MarkdownLayoutController.swift": "6cf5c831a66c1e101edd56638baa5a5e7f0fba0222de5913c2a37b8a770189af",
+    "FinderNotes/MarkdownListContinuation.swift": "2790fd305bf8e0a2f66e7369d7c40ceabd2f7b259c800e2b31d1142632d6a892",
+    "FinderNotes/MarkdownPresentation.swift": "69827f67f973c07ea42ebdebfcb3da72727f265ed2bf7ce9137f99fe61a33012",
+    "FinderNotes/MarkdownTextEdit.swift": "5ef2311b5ba86f2436a6aceebdc7e75279f195930bc1e3afb683052ee8aa26d8",
+    "FinderNotes/MediaPreviewController.swift": "274d3720f619a8f507049f56e72d3dda016374d6749fe14723209384d1a8f2bd",
+    "FinderNotes/NoteReader.swift": "bf9615bb051d5ed9870c60193693f6b2306691ea978a5afd128275a54dc6900e",
+    "FinderNotes/NoteWriter.swift": "69822bd44b3be0f0363cab106b2421efb33492b198f071dcb9a8a585dee145a5",
+    "FinderNotes/UpdateCoordinator.swift": "0e634f2b1ec6f65b2cdfa916074d19ef1dd88a95f9b07131523771f7d00eb493",
+    "FinderNotes/UpdateInstallAudit.swift": "1cd77d9966510d368462ad524e486398276d1b50cdec0a1cb637c0e7b130dbf9",
+    "FinderNotes/main.swift": "dee452e18ef440ea950e19ba9bd4aade9297be0ed3043a9fefefdc604718e3e6",
+    "FinderNotes.xcodeproj/project.pbxproj": "86fba4f5a3f6fb8a347270a9642eb214ed3e85cd3f34e138d83d2e53b157c0a1",
+    "FinderNotes.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved": "e89d1dd0c4e5814a2be268d270908af513e99a0c9ffb31d095b6b9e480892ad0"
+  },
+  "packageLocks": {
+    "originHash": "6cd735889f74f7bdfaeb767144364160e04db981e53c431b819f5e9ada31d734",
+    "pins": [
+      {
+        "identity": "sparkle",
+        "kind": "remoteSourceControl",
+        "location": "https://github.com/sparkle-project/Sparkle",
+        "state": {
+          "revision": "eef1a539a373c1f1a320624b1130fc5de7b2e100",
+          "version": "2.10.0"
+        }
+      },
+      {
+        "identity": "swift-cmark",
+        "kind": "remoteSourceControl",
+        "location": "https://github.com/swiftlang/swift-cmark.git",
+        "state": {
+          "revision": "08ddb528923cc1a6527e02b7a1aee9e516ca749a",
+          "version": "0.9.0"
+        }
+      },
+      {
+        "identity": "swift-markdown",
+        "kind": "remoteSourceControl",
+        "location": "https://github.com/swiftlang/swift-markdown.git",
+        "state": {
+          "revision": "25cb61d3482054b09ae76ca4f281b1bfe7fe5a43",
+          "version": "0.9.0"
+        }
+      }
+    ],
+    "version": 3
+  }
+}

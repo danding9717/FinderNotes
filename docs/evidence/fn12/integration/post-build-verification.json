@@ -1,0 +1,19 @@
+{
+  "checkedAtUTC": "2026-10-10T10:23:16.736790+00:00",
+  "command": "codesign --verify --deep --strict <app>; lipo -archs <app>/Contents/MacOS/FinderNotes",
+  "Standard": {
+    "strictSignatureExitCode": 0,
+    "architectures": [
+      "x86_64",
+      "arm64"
+    ]
+  },
+  "LocalTrial": {
+    "strictSignatureExitCode": 0,
+    "architectures": [
+      "x86_64",
+      "arm64"
+    ]
+  },
+  "boundary": "Architecture slices verified; component execution only arm64. No Intel runtime or installation performed."
+}

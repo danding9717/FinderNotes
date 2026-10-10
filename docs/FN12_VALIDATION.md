@@ -4,6 +4,8 @@
 
 验证日期：2026-10-10。正式任务和验收状态以 [FN-12 / TASK-404](https://app.notion.com/p/3f5e7607d6498117b9b8e4db3a066ae9) 为准。本文保存代码审阅所需的验证方法与证据，不替代 Dan 的验收。
 
+收尾时按 Dan 补充授权整合 FN-11：standard／LocalTrial Release 与严格签名均通过，FN-11 2155 项断言和 FN-12 100 项组件检查通过。新命令、初次临时 harness 失败及证据见 [整合验证](evidence/fn12/integration/INTEGRATION.md)。这些结果没有新增真实 UI 或安装验收。当前个人安装件与 Delivery 旧候选仍来自独立验收源 `c2f4253`；组合发布须重新构建签名并递增构建号。
+
 ## 环境与隔离
 
 - 基线 `main 235b13f`，实现工作树 `/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes`，分支 `codex/fn-12-app-update`；交付前尚未提交。

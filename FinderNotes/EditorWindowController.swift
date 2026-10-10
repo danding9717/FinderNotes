@@ -15,6 +15,8 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
     let exportButton = NSButton(title: "导出", target: nil, action: nil)
     let previewButton = NSButton(title: "", target: nil, action: nil)
     let pinButton = NSButton(title: "置顶", target: nil, action: nil)
+    let markdownModeButton = NSPopUpButton(frame: .zero, pullsDown: false)
+    private(set) var markdownLayout: MarkdownLayoutController!
     private(set) var isPinned = false
     private var isUpdateInterfaceActive = false
     var pinStateDidChange: ((Bool) -> Void)?
@@ -49,6 +51,7 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
          autosaveScheduler: any EditorAutosaveScheduling = EditorAutosaveScheduler(),
          preview: MediaPreviewController = MediaPreviewController(),
          recoveryStore: DraftRecoveryStore? = nil,
+         defaults: UserDefaults = .standard,
          protectedExportDestination: (@MainActor (URL, String, String) async -> URL?)? = nil) {
         self.protectedExportDestination = protectedExportDestination
         self.recoveryStore = recoveryStore
@@ -70,6 +73,8 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
         window.delegate = self
         window.center()
         configureContent()
+        markdownLayout = MarkdownLayoutController(textView: editor, defaults: defaults)
+        updateMarkdownModeSelection()
         renderInstalledSnapshot()
     }
 
@@ -90,6 +95,21 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
 
     private func updateWindowLevel() {
         window?.level = isPinned && !isUpdateInterfaceActive ? .floating : .normal
+    }
+
+    @objc func toggleMarkdown(_ sender: Any?) {
+        markdownLayout.setEnabled(!markdownLayout.isEnabled)
+        updateMarkdownModeSelection()
+    }
+
+    @objc private func selectMarkdownMode(_ sender: NSPopUpButton) {
+        guard let item = sender.selectedItem else { return }
+        markdownLayout.setEnabled(item.tag == 1)
+        updateMarkdownModeSelection()
+    }
+
+    private func updateMarkdownModeSelection() {
+        markdownModeButton.selectItem(withTag: markdownLayout.isEnabled ? 1 : 0)
     }
 
     private func configureContent() {
@@ -146,7 +166,10 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
         editor.textContainer?.widthTracksTextView = true
         editor.textContainer?.containerSize = NSSize(width: 0, height: CGFloat.greatestFiniteMagnitude)
         editor.delegate = self
+        editor.inputStateWillChange = { [weak self] in self?.markdownLayout?.inputStateWillChange() }
+        editor.continuesMarkdownLists = { [weak self] in self?.markdownLayout?.isEnabled == true }
         editor.inputStateDidChange = { [weak self] in
+            self?.markdownLayout?.inputStateDidChange()
             self?.captureDraft()
             self?.scheduleRecovery()
             self?.scheduleAutosave()
@@ -232,6 +255,29 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
         advancedButton.refusesFirstResponder = true
         advancedButton.setAccessibilityIdentifier("fn-advanced-options")
         controls.addArrangedSubview(advancedButton)
+        let modeMenu = NSMenu()
+        for (index, title, symbol, identifier) in [
+            (0, "源码模式", "chevron.left.forwardslash.chevron.right", "fn-mode-source"),
+            (1, "实时阅览", "pencil", "fn-mode-live-preview")
+        ] {
+            let item = NSMenuItem(title: title, action: nil, keyEquivalent: "")
+            item.tag = index
+            item.image = NSImage(systemSymbolName: symbol, accessibilityDescription: nil)?
+                .withSymbolConfiguration(.init(pointSize: 13, weight: .regular))
+            item.setAccessibilityIdentifier(identifier)
+            modeMenu.addItem(item)
+        }
+        markdownModeButton.menu = modeMenu
+        markdownModeButton.controlSize = .small
+        markdownModeButton.isBordered = false
+        markdownModeButton.refusesFirstResponder = true
+        markdownModeButton.target = self
+        markdownModeButton.action = #selector(selectMarkdownMode(_:))
+        markdownModeButton.toolTip = "切换源码模式或实时阅览"
+        markdownModeButton.setAccessibilityLabel("编辑模式")
+        markdownModeButton.setAccessibilityIdentifier("fn-editor-mode")
+        markdownModeButton.setContentCompressionResistancePriority(.required, for: .horizontal)
+        controls.addArrangedSubview(markdownModeButton)
         stack.addArrangedSubview(controls)
         controls.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
         statusLabel.font = .systemFont(ofSize: 12)
@@ -311,10 +357,15 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
     }
 
     func textDidChange(_ notification: Notification) {
+        markdownLayout?.documentDidChange()
         captureDraft()
         scheduleRecovery()
         scheduleAutosave()
         renderStatus()
+    }
+
+    func textViewDidChangeSelection(_ notification: Notification) {
+        markdownLayout?.selectionDidChange()
     }
 
     private func cancelAutosave() {
@@ -342,6 +393,7 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
         editor.undoManager?.removeAllActions()
         editor.setSelectedRange(NSRange(location: 0, length: 0))
         editor.scrollToBeginningOfDocument(nil)
+        markdownLayout?.installDocument()
         editor.isEditable = session.snapshot != nil
         editor.isSelectable = session.snapshot != nil
         filePath.stringValue = session.snapshot?.url.path ?? ""

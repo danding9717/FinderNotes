@@ -1,0 +1,42 @@
+{
+  "Standard": {
+    "appPath": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Integration/Standard/Build/Products/Release/FinderNotes.app",
+    "buildSucceeded": true,
+    "identity": "com.findernotes.FinderNotes",
+    "version": "0.1.1",
+    "build": "12",
+    "updatesEnabled": false,
+    "feedURL": null,
+    "manualUpdateSettings": {
+      "SUEnableAutomaticChecks": false,
+      "SUAutomaticallyUpdate": false,
+      "SUAllowsAutomaticUpdates": false,
+      "SUEnableSystemProfiling": false,
+      "SUVerifyUpdateBeforeExtraction": true
+    },
+    "embeddedSparkleVersion": "2.10.0",
+    "executableSHA256": "74039728fd9fce5dbb7598c2ba3807df325942b091091f438bd1de356e3d0eb8",
+    "evidence": "build log includes BUILD SUCCEEDED and build_app.sh post-build settings verification; root reported successful strict codesign verification.",
+    "installedOrLaunched": false
+  },
+  "LocalTrial": {
+    "appPath": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Integration/LocalTrial/Build/Products/Release/FinderNotes.app",
+    "buildSucceeded": true,
+    "identity": "com.findernotes.FinderNotes.LocalTrial",
+    "version": "0.1.1",
+    "build": "12",
+    "updatesEnabled": true,
+    "feedURL": "https://raw.githubusercontent.com/danding9717/FinderNotes-updates/main/appcast.xml",
+    "manualUpdateSettings": {
+      "SUEnableAutomaticChecks": false,
+      "SUAutomaticallyUpdate": false,
+      "SUAllowsAutomaticUpdates": false,
+      "SUEnableSystemProfiling": false,
+      "SUVerifyUpdateBeforeExtraction": true
+    },
+    "embeddedSparkleVersion": "2.10.0",
+    "executableSHA256": "9d73d9894c35b9e5d9db6dc91cc0094075c0bfa8e7047cec77e484c946f1db6b",
+    "evidence": "build log includes BUILD SUCCEEDED and build_app.sh post-build settings verification; root reported successful strict codesign verification.",
+    "installedOrLaunched": false
+  }
+}

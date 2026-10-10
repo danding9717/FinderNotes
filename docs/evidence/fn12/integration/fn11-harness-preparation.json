@@ -1,0 +1,23 @@
+{
+  "createdAt": "2026-10-10T07:05:22.879761+00:00",
+  "projectRoot": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes",
+  "originalScriptSHA256": "5229a0f7012e48270ee6d229fff525d8e45e49cda716b7150eae492f1a435335",
+  "harnessScriptSHA256": "db80bf02e6f2f719834a8e9e2b2f39d9f62b0927273fa42b85ebccc1b0079e63",
+  "changes": [
+    "fixed project_root",
+    "independent verification_dir",
+    "Sparkle framework search/link/rpath",
+    "compile import from fixed SPM Sparkle artifact; embedded app lacks Modules"
+  ],
+  "configuration": "Release",
+  "skipBuild": true,
+  "taskReviewUI": false,
+  "derivedData": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Integration/Standard",
+  "before": {
+    "temporaryRoot": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T",
+    "directories": [],
+    "preferences": []
+  },
+  "sparkleCompileFramework": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Integration/Standard/SourcePackages/artifacts/sparkle/Sparkle/Sparkle.xcframework/macos-arm64_x86_64/Sparkle.framework",
+  "firstAttempt": "Harness import failed before tests: embedded framework has no Modules; logs preserved."
+}

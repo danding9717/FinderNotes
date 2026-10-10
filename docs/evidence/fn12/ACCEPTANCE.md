@@ -19,6 +19,12 @@
 
 ## Git 与清理边界
 
-收尾时 main 已先合入 FN-11（PR #14／`74e5428`），Xcode 工程 PBX 对象编号、依赖锁文件和编辑器改动重叠，不能整文件选一边覆盖。按 AGENTS.md 遇语义冲突停止合并，验收与 Done 保留，实际提交／PR／冲突／清理结果另按执行结果补记。
+收尾时 main 已先合入 FN-11（PR #14／`74e5428`），Xcode 工程 PBX 对象编号、依赖锁文件和编辑器改动重叠。Dan 随后明确授权“处理这三个冲突并继续标准收尾”。整合保留两方功能与固定依赖，standard／LocalTrial Release 均通过，FN-11 2155 项断言及 FN-12 100 项组件检查全部通过；没有追加真实 UI 或更新安装结论。详见 [整合验证](integration/INTEGRATION.md)。
+
+验收实现提交为 `c2f425371441af21d542856e2db6a854677ecf57`，清理提交为 `886f282`，PR 为 [#15](https://github.com/danding9717/FinderNotes/pull/15)。实际合并与同步 SHA 以该 PR 及 Notion 收尾回读记录为准。
+
+当前个人安装件及 `.build/Delivery/FinderNotes-0.1.1-12/` 包来自 `c2f4253` 的 FN-12 独立验收源码，不含 FN-11，不代表组合发布包。后续发布须从最终整合源码重新构建、复验及签名，并使用大于 12 的构建号；本轮未重新安装或正式发布。
 
 FN-12 的测试代码先纳入验收提交，随后按授权从当前树删除；复现代码可以从清理前 Git 提交查看。合成应用／图片、测试 feed、构建产物、测试身份缓存／恢复文件和临时服务按精确清单清理。个人安装应用、真实笔记、LocalTrial 恢复目录、签名密钥、正式未发布材料及其他任务资源保留。必要报告保存在本目录，来源和 SHA256 见 `evidence-manifest.json`；清理不重写历史失败或等于重新验收。
+
+首轮 66 项清理及整合后追加 23 项清理均已完成；后者包含 17 个 WebKit／HTTP 缓存目录、3 个 SPM 锁与整合构建／临时材料。12 个精确 LaunchServices 主应用／helper 路径注销后回读无残留，临时控制台已关闭。清理前后个人 app 与恢复目录摘要一致，严格签名通过；详见 `cleanup-result.json`、`integration/residual-inventory.json` 和 `integration/cleanup-final.json`。管理员测试缓存由 Dan 回复“管理员测试缓存已清理”；普通权限无法独立回读，此项保留为人工确认。没有据清单大小推断实际回收磁盘空间。

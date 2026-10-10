@@ -1,0 +1,104 @@
+2026-10-10 15:06:58.451 FN12ComponentChecks[55630:730417] FinderNotes update cleanup audit could not be recorded; result remains unknown: Error Domain=NSCocoaErrorDomain Code=514 "The item couldn’t be saved because the file name is invalid."
+2026-10-10 15:06:58.451 FN12ComponentChecks[55630:730417] FinderNotes update cleanup audit could not be recorded; result remains unknown: Error Domain=NSCocoaErrorDomain Code=514 "The item couldn’t be saved because the file name is invalid."
+PASS: real AppKit app-modal session is active
+PASS: app-modal update alert cancels quit synchronously
+PASS: app-modal quit creates no asynchronous task or reply
+PASS: ending real modal session releases modal window
+PASS: no editor may quit synchronously
+PASS: standard harness does not connect to personal feed
+PASS: disabled updater disables Check for Updates menu
+PASS: disabled action remains harmless
+PASS: application menu includes Check for Updates
+PASS: menu targets real update coordinator
+PASS: menu routes real Sparkle action
+PASS: About remains before update command
+PASS: component editor stays hidden
+PASS: pin preference initially floats editor
+PASS: Sparkle interaction temporarily lowers pinned editor
+PASS: temporary lowering preserves pin preference and button
+PASS: temporary lowering preserves pin menu selection
+PASS: unpinning during update changes preference while staying normal
+PASS: pinning during update changes preference while staying normal
+PASS: modal completion restores selected floating level
+PASS: update session completion restores selected floating level
+PASS: update interaction does not alter text or draft revision
+PASS: update interaction preserves component selection and focus
+PASS: in-flight save prevents termination
+PASS: termination never completes or cancels in-flight save
+PASS: in-flight export prevents termination
+PASS: existing confirmation prevents duplicate termination
+PASS: install quit starts with editor lowered
+PASS: repeated quit requests remain asynchronous
+PASS: repeated quit uses an existing termination task
+PASS: dirty draft enters existing confirmation flow
+PASS: repeated quit produces exactly one confirmation sheet
+PASS: Return to Editing replies once and cancels quit
+PASS: cancelled quit releases termination guard
+PASS: Return to Editing preserves exact UTF-8 draft and revision
+PASS: Return to Editing clears confirmation state
+PASS: cancelled quit restores selected floating level
+PASS: programmatic marked-text fixture exists
+PASS: marked text rejects quit without opening a draft confirmation sheet
+PASS: marked text finishes asynchronous quit with one cancellation reply
+PASS: marked text quit explains that composition must finish first
+PASS: marked text quit preserves native marked range and exact composition bytes
+PASS: marked text quit preserves selection, focus, and editability
+PASS: marked text quit preserves draft revision and load generation
+PASS: marked text quit neither schedules nor cancels autosave
+PASS: marked text quit queues no recovery or save operation
+PASS: committing composition resumes normal draft capture
+PASS: committed dirty input uses the normal draft confirmation flow
+PASS: Return to Editing after composition preserves committed draft and revision
+PASS: cancelled quit can be retried
+PASS: explicit discard permits one final quit reply
+PASS: successful preparation releases termination guard
+PASS: recovery fixture uses native NSTextView marked state
+PASS: direct prepareToQuit resolves marked text without awaiting confirmation
+PASS: direct marked text guard preserves composition and draft revision
+PASS: marked text quit leaves real recovery JSON byte-for-byte unchanged
+PASS: marked text quit neither removes recovery nor queues recovery IO
+PASS: committed input remains dirty and eligible for normal manual save
+PASS: injected successful manual save confirms exact committed input
+PASS: confirmed save removes the isolated recovery record
+PASS: saved committed input may quit through the normal clean flow
+PASS: missing binding cannot prove cleanup
+PASS: wrong target cannot prove cleanup
+PASS: observed old bundle remaining is incomplete
+PASS: observed old bundle then missing is completed
+PASS: missing without old inode observation is unknown
+PASS: empty observations are unknown
+PASS: substituted object invalidates cleanup proof
+PASS: unreadable interval invalidates cleanup proof
+PASS: one newly extracted target app binds exactly
+PASS: binding records exact extraction inode
+PASS: receipt records original installed app inode
+PASS: pre-termination JSON records pending restart
+PASS: receipt is private mode 600
+PASS: cancelled termination persists without claiming completion
+PASS: two matching new caches remain unbound
+PASS: pre-check cache is excluded from binding
+PASS: other version cannot bind
+PASS: symlink app outside exact cache cannot bind
+PASS: Info.plist symlink escape cannot bind
+PASS: changed extraction inode invalidates observation
+PASS: receipt cannot inspect outside its exact installation cache
+PASS: FIFO validation fixture created
+PASS: FIFO receipt rejected without blocking
+PASS: oversized receipt rejected
+PASS: hardlinked receipt rejected
+PASS: symlink receipt rejected
+PASS: foreign existing receipt is not overwritten
+PASS: unsafe existing receipt symlink is not followed or overwritten
+PASS: restart without reliable binding persists unknown
+PASS: real scoped restart observation persists old inode then removed
+PASS: default initializer constructs its bundle-ID Sparkle cache path
+PASS: default initializer constructs its bundle-ID results path
+PASS: missing default installation cache starts with empty baseline
+PASS: default-constructed cache path binds exactly one new extraction
+PASS: default-directory URL bits permit observing exact old inode
+PASS: removed binding fixture retains differing URL directory bits with identical paths
+PASS: removing entire exact binding directory observes missing
+PASS: observed old inode followed by whole bound-directory removal completes
+PASS: whole directory already missing without old-inode observation remains unknown
+Audit fixtures retained at /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Integration/FN12Components/audit-components-0851B54C-7108-435C-AB49-491271B353A9
+RESULT: 100 passed / 0 failed
