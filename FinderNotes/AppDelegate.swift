@@ -3,6 +3,7 @@ import AppKit
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
     private(set) var controller: EditorWindowController?
+    private var pinMenuItem: NSMenuItem?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         setupMenu()
@@ -14,6 +15,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
     private func editorController() -> EditorWindowController {
         if let controller { return controller }
         let created = EditorWindowController(recoveryStore: DraftRecoveryStore(directory: DraftRecoveryStore.defaultDirectory()))
+        created.pinStateDidChange = { [weak self] isPinned in
+            self?.pinMenuItem?.state = isPinned ? .on : .off
+        }
         created.refreshRecoveryAvailability()
         controller = created
         return created
@@ -54,8 +58,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
 
     @objc func saveNote(_ sender: Any?) { controller?.saveNote(sender) }
     @objc func exportMarkdown(_ sender: Any?) { controller?.exportMarkdown(sender) }
+    @objc func togglePin(_ sender: Any?) { controller?.togglePin(sender) }
 
     func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+        if menuItem.action == #selector(togglePin(_:)) {
+            menuItem.state = controller?.isPinned == true ? .on : .off
+            return controller?.window != nil
+        }
         if menuItem.action == #selector(saveNote(_:)) { return controller?.canSaveFromMenu ?? false }
         if menuItem.action == #selector(exportMarkdown(_:)) { return controller?.canExportFromMenu ?? false }
         return true
@@ -99,6 +108,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         let next = edit.addItem(withTitle: "查找下一个", action: #selector(NSTextView.performFindPanelAction(_:)), keyEquivalent: "g")
         next.tag = NSTextFinder.Action.nextMatch.rawValue
         let window = submenu("窗口")
+        let pin = window.addItem(withTitle: "置顶", action: #selector(togglePin(_:)), keyEquivalent: "")
+        pin.target = self
+        pinMenuItem = pin
+        window.addItem(.separator())
         window.addItem(withTitle: "最小化", action: #selector(NSWindow.performMiniaturize(_:)), keyEquivalent: "m")
         window.addItem(withTitle: "缩放", action: #selector(NSWindow.performZoom(_:)), keyEquivalent: "")
         NSApp.windowsMenu = window
