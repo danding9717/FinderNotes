@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+  <channel>
+    <title>FinderNotes 个人版本更新</title>
+    <link>https://github.com/danding9717/FinderNotes</link>
+    <description>FinderNotes 手动更新</description>
+    <language>zh-CN</language>
+    <item>
+      <title>FinderNotes 0.1.4（15）</title>
+      <sparkle:version>15</sparkle:version>
+      <sparkle:shortVersionString>0.1.4</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <description>&lt;!doctype html&gt;
+&lt;html lang="zh-CN"&gt;&lt;meta charset="utf-8"&gt;&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;&lt;title&gt;FinderNotes 更新说明&lt;/title&gt;&lt;body&gt;&lt;h1&gt;FinderNotes 0.1.4（15）&lt;/h1&gt;&lt;p&gt;更新来源已统一到 FinderNotes 主仓库。&lt;/p&gt;
+&lt;p&gt;这是 0.1.4（15）连续更新验证版本，与 0.1.3（14）功能相同，用于确认迁移后仍能从新地址检查、下载并安装更新。&lt;/p&gt;
+&lt;p&gt;安装完成后可再次选择“检查更新…”确认当前版本。旧更新仓库将在 Dan 确认新源检查和安装正常后删除。&lt;/p&gt;
+&lt;p&gt;笔记存储、草稿恢复、应用身份与更新签名保持不变。请完成中文输入并保存笔记后再安装。&lt;/p&gt;
+&lt;p&gt;需要 macOS 26.0 或更高；包含 Apple Silicon 和 Intel 架构，实际运行验证限 Apple Silicon。个人使用版本采用 ad hoc 签名，未进行 Apple 公证。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+</description>
+      <sparkle:fullReleaseNotesLink>https://github.com/danding9717/FinderNotes/releases/tag/v0.1.4</sparkle:fullReleaseNotesLink>
+      <pubDate>Sat, 10 Oct 2026 11:06:28 GMT</pubDate>
+      <enclosure url="https://github.com/danding9717/FinderNotes/releases/download/v0.1.4/FinderNotes-0.1.4-15.zip" type="application/octet-stream" length="4963069" sparkle:edSignature="BEjgRXx7+rKZGux72oL0lXU+xb6a2/A3SenBKto4fwPwxYfCcwMuWwFd3Saza6z+CAjHwensfCpe1U4TOtjrAw==" />
+    </item>
+    <item>
+      <title>FinderNotes 0.1.3（14）</title>
+      <sparkle:version>14</sparkle:version>
+      <sparkle:shortVersionString>0.1.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <description>&lt;!doctype html&gt;
+&lt;html lang="zh-CN"&gt;&lt;meta charset="utf-8"&gt;&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;&lt;title&gt;FinderNotes 更新说明&lt;/title&gt;&lt;body&gt;&lt;h1&gt;FinderNotes 0.1.3（14）&lt;/h1&gt;&lt;p&gt;更新来源迁移到 FinderNotes 主仓库，源码、版本和下载地址统一管理。&lt;/p&gt;
+&lt;p&gt;本次为 0.1.3（14）过渡版本；安装后再次选择“检查更新…”，可从新地址安装 0.1.4（15）。&lt;/p&gt;
+&lt;p&gt;笔记存储、草稿恢复、应用身份和更新签名保持不变。&lt;/p&gt;
+&lt;p&gt;请完成中文输入并保存笔记后再安装；安装后返回编辑，后续退出仍可能继续原安装请求。&lt;/p&gt;
+&lt;p&gt;需要 macOS 26.0 或更高；包含 Apple Silicon 和 Intel 架构，实际运行验证限 Apple Silicon。个人使用版本采用 ad hoc 签名，未进行 Apple 公证。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+</description>
+      <sparkle:fullReleaseNotesLink>https://github.com/danding9717/FinderNotes/releases/tag/v0.1.3</sparkle:fullReleaseNotesLink>
+      <pubDate>Sat, 10 Oct 2026 11:05:26 GMT</pubDate>
+      <enclosure url="https://github.com/danding9717/FinderNotes/releases/download/v0.1.3/FinderNotes-0.1.3-14.zip" type="application/octet-stream" length="4963068" sparkle:edSignature="V/1s1YBJsEZHz7elv9nCnAuy7Do0jGlxU3858aoJiSZD/lfrExbbHDdKaKEaw9ykv/goXRAJgjy/j2GZXHaYBg==" />
+    </item>
+    <item>
+      <title>FinderNotes 0.1.2（13）</title>
+      <sparkle:version>13</sparkle:version>
+      <sparkle:shortVersionString>0.1.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <pubDate>Sat, 10 Oct 2026 10:36:45 GMT</pubDate>
+      <enclosure url="https://github.com/danding9717/FinderNotes/releases/download/v0.1.2/FinderNotes-0.1.2-13.zip" type="application/octet-stream" length="4962689" sparkle:edSignature="rGIBD6tN2Ogt5nmORgpzytvbPy7tpI9vl9d4BGOgoFzzJG7FQjFLBs/mnkOOgtwxT1Y/HNvEXNDKdmILVQsHBg==" />
+      <description>&lt;!doctype html&gt;
+&lt;html lang="zh-CN"&gt;&lt;meta charset="utf-8"&gt;&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;&lt;title&gt;FinderNotes 更新说明&lt;/title&gt;&lt;body&gt;&lt;h1&gt;FinderNotes 0.1.2（13）&lt;/h1&gt;&lt;p&gt;本次更新整合窗口置顶、Markdown 原地实时排版和应用内手动更新。&lt;/p&gt;
+&lt;p&gt;Markdown 标题、强调、链接、代码块、列表和任务复选框可在编辑时直接显示；列表回车续写、任务勾选与撤销保持原文保存。&lt;/p&gt;
+&lt;p&gt;窗口可置顶于当前桌面，媒体预览与 Markdown 排版可以分别控制。&lt;/p&gt;
+&lt;p&gt;通过“FinderNotes → 检查更新…”下载新版；安装重启沿用未保存草稿、中文组合输入、保存与导出的保护。&lt;/p&gt;
+&lt;p&gt;请完成中文输入并保存笔记后再安装。已点击安装后选择返回编辑，后续正常退出仍可能继续原安装请求。&lt;/p&gt;
+&lt;p&gt;版本 0.1.2（13），需要 macOS 26.0 或更高；包含 Apple Silicon 与 Intel 架构，实际运行仅验证 Apple Silicon。&lt;/p&gt;
+&lt;p&gt;这是个人使用版本，采用 ad hoc 签名，未进行 Apple 公证；系统安全提示及已有使用限制仍适用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+</description>
+      <sparkle:fullReleaseNotesLink>https://github.com/danding9717/FinderNotes/releases/tag/v0.1.2</sparkle:fullReleaseNotesLink>
+    </item>
+  </channel>
+</rss>
