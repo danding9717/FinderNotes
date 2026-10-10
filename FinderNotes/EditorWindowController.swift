@@ -14,6 +14,9 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
     let copyButton = NSButton(title: "复制", target: nil, action: nil)
     let exportButton = NSButton(title: "导出", target: nil, action: nil)
     let previewButton = NSButton(title: "", target: nil, action: nil)
+    let pinButton = NSButton(title: "置顶", target: nil, action: nil)
+    private(set) var isPinned = false
+    var pinStateDidChange: ((Bool) -> Void)?
     let advancedButton = NSPopUpButton(frame: .zero, pullsDown: true)
     let recoveryMenuItem = NSMenuItem(title: "恢复草稿…", action: nil, keyEquivalent: "")
     let conflictMenuItem = NSMenuItem(title: "核对外部版本…", action: nil, keyEquivalent: "")
@@ -60,6 +63,8 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
         window.title = "FinderNotes"
         window.minSize = NSSize(width: 500, height: 360)
         window.isReleasedWhenClosed = false
+        // Keep document-window Spaces behavior even at the floating level.
+        window.collectionBehavior = [.managed, .participatesInCycle]
         super.init(window: window)
         window.delegate = self
         window.center()
@@ -68,6 +73,14 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
     }
 
     required init?(coder: NSCoder) { fatalError("Use init(session:)") }
+
+    @objc func togglePin(_ sender: Any?) {
+        guard let window else { return }
+        isPinned.toggle()
+        window.level = isPinned ? .floating : .normal
+        pinButton.state = isPinned ? .on : .off
+        pinStateDidChange?(isPinned)
+    }
 
     private func configureContent() {
         guard let content = window?.contentView else { return }
@@ -83,6 +96,20 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
             stack.topAnchor.constraint(equalTo: content.topAnchor, constant: 20),
             stack.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -18)
         ])
+        pinButton.setButtonType(.pushOnPushOff)
+        pinButton.bezelStyle = .rounded
+        pinButton.controlSize = .small
+        pinButton.refusesFirstResponder = true
+        pinButton.target = self
+        pinButton.action = #selector(togglePin(_:))
+        pinButton.image = NSImage(systemSymbolName: "pin", accessibilityDescription: nil)
+        pinButton.imagePosition = .imageLeading
+        pinButton.toolTip = "在当前桌面的普通窗口上方显示"
+        pinButton.setAccessibilityIdentifier("fn-toggle-pin")
+        let header = NSStackView(views: [NSView(), pinButton])
+        header.orientation = .horizontal
+        stack.addArrangedSubview(header)
+        header.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
         filePath.font = .systemFont(ofSize: 11)
         filePath.textColor = .secondaryLabelColor
         filePath.isSelectable = true
