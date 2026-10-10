@@ -1,0 +1,31 @@
+{
+  "bundleID": "com.findernotes.FinderNotes.LocalTrial",
+  "version": "0.1.3",
+  "build": "14",
+  "releaseTag": "v0.1.3",
+  "feedURL": "https://raw.githubusercontent.com/danding9717/FinderNotes/updates/appcast.xml",
+  "archiveURL": "https://github.com/danding9717/FinderNotes/releases/download/v0.1.3/FinderNotes-0.1.3-14.zip",
+  "releaseNotesURL": "https://github.com/danding9717/FinderNotes/releases/tag/v0.1.3",
+  "archiveSHA256": "eabe7f0c11e67c2a3e4074c750eb230086a4def287a23bb0d62e7ae30b931b20",
+  "archiveLength": 4963068,
+  "publicEDKey": "osFBk+W7kVsju92PnwDjwW6PNCMStp1FrEjjyZyjyWg=",
+  "signatureVerified": true,
+  "signatureScope": "archive",
+  "releaseNotesMode": "inline",
+  "releaseAssets": [
+    "FinderNotes-0.1.3-14.zip",
+    "SHA256SUMS"
+  ],
+  "sourceCommit": "7086b56ff40684031058001158a333a10bffa9e9",
+  "verification": {
+    "localTrialReleaseBuild": true,
+    "standardReleaseBuild": true,
+    "architectures": [
+      "arm64",
+      "x86_64"
+    ],
+    "archiveRoundTrip": true,
+    "strictCodeSignature": true,
+    "realInAppUpgrade": "pending Dan validation"
+  }
+}
