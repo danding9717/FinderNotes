@@ -1,0 +1,22 @@
+{
+  "phase": "unexpected-upgrade-after-user-reported-cancellation",
+  "parentModeDuringTest": "0o555",
+  "buildBefore": "12",
+  "buildCurrent": "13",
+  "versionCurrent": "0.1.2",
+  "bundleInodeCurrent": 11018141,
+  "userReportedAction": "cancelled installer authorization",
+  "authorizationResultIndependentlyVerified": true,
+  "cancelResultVerified": false,
+  "actualResult": "installation after actual system authorization; cannot count as cancellation refusal pass",
+  "evidence": [
+    "permission-sample.txt",
+    "permission-result-before-user-reply.json",
+    "auth-verified-timeline.txt"
+  ],
+  "toolBoundary": "SecurityAgent was not controlled by agent",
+  "strictSignaturePassed": true,
+  "testParentModeRestored": "0o755",
+  "authorizationGranted": true,
+  "diagnostic": "auth-verified-timeline.txt records authenticated + Succeeded authorizing at 2026-10-10 11:17:50; root installer used /var/root cache"
+}

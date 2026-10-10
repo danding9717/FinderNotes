@@ -1,0 +1,1044 @@
+{
+  "schema": 1,
+  "inventoriedAt": "2026-10-10T14:58:05.737390+08:00",
+  "worktree": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes",
+  "readOnlyInventoryExceptThisFile": true,
+  "noDeletionOrProcessActionsPerformed": true,
+  "guards": [
+    "Delete only these exact entries after stated conditions, never a broad FN12* glob",
+    "Recheck inode, owner and absence of app/build/server/watcher users before deletion",
+    "Formal delivery must be copied to main-repo Delivery and independently verified before deleting final candidate/build",
+    "Do not touch personal LocalTrial/FN11/other tasks/Keychain or private signing keys",
+    "Archive small factual reports first; test media, app copies, ZIPs and synthetic recovery artifacts need not be retained"
+  ],
+  "protectedPaths": [
+    "/Users/danding/Applications/FinderNotes.app",
+    "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.LocalTrial",
+    "/Users/danding/Library/Caches/com.findernotes.FinderNotes.LocalTrial",
+    "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.LocalTrial.plist",
+    "/Users/danding/Project/AI/FinderNotes/.build/Delivery/FinderNotes-0.1.1-12",
+    "/Users/danding/Library/Keychains"
+  ],
+  "protectedSigningAccounts": [
+    "com.findernotes.FinderNotes.LocalTrial.updates",
+    "com.findernotes.FN12Review"
+  ],
+  "cleanupEntries": [
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreparedReleaseCandidate",
+      "sizeKiB": 3776,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11024735
+      },
+      "ownerUID": 501,
+      "mode": "0o700",
+      "purpose": "FINAL production candidate / current LocalTrial build; not disposable until delivery verified",
+      "risk": "HIGH: final signed release material",
+      "condition": "after-production-delivery-copy-hashes-and-independent-verification-match-and-key-evidence-preserved"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12LocalTrialPin",
+      "sizeKiB": 212292,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11004410
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FINAL production candidate / current LocalTrial build; not disposable until delivery verified",
+      "risk": "HIGH: final signed release material",
+      "condition": "after-production-delivery-copy-hashes-and-independent-verification-match-and-key-evidence-preserved"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Standard",
+      "sizeKiB": 209748,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 10993770
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 generated isolated fixture / build / cache / evidence",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12SourcePackages",
+      "sizeKiB": 101308,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 10989444
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 generated isolated fixture / build / cache / evidence",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreparedReleaseCandidateBeforeIMEGuard-result.json",
+      "sizeKiB": 24,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11014934
+      },
+      "ownerUID": 501,
+      "mode": "0o644",
+      "purpose": "Obsolete pre-final production-package review or pre-IME build; retain failure/preparation summary first",
+      "risk": "medium: stale signed packages must not be confused with final candidate",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreparedReleaseCandidateBeforeIMEGuard",
+      "sizeKiB": 3776,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11014935
+      },
+      "ownerUID": 501,
+      "mode": "0o700",
+      "purpose": "Obsolete pre-final production-package review or pre-IME build; retain failure/preparation summary first",
+      "risk": "medium: stale signed packages must not be confused with final candidate",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ReadOnlyVolumeValidation",
+      "sizeKiB": 13804,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11021030
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 generated isolated fixture / build / cache / evidence",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreparedReleaseFinal-result.json",
+      "sizeKiB": 0,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11012595
+      },
+      "ownerUID": 501,
+      "mode": "0o644",
+      "purpose": "Obsolete pre-final production-package review or pre-IME build; retain failure/preparation summary first",
+      "risk": "medium: stale signed packages must not be confused with final candidate",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreparedReleaseReview-result.json",
+      "sizeKiB": 24,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 10999360
+      },
+      "ownerUID": 501,
+      "mode": "0o644",
+      "purpose": "Obsolete pre-final production-package review or pre-IME build; retain failure/preparation summary first",
+      "risk": "medium: stale signed packages must not be confused with final candidate",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreparedReleaseCandidate-result.json",
+      "sizeKiB": 24,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11024728
+      },
+      "ownerUID": 501,
+      "mode": "0o644",
+      "purpose": "FINAL production candidate / current LocalTrial build; not disposable until delivery verified",
+      "risk": "HIGH: final signed release material",
+      "condition": "after-production-delivery-copy-hashes-and-independent-verification-match-and-key-evidence-preserved"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreIMEGuard",
+      "sizeKiB": 13492,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11022467
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "Obsolete pre-final production-package review or pre-IME build; retain failure/preparation summary first",
+      "risk": "medium: stale signed packages must not be confused with final candidate",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidation",
+      "sizeKiB": 27768,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11023244
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 generated isolated fixture / build / cache / evidence",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12LocalTrial",
+      "sizeKiB": 208328,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 10995194
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 generated isolated fixture / build / cache / evidence",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationPin",
+      "sizeKiB": 33188,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11011866
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 generated isolated fixture / build / cache / evidence",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12SigningWait-sample.txt",
+      "sizeKiB": 68,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11014795
+      },
+      "ownerUID": 501,
+      "mode": "0o644",
+      "purpose": "FN12 generated isolated fixture / build / cache / evidence",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance",
+      "sizeKiB": 41368,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11060788
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 generated isolated fixture / build / cache / evidence",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12StandardPin",
+      "sizeKiB": 212244,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11004411
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 generated isolated fixture / build / cache / evidence",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ReadOnlyValidation",
+      "sizeKiB": 27956,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11013900
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 generated isolated fixture / build / cache / evidence",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationAudit",
+      "sizeKiB": 27748,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11015623
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 generated isolated fixture / build / cache / evidence",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12BootstrapValidation-r8ex66ni",
+      "sizeKiB": 6412,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11001645
+      },
+      "ownerUID": 501,
+      "mode": "0o700",
+      "purpose": "FN12 generated isolated fixture / build / cache / evidence",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreparedReleaseReview",
+      "sizeKiB": 3680,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11001007
+      },
+      "ownerUID": 501,
+      "mode": "0o700",
+      "purpose": "Obsolete pre-final production-package review or pre-IME build; retain failure/preparation summary first",
+      "risk": "medium: stale signed packages must not be confused with final candidate",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationBeforePin",
+      "sizeKiB": 30612,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 10995856
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 generated isolated fixture / build / cache / evidence",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidationBeforeIMEGuard",
+      "sizeKiB": 27760,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11020307
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 generated isolated fixture / build / cache / evidence",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation",
+      "sizeKiB": 29688,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11007200
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 generated isolated fixture / build / cache / evidence",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Dependencies",
+      "sizeKiB": 38796,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 10986892
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 generated isolated fixture / build / cache / evidence",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12RealInstall-20261010-142424",
+      "sizeKiB": 52,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11059387
+      },
+      "ownerUID": 501,
+      "mode": "0o700",
+      "purpose": "Actual authorized LocalTrial 11->12 installation evidence and empty recovery snapshot",
+      "risk": "medium: formal bootstrap evidence; archive reports before clearing",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/.findernotes-update-6e01_y_t",
+      "sizeKiB": 10476,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11012596
+      },
+      "ownerUID": 501,
+      "mode": "0o700",
+      "purpose": "Obsolete 10:54 prepare_update staging: ZIP SHA256 3fee8d35f4cd09aabd3bb8443a11e016300fb0453f36ddf7080b8d9c6dddbcf0 plus extracted verification app",
+      "risk": "medium: package staging, proven different from final ZIP",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12Acceptance",
+      "sizeKiB": 0,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11063476
+      },
+      "ownerUID": 501,
+      "mode": "0o700",
+      "purpose": "FN12 isolated recovery locks and update receipts; all DraftRecovery directories currently contain only 0-byte .lock",
+      "risk": "medium: preserve exact receipt JSONs before clearing",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12IMEReview",
+      "sizeKiB": 8,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11021577
+      },
+      "ownerUID": 501,
+      "mode": "0o700",
+      "purpose": "FN12 isolated recovery locks and update receipts; all DraftRecovery directories currently contain only 0-byte .lock",
+      "risk": "medium: preserve exact receipt JSONs before clearing",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12ReadOnlyReview",
+      "sizeKiB": 4,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11015409
+      },
+      "ownerUID": 501,
+      "mode": "0o700",
+      "purpose": "FN12 isolated recovery locks and update receipts; all DraftRecovery directories currently contain only 0-byte .lock",
+      "risk": "medium: preserve exact receipt JSONs before clearing",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12ReadOnlyVolumeReview",
+      "sizeKiB": 0,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11021428
+      },
+      "ownerUID": 501,
+      "mode": "0o700",
+      "purpose": "FN12 isolated recovery locks and update receipts; all DraftRecovery directories currently contain only 0-byte .lock",
+      "risk": "medium: preserve exact receipt JSONs before clearing",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12Review",
+      "sizeKiB": 8,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 10998217
+      },
+      "ownerUID": 501,
+      "mode": "0o700",
+      "purpose": "FN12 isolated recovery locks and update receipts; all DraftRecovery directories currently contain only 0-byte .lock",
+      "risk": "medium: preserve exact receipt JSONs before clearing",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Caches/com.findernotes.FinderNotes.FN12IMEReview",
+      "sizeKiB": 4,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11021908
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 isolated Sparkle/WebKit/network cache",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Caches/com.findernotes.FinderNotes.FN12ReadOnlyReview",
+      "sizeKiB": 4,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11015460
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 isolated Sparkle/WebKit/network cache",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Caches/com.findernotes.FinderNotes.FN12Review",
+      "sizeKiB": 4,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 10998444
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 isolated Sparkle/WebKit/network cache",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Caches/com.findernotes.FinderNotes.FN12NetworkChecks.404",
+      "sizeKiB": 132,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11003567
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 isolated Sparkle/WebKit/network cache",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Caches/com.findernotes.FinderNotes.FN12NetworkChecks.bad-signature",
+      "sizeKiB": 0,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11003975
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 isolated Sparkle/WebKit/network cache",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Caches/com.findernotes.FinderNotes.FN12NetworkChecks.corrupt",
+      "sizeKiB": 0,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11003999
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 isolated Sparkle/WebKit/network cache",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12Acceptance.plist",
+      "sizeKiB": 4,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11063671
+      },
+      "ownerUID": 501,
+      "mode": "0o600",
+      "purpose": "FN12 isolated preference domain; no production LocalTrial domain",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12IMEReview.plist",
+      "sizeKiB": 4,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11067382
+      },
+      "ownerUID": 501,
+      "mode": "0o600",
+      "purpose": "FN12 isolated preference domain; no production LocalTrial domain",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12ReadOnlyReview.plist",
+      "sizeKiB": 4,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11018933
+      },
+      "ownerUID": 501,
+      "mode": "0o600",
+      "purpose": "FN12 isolated preference domain; no production LocalTrial domain",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12ReadOnlyVolumeReview.plist",
+      "sizeKiB": 4,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11021493
+      },
+      "ownerUID": 501,
+      "mode": "0o600",
+      "purpose": "FN12 isolated preference domain; no production LocalTrial domain",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12Review.plist",
+      "sizeKiB": 4,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11016751
+      },
+      "ownerUID": 501,
+      "mode": "0o600",
+      "purpose": "FN12 isolated preference domain; no production LocalTrial domain",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.404.plist",
+      "sizeKiB": 4,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11004165
+      },
+      "ownerUID": 501,
+      "mode": "0o600",
+      "purpose": "FN12 isolated preference domain; no production LocalTrial domain",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.bad-signature.plist",
+      "sizeKiB": 4,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11005960
+      },
+      "ownerUID": 501,
+      "mode": "0o600",
+      "purpose": "FN12 isolated preference domain; no production LocalTrial domain",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.corrupt.plist",
+      "sizeKiB": 4,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11005957
+      },
+      "ownerUID": 501,
+      "mode": "0o600",
+      "purpose": "FN12 isolated preference domain; no production LocalTrial domain",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.invalid.plist",
+      "sizeKiB": 4,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11004157
+      },
+      "ownerUID": 501,
+      "mode": "0o600",
+      "purpose": "FN12 isolated preference domain; no production LocalTrial domain",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.latest.plist",
+      "sizeKiB": 4,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11004163
+      },
+      "ownerUID": 501,
+      "mode": "0o600",
+      "purpose": "FN12 isolated preference domain; no production LocalTrial domain",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.local-ahead.plist",
+      "sizeKiB": 4,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11004159
+      },
+      "ownerUID": 501,
+      "mode": "0o600",
+      "purpose": "FN12 isolated preference domain; no production LocalTrial domain",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.offline.plist",
+      "sizeKiB": 4,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11004156
+      },
+      "ownerUID": 501,
+      "mode": "0o600",
+      "purpose": "FN12 isolated preference domain; no production LocalTrial domain",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.slow-download.plist",
+      "sizeKiB": 4,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11005954
+      },
+      "ownerUID": 501,
+      "mode": "0o600",
+      "purpose": "FN12 isolated preference domain; no production LocalTrial domain",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.timeout.plist",
+      "sizeKiB": 4,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11005967
+      },
+      "ownerUID": 501,
+      "mode": "0o600",
+      "purpose": "FN12 isolated preference domain; no production LocalTrial domain",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.update.plist",
+      "sizeKiB": 4,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 11004161
+      },
+      "ownerUID": 501,
+      "mode": "0o600",
+      "purpose": "FN12 isolated preference domain; no production LocalTrial domain",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/com.findernotes.FinderNotes.FN12IMEReview",
+      "sizeKiB": 0,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11021912
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 isolated WebKit temporary directory",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/com.findernotes.FinderNotes.FN12ReadOnlyReview",
+      "sizeKiB": 0,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11015464
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 isolated WebKit temporary directory",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/com.findernotes.FinderNotes.FN12Review",
+      "sizeKiB": 0,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 10998448
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 isolated WebKit temporary directory",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/C/com.findernotes.FinderNotes.FN12Acceptance",
+      "sizeKiB": 20,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11063471
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 isolated Metal private-user cache",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/C/com.findernotes.FinderNotes.FN12IMEReview",
+      "sizeKiB": 20,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11021566
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 isolated Metal private-user cache",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/C/com.findernotes.FinderNotes.FN12ReadOnlyReview",
+      "sizeKiB": 20,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11015405
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 isolated Metal private-user cache",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/C/com.findernotes.FinderNotes.FN12ReadOnlyVolumeReview",
+      "sizeKiB": 68,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 11021412
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 isolated Metal private-user cache",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/C/com.findernotes.FinderNotes.FN12Review",
+      "sizeKiB": 20,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 10998160
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 isolated Metal private-user cache",
+      "risk": "low after evidence preserved and no users/processes",
+      "condition": "after-key-evidence-preserved-and-test-processes-stopped"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/_Users_danding_.codex_worktrees_fn-12-app-update_FinderNotes_.build_FN12SourcePackages_Package.resolved.lock",
+      "sizeKiB": 0,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 10993074
+      },
+      "ownerUID": 501,
+      "mode": "0o644",
+      "purpose": "FN12 SPM 0-byte lock file",
+      "risk": "low only after no build/SPM process holds this exact lock",
+      "condition": "after-all-FN12-build-and-SPM-processes-stopped"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/_Users_danding_.codex_worktrees_fn-12-app-update_FinderNotes_.build_FN12SourcePackages_artifacts_sparkle_Sparkle.lock",
+      "sizeKiB": 0,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 10993475
+      },
+      "ownerUID": 501,
+      "mode": "0o644",
+      "purpose": "FN12 SPM 0-byte lock file",
+      "risk": "low only after no build/SPM process holds this exact lock",
+      "condition": "after-all-FN12-build-and-SPM-processes-stopped"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/_Users_danding_.codex_worktrees_fn-12-app-update_FinderNotes_.build_FN12SourcePackages_workspace-state.json.lock",
+      "sizeKiB": 0,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 10993059
+      },
+      "ownerUID": 501,
+      "mode": "0o644",
+      "purpose": "FN12 SPM 0-byte lock file",
+      "risk": "low only after no build/SPM process holds this exact lock",
+      "condition": "after-all-FN12-build-and-SPM-processes-stopped"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/validation/fn12",
+      "sizeKiB": 216,
+      "kind": "directory",
+      "identity": {
+        "device": 16777232,
+        "inode": 10994560
+      },
+      "ownerUID": 501,
+      "mode": "0o755",
+      "purpose": "FN12 validation source and its __pycache__; parent explicitly requested removal after preserving pre-cleanup Git commit",
+      "risk": "medium: reproducibility source is removed from final tree",
+      "condition": "after-pre-cleanup-source-commit-recorded-and-key-evidence-archived"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/tests/test_update_tools.py",
+      "sizeKiB": 20,
+      "kind": "file",
+      "identity": {
+        "device": 16777232,
+        "inode": 10995933
+      },
+      "ownerUID": 501,
+      "mode": "0o644",
+      "purpose": "FN12 update-tool unit test source; preserve pre-cleanup Git commit",
+      "risk": "medium: reproducibility source is removed from final tree",
+      "condition": "after-pre-cleanup-source-commit-recorded-and-key-evidence-archived"
+    }
+  ],
+  "processes": [
+    {
+      "pid": 43800,
+      "exactArgs": "Python -B -u validation/fn12/acceptance_console.py",
+      "listener": "127.0.0.1:18777",
+      "actionForRoot": "stop own server normally after confirming exact current PID/args",
+      "note": "No FN12 app, Autoupdate, native updater or cleanup watcher found; recheck immediately before cleanup"
+    }
+  ],
+  "mounts": {
+    "actualFN12MountsFound": false,
+    "hdiutilAndMountChecked": true,
+    "warning": "LaunchServices still has a stale mounted-container record; not evidence an actual disk is attached"
+  },
+  "launchd": {
+    "system/com.findernotes.FinderNotes.FN12ReadOnlyReview-sparkle-updater": "not found",
+    "gui/501/com.findernotes.FinderNotes.FN12Review-sparkle-updater": "not found",
+    "gui/501/com.findernotes.FinderNotes.FN12IMEReview-sparkle-updater": "not found",
+    "gui/501/com.findernotes.FinderNotes.FN12Acceptance-sparkle-updater": "not found"
+  },
+  "launchServicesExactAppPaths": [
+    "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/network/FN12 Network Checks.app",
+    "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ReadOnlyValidation/Installed/FN12 ReadOnly Review.app",
+    "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidation/Installed/FN12 IME Review.app",
+    "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/Installed/FinderNotes FN12 Review.app",
+    "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/Installed/FinderNotes 更新验收.app"
+  ],
+  "launchServicesPorts": [
+    "FinderNotesFN12Review",
+    "FinderNotesFN12IMEReview",
+    "FinderNotesFN12ReadOnlyReview",
+    "FinderNotesFN12Acceptance"
+  ],
+  "launchServicesNote": "Unregister only exact owned test app paths; network path is already missing but stale in LS. Do not unregister production LocalTrial by identifier or reset global LS/Finder service database.",
+  "permissionLimited": [
+    {
+      "path": "/var/root/Library/Caches/com.findernotes.FinderNotes.FN12ReadOnlyReview",
+      "sizeKiB": null,
+      "status": "PermissionError; current existence and remaining contents not independently confirmed",
+      "action": "record limitation only; no sudo/password/SecurityAgent operation"
+    }
+  ],
+  "acceptanceFacts": {
+    "installedBuild": "12",
+    "installedVersion": "0.1.1",
+    "noMediaBaselineJSON": true,
+    "noAcceptanceReceiptJSON": true,
+    "latestVerification": "evidence/20261010T063514-0b28d710-verification.json: unknown, preparation only, no PID or baseline",
+    "latestReadiness": "evidence/readiness.json at 14:48:43: running build12 PID39761, strict signature pass; readiness only",
+    "nativeAcceptance13UpgradeNotProvenByTheseFiles": true,
+    "HTTPsmokeCancellationVerified": false,
+    "smokeTransferMarkerPreserved": "evidence/console-smoke-transfer-marker.json",
+    "actualPriorNativeUpgradeEvidence": "FN12Validation/native-final.json and FN12IMEValidation/native-final.json plus exact cleanup observers",
+    "humanAcceptance": "Parent reports explicit Dan acceptance; keep separate from automated/preparation evidence"
+  },
+  "evidenceToArchiveBeforeDelete": {
+    "receipts": [
+      "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12IMEReview/UpdateResults/08C3B412-DB32-4199-BB4F-E7D417592AB7.json",
+      "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12IMEReview/UpdateResults/89966756-48E9-46D8-9F5A-64F99396DBA4.json",
+      "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12ReadOnlyReview/UpdateResults/F10C07CA-5154-4B97-AC21-94E0CE4ACC9B.json",
+      "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12Review/UpdateResults/3A3EF9F3-4756-4D8F-9096-CDB8DF0E374F.json",
+      "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12Review/UpdateResults/D5C6942C-CA59-4343-A309-13BB01BB2B09.json"
+    ],
+    "keyReports": [
+      "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/components/results.log",
+      "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationBeforePin/network/results.json",
+      "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/native-final.json",
+      "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/cleanup-observer.json",
+      "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidation/native-final.json",
+      "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidation/native-ime-install-guard.json",
+      "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidation/cleanup-observer.json",
+      "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ReadOnlyValidation/auth-verified-timeline.txt",
+      "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ReadOnlyValidation/permission-result.json",
+      "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ReadOnlyVolumeValidation/native-result.json",
+      "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12RealInstall-20261010-142424/install-result.json",
+      "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12RealInstall-20261010-142424/launch-verification.json",
+      "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/evidence/readiness.json",
+      "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/evidence/console-smoke.json",
+      "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/evidence/console-smoke-transfer-marker.json",
+      "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/evidence/console-events.jsonl"
+    ],
+    "buildLogs": "FN12Dependencies/build-standard-ime-guard.log and build-local-trial-ime-guard.log; retain concise failures/limits from prior attempts",
+    "finalProductionZIPsha256": "17d1aaafedabf00b74f859ef6f558a4bd6ed727d47faf8ec687b3b22202c1ea9"
+  },
+  "absentNamedTempRoots": "No FN12 entries under /private/tmp; no findernotes-tools-test-/findernotes-package-test-/named install staging in user TMPDIR; no other scoped named temp resources observed",
+  "statistics": {
+    "entryCount": 66,
+    "totalInventoryKiB": 1285020,
+    "FN12BuildGlobKiB": 1273936,
+    "FN12BuildGlobMiB": 1244.08,
+    "rootPrivilegedCacheIncludedInSize": false
+  }
+}

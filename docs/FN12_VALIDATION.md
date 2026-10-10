@@ -1,5 +1,7 @@
 # FN-12 验证证据
 
+> 2026-10-10：Dan 已明确验收，FN-12 为 Done。以下按执行时事实保留；本任务测试源码和产物已按授权清理，旧 `.build/FN12*` 路径不再存在，不能继续使用原临时控制台。复现源码见清理前提交 `c2f425371441af21d542856e2db6a854677ecf57`；关键证据已迁至 [docs/evidence/fn12](evidence/fn12/ACCEPTANCE.md)，清理结果见该目录 `cleanup-result.json`。正式未发布材料保留于主仓库 `.build/Delivery/FinderNotes-0.1.1-12/`。旧失败与未验证项不随接受或清理改写。
+
 验证日期：2026-10-10。正式任务和验收状态以 [FN-12 / TASK-404](https://app.notion.com/p/3f5e7607d6498117b9b8e4db3a066ae9) 为准。本文保存代码审阅所需的验证方法与证据，不替代 Dan 的验收。
 
 ## 环境与隔离

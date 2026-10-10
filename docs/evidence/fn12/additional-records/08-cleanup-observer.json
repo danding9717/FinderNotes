@@ -1,0 +1,23 @@
+{
+  "oldPID": 62899,
+  "exactPath": "/Users/danding/Library/Caches/com.findernotes.FinderNotes.FN12Review/org.sparkle-project.Sparkle/Installation/aKXntYCsk/lHUIuuKMH/FinderNotes FN12 Review.app",
+  "oldIdentity": {
+    "device": 16777232,
+    "inode": 11016147
+  },
+  "states": [
+    {
+      "state": "new-bundle-before-swap",
+      "time": 1791601311.0159519
+    },
+    {
+      "state": "old-bundle-present",
+      "time": 1791601318.838793
+    },
+    {
+      "state": "missing",
+      "time": 1791601318.856938
+    }
+  ],
+  "observedOldThenDeleted": true
+}

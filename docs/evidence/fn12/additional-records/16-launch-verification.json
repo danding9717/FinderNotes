@@ -1,0 +1,16 @@
+{
+  "runningLocalTrials": [
+    {
+      "pid": "33896",
+      "application": "/Users/danding/Applications/FinderNotes.app"
+    }
+  ],
+  "singleInstance": true,
+  "runtimeAboutPanel": "FinderNotes 版本0.1.1 (12)",
+  "checkUpdatesMenuVisible": true,
+  "mainWindowReady": true,
+  "userMediaOpenedOrEdited": false,
+  "noRecoveryPromptObserved": true,
+  "publicationPerformed": false,
+  "gitCloseoutPerformed": false
+}

@@ -1,0 +1,834 @@
+{
+  "time": "2026-10-10T15:00:34.488967+08:00",
+  "preCleanupSourceCommit": "c2f425371441af21d542856e2db6a854677ecf57",
+  "entries": [
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreparedReleaseCandidate",
+      "inventoryKiB": 3776,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12LocalTrialPin",
+      "inventoryKiB": 212292,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Standard",
+      "inventoryKiB": 209748,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12SourcePackages",
+      "inventoryKiB": 101308,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreparedReleaseCandidateBeforeIMEGuard-result.json",
+      "inventoryKiB": 24,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreparedReleaseCandidateBeforeIMEGuard",
+      "inventoryKiB": 3776,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ReadOnlyVolumeValidation",
+      "inventoryKiB": 13804,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreparedReleaseFinal-result.json",
+      "inventoryKiB": 0,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreparedReleaseReview-result.json",
+      "inventoryKiB": 24,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreparedReleaseCandidate-result.json",
+      "inventoryKiB": 24,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreIMEGuard",
+      "inventoryKiB": 13492,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidation",
+      "inventoryKiB": 27768,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12LocalTrial",
+      "inventoryKiB": 208328,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationPin",
+      "inventoryKiB": 33188,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12SigningWait-sample.txt",
+      "inventoryKiB": 68,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance",
+      "inventoryKiB": 41368,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12StandardPin",
+      "inventoryKiB": 212244,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ReadOnlyValidation",
+      "inventoryKiB": 27956,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationAudit",
+      "inventoryKiB": 27748,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12BootstrapValidation-r8ex66ni",
+      "inventoryKiB": 6412,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreparedReleaseReview",
+      "inventoryKiB": 3680,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationBeforePin",
+      "inventoryKiB": 30612,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidationBeforeIMEGuard",
+      "inventoryKiB": 27760,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation",
+      "inventoryKiB": 29688,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Dependencies",
+      "inventoryKiB": 38796,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12RealInstall-20261010-142424",
+      "inventoryKiB": 52,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/.findernotes-update-6e01_y_t",
+      "inventoryKiB": 10476,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12Acceptance",
+      "inventoryKiB": 0,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12IMEReview",
+      "inventoryKiB": 8,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12ReadOnlyReview",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12ReadOnlyVolumeReview",
+      "inventoryKiB": 0,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12Review",
+      "inventoryKiB": 8,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Caches/com.findernotes.FinderNotes.FN12IMEReview",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Caches/com.findernotes.FinderNotes.FN12ReadOnlyReview",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Caches/com.findernotes.FinderNotes.FN12Review",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Caches/com.findernotes.FinderNotes.FN12NetworkChecks.404",
+      "inventoryKiB": 132,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Caches/com.findernotes.FinderNotes.FN12NetworkChecks.bad-signature",
+      "inventoryKiB": 0,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Caches/com.findernotes.FinderNotes.FN12NetworkChecks.corrupt",
+      "inventoryKiB": 0,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12Acceptance.plist",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12IMEReview.plist",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12ReadOnlyReview.plist",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12ReadOnlyVolumeReview.plist",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12Review.plist",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.404.plist",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.bad-signature.plist",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.corrupt.plist",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.invalid.plist",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.latest.plist",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.local-ahead.plist",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.offline.plist",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.slow-download.plist",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.timeout.plist",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/Library/Preferences/com.findernotes.FinderNotes.FN12NetworkChecks.update.plist",
+      "inventoryKiB": 4,
+      "status": "deleted"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/com.findernotes.FinderNotes.FN12IMEReview",
+      "inventoryKiB": 0,
+      "status": "deleted"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/com.findernotes.FinderNotes.FN12ReadOnlyReview",
+      "inventoryKiB": 0,
+      "status": "deleted"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/com.findernotes.FinderNotes.FN12Review",
+      "inventoryKiB": 0,
+      "status": "deleted"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/C/com.findernotes.FinderNotes.FN12Acceptance",
+      "inventoryKiB": 20,
+      "status": "deleted"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/C/com.findernotes.FinderNotes.FN12IMEReview",
+      "inventoryKiB": 20,
+      "status": "deleted"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/C/com.findernotes.FinderNotes.FN12ReadOnlyReview",
+      "inventoryKiB": 20,
+      "status": "deleted"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/C/com.findernotes.FinderNotes.FN12ReadOnlyVolumeReview",
+      "inventoryKiB": 68,
+      "status": "deleted"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/C/com.findernotes.FinderNotes.FN12Review",
+      "inventoryKiB": 20,
+      "status": "deleted"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/_Users_danding_.codex_worktrees_fn-12-app-update_FinderNotes_.build_FN12SourcePackages_Package.resolved.lock",
+      "inventoryKiB": 0,
+      "status": "deleted"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/_Users_danding_.codex_worktrees_fn-12-app-update_FinderNotes_.build_FN12SourcePackages_artifacts_sparkle_Sparkle.lock",
+      "inventoryKiB": 0,
+      "status": "deleted"
+    },
+    {
+      "path": "/var/folders/j_/l8s7fghx6q73l51666cwkdw00000gn/T/_Users_danding_.codex_worktrees_fn-12-app-update_FinderNotes_.build_FN12SourcePackages_workspace-state.json.lock",
+      "inventoryKiB": 0,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/validation/fn12",
+      "inventoryKiB": 216,
+      "status": "deleted"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/tests/test_update_tools.py",
+      "inventoryKiB": 20,
+      "status": "deleted"
+    }
+  ],
+  "removedCount": 66,
+  "inventoriedKiBRemoved": 1285020,
+  "diskSpaceReclaimedNotMeasured": true,
+  "testServerStopped": true,
+  "launchServicesUnregistration": [
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/.findernotes-update-6e01_y_t/verification/FinderNotes.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/.findernotes-update-6e01_y_t/verification/FinderNotes.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/Installed/FinderNotes 更新验收.app",
+      "returncode": 0,
+      "detail": ""
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/verification-extracted/12/FinderNotes 更新验收.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/verification-extracted/12/FinderNotes 更新验收.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/verification-extracted/13/FinderNotes 更新验收.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/verification-extracted/13/FinderNotes 更新验收.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/versions/12/FinderNotes 更新验收.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/versions/12/FinderNotes 更新验收.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/versions/13/FinderNotes 更新验收.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/versions/13/FinderNotes 更新验收.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12BootstrapValidation-r8ex66ni/Applications/FinderNotes.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12BootstrapValidation-r8ex66ni/Applications/FinderNotes.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidation/Installed/FN12 IME Review.app",
+      "returncode": 0,
+      "detail": ""
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidation/versions/12/FN12 IME Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidation/versions/12/FN12 IME Review.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidation/versions/13/FN12 IME Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidation/versions/13/FN12 IME Review.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidationBeforeIMEGuard/Installed/FN12 IME Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidationBeforeIMEGuard/Installed/FN12 IME Review.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidationBeforeIMEGuard/versions/12/FN12 IME Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidationBeforeIMEGuard/versions/12/FN12 IME Review.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidationBeforeIMEGuard/versions/13/FN12 IME Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidationBeforeIMEGuard/versions/13/FN12 IME Review.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12LocalTrial/Build/Products/Release/FinderNotes.app",
+      "returncode": 0,
+      "detail": ""
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12LocalTrialPin/Build/Products/Release/FinderNotes.app",
+      "returncode": 0,
+      "detail": ""
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreIMEGuard/LocalTrial/FinderNotes.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreIMEGuard/LocalTrial/FinderNotes.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreIMEGuard/Standard/FinderNotes.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12PreIMEGuard/Standard/FinderNotes.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ReadOnlyValidation/Installed/FN12 ReadOnly Review.app",
+      "returncode": 0,
+      "detail": ""
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ReadOnlyValidation/versions/12/FN12 ReadOnly Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ReadOnlyValidation/versions/12/FN12 ReadOnly Review.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ReadOnlyValidation/versions/13/FN12 ReadOnly Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ReadOnlyValidation/versions/13/FN12 ReadOnly Review.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ReadOnlyVolumeValidation/staging/FN12 ReadOnly Volume Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ReadOnlyVolumeValidation/staging/FN12 ReadOnly Volume Review.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Standard/Build/Products/Release/FinderNotes.app",
+      "returncode": 0,
+      "detail": ""
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12StandardPin/Build/Products/Release/FinderNotes.app",
+      "returncode": 0,
+      "detail": ""
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/Installed/FinderNotes FN12 Review.app",
+      "returncode": 0,
+      "detail": ""
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/ambiguous/Installation/one/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/ambiguous/Installation/one/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/ambiguous/Installation/two/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/ambiguous/Installation/two/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/ambiguous/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/ambiguous/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/default-directory-construction/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/default-directory-construction/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/foreign/Installation/new-download/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/foreign/Installation/new-download/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/foreign/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/foreign/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/info-symlink/Installation/new-download/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/info-symlink/Installation/new-download/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/info-symlink/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/info-symlink/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/replaced-extraction/Installation/new-download/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/replaced-extraction/Installation/new-download/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/replaced-extraction/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/replaced-extraction/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/replaced-extraction/OriginalExtraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/replaced-extraction/OriginalExtraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/resume-completed/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/resume-completed/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/resume-unknown/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/resume-unknown/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/stale/Installation/new-download/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/stale/Installation/new-download/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/stale/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/stale/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/symlink/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/symlink/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/symlink/Outside.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/symlink/Outside.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/unique/Installation/new-download/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/unique/Installation/new-download/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/unique/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/unique/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/unsafe-files/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-110AE18B-864B-4904-9FAD-6109F504588D/unsafe-files/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/ambiguous/Installation/one/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/ambiguous/Installation/one/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/ambiguous/Installation/two/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/ambiguous/Installation/two/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/ambiguous/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/ambiguous/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/default-directory-construction/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/default-directory-construction/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/foreign/Installation/new-download/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/foreign/Installation/new-download/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/foreign/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/foreign/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/info-symlink/Installation/new-download/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/info-symlink/Installation/new-download/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/info-symlink/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/info-symlink/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/replaced-extraction/Installation/new-download/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/replaced-extraction/Installation/new-download/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/replaced-extraction/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/replaced-extraction/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/replaced-extraction/OriginalExtraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/replaced-extraction/OriginalExtraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/resume-completed/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/resume-completed/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/resume-unknown/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/resume-unknown/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/stale/Installation/new-download/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/stale/Installation/new-download/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/stale/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/stale/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/symlink/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/symlink/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/symlink/Outside.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/symlink/Outside.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/unique/Installation/new-download/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/unique/Installation/new-download/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/unique/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/unique/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/unsafe-files/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-A284B2D2-89F2-4CB0-99C2-B6B7F95D0ABF/unsafe-files/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/ambiguous/Installation/one/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/ambiguous/Installation/one/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/ambiguous/Installation/two/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/ambiguous/Installation/two/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/ambiguous/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/ambiguous/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/foreign/Installation/new-download/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/foreign/Installation/new-download/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/foreign/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/foreign/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/info-symlink/Installation/new-download/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/info-symlink/Installation/new-download/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/info-symlink/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/info-symlink/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/replaced-extraction/Installation/new-download/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/replaced-extraction/Installation/new-download/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/replaced-extraction/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/replaced-extraction/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/replaced-extraction/OriginalExtraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/replaced-extraction/OriginalExtraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/resume-completed/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/resume-completed/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/resume-unknown/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/resume-unknown/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/stale/Installation/new-download/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/stale/Installation/new-download/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/stale/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/stale/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/symlink/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/symlink/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/symlink/Outside.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/symlink/Outside.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/unique/Installation/new-download/extraction/Fixture.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/unique/Installation/new-download/extraction/Fixture.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/unique/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/unique/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/unsafe-files/Installed.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/audit-components-BC430990-4BA4-42E5-995F-DEB231C0713B/unsafe-files/Installed.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/network/FN12 Network Checks.app",
+      "returncode": 0,
+      "detail": ""
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/versions/12/FinderNotes FN12 Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/versions/12/FinderNotes FN12 Review.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/versions/13/FinderNotes FN12 Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/versions/13/FinderNotes FN12 Review.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationAudit/Installed/FinderNotes FN12 Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationAudit/Installed/FinderNotes FN12 Review.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationAudit/versions/12/FinderNotes FN12 Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationAudit/versions/12/FinderNotes FN12 Review.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationAudit/versions/13/FinderNotes FN12 Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationAudit/versions/13/FinderNotes FN12 Review.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationBeforePin/Installed/FinderNotes FN12 Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationBeforePin/Installed/FinderNotes FN12 Review.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationBeforePin/network/FN12 Network Checks.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationBeforePin/network/FN12 Network Checks.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationBeforePin/versions/12/FinderNotes FN12 Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationBeforePin/versions/12/FinderNotes FN12 Review.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationBeforePin/versions/13/FinderNotes FN12 Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationBeforePin/versions/13/FinderNotes FN12 Review.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationPin/Installed/FinderNotes FN12 Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationPin/Installed/FinderNotes FN12 Review.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationPin/versions/12/FinderNotes FN12 Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationPin/versions/12/FinderNotes FN12 Review.app: -10814\n from spotlight"
+    },
+    {
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationPin/versions/13/FinderNotes FN12 Review.app",
+      "returncode": 1,
+      "detail": "failed to scan /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationPin/versions/13/FinderNotes FN12 Review.app: -10814\n from spotlight"
+    }
+  ],
+  "protectedAppAndRecoveryUnchanged": true,
+  "personalAppStrictSignaturePassed": true,
+  "unpublishedDelivery": "/Users/danding/Project/AI/FinderNotes/.build/Delivery/FinderNotes-0.1.1-12",
+  "permissionLimited": [
+    {
+      "path": "/var/root/Library/Caches/com.findernotes.FinderNotes.FN12ReadOnlyReview",
+      "sizeKiB": null,
+      "status": "PermissionError; current existence and remaining contents not independently confirmed",
+      "action": "record limitation only; no sudo/password/SecurityAgent operation"
+    }
+  ],
+  "signingKeysPreserved": true
+}

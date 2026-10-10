@@ -1,0 +1,24 @@
+{
+  "passed": [
+    "console renders UTF-8 with restrictive CSP",
+    "Python syntax",
+    "latest HTTP fixture",
+    "local-ahead HTTP fixture",
+    "404 HTTP fixture",
+    "invalid HTTP fixture",
+    "bad-signature HTTP fixture",
+    "corrupt HTTP fixture",
+    "update HTTP fixture",
+    "slow-download HTTP fixture",
+    "slow transfer begins with 4096 bytes; original scenario remains in URL",
+    "Host, Origin and CSRF rejection",
+    "exact synthetic draft permission toggle and restoration"
+  ],
+  "count": 13,
+  "nativeInstallationTested": false,
+  "baselineCreated": false,
+  "validArchiveDownloaded": "unknown for HTTP smoke client; server finished sending the synthetic slow response",
+  "initialCase": "latest",
+  "downloadCancellationVerified": false,
+  "correction": "The smoke client read one chunk but did not reliably terminate the HTTP response. A later archive-complete was logged; the prep-only transfer marker was preserved in console-smoke-transfer-marker.json. This does not prove native download cancellation. Native Sparkle did not request this archive. No product cache was cleared."
+}

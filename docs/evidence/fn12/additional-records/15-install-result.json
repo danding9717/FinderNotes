@@ -1,0 +1,504 @@
+{
+  "status": "installed",
+  "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12LocalTrialPin/Build/Products/Release/FinderNotes.app",
+  "destination": "/Users/danding/Applications/FinderNotes.app",
+  "bundleID": "com.findernotes.FinderNotes.LocalTrial",
+  "version": "0.1.1",
+  "build": "12",
+  "filesSHA256": {
+    "Contents": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Autoupdate": {
+      "symlink": "Versions/Current/Autoupdate"
+    },
+    "Contents/Frameworks/Sparkle.framework/Resources": {
+      "symlink": "Versions/Current/Resources"
+    },
+    "Contents/Frameworks/Sparkle.framework/Sparkle": {
+      "symlink": "Versions/Current/Sparkle"
+    },
+    "Contents/Frameworks/Sparkle.framework/Updater.app": {
+      "symlink": "Versions/Current/Updater.app"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Autoupdate": {
+      "sha256": "abce46954cc1fdbd72bdf6bc786ca44590735bc842b3f713a2c948bbae86da3e",
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/Base.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/Base.lproj/Sparkle.strings": {
+      "sha256": "bf93bdde8ad020f2ba210ecfa0e84b5365d0342355a3ca39d88fec0acb1e4a40",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/Info.plist": {
+      "sha256": "5fa024aa416c13614fb5588d378aa6c16371737d9980c57fcb3e32f8208f1b86",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ReleaseNotesColorStyle.css": {
+      "sha256": "76bd6999758fd8e51d17e6b482db434f9b4768c02b037af6bd2e3a000ce8cbc1",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/SUUpdateAlert.nib": {
+      "sha256": "3987a333da7c2728ef2cb9656e5eeaf0832884873cabf78353fcb9099c5d8fbe",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/SUUpdatePermissionPrompt.nib": {
+      "sha256": "2e62b9d5a736d53b1eaf217432c4d0ad05217e897787cf1bdf1071ff22308d46",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ar.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ar.lproj/Sparkle.strings": {
+      "sha256": "441182787471a3998908044515fe13e92230edaa7e2730638e72a49610f56cba",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ca.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ca.lproj/Sparkle.strings": {
+      "sha256": "7ed0d5ca300649a7f13304015008f2dede98ad743a625c17d5a5fedacc1a3b1a",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/cs.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/cs.lproj/Sparkle.strings": {
+      "sha256": "99e66decf9bc46cf5622eead4e65b3b502e3775a4e8e0f03ef1b41683ea8d518",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/da.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/da.lproj/Sparkle.strings": {
+      "sha256": "8d0ff69b79460185f941372655433bad3934f49e63bef0b4171bd66da71e55f0",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/de.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/de.lproj/Sparkle.strings": {
+      "sha256": "311035a15227fb12e85eba2a46f3f6198d98ac5590d1d38c43c4ff7430d06599",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/el.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/el.lproj/Sparkle.strings": {
+      "sha256": "638981a4f095d8b1dabb6230d452e470359711b81803bc5df8c21e1211fd3757",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/es.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/es.lproj/Sparkle.strings": {
+      "sha256": "047b9affd0e995039072c24b8d7aa830624d03c89c524e4f58d7d6f13eca8352",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/fa.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/fa.lproj/Sparkle.strings": {
+      "sha256": "ed9dda9e271f7a97b8a7f327e71a1b6d06e5e061b367e7da3d153e47dc319263",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/fi.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/fi.lproj/Sparkle.strings": {
+      "sha256": "c14af9bac3fce436222a4ea277a7a6c0f9b42b2d84aceea75e758ce7538acae2",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/fr.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/fr.lproj/Sparkle.strings": {
+      "sha256": "3d554dcd167b085e25a75248533f21f389593aeace912ab9952c825ffe141ce1",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/he.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/he.lproj/Sparkle.strings": {
+      "sha256": "1d795bd7329d04b7ce84b6bdc845f917369e858b2b292f117b89a6666a185723",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/hr.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/hr.lproj/Sparkle.strings": {
+      "sha256": "920041380a08b3ba50d44e8a83f59de551139845a72748d58f2387c65920b33a",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/hu.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/hu.lproj/Sparkle.strings": {
+      "sha256": "cc2a16e4d487c6fab357b4f7d0fbbf7ec882371b2130413ffcb1b69cd540d2cf",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/is.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/is.lproj/Sparkle.strings": {
+      "sha256": "403feba503410e9455cd0eaafe592a2576eedb24130ccf2cdb13dda4b101f87e",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/it.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/it.lproj/Sparkle.strings": {
+      "sha256": "56a7445c1b68d76849ac59b98aa5c20c9002d5e07e9f0a2720486160f85b7366",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ja.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ja.lproj/Sparkle.strings": {
+      "sha256": "e404910028af70579cfa208bb4fadd9e3592505fc89af208f4071f2309553fb2",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ko.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ko.lproj/Sparkle.strings": {
+      "sha256": "a6269eb3f5a07d0c4f5d7467d5065372085aef7484c518a9d784ffd6c8f5aae4",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/nb.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/nb.lproj/Sparkle.strings": {
+      "sha256": "ef6f0dcae90c440b47ece09909e9cdf35f3383f34e72a614c8c5c0752ecbffe0",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/nl.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/nl.lproj/Sparkle.strings": {
+      "sha256": "ca9adf34fb93fe3f394ccc92114bf6a6b1f8a128bb5f362cb9f3247d7c26c77d",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/nn.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/nn.lproj/Sparkle.strings": {
+      "sha256": "1db8c6853a550aa25382da2d55431a1c1d308d6a37676c4f8593cc1633f8a5ae",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/pl.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/pl.lproj/Sparkle.strings": {
+      "sha256": "5c54b3f8e1eb3026e142e710e2167f2f839b73ab5ad7f18719230f33ae682aa9",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/pt-BR.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/pt-BR.lproj/Sparkle.strings": {
+      "sha256": "0292cadc2acfc34875c1e0b54e2d50de3833cd5e20c8660c8effe2b859aac84c",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/pt-PT.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/pt-PT.lproj/Sparkle.strings": {
+      "sha256": "31b28f3e5b5f9fe3d7abf71a779751d51ff632f3190155ef3cd97d2791a40fb1",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ro.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ro.lproj/Sparkle.strings": {
+      "sha256": "b2bf064222c38a3672b01fe09406f799718cb0fc4e715121662639d6fdfea6ed",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ru.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ru.lproj/Sparkle.strings": {
+      "sha256": "7193af28eb2a09b9fe7119cf6065a2150c6590971b22f98c56f356cd90851923",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/sk.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/sk.lproj/Sparkle.strings": {
+      "sha256": "e158daaa4f3f91b57cee05ab896f2c1bc467317932cc53bb7c01e7daee9e5238",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/sl.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/sl.lproj/Sparkle.strings": {
+      "sha256": "c62770c604a6c8c89e283357c8b322d8ce6a85f4d85c09002048331f65f8d980",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/sv.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/sv.lproj/Sparkle.strings": {
+      "sha256": "4a21ad5bcf8d836d265710c2e4a0a64f07c9551f1c49694d6734a931d23efd39",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/th.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/th.lproj/Sparkle.strings": {
+      "sha256": "4b6c8dc2ab69a0425de3aa9dc386c6539348e3983e47aa10f94c17e345a157a5",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/tr.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/tr.lproj/Sparkle.strings": {
+      "sha256": "b040d3f02d341eba047c15dfcafb60406d0847096a94466ecab512dcfb16abb5",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/uk.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/uk.lproj/Sparkle.strings": {
+      "sha256": "ff44d58635b3e8409d54b42b72c876a43e17fa98f6ea96b32583b9e88c747ab6",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/vi.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/vi.lproj/Sparkle.strings": {
+      "sha256": "2b3b4acbadf534cd0e812b97e589f80a4e1655b07c8907e98cc31df458ffd8b7",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/zh_CN.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/zh_CN.lproj/Sparkle.strings": {
+      "sha256": "e7f543b92977e9abc907241c411d8db0f59c4fee480859b3e88e4b495e0976c8",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/zh_HK.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/zh_HK.lproj/Sparkle.strings": {
+      "sha256": "3fc210132f33d89af3d25d27c7ea19426cf6d304be50254538456e0ec4fb7858",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/zh_TW.lproj": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/zh_TW.lproj/Sparkle.strings": {
+      "sha256": "76321e1dd844c9b6568cb4af7c63bb57d9d1b700109aeedd7e5721d78727b12d",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Sparkle": {
+      "sha256": "03bc3364e99a0ff0fcdd4899dc1116bfcc9588fd2fa1889ccc5341e2245aa75a",
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Updater.app": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Updater.app/Contents": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Updater.app/Contents/Info.plist": {
+      "sha256": "59ccb021c4e784681a2042e96feaf7c47eaa7c2a6468ce5c73d6f38274385c40",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Updater.app/Contents/MacOS": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Updater.app/Contents/MacOS/Updater": {
+      "sha256": "3566cf061983c184e00c5ec0a779bbec86bb0214004ad63e46b42133f27d908c",
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Updater.app/Contents/PkgInfo": {
+      "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Updater.app/Contents/_CodeSignature": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Updater.app/Contents/_CodeSignature/CodeResources": {
+      "sha256": "6686de10a28a2fe11b36cbb86dcbacc827cfc4ea116b4dabf1845e5aee629e9b",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Downloader.xpc": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Downloader.xpc/Contents": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Downloader.xpc/Contents/Info.plist": {
+      "sha256": "098634fc77fd96310eff2a63d6080b76139e3b2138dade393cf1cd0ef9a4dd93",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Downloader.xpc/Contents/MacOS": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Downloader.xpc/Contents/MacOS/Downloader": {
+      "sha256": "fc87a756d391f1955c9ecc0ee8eb8af4b8fa5e550bb4db3e9cd6204d33cc5bcc",
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Downloader.xpc/Contents/_CodeSignature": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Downloader.xpc/Contents/_CodeSignature/CodeResources": {
+      "sha256": "6686de10a28a2fe11b36cbb86dcbacc827cfc4ea116b4dabf1845e5aee629e9b",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Installer.xpc": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Installer.xpc/Contents": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Installer.xpc/Contents/Info.plist": {
+      "sha256": "c382d031b287e64e0d4e6e7eec4208600e8b2abbe100f348c3b12f8baf4a348d",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Installer.xpc/Contents/MacOS": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Installer.xpc/Contents/MacOS/Installer": {
+      "sha256": "d20923c1c76857721c934fb6b709f1081064db1169fc98a7a307b676bbcc08a8",
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Installer.xpc/Contents/_CodeSignature": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Installer.xpc/Contents/_CodeSignature/CodeResources": {
+      "sha256": "6686de10a28a2fe11b36cbb86dcbacc827cfc4ea116b4dabf1845e5aee629e9b",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/_CodeSignature": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/_CodeSignature/CodeResources": {
+      "sha256": "75ce8fedf5e514c17288255791d824bf0aab862b17b23caf2b4b23217143502e",
+      "mode": 420
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/Current": {
+      "symlink": "B"
+    },
+    "Contents/Frameworks/Sparkle.framework/XPCServices": {
+      "symlink": "Versions/Current/XPCServices"
+    },
+    "Contents/Info.plist": {
+      "sha256": "0be489190fa8aa1c221d997cd6bd3bf77d1cbd27fcafa471aa3fdc4d65e45e18",
+      "mode": 420
+    },
+    "Contents/MacOS": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/MacOS/FinderNotes": {
+      "sha256": "72ec292be8b40be6d77d76116da2f2fdac6fbfbd650d267f147bfa5000fd4241",
+      "mode": 493
+    },
+    "Contents/PkgInfo": {
+      "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0",
+      "mode": 420
+    },
+    "Contents/Resources": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/Resources/AppIcon.icns": {
+      "sha256": "50e2bc28f21b88c1629a852487ef1c281d2a08a93f230a4977a9b400735690e3",
+      "mode": 420
+    },
+    "Contents/Resources/Assets.car": {
+      "sha256": "3b1b688040d1f1239c2da221c52427a1d59fdb46ab53d51a584ac6123e8dcf2b",
+      "mode": 420
+    },
+    "Contents/_CodeSignature": {
+      "directory": true,
+      "mode": 493
+    },
+    "Contents/_CodeSignature/CodeResources": {
+      "sha256": "89c0a18a9fb59681e752e8410f3c4aa77aa6e1947133145e408fdec2c33470fb",
+      "mode": 420
+    }
+  },
+  "replacedExisting": true,
+  "oldApplicationDeleted": true,
+  "recoveryMigration": false,
+  "settingsChanged": false
+}

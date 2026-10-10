@@ -1,0 +1,46 @@
+{
+  "awaitingRestart" : false,
+  "binding" : {
+    "bundlePath" : "\/Users\/danding\/Library\/Caches\/com.findernotes.FinderNotes.FN12Review\/org.sparkle-project.Sparkle\/Installation\/X0bFvz8ft\/eibCgGMQ4\/FinderNotes FN12 Review.app",
+    "directoryIdentity" : {
+      "device" : 16777232,
+      "inode" : 11013539
+    },
+    "directoryPath" : "\/Users\/danding\/Library\/Caches\/com.findernotes.FinderNotes.FN12Review\/org.sparkle-project.Sparkle\/Installation\/X0bFvz8ft",
+    "extractionIdentity" : {
+      "device" : 16777232,
+      "inode" : 11013540
+    }
+  },
+  "bundleID" : "com.findernotes.FinderNotes.FN12Review",
+  "cacheInstallationPath" : "\/Users\/danding\/Library\/Caches\/com.findernotes.FinderNotes.FN12Review\/org.sparkle-project.Sparkle\/Installation",
+  "checkedAt" : 813293810.258247,
+  "createdAt" : 813293763.051789,
+  "evaluation" : {
+    "reason" : "old-bundle-cleanup-not-observed",
+    "status" : "unknown"
+  },
+  "id" : "3A3EF9F3-4756-4D8F-9096-CDB8DF0E374F",
+  "installationPath" : "\/Users\/danding\/.codex\/worktrees\/fn-12-app-update\/FinderNotes\/.build\/FN12Validation\/Installed\/FinderNotes FN12 Review.app",
+  "observations" : [
+    "unreadable",
+    "unreadable",
+    "unreadable",
+    "unreadable",
+    "unreadable",
+    "unreadable"
+  ],
+  "oldIdentity" : {
+    "device" : 16777232,
+    "inode" : 11012389
+  },
+  "oldVersion" : {
+    "build" : "12",
+    "display" : "0.1.1"
+  },
+  "schema" : 1,
+  "targetVersion" : {
+    "build" : "13",
+    "display" : "0.1.2"
+  }
+}

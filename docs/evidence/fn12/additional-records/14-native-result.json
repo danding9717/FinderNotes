@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "case": "read-only-volume-native-preflight-refusal",
+  "bundleID": "com.findernotes.FinderNotes.FN12ReadOnlyVolumeReview",
+  "buildRemains": "12",
+  "strictSignaturePassed": true,
+  "nativeMessage": "无法更新FN12 ReadOnly Volume Review，因为它打开自一个只读或临时位置。 移动FN12 ReadOnly Volume Review到应用程序文件夹并再试一次。",
+  "cancelButton": "取消更新",
+  "afterCancel": "editor remained open; check-for-updates menu enabled",
+  "authorizationPromptObserved": false,
+  "normalQuitVerified": true,
+  "covers": "read-only volume preflight; does not prove declined installation authorization",
+  "evidence": [
+    "manifest.json",
+    "disk-info.plist"
+  ],
+  "mountDetached": true
+}
