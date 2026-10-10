@@ -1,0 +1,64 @@
+{
+  "checkedAt": "2026-10-10T11:07:46.319748+00:00",
+  "repositoryPublic": true,
+  "downloads": [
+    {
+      "version": "0.1.4",
+      "build": "15",
+      "url": "https://github.com/danding9717/FinderNotes/releases/download/v0.1.4/FinderNotes-0.1.4-15.zip",
+      "httpStatus": 200,
+      "length": 4963069,
+      "sha256": "eda5cbaeebd6ab2cd468e8122819ebedbe25aa33d5eee65d23df129fe3dec5c7",
+      "ed25519Verified": true,
+      "strictCodeSignature": true,
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "embeddedFeed": "https://raw.githubusercontent.com/danding9717/FinderNotes/updates/appcast.xml",
+      "releaseAssets": [
+        "FinderNotes-0.1.4-15.zip",
+        "SHA256SUMS"
+      ]
+    },
+    {
+      "version": "0.1.3",
+      "build": "14",
+      "url": "https://github.com/danding9717/FinderNotes/releases/download/v0.1.3/FinderNotes-0.1.3-14.zip",
+      "httpStatus": 200,
+      "length": 4963068,
+      "sha256": "eabe7f0c11e67c2a3e4074c750eb230086a4def287a23bb0d62e7ae30b931b20",
+      "ed25519Verified": true,
+      "strictCodeSignature": true,
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "embeddedFeed": "https://raw.githubusercontent.com/danding9717/FinderNotes/updates/appcast.xml",
+      "releaseAssets": [
+        "FinderNotes-0.1.3-14.zip",
+        "SHA256SUMS"
+      ]
+    },
+    {
+      "version": "0.1.2",
+      "build": "13",
+      "url": "https://github.com/danding9717/FinderNotes/releases/download/v0.1.2/FinderNotes-0.1.2-13.zip",
+      "httpStatus": 200,
+      "length": 4962689,
+      "sha256": "55fd8e765d68a0956acf4d698e88d64c763161678f3f9e3dc7625144585cb6da",
+      "ed25519Verified": true,
+      "strictCodeSignature": true,
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "embeddedFeed": "https://raw.githubusercontent.com/danding9717/FinderNotes-updates/main/appcast.xml",
+      "releaseAssets": [
+        "FinderNotes-0.1.2-13.zip",
+        "SHA256SUMS"
+      ]
+    }
+  ],
+  "realInAppUpgrade": "pending Dan validation"
+}
