@@ -1,0 +1,42 @@
+{
+  "identity": "com.findernotes.FinderNotes.FN12Acceptance",
+  "displayName": "FinderNotes 更新验收",
+  "feedURL": "http://localhost:18777/appcast.xml",
+  "keyAccount": "com.findernotes.FN12Review",
+  "sourceApp": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12LocalTrialPin/Build/Products/Release/FinderNotes.app",
+  "sourceExecutableSHA256": "72ec292be8b40be6d77d76116da2f2fdac6fbfbd650d267f147bfa5000fd4241",
+  "sourceCompiledSectionsSHA256": "8e1e410fbd2eaab1fd0a1c68960bb1b1504d1f25e62ad5054de6b3313b32fcec",
+  "compiledSectionsCount": 74,
+  "installedBuild12": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/Installed/FinderNotes 更新验收.app",
+  "strictInstalledCodeSignature": "PASS",
+  "existingOutputRefusal": "PASS",
+  "offlineAppcastPreview": "PASS",
+  "noLaunchOrServer": true,
+  "noKeychainPromptObserved": true,
+  "verifiedBuilds": [
+    {
+      "build": "12",
+      "shortVersion": "0.1.1",
+      "archive": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/feed-assets/FinderNotes-FN12Acceptance-12.zip",
+      "length": 3827954,
+      "sha256": "62139d740a4e5700921d59dbd9b6d3deb4687d0da7dece57ad30121971b1baab",
+      "independentEd25519": "PASS",
+      "zipCRC": "PASS",
+      "strictSignatureAfterExtraction": "PASS",
+      "identityAndManualUpdateFlags": "PASS",
+      "sourceCompiledSectionsUnchanged": "PASS"
+    },
+    {
+      "build": "13",
+      "shortVersion": "0.1.2",
+      "archive": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/feed-assets/FinderNotes-FN12Acceptance-13.zip",
+      "length": 3827956,
+      "sha256": "169151a7f509bbd7f92aef3c960a3dfb9c78a2345b738903a3d29b7396efbba3",
+      "independentEd25519": "PASS",
+      "zipCRC": "PASS",
+      "strictSignatureAfterExtraction": "PASS",
+      "identityAndManualUpdateFlags": "PASS",
+      "sourceCompiledSectionsUnchanged": "PASS"
+    }
+  ]
+}

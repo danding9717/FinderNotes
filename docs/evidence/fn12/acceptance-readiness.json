@@ -1,0 +1,71 @@
+{
+  "time": "2026-10-10T14:48:43.431023+08:00",
+  "purpose": "Human acceptance environment readiness, not Dan acceptance",
+  "application": {
+    "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/Installed/FinderNotes 更新验收.app",
+    "expectedBuild": "12",
+    "status": "verified",
+    "pids": [
+      39761
+    ],
+    "bundleID": "com.findernotes.FinderNotes.FN12Acceptance",
+    "version": "0.1.1",
+    "build": "12",
+    "identity": {
+      "device": 16777232,
+      "inode": 11061299
+    },
+    "strictSignatureVerified": true,
+    "processEvidence": "ps exact executable path; compare PID against the explicit baseline"
+  },
+  "media": [
+    {
+      "name": "只读草稿测试.png",
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/media/只读草稿测试.png",
+      "attribute": "com.findernotes.note.v1",
+      "state": "present",
+      "byteLength": 79,
+      "sha256": "46914eca845d9b36b0be4cdf7bd9be40c37b9903a8e983c92afba6dabd1baf6a",
+      "identity": {
+        "device": 16777232,
+        "inode": 11062789
+      },
+      "mediaSHA256": "98f9406cf428e8181b0a85f74bcaf2a8d22eac36389b046bc6085102636efd49",
+      "mediaByteLength": 12663
+    },
+    {
+      "name": "验收笔记.png",
+      "path": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/media/验收笔记.png",
+      "attribute": "com.findernotes.note.v1",
+      "state": "present",
+      "byteLength": 79,
+      "sha256": "46914eca845d9b36b0be4cdf7bd9be40c37b9903a8e983c92afba6dabd1baf6a",
+      "identity": {
+        "device": 16777232,
+        "inode": 11062736
+      },
+      "mediaSHA256": "98f9406cf428e8181b0a85f74bcaf2a8d22eac36389b046bc6085102636efd49",
+      "mediaByteLength": 12663
+    }
+  ],
+  "mediaPermissions": {
+    "只读草稿测试.png": "0o444",
+    "验收笔记.png": "0o644"
+  },
+  "personalApplication": {
+    "path": "/Users/danding/Applications/FinderNotes.app",
+    "version": "0.1.1",
+    "build": "12",
+    "feed": "https://raw.githubusercontent.com/danding9717/FinderNotes-updates/main/appcast.xml"
+  },
+  "initialCase": "latest",
+  "baselineCreated": false,
+  "nativeArchiveRequested": false,
+  "installationCacheExists": false,
+  "pendingInstallStarted": false,
+  "serverListener": "COMMAND   PID    USER   FD   TYPE            DEVICE SIZE/OFF NODE NAME\nPython  43800 danding    3u  IPv4 0x4524c618981878f      0t0  TCP 127.0.0.1:18777 (LISTEN)\n",
+  "HTTPAndSyntaxSmoke": "13 preparation checks; cancellation explicitly unverified",
+  "UI": "Control console visibly verified; native prompt automation inconclusive, no acceptance claimed",
+  "publication": false,
+  "gitCloseout": false
+}

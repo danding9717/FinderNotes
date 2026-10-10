@@ -4,24 +4,28 @@ FinderNotes 为 Finder 中的单份图片或视频提供原生笔记编辑入口
 
 ## v0.1 本地交付
 
-当前使用版为 `0.1.0 (11)`，身份 `com.findernotes.FinderNotes.LocalTrial`，安装位置 `~/Applications/FinderNotes.app`，Finder 服务为“用 FinderNotes 编辑笔记”。[安装、使用、恢复与卸载手册](docs/LOCAL_TRIAL.md)说明当前功能、构建方式和限制。
+当前个人安装版为 `0.1.1 (12)`，身份 `com.findernotes.FinderNotes.LocalTrial`，安装位置 `~/Applications/FinderNotes.app`，Finder 服务为“用 FinderNotes 编辑笔记”。历史 v0.1 交付版本为 `0.1.0 (11)`。[安装、使用、恢复与卸载手册](docs/LOCAL_TRIAL.md)说明当前功能、构建方式和限制。
 
 Dan 于 2026-09-27 明确确认 FinderNotes v0.1、M2 和项目整体交付通过。整体验收不改变已有失败、未验证项或 FN08-I07／FN08-I08 的结论；项目状态与清理结果以 [Notion 项目首页](https://app.notion.com/p/3e4e7607d6498038adeee4c1069f2bb9)当前记录为准。本次交付仍为个人本机使用，未公开发布。
 
-交付后的本地清理移除测试代码、测试 target/profile、合成样本和本地历史验收证据。Git 历史与 Notion 记录保留；清理不代表历史问题已修复，也不构成当前构建的新一轮功能验收。
+历史 v0.1 交付后的本地清理移除当时的测试代码、测试 target/profile、合成样本和本地历史验收证据。Git 历史与 Notion 记录保留；清理不代表历史问题已修复，也不构成当前构建的新一轮功能验收。
 
-## 构建当前版本
+## FN-12 手动更新
+
+`0.1.1（12）` 加入 **FinderNotes → 检查更新…**，已于 2026-10-10 覆盖个人安装件并获 Dan 验收。生产 feed 和 GitHub Release 尚未发布，当前检查可能返回 404，应显示失败。旧版 11 没有更新器，首次须显式安装一次；后续通过应用内更新。验收、Git 整合与发布分别记录，验收不代表 V1.0 整体交付。操作与失败处理见[更新手册](docs/UPDATES.md)，实际测试和保留边界见[验证报告](docs/FN12_VALIDATION.md)。
+
+## 构建个人版本
 
 需要与当前 macOS 兼容的完整 Xcode；工具链配置可用 `./scripts/verify_toolchain.sh` 查看。如 Xcode 位于其他位置，为当前命令设置 `FINDERNOTES_DEVELOPER_DIR`，不切换系统全局开发目录。
 
 ```sh
-FINDERNOTES_DERIVED_DATA="$PWD/.build/DerivedData-build11" \
+FINDERNOTES_DERIVED_DATA="$PWD/.build/DerivedData-build12" \
   FINDERNOTES_BUILD_PROFILE=local-trial ./scripts/build_app.sh
 ```
 
-`local-trial` 只接受 Release；脚本检查签名、bundle ID、版本、名称及服务配置，输出 `.build/DerivedData-build11/Build/Products/Release/FinderNotes.app`。构建不安装或覆盖当前应用。保留的 `standard` profile 使用工程基础身份，与当前安装件不同；重建当前使用版请明确使用 `local-trial`。
+`local-trial` 只接受 Release；脚本检查签名、bundle ID、版本、名称及服务配置，输出 `.build/DerivedData-build12/Build/Products/Release/FinderNotes.app`。构建不安装或覆盖当前应用。保留的 `standard` profile 使用工程基础身份，与真实安装件不同，默认关闭更新；构建个人版请明确使用 `local-trial`。当前源码构建 `0.1.1（12）`，不会重建历史 `0.1.0（11）`。
 
-应用图标的正式资源位于 `FinderNotes/Assets.xcassets`；`scripts/prepare_app_icon.sh` 从 `design/app-icon/FinderNotes-fullbleed.png` 重建图标尺寸。保留的旧设计源与说明见 [图标设计记录](design/app-icon/README.md)。安装脚本 `scripts/install_local_trial.py` 拒绝覆盖任何已存在的目标，使用与卸载步骤见手册。
+应用图标的正式资源位于 `FinderNotes/Assets.xcassets`；`scripts/prepare_app_icon.sh` 从 `design/app-icon/FinderNotes-fullbleed.png` 重建图标尺寸。保留的旧设计源与说明见 [图标设计记录](design/app-icon/README.md)。安装脚本 `scripts/install_local_trial.py` 默认拒绝覆盖已有目标；显式升级入口与签名校验、失败现场处理见[更新手册](docs/UPDATES.md)，不会因构建或准备材料自动安装。
 
 ## 功能与数据边界
 
@@ -43,4 +47,4 @@ FINDERNOTES_DERIVED_DATA="$PWD/.build/DerivedData-build11" \
 - [FN-08 验收记录与 I07／I08 保留结论](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/docs/evidence/fn08/ACCEPTANCE.md)
 - [FN-08 实测报告及失败／未验证项](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/docs/evidence/fn08/2026-09-27.md)
 
-后续工作先阅读 [AGENTS.md](AGENTS.md)、Notion 的当前授权范围和实际 Git 状态。[初始设计说明](Finder_Notes_Codex_Design.md)作为设计历史保留，其中的 Finder 原生注释路线已由 D-006 替代。本轮不启动下一版本。
+后续工作先阅读 [AGENTS.md](AGENTS.md)、Notion 的当前授权范围和实际 Git 状态。[初始设计说明](Finder_Notes_Codex_Design.md)作为设计历史保留，其中的 Finder 原生注释路线已由 D-006 替代。本轮仅推进获授权的 FN-12 更新功能，不启动其他任务。

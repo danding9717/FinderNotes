@@ -3,9 +3,15 @@ import AppKit
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
     private(set) var controller: EditorWindowController?
+    private(set) var updateCoordinator: UpdateCoordinator?
     private var pinMenuItem: NSMenuItem?
+    private var terminationTask: Task<Void, Never>?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        updateCoordinator = UpdateCoordinator()
+        updateCoordinator?.interactionStateDidChange = { [weak self] active in
+            self?.controller?.setUpdateInterfaceActive(active)
+        }
         setupMenu()
         NSApp.servicesProvider = self
         NSUpdateDynamicServices()
@@ -18,6 +24,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         created.pinStateDidChange = { [weak self] isPinned in
             self?.pinMenuItem?.state = isPinned ? .on : .off
         }
+        created.setUpdateInterfaceActive(updateCoordinator?.isUpdateInterfaceActive ?? false)
         created.refreshRecoveryAvailability()
         controller = created
         return created
@@ -47,8 +54,20 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
     }
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+        // Sparkle's modal alerts run inside a main-queue callback. Waiting for a
+        // MainActor task from that nested modal loop can deadlock the quit reply.
+        guard sender.modalWindow == nil else { return .terminateCancel }
         guard let controller else { return .terminateNow }
-        Task { sender.reply(toApplicationShouldTerminate: await controller.prepareToQuit()) }
+        // Sparkle sends an ordinary quit event and waits for actual termination.
+        // A second quit request must not open another sheet or reply twice.
+        guard terminationTask == nil else { return .terminateLater }
+        terminationTask = Task { [weak self] in
+            let canQuit = await controller.prepareToQuit()
+            self?.updateCoordinator?.recordApplicationTermination(allowed: canQuit)
+            if !canQuit { self?.updateCoordinator?.restoreEditorWindowLevel() }
+            self?.terminationTask = nil
+            sender.reply(toApplicationShouldTerminate: canQuit)
+        }
         return .terminateLater
     }
 
@@ -81,6 +100,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         }
         let app = submenu("FinderNotes")
         app.addItem(withTitle: "关于 FinderNotes", action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
+        let update = app.addItem(withTitle: "检查更新…", action: #selector(UpdateCoordinator.checkForUpdates(_:)), keyEquivalent: "")
+        update.target = updateCoordinator
         app.addItem(.separator())
         let services = NSMenuItem(title: "服务", action: nil, keyEquivalent: "")
         services.submenu = NSMenu(title: "服务")

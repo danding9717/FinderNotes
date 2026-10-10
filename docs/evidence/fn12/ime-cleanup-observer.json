@@ -1,0 +1,32 @@
+{
+  "exactPath": "/Users/danding/Library/Caches/com.findernotes.FinderNotes.FN12IMEReview/org.sparkle-project.Sparkle/Installation/emyOcd34A/y4kPCHhKw/FN12 IME Review.app",
+  "oldIdentity": {
+    "device": 16777232,
+    "inode": 11023754
+  },
+  "events": [
+    {
+      "elapsed": 2.2000000171829015e-05,
+      "state": [
+        "other",
+        16777232,
+        11024098
+      ]
+    },
+    {
+      "elapsed": 3.9718500839990156,
+      "state": [
+        "old",
+        16777232,
+        11023754
+      ]
+    },
+    {
+      "elapsed": 4.013776833999145,
+      "state": [
+        "missing"
+      ]
+    }
+  ],
+  "oldObservedThenMissing": true
+}

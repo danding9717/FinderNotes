@@ -36,19 +36,51 @@ xcodebuild -project "$project_root/FinderNotes.xcodeproj" \
 
 app_path="$derived_data/Build/Products/$configuration/FinderNotes.app"
 codesign --verify --deep --strict "$app_path"
-if [[ "$profile" == local-trial ]]; then
-  /usr/bin/python3 - "$app_path/Contents/Info.plist" <<'PY'
+sparkle_path="$app_path/Contents/Frameworks/Sparkle.framework"
+if [[ ! -d "$sparkle_path" ]]; then
+  print -u2 'Sparkle.framework was not embedded in FinderNotes.app.'
+  exit 2
+fi
+codesign --verify --deep --strict "$sparkle_path"
+/usr/bin/python3 - "$app_path/Contents/Info.plist" "$sparkle_path/Resources/Info.plist" "$profile" <<'PY'
+import base64
 import plistlib
 import sys
 
 with open(sys.argv[1], 'rb') as source:
     info = plistlib.load(source)
+with open(sys.argv[2], 'rb') as source:
+    sparkle = plistlib.load(source)
+if sparkle.get('CFBundleShortVersionString') != '2.10.0':
+    sys.exit('Expected embedded Sparkle 2.10.0')
+for key in ('SUEnableAutomaticChecks', 'SUAutomaticallyUpdate', 'SUAllowsAutomaticUpdates', 'SUEnableSystemProfiling'):
+    if info.get(key) is not False:
+        sys.exit(f'Expected {key}=false for manual updates only')
+if info.get('SUVerifyUpdateBeforeExtraction') is not True:
+    sys.exit('Expected EdDSA verification before extraction')
+try:
+    if len(base64.b64decode(info.get('SUPublicEDKey', ''), validate=True)) != 32:
+        raise ValueError('Expected a 32-byte EdDSA public key')
+except (ValueError, TypeError) as error:
+    sys.exit(f'Invalid SUPublicEDKey: {error}')
+feed = 'https://raw.githubusercontent.com/danding9717/FinderNotes-updates/main/appcast.xml'
+if (info.get('SUFeedURL') == feed
+        and info.get('CFBundleIdentifier') != 'com.findernotes.FinderNotes.LocalTrial'):
+    sys.exit('Only the LocalTrial application may connect to the production update feed')
+if sys.argv[3] != 'local-trial':
+    if info.get('CFBundleIdentifier') == 'com.findernotes.FinderNotes':
+        if info.get('FinderNotesUpdatesEnabled') is not False or info.get('SUFeedURL'):
+            sys.exit('Standard development builds must keep updates disabled and omit SUFeedURL')
+    print('Verified embedded Sparkle 2.10.0 and manual-update settings')
+    sys.exit(0)
 expected = {
     'CFBundleIdentifier': 'com.findernotes.FinderNotes.LocalTrial',
     'CFBundleName': 'FinderNotes',
     'CFBundleDisplayName': 'FinderNotes',
-    'CFBundleShortVersionString': '0.1.0',
-    'CFBundleVersion': '11',
+    'CFBundleShortVersionString': '0.1.1',
+    'CFBundleVersion': '12',
+    'FinderNotesUpdatesEnabled': True,
+    'SUFeedURL': feed,
 }
 for key, value in expected.items():
     if info.get(key) != value:
@@ -61,7 +93,6 @@ if (service.get('NSMenuItem') != {'default': '用 FinderNotes 编辑笔记'}
         or service.get('NSPortName') != 'FinderNotesLocalTrial'
         or service.get('NSMessage') != 'receiveFiles'):
     sys.exit('Unexpected local-trial Finder service identity.')
-print('Verified local-trial identity: ' + expected['CFBundleIdentifier'] + ' 0.1.0 (11)')
+print('Verified local-trial identity: ' + expected['CFBundleIdentifier'] + ' 0.1.1 (12), Sparkle 2.10.0')
 PY
-fi
 print -r -- "$app_path"

@@ -1,0 +1,349 @@
+[
+  {
+    "events": [
+      "check-started",
+      "found-version-13",
+      "dismissed",
+      "cycle-finished"
+    ],
+    "errors": [],
+    "finished": true,
+    "elapsed": 0.05118989944458008,
+    "readyAfterCheck": true,
+    "readyBeforeCheck": true,
+    "busyAfterCheck": true,
+    "passed": true,
+    "case": "update",
+    "noUpdateReason": 0,
+    "downloadedBytes": 0,
+    "processExitCode": 0
+  },
+  {
+    "events": [
+      "check-started",
+      "no-update",
+      "dismissed",
+      "cycle-finished"
+    ],
+    "errors": [
+      {
+        "code": 1001,
+        "reason": "",
+        "domain": "SUSparkleErrorDomain",
+        "description": "You’re up to date!"
+      }
+    ],
+    "finished": true,
+    "elapsed": 0.05027306079864502,
+    "readyAfterCheck": true,
+    "readyBeforeCheck": true,
+    "busyAfterCheck": true,
+    "passed": true,
+    "case": "latest",
+    "noUpdateReason": 1,
+    "downloadedBytes": 0,
+    "processExitCode": 0
+  },
+  {
+    "events": [
+      "check-started",
+      "no-update",
+      "dismissed",
+      "cycle-finished"
+    ],
+    "errors": [
+      {
+        "code": 1001,
+        "reason": "",
+        "domain": "SUSparkleErrorDomain",
+        "description": "You’re up to date!"
+      }
+    ],
+    "finished": true,
+    "elapsed": 0.051203012466430664,
+    "readyAfterCheck": true,
+    "readyBeforeCheck": true,
+    "busyAfterCheck": true,
+    "passed": true,
+    "case": "local-ahead",
+    "noUpdateReason": 2,
+    "downloadedBytes": 0,
+    "processExitCode": 0
+  },
+  {
+    "events": [
+      "check-started",
+      "updater-error",
+      "dismissed",
+      "cycle-finished"
+    ],
+    "errors": [
+      {
+        "code": 2001,
+        "reason": "",
+        "domain": "SUSparkleErrorDomain",
+        "description": "An error occurred in retrieving update information. Please try again later."
+      },
+      {
+        "code": 2001,
+        "reason": "",
+        "domain": "SUSparkleErrorDomain",
+        "description": "An error occurred while downloading the update. Please try again later."
+      },
+      {
+        "code": 2001,
+        "reason": "",
+        "domain": "SUSparkleErrorDomain",
+        "description": "A network error occurred while downloading http://localhost:18773/case/404. not found (404)"
+      }
+    ],
+    "finished": true,
+    "elapsed": 0.051177978515625,
+    "readyAfterCheck": true,
+    "readyBeforeCheck": true,
+    "busyAfterCheck": true,
+    "passed": true,
+    "case": "404",
+    "noUpdateReason": 0,
+    "downloadedBytes": 0,
+    "processExitCode": 0
+  },
+  {
+    "events": [
+      "check-started",
+      "updater-error",
+      "dismissed",
+      "cycle-finished"
+    ],
+    "errors": [
+      {
+        "code": 1000,
+        "reason": "",
+        "domain": "SUSparkleErrorDomain",
+        "description": "An error occurred while parsing the update feed."
+      },
+      {
+        "code": 5,
+        "reason": "",
+        "domain": "NSXMLParserErrorDomain",
+        "description": "Line 1: Extra content at the end of the document\n"
+      }
+    ],
+    "finished": true,
+    "elapsed": 0.05137896537780762,
+    "readyAfterCheck": true,
+    "readyBeforeCheck": true,
+    "busyAfterCheck": true,
+    "passed": true,
+    "case": "invalid",
+    "noUpdateReason": 0,
+    "downloadedBytes": 0,
+    "processExitCode": 0
+  },
+  {
+    "events": [
+      "check-started",
+      "updater-error",
+      "dismissed",
+      "cycle-finished"
+    ],
+    "errors": [
+      {
+        "code": 2001,
+        "reason": "",
+        "domain": "SUSparkleErrorDomain",
+        "description": "An error occurred in retrieving update information. Please try again later."
+      },
+      {
+        "code": 2001,
+        "reason": "",
+        "domain": "SUSparkleErrorDomain",
+        "description": "An error occurred while downloading the update. Please try again later."
+      },
+      {
+        "code": 2001,
+        "reason": "",
+        "domain": "SUSparkleErrorDomain",
+        "description": "Failed to download temporary data."
+      },
+      {
+        "code": -1004,
+        "reason": "",
+        "domain": "NSURLErrorDomain",
+        "description": "Could not connect to the server."
+      },
+      {
+        "code": -1004,
+        "reason": "",
+        "domain": "kCFErrorDomainCFNetwork",
+        "description": "The operation couldn’t be completed. (kCFErrorDomainCFNetwork error -1004.)"
+      }
+    ],
+    "finished": true,
+    "elapsed": 0.05126500129699707,
+    "readyAfterCheck": true,
+    "readyBeforeCheck": true,
+    "busyAfterCheck": true,
+    "passed": true,
+    "case": "offline",
+    "noUpdateReason": 0,
+    "downloadedBytes": 0,
+    "processExitCode": 0
+  },
+  {
+    "events": [
+      "check-started",
+      "updater-error",
+      "dismissed",
+      "cycle-finished"
+    ],
+    "errors": [
+      {
+        "code": 2001,
+        "reason": "",
+        "domain": "SUSparkleErrorDomain",
+        "description": "An error occurred in retrieving update information. Please try again later."
+      },
+      {
+        "code": 2001,
+        "reason": "",
+        "domain": "SUSparkleErrorDomain",
+        "description": "An error occurred while downloading the update. Please try again later."
+      },
+      {
+        "code": 2001,
+        "reason": "",
+        "domain": "SUSparkleErrorDomain",
+        "description": "Failed to download temporary data."
+      },
+      {
+        "code": -1001,
+        "reason": "",
+        "domain": "NSURLErrorDomain",
+        "description": "The request timed out."
+      },
+      {
+        "code": -1001,
+        "reason": "",
+        "domain": "kCFErrorDomainCFNetwork",
+        "description": "The operation couldn’t be completed. (kCFErrorDomainCFNetwork error -1001.)"
+      }
+    ],
+    "finished": true,
+    "elapsed": 60.16970503330231,
+    "readyAfterCheck": true,
+    "readyBeforeCheck": true,
+    "busyAfterCheck": true,
+    "passed": true,
+    "case": "timeout",
+    "noUpdateReason": 0,
+    "downloadedBytes": 0,
+    "processExitCode": 0
+  },
+  {
+    "events": [
+      "check-started",
+      "found-version-13",
+      "download-started",
+      "download-length",
+      "preparing-extraction",
+      "updater-error",
+      "dismissed",
+      "cycle-finished"
+    ],
+    "errors": [
+      {
+        "code": 4005,
+        "reason": "",
+        "domain": "SUSparkleErrorDomain",
+        "description": "The update is improperly signed and could not be validated. Please try again later or contact the app developer."
+      },
+      {
+        "code": 4005,
+        "reason": "",
+        "domain": "SUSparkleErrorDomain",
+        "description": "(Ed)DSA signature validation before unarchiving failed for update /Users/danding/Library/Caches/com.findernotes.FinderNotes.FN12NetworkChecks.bad-signature/org.sparkle-project.Sparkle/Installation/WsbOTWBiG/1D99F943-8B4D-4456-9088-71EB215ADF54.zip"
+      },
+      {
+        "code": 3002,
+        "reason": "",
+        "domain": "SUSparkleErrorDomain",
+        "description": "EdDSA signature does not match. Data of the update being checked is different than data that has been signed, or the public key and the private key are not from the same set. The downloaded update (1D99F943-8B4D-4456-9088-71EB215ADF54.zip) is likely not signed correctly because the file has the expected content length (3733063 bytes) which matches the appcast item."
+      }
+    ],
+    "finished": true,
+    "elapsed": 1.1195690631866455,
+    "readyAfterCheck": true,
+    "readyBeforeCheck": true,
+    "busyAfterCheck": true,
+    "passed": true,
+    "case": "bad-signature",
+    "noUpdateReason": 0,
+    "downloadedBytes": 3733063,
+    "processExitCode": 0
+  },
+  {
+    "events": [
+      "check-started",
+      "found-version-13",
+      "download-started",
+      "download-length",
+      "preparing-extraction",
+      "updater-error",
+      "dismissed",
+      "cycle-finished"
+    ],
+    "errors": [
+      {
+        "code": 4005,
+        "reason": "",
+        "domain": "SUSparkleErrorDomain",
+        "description": "The update is improperly signed and could not be validated. Please try again later or contact the app developer."
+      },
+      {
+        "code": 4005,
+        "reason": "",
+        "domain": "SUSparkleErrorDomain",
+        "description": "(Ed)DSA signature validation before unarchiving failed for update /Users/danding/Library/Caches/com.findernotes.FinderNotes.FN12NetworkChecks.corrupt/org.sparkle-project.Sparkle/Installation/S4KTEXtaM/95F1A623-56E4-4B47-8467-5381C0D7C4A1.zip"
+      },
+      {
+        "code": 3002,
+        "reason": "",
+        "domain": "SUSparkleErrorDomain",
+        "description": "EdDSA signature does not match. Data of the update being checked is different than data that has been signed, or the public key and the private key are not from the same set. The downloaded update (95F1A623-56E4-4B47-8467-5381C0D7C4A1.zip) is likely not signed correctly because the file has the expected content length (56 bytes) which matches the appcast item."
+      }
+    ],
+    "finished": true,
+    "elapsed": 0.3396320343017578,
+    "readyAfterCheck": true,
+    "readyBeforeCheck": true,
+    "busyAfterCheck": true,
+    "passed": true,
+    "case": "corrupt",
+    "noUpdateReason": 0,
+    "downloadedBytes": 56,
+    "processExitCode": 0
+  },
+  {
+    "events": [
+      "check-started",
+      "found-version-13",
+      "download-started",
+      "download-length",
+      "download-cancelled",
+      "dismissed",
+      "cycle-finished"
+    ],
+    "errors": [],
+    "finished": true,
+    "elapsed": 0.25420594215393066,
+    "readyAfterCheck": true,
+    "readyBeforeCheck": true,
+    "busyAfterCheck": true,
+    "passed": true,
+    "case": "slow-download",
+    "noUpdateReason": 0,
+    "downloadedBytes": 4096,
+    "processExitCode": 0
+  }
+]
