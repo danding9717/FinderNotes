@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-10T11:15:18.363526+00:00",
+  "installedPath": "~/Applications/FinderNotes.app",
+  "version": "0.1.4",
+  "build": "15",
+  "feedURL": "https://raw.githubusercontent.com/danding9717/FinderNotes/updates/appcast.xml",
+  "bundleID": "com.findernotes.FinderNotes.LocalTrial",
+  "strictCodeSignature": true,
+  "runningAtOriginalPath": true,
+  "userConfirmation": "已升级到 0.1.4，检查和安装均正常",
+  "reconciliation": "Initial read was build 14; Dan confirmed second update in progress, then build 15 observed with restart record.",
+  "finalUpdateDialog": "您使用的就是最新版！ FinderNotes 0.1.4是当前的最新版本。",
+  "updateResults": [
+    {
+      "oldVersion": {
+        "build": "13",
+        "display": "0.1.2"
+      },
+      "targetVersion": {
+        "build": "14",
+        "display": "0.1.3"
+      },
+      "awaitingRestart": false,
+      "evaluation": {
+        "reason": "old-bundle-cleanup-not-observed",
+        "status": "unknown"
+      }
+    },
+    {
+      "oldVersion": {
+        "build": "14",
+        "display": "0.1.3"
+      },
+      "targetVersion": {
+        "build": "15",
+        "display": "0.1.4"
+      },
+      "awaitingRestart": false,
+      "evaluation": {
+        "reason": "old-bundle-cleanup-not-observed",
+        "status": "unknown"
+      }
+    }
+  ],
+  "cleanupBoundary": "Audit reports old-bundle-cleanup-not-observed; no claim of confirmed old-bundle cleanup and no manual deletion of caches."
+}

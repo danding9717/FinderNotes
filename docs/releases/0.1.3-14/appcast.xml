@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+  <channel>
+    <title>FinderNotes 个人版本更新</title>
+    <link>https://github.com/danding9717/FinderNotes</link>
+    <description>FinderNotes 手动更新</description>
+    <language>zh-CN</language>
+    <item>
+      <title>FinderNotes 0.1.3（14）</title>
+      <sparkle:version>14</sparkle:version>
+      <sparkle:shortVersionString>0.1.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <description>&lt;!doctype html&gt;
+&lt;html lang="zh-CN"&gt;&lt;meta charset="utf-8"&gt;&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;&lt;title&gt;FinderNotes 更新说明&lt;/title&gt;&lt;body&gt;&lt;h1&gt;FinderNotes 0.1.3（14）&lt;/h1&gt;&lt;p&gt;更新来源迁移到 FinderNotes 主仓库，源码、版本和下载地址统一管理。&lt;/p&gt;
+&lt;p&gt;本次为 0.1.3（14）过渡版本；安装后再次选择“检查更新…”，可从新地址安装 0.1.4（15）。&lt;/p&gt;
+&lt;p&gt;笔记存储、草稿恢复、应用身份和更新签名保持不变。&lt;/p&gt;
+&lt;p&gt;请完成中文输入并保存笔记后再安装；安装后返回编辑，后续退出仍可能继续原安装请求。&lt;/p&gt;
+&lt;p&gt;需要 macOS 26.0 或更高；包含 Apple Silicon 和 Intel 架构，实际运行验证限 Apple Silicon。个人使用版本采用 ad hoc 签名，未进行 Apple 公证。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+</description>
+      <sparkle:fullReleaseNotesLink>https://github.com/danding9717/FinderNotes/releases/tag/v0.1.3</sparkle:fullReleaseNotesLink>
+      <pubDate>Sat, 10 Oct 2026 11:05:26 GMT</pubDate>
+      <enclosure url="https://github.com/danding9717/FinderNotes/releases/download/v0.1.3/FinderNotes-0.1.3-14.zip" type="application/octet-stream" length="4963068" sparkle:edSignature="V/1s1YBJsEZHz7elv9nCnAuy7Do0jGlxU3858aoJiSZD/lfrExbbHDdKaKEaw9ykv/goXRAJgjy/j2GZXHaYBg==" />
+    </item>
+  </channel>
+</rss>

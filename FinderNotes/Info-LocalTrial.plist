@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1.1</string>
+	<string>0.1.4</string>
 	<key>CFBundleVersion</key>
-	<string>12</string>
+	<string>15</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.productivity</string>
 	<key>LSMinimumSystemVersion</key>
@@ -33,7 +33,7 @@
 	<key>FinderNotesUpdatesEnabled</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>https://raw.githubusercontent.com/danding9717/FinderNotes-updates/main/appcast.xml</string>
+	<string>https://raw.githubusercontent.com/danding9717/FinderNotes/updates/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>osFBk+W7kVsju92PnwDjwW6PNCMStp1FrEjjyZyjyWg=</string>
 	<key>SUEnableAutomaticChecks</key>
