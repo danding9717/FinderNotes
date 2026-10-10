@@ -63,7 +63,7 @@ try:
         raise ValueError('Expected a 32-byte EdDSA public key')
 except (ValueError, TypeError) as error:
     sys.exit(f'Invalid SUPublicEDKey: {error}')
-feed = 'https://raw.githubusercontent.com/danding9717/FinderNotes-updates/main/appcast.xml'
+feed = 'https://raw.githubusercontent.com/danding9717/FinderNotes/updates/appcast.xml'
 if (info.get('SUFeedURL') == feed
         and info.get('CFBundleIdentifier') != 'com.findernotes.FinderNotes.LocalTrial'):
     sys.exit('Only the LocalTrial application may connect to the production update feed')
@@ -77,8 +77,8 @@ expected = {
     'CFBundleIdentifier': 'com.findernotes.FinderNotes.LocalTrial',
     'CFBundleName': 'FinderNotes',
     'CFBundleDisplayName': 'FinderNotes',
-    'CFBundleShortVersionString': '0.1.1',
-    'CFBundleVersion': '12',
+    'CFBundleShortVersionString': '0.1.3',
+    'CFBundleVersion': '14',
     'FinderNotesUpdatesEnabled': True,
     'SUFeedURL': feed,
 }
@@ -93,6 +93,6 @@ if (service.get('NSMenuItem') != {'default': '用 FinderNotes 编辑笔记'}
         or service.get('NSPortName') != 'FinderNotesLocalTrial'
         or service.get('NSMessage') != 'receiveFiles'):
     sys.exit('Unexpected local-trial Finder service identity.')
-print('Verified local-trial identity: ' + expected['CFBundleIdentifier'] + ' 0.1.1 (12), Sparkle 2.10.0')
+print('Verified local-trial identity: ' + expected['CFBundleIdentifier'] + ' 0.1.3 (14), Sparkle 2.10.0')
 PY
 print -r -- "$app_path"

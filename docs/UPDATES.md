@@ -1,34 +1,38 @@
 # FinderNotes 个人版应用内更新
 
-本功能采用固定的 Sparkle 2.10.0。应用菜单 **FinderNotes → 检查更新…** 只在用户点击后检查，显示当前版本或新版说明；下载失败与检查失败单独显示错误。检查、下载和安装期间不会发起重复检查。首次带更新器的版本是 **0.1.1（12）**，沿用 `com.findernotes.FinderNotes.LocalTrial`、`FinderNotesLocalTrial` 服务端口和原草稿恢复目录。这仍是个人稳定版开发，不代表 V1.0 最终版或公开发布完成。
+本功能采用固定的 Sparkle 2.10.0。应用菜单 **FinderNotes → 检查更新…** 只在用户点击后检查，显示当前版本或新版说明；下载失败与检查失败单独显示错误。检查、下载和安装期间不会发起重复检查。首次带更新器的版本是 **0.1.1（12）**，沿用 `com.findernotes.FinderNotes.LocalTrial`、`FinderNotesLocalTrial` 服务端口和原草稿恢复目录。这仍是个人稳定版开发，源码公开与 Release 发布不代表 V1.0 最终验收完成。
 
 安装重启经过现有异步退出链。组合输入尚未完成时直接延后退出，提示先完成输入，不打开草稿确认框；保存或导出尚未完成时亦不强制退出。未保存草稿选择“返回编辑”会保留当前运行实例，可通过“检查更新…”重新打开已下载的安装界面。**已经点击“安装并重启”后，Sparkle 会保留同一次手动安装请求；之后正常退出也可能继续安装并重启。**不能把返回编辑理解为撤销已请求的安装。更新界面不操作媒体正文或草稿恢复目录。FN08-I07、FN08-I08 仍按原记录保留；跨 Sparkle 窗口的原候选上下文延续尚待人工验收，不能因加入更新器认定已解决。
 
 ## 更新源、签名与本地准备
 
-公开仓库 [`danding9717/FinderNotes-updates`](https://github.com/danding9717/FinderNotes-updates) 仅用于版本信息、中文更新说明及已编译更新包。源码仓库保持私有。生产 feed 固定为：
+FN-13 按 Dan 授权将源码、更新列表和安装包统一到公开仓库 [`danding9717/FinderNotes`](https://github.com/danding9717/FinderNotes)。新应用的生产 feed 固定为该仓库 `updates` 分支中的：
 
 ```text
-https://raw.githubusercontent.com/danding9717/FinderNotes-updates/main/appcast.xml
+https://raw.githubusercontent.com/danding9717/FinderNotes/updates/appcast.xml
 ```
 
-应用仅嵌入 Ed25519 公钥。私钥存于登录钥匙串，签名 account 为 `com.findernotes.FinderNotes.LocalTrial.updates`。不要重新生成、导出或把私钥写进仓库。应用启用解压前验签；构建号是递增的正整数，Sparkle 据此比较版本。[Sparkle 官方接入说明](https://sparkle-project.org/documentation/)
+`updates` 分支只承载发布数据，可在核验安装包后独立更新；应用源码改动通过 PR 审阅，待 Dan 实际验收后再按授权合并。迁移期间旧源 `https://raw.githubusercontent.com/danding9717/FinderNotes-updates/main/appcast.xml` 保持可用，具体切换顺序见下文。
+
+应用仅嵌入 Ed25519 公钥。私钥存于登录钥匙串，签名 account 为 `com.findernotes.FinderNotes.LocalTrial.updates`。迁移保持原 bundle ID、服务身份和签名密钥。不要重新生成、导出或把私钥写进仓库。应用启用解压前验签；构建号是递增的正整数，Sparkle 据此比较版本。[Sparkle 官方接入说明](https://sparkle-project.org/documentation/)
 
 先构建产物，再生成新的本地待审目录：
 
 ```sh
-FINDERNOTES_DERIVED_DATA="$PWD/.build/DerivedData-build12" \
+FINDERNOTES_DERIVED_DATA="$PWD/.build/DerivedData-release" \
   FINDERNOTES_BUILD_PROFILE=local-trial ./scripts/build_app.sh
 
 python3 -B scripts/prepare_update.py \
-  --source "$PWD/.build/DerivedData-build12/Build/Products/Release/FinderNotes.app" \
-  --output "$PWD/.build/update-review-0.1.1-12" \
-  --sign-update "$PWD/.build/FN12Dependencies/Sparkle/bin/sign_update"
+  --source "$PWD/.build/DerivedData-release/Build/Products/Release/FinderNotes.app" \
+  --output "$PWD/.build/update-review-single-repo" \
+  --sign-update "/path/to/Sparkle-2.10.0/bin/sign_update"
 ```
 
-`--sign-update` 应指向固定 Sparkle 2.10.0 的官方工具。也可在 Xcode SPM 下载产物的 `artifacts/sparkle/Sparkle/bin` 查找。准备脚本读取构建 app 内的版本，不改 Info.plist；使用 `ditto` 生成 ZIP、解压复验完整清单及严格代码签名，保存框架内部合法链接和执行权限。然后调用官方签名工具，并用 app 内公钥独立验证签名，防止选错钥匙串账号。[Sparkle 官方发布说明](https://sparkle-project.org/documentation/publishing/)
+将 `--sign-update` 的示例路径替换为固定 Sparkle 2.10.0 的官方工具路径；可在 Xcode SPM 下载产物的 `artifacts/sparkle/Sparkle/bin` 查找。准备脚本读取构建 app 内的版本，不改 Info.plist；使用 `ditto` 生成 ZIP、解压复验完整清单及严格代码签名，保存框架内部合法链接和执行权限。然后调用官方签名工具，并用 app 内公钥独立验证签名，防止选错钥匙串账号。[Sparkle 官方发布说明](https://sparkle-project.org/documentation/publishing/)
 
-输出包括版本 ZIP、`SHA256SUMS`、中文 HTML 说明、`appcast.xml` 和 `preparation.json`。默认 ZIP 地址是固定版本的 `releases/download/v0.1.1-12/FinderNotes-0.1.1-12.zip`，不用 `latest`。可用 `--notes-file` 提供 UTF-8 纯文本，每行作为一段；`--release-base-url` 检查 HTTPS 地址，自定义值须由调用者保证是固定版本下载目录。输出已存在时停止，不覆盖。失败打印 `evidenceDirectory` 并保留本次现场；`prepared_locally` 只表示本地准备成功，没有上传、提交或发布。
+本地输出包括版本 ZIP、`SHA256SUMS`、中文说明、`appcast.xml` 和 `preparation.json`。默认 tag 为 `v{version}`，例如桥接版的下载地址是 `https://github.com/danding9717/FinderNotes/releases/download/v0.1.3/FinderNotes-0.1.3-14.zip`，不用 `latest`。中文更新说明内嵌于 appcast 的 `description`，不依赖独立 HTML 附件。Release 只上传 ZIP 与 `SHA256SUMS`；构建、复现和验证材料归档至源码仓库的 `docs/releases/<version>-<build>/`，GitHub 自动生成的源码 ZIP、tar.gz 仍会显示。
+
+可用 `--notes-file` 提供 UTF-8 纯文本，每行作为一段；`--release-base-url` 检查 HTTPS 地址，自定义值须由调用者保证是固定版本下载目录。输出已存在时停止，不覆盖，每次准备应使用新目录。失败打印 `evidenceDirectory` 并保留本次现场；`prepared_locally` 只表示本地准备成功，没有上传、提交或发布。
 
 ## 首次升级安装
 
@@ -38,7 +42,7 @@ python3 -B scripts/prepare_update.py \
 
 ```sh
 python3 -B scripts/install_local_trial.py \
-  --source "$PWD/.build/DerivedData-build12/Build/Products/Release/FinderNotes.app" \
+  --source "$PWD/.build/DerivedData-release/Build/Products/Release/FinderNotes.app" \
   --destination "$HOME/Applications/FinderNotes.app"
 ```
 
@@ -46,7 +50,7 @@ python3 -B scripts/install_local_trial.py \
 
 ```sh
 python3 -B scripts/install_local_trial.py \
-  --source "$PWD/.build/DerivedData-build12/Build/Products/Release/FinderNotes.app" \
+  --source "$PWD/.build/DerivedData-release/Build/Products/Release/FinderNotes.app" \
   --destination "$HOME/Applications/FinderNotes.app" \
   --replace-existing
 ```
@@ -71,11 +75,18 @@ FinderNotes 在允许退出前记录本次目标版本、原安装路径、旧�
 
 记录位于 `~/Library/Application Support/<bundleID>/UpdateResults/<UUID>.json`，新建结果目录为 0700，记录为 0600。读取拒绝符号链接、硬链接、非普通文件和超过 64 KiB 的记录；已有目标必须是同一审计记录才可更新，未知对象保留。记录失败只写系统日志并保持无法确认，不据此报告清理成功。审计记录是本机证据，不取代 Sparkle 错误提示、真实安装验收或 Notion 任务状态。
 
-## 后续发布与验收
+## 单仓迁移与发布验收
 
-本轮已交付隔离验证和可审阅材料，完成真实首次覆盖安装并获 Dan 验收，标准 Git 收尾另按授权执行。正式 GitHub Release 和生产 appcast 上传仍待明确发布授权。发布时先上传固定版本 ZIP 与 HTML，核验下载字节、签名和中文说明，再更新生产 feed 并回读。脚本生成的是单版本 appcast；后续版本发布时须与已发布 feed 合并，保留需要支持的旧版本条目，再次核验所有引用，不直接覆盖历史。生产 feed 没有发布前，检查可能返回 HTTP 404，必须保留为失败，不能显示最新版。
+本次迁移由 [FN-13](https://app.notion.com/p/3f5e7607d64981659145f36b04d7b241) 记录范围与验收。以下是发布和人工验证安排，不表示已经完成真实升级：
 
-当前个人安装件及主仓 `.build/Delivery/FinderNotes-0.1.1-12/` 保留包来自 FN-12 独立验收提交 `c2f4253`，不含后来整合的 FN-11。后续组合版本须从最终整合源码重新构建、复验、签名，并使用大于 12 的构建号；同为 12 不会向已安装的 12 提供升级。本轮整合只构建验证，未重新覆盖个人安装件或发布旧候选包。
+1. 从迁移 PR 的固定源码提交构建 **0.1.3（14）**；再以同一实现、仅版本及说明差异构建 **0.1.4（15）**。两个版本均内嵌主仓 `updates` 分支的新 feed，保留已有应用身份与签名密钥。记录实际提交、安装包 SHA256、长度和签名，不以分支名代替构建来源。
+2. 主仓公开后先发布两个固定版本的 ZIP 与校验文件，匿名下载复验字节、签名和包内配置；新 feed 提供 15，旧 feed 只提供 14 作为迁移入口。旧 feed 的 14 安装包也从主仓 Release 下载，避免依赖旧仓附件。不能让旧 feed 直接提供 15，否则无法凭这次安装证明新 feed 可用。
+3. Dan 在原安装件中通过“检查更新…”完成 **13 → 14**，重启后确认版本及新 feed；再检查更新并完成 **14 → 15**，确认原路径运行、检查和安装正常。最后在 15 中再次检查更新。只有 14 显示“已是最新版本”不足以证明新源能安装更新；脚本下载与验签也不替代真实应用内升级。
+4. 保留 `FinderNotes-updates`，直到 Dan 完成上述升级并明确确认新源检查、安装正常。删除前核对新 feed、保留版本安装包和更新说明均不再依赖旧仓，并记录真实验证结果。未升级的旧版仍依赖旧 feed；删除后的剩余旧安装件需手动安装主仓发布包。
+
+发布顺序始终是先核验固定版本安装包，再更新 feed 并匿名回读精确 URL。脚本生成单版本 appcast；合并发布数据时保留需要支持的历史条目，逐项核验引用，不用新文件直接覆盖历史。历史 13 若保留，须指向主仓的同字节安装包并复验签名。HTTP 404、检查失败或下载失败均应如实报告，不能显示或记录为最新版。
+
+FN-12 历史验收使用的 `0.1.1（12）` 保留包来自独立验收提交 `c2f4253`，不含后来整合的 FN-11；该记录不代表当前安装件或本次迁移包。历史证据继续保留，不将本次地址变更追写为历史实测结果。
 
 验收时自动测试只使用独立临时目录、合成 bundle 和签名／进程注入。测试源码已按收尾授权从当前树移除，以下历史命令须在清理前提交 `c2f425371441af21d542856e2db6a854677ecf57` 的独立副本中运行：
 

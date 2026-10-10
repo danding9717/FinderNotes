@@ -18,10 +18,10 @@ import xml.etree.ElementTree as ET
 from install_local_trial import identity, manifest, ordinary_path, rename_exclusive, validate
 
 SPARKLE = 'http://www.andymatuschak.org/xml-namespaces/sparkle'
-FEED_URL = 'https://raw.githubusercontent.com/danding9717/FinderNotes-updates/main/appcast.xml'
-REPOSITORY_URL = 'https://github.com/danding9717/FinderNotes-updates'
+FEED_URL = 'https://raw.githubusercontent.com/danding9717/FinderNotes/updates/appcast.xml'
+REPOSITORY_URL = 'https://github.com/danding9717/FinderNotes'
 KEYCHAIN_ACCOUNT = 'com.findernotes.FinderNotes.LocalTrial.updates'
-DEFAULT_NOTES = '''新增“检查更新…”菜单，可手动查看新版本、下载并安装更新。
+DEFAULT_NOTES = '''更新来源统一到 FinderNotes 仓库，可从“检查更新…”手动下载并安装后续版本。
 安装重启前保留现有草稿、保存与导出保护；返回编辑后可稍后重试。
 这是个人本机使用版本，沿用 LocalTrial 身份，未进行 Apple 公证。
 '''
@@ -58,7 +58,7 @@ if !publicKey.isValidSignature(signature, for: archive) { exit(1) }
     subprocess.run(['/usr/bin/xcrun', 'swift', '-e', swift, str(archive), signature, public_key], check=True)
 
 
-def make_appcast(info, archive_url, notes_url, signature, length, published_at):
+def make_appcast(info, archive_url, notes_url, release_notes, signature, length, published_at):
     ET.register_namespace('sparkle', SPARKLE)
     rss = ET.Element('rss', {'version': '2.0'})
     channel = ET.SubElement(rss, 'channel')
@@ -71,7 +71,8 @@ def make_appcast(info, archive_url, notes_url, signature, length, published_at):
     ET.SubElement(item, f'{{{SPARKLE}}}version').text = info['CFBundleVersion']
     ET.SubElement(item, f'{{{SPARKLE}}}shortVersionString').text = info['CFBundleShortVersionString']
     ET.SubElement(item, f'{{{SPARKLE}}}minimumSystemVersion').text = info.get('LSMinimumSystemVersion', '26.0')
-    ET.SubElement(item, f'{{{SPARKLE}}}releaseNotesLink').text = notes_url
+    ET.SubElement(item, 'description').text = release_notes
+    ET.SubElement(item, f'{{{SPARKLE}}}fullReleaseNotesLink').text = notes_url
     ET.SubElement(item, 'pubDate').text = format_datetime(published_at, usegmt=True)
     ET.SubElement(item, 'enclosure', {'url': archive_url, 'type': 'application/octet-stream',
                                     'length': str(length), f'{{{SPARKLE}}}edSignature': signature})
@@ -108,7 +109,7 @@ def prepare(source, output, sign_update, *, account=KEYCHAIN_ACCOUNT, notes=DEFA
         raise ValueError('Signed feeds require generate_appcast; this preparation uses archive signatures')
     version = info['CFBundleShortVersionString']
     build = info['CFBundleVersion']
-    tag = f'v{version}-{build}'
+    tag = f'v{version}'
     release_base_url = https_url(release_base_url or f'{REPOSITORY_URL}/releases/download/{tag}')
     archive_name = f'FinderNotes-{version}-{build}.zip'
     notes_name = f'FinderNotes-{version}-{build}.html'
@@ -142,8 +143,8 @@ def prepare(source, output, sign_update, *, account=KEYCHAIN_ACCOUNT, notes=DEFA
         (stage / notes_name).write_text(release_notes, encoding='utf-8')
         (stage / 'release-notes.txt').write_text(notes, encoding='utf-8')
         archive_url = release_base_url.rstrip('/') + '/' + archive_name
-        notes_url = release_base_url.rstrip('/') + '/' + notes_name
-        (stage / 'appcast.xml').write_bytes(make_appcast(info, archive_url, notes_url, signature,
+        notes_url = f'{REPOSITORY_URL}/releases/tag/{tag}'
+        (stage / 'appcast.xml').write_bytes(make_appcast(info, archive_url, notes_url, release_notes, signature,
                                                        length, datetime.now(timezone.utc)))
         (stage / 'SHA256SUMS').write_text(f'{archive_sha256}  {archive_name}\n', encoding='utf-8')
         result = {'status': 'prepared_locally', 'published': False, 'source': str(source),
@@ -151,6 +152,7 @@ def prepare(source, output, sign_update, *, account=KEYCHAIN_ACCOUNT, notes=DEFA
                   'version': version, 'build': build, 'releaseTag': tag, 'feedURL': FEED_URL,
                   'archiveURL': archive_url, 'releaseNotesURL': notes_url, 'archiveSHA256': archive_sha256,
                   'archiveLength': length, 'publicEDKey': public_key, 'signatureVerified': True,
+                  'releaseNotesMode': 'inline', 'releaseAssets': [archive_name, 'SHA256SUMS'],
                   'keychainAccount': account, 'filesSHA256': original,
                   'signatureScope': 'archive', 'appcastHistory': 'single release; merge with published feed before future releases'}
         (stage / 'preparation.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
