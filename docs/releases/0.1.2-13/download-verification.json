@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "anonymousDownloadHTTP": 200,
+  "archiveSHA256": "55fd8e765d68a0956acf4d698e88d64c763161678f3f9e3dc7625144585cb6da",
+  "archiveLength": 4962689,
+  "signatureVerifiedAgainstInstalledPublicKey": true,
+  "strictCodeSignatureVerified": true,
+  "manifestMatchesSource": true,
+  "fileCount": 124,
+  "version": "0.1.2",
+  "build": "13",
+  "inlineChineseNotes": true
+}

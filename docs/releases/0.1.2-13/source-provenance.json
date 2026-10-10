@@ -1,0 +1,13 @@
+{
+  "sourceCommit": "fb06e62d9903ae2a336dcd8df1cdc99f9295ea79",
+  "sourceTag": "v0.1.2",
+  "version": "0.1.2",
+  "build": "13",
+  "sourceChanges": false,
+  "releaseMetadataOverrides": {
+    "CFBundleShortVersionString": "0.1.2",
+    "CFBundleVersion": "13"
+  },
+  "profile": "standard with explicit LocalTrial identity and generated Info-Release.plist",
+  "packageResolvedSHA256": "e89d1dd0c4e5814a2be268d270908af513e99a0c9ffb31d095b6b9e480892ad0"
+}

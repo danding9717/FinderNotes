@@ -1,0 +1,18 @@
+{
+  "checkedOn": "2026-10-10",
+  "timeZone": "Asia/Shanghai",
+  "application": "/Users/danding/Applications/FinderNotes.app",
+  "installedVersion": "0.1.1",
+  "installedBuild": "12",
+  "entryPoint": "FinderNotes → 检查更新…",
+  "windowTitle": "软件更新",
+  "foundVersion": "0.1.2",
+  "foundBuild": "13",
+  "nativeMessage": "新版本的FinderNotes已经发布 FinderNotes 0.1.2可供下载，您现在的版本是0.1.1。要现在下载吗？",
+  "visibleChineseReleaseNotes": true,
+  "visibleInstallButton": "安装更新",
+  "installedApplicationUnchanged": true,
+  "clickedInstall": false,
+  "installationRestartGatekeeperAndCleanup": "not exercised for this release",
+  "observationMethod": "CUA accessibility tree of real installed application"
+}

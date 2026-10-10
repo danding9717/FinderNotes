@@ -1,0 +1,52 @@
+{
+  "release": "0.1.2 (13)",
+  "archiveDate": "2026-10-10",
+  "sourceCommit": "fb06e62d9903ae2a336dcd8df1cdc99f9295ea79",
+  "reason": "Keep only installer ZIP and SHA256SUMS in Release assets; archive development and HTML materials separately.",
+  "assets": [
+    {
+      "name": "build-release.sh",
+      "size": 336,
+      "digest": "sha256:a01ced1b16182768d68d4994d26f2c20faa0bf28c986e9e10ad4f3700ba5b92e",
+      "browser_download_url": "https://github.com/danding9717/FinderNotes/releases/download/v0.1.2/build-release.sh"
+    },
+    {
+      "name": "download-verification.json",
+      "size": 387,
+      "digest": "sha256:0c23ba276be2024c08147a521d0ad8c2c3b2e701d248a197b530d1f21237ff39",
+      "browser_download_url": "https://github.com/danding9717/FinderNotes/releases/download/v0.1.2/download-verification.json"
+    },
+    {
+      "name": "FinderNotes-0.1.2-13.html",
+      "size": 1150,
+      "digest": "sha256:67e5e2f526eeefd635585077c4db7998e07103523b044279031e948e432901bf",
+      "browser_download_url": "https://github.com/danding9717/FinderNotes/releases/download/v0.1.2/FinderNotes-0.1.2-13.html"
+    },
+    {
+      "name": "Info-Release.plist",
+      "size": 2074,
+      "digest": "sha256:a3c09c20e50fc835f4c1de994b46c7157b2d3db3a1617b2c5744670e335a567a",
+      "browser_download_url": "https://github.com/danding9717/FinderNotes/releases/download/v0.1.2/Info-Release.plist"
+    },
+    {
+      "name": "production-ui-verification.json",
+      "size": 764,
+      "digest": "sha256:d0330436ac71317ddebbed8c116cbecd8d6f2b0700479ae3e87cd41f42eb1e3a",
+      "browser_download_url": "https://github.com/danding9717/FinderNotes/releases/download/v0.1.2/production-ui-verification.json"
+    },
+    {
+      "name": "REPRODUCE.md",
+      "size": 1313,
+      "digest": "sha256:ecb777efebacb8f5696df4e25fa8e1bec8a0025b7ebc8edffae7df2f8b538b39",
+      "browser_download_url": "https://github.com/danding9717/FinderNotes/releases/download/v0.1.2/REPRODUCE.md"
+    },
+    {
+      "name": "source-provenance.json",
+      "size": 450,
+      "digest": "sha256:c27e9105e39bd2434836ba82df2328f021eb81b2564bb13be20c14793ba808e1",
+      "browser_download_url": "https://github.com/danding9717/FinderNotes/releases/download/v0.1.2/source-provenance.json"
+    }
+  ],
+  "publicHTMLDigest": "sha256:67e5e2f526eeefd635585077c4db7998e07103523b044279031e948e432901bf",
+  "productionFeedSHA256": "b9f6ddfb325bc57b23c51a7fbfcd59ef8aaaa0e1419b2b108fbe9919badee343"
+}
