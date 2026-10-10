@@ -18,6 +18,7 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
     let markdownModeButton = NSPopUpButton(frame: .zero, pullsDown: false)
     private(set) var markdownLayout: MarkdownLayoutController!
     private(set) var isPinned = false
+    private var isUpdateInterfaceActive = false
     var pinStateDidChange: ((Bool) -> Void)?
     let advancedButton = NSPopUpButton(frame: .zero, pullsDown: true)
     let recoveryMenuItem = NSMenuItem(title: "恢复草稿…", action: nil, keyEquivalent: "")
@@ -80,11 +81,20 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
     required init?(coder: NSCoder) { fatalError("Use init(session:)") }
 
     @objc func togglePin(_ sender: Any?) {
-        guard let window else { return }
+        guard window != nil else { return }
         isPinned.toggle()
-        window.level = isPinned ? .floating : .normal
+        updateWindowLevel()
         pinButton.state = isPinned ? .on : .off
         pinStateDidChange?(isPinned)
+    }
+
+    func setUpdateInterfaceActive(_ active: Bool) {
+        isUpdateInterfaceActive = active
+        updateWindowLevel()
+    }
+
+    private func updateWindowLevel() {
+        window?.level = isPinned && !isUpdateInterfaceActive ? .floating : .normal
     }
 
     @objc func toggleMarkdown(_ sender: Any?) {
@@ -632,6 +642,10 @@ final class EditorWindowController: NSWindowController, NSWindowDelegate, NSText
     }
 
     func prepareToQuit() async -> Bool {
+        guard !editor.hasMarkedText() else {
+            showActionMessage("请先完成中文输入，再退出。")
+            return false
+        }
         guard !isConfirming, !session.isSaving, !isExporting else { return false }
         cancelAutosave()
         session.invalidateLoading()

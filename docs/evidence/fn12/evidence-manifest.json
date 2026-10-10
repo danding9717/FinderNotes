@@ -1,0 +1,92 @@
+[
+  {
+    "evidence": "components-results.log",
+    "source": ".build/FN12Validation/components/results.log",
+    "bytes": 5811,
+    "sha256": "81403f5656a1bafa323da5fae76129758569362a5d48fb9910c1278324a52fc8"
+  },
+  {
+    "evidence": "network-results.json",
+    "source": ".build/FN12ValidationBeforePin/network/results.json",
+    "bytes": 9713,
+    "sha256": "c55ffe74194cf1fae25dee062f76d920eede9c3dc0d33ebb9711262c35962cad"
+  },
+  {
+    "evidence": "ime-install-result.json",
+    "source": ".build/FN12IMEValidation/native-final.json",
+    "bytes": 608,
+    "sha256": "06dafdfe65e7249d8d0b2b6bc3035ac13792b766dea9674bb8822d127182112f"
+  },
+  {
+    "evidence": "ime-cleanup-observer.json",
+    "source": ".build/FN12IMEValidation/cleanup-observer.json",
+    "bytes": 644,
+    "sha256": "f3851976a0b36e01fee981d5b2a4bc5aa139229df20b30428d45b9c79b5b1018"
+  },
+  {
+    "evidence": "ime-product-receipt.json",
+    "source": ".build/FN12IMEValidation/receipt-89966756-48E9-46D8-9F5A-64F99396DBA4.json",
+    "bytes": 1489,
+    "sha256": "7fa38137530b168c6981de7fd7801c53802b69909a508138cb03d7d454cd117d"
+  },
+  {
+    "evidence": "readonly-volume-result.json",
+    "source": ".build/FN12ReadOnlyVolumeValidation/native-result.json",
+    "bytes": 752,
+    "sha256": "a9457f4c94ced930f8d2c355a6b7e577239aa7509eeed1cdbd0cf68568248246"
+  },
+  {
+    "evidence": "readonly-auth-timeline.txt",
+    "source": ".build/FN12ReadOnlyValidation/auth-verified-timeline.txt",
+    "bytes": 2212,
+    "sha256": "79e0715b868fbbc0db9f3f14e2f38fa62613f2b1aec3062a9c0e1dacc10e2689"
+  },
+  {
+    "evidence": "real-install-result.json",
+    "source": ".build/FN12RealInstall-20261010-142424/install-result.json",
+    "bytes": 20105,
+    "sha256": "5097d396dc97ab006c418a693b65e910682702a59ca56081770e9937452c1f69"
+  },
+  {
+    "evidence": "real-launch-verification.json",
+    "source": ".build/FN12RealInstall-20261010-142424/launch-verification.json",
+    "bytes": 415,
+    "sha256": "a380c35dacddda8ec827c9cd4841555bab4b043a83f76adae366cdb4658a1bee"
+  },
+  {
+    "evidence": "acceptance-package-verification.json",
+    "source": ".build/FN12Acceptance/verification.json",
+    "bytes": 1976,
+    "sha256": "d719e01fa06b8cd3a1692361d04cdafff681171e658295cd9234191b205e0649"
+  },
+  {
+    "evidence": "acceptance-readiness.json",
+    "source": ".build/FN12Acceptance/evidence/readiness.json",
+    "bytes": 2734,
+    "sha256": "0da0c0077b1ca33618345cb6a4f5c02fbac1671f40df02ab951c45537f14909e"
+  },
+  {
+    "evidence": "console-preparation-smoke.json",
+    "source": ".build/FN12Acceptance/evidence/console-smoke.json",
+    "bytes": 1114,
+    "sha256": "1bde51357eab57ed8d68b2af78265bdb28ba74c4d9db38aeb629cdda7324b9cf"
+  },
+  {
+    "evidence": "console-preparation-transfer.json",
+    "source": ".build/FN12Acceptance/evidence/console-smoke-transfer-marker.json",
+    "bytes": 170,
+    "sha256": "bc6cdf97e8ec8979912ff38c5165f0628081cf8ae07847966d2228af9884bbba"
+  },
+  {
+    "evidence": "release-independent-verification.json",
+    "source": ".build/FN12PreparedReleaseCandidate/evidence/independent-verification.json",
+    "bytes": 1267,
+    "sha256": "9ca9f464c7d092c2213db37968a9973ec2972ac4122a0bcefd74ea72d935e14b"
+  },
+  {
+    "evidence": "console-preparation.png",
+    "source": ".build/FN12Acceptance/evidence/console-ready.png",
+    "bytes": 70659,
+    "sha256": "2eb0b08135bb400f7ba1812a312a2f207107745ebfdbe4bb5cbc540747ff9f47"
+  }
+]

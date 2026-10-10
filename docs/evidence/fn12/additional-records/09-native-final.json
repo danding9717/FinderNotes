@@ -1,0 +1,16 @@
+{
+  "oldPID": 76049,
+  "newPID": 77128,
+  "oldBuild": "12",
+  "newBuild": "13",
+  "newVersion": "0.1.2",
+  "samePath": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidation/Installed/FN12 IME Review.app",
+  "singleProcess": true,
+  "strictCodesignPassed": true,
+  "bodyBeforeAndAfterUpdate": "中文输入",
+  "independentXattrReadbackPassed": true,
+  "oldCleanupObserverPassed": true,
+  "unfinishedInputExitGuardPassed": true,
+  "crossWindowCandidateContinuation": "not passed; original SCIM candidate context needs manual acceptance",
+  "filePermissionsRestored": "0644"
+}

@@ -1,0 +1,29 @@
+{
+  "awaitingRestart" : false,
+  "bundleID" : "com.findernotes.FinderNotes.FN12AuditChecks",
+  "cacheInstallationPath" : "\/Users\/danding\/.codex\/worktrees\/fn-12-app-update\/FinderNotes\/.build\/FN12Integration\/FN12Components\/audit-components-0851B54C-7108-435C-AB49-491271B353A9\/resume-unknown\/Installation",
+  "checkedAt" : 813308818.464458,
+  "createdAt" : 813308818.453205,
+  "evaluation" : {
+    "reason" : "current-installation-cache-not-uniquely-bound",
+    "status" : "unknown"
+  },
+  "id" : "6AC2C41D-0344-4D19-8895-A52E69472DBE",
+  "installationPath" : "\/Users\/danding\/.codex\/worktrees\/fn-12-app-update\/FinderNotes\/.build\/FN12Integration\/FN12Components\/audit-components-0851B54C-7108-435C-AB49-491271B353A9\/resume-unknown\/Installed.app",
+  "observations" : [
+
+  ],
+  "oldIdentity" : {
+    "device" : 16777232,
+    "inode" : 11076420
+  },
+  "oldVersion" : {
+    "build" : "12",
+    "display" : "0.1.1"
+  },
+  "schema" : 1,
+  "targetVersion" : {
+    "build" : "12",
+    "display" : "0.1.1"
+  }
+}

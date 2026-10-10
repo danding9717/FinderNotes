@@ -1,0 +1,254 @@
+{
+  "schema": 1,
+  "createdAtUTC": "2026-10-10T07:12:14.891467+00:00",
+  "sourceRoot": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Integration",
+  "scope": "FN12 + merged FN11 integration build and hidden component evidence only",
+  "files": [
+    {
+      "path": "build-standard.log.gz",
+      "bytes": 34651,
+      "sha256": "cf62bea6d2ef5d82835fa6b345a29cc173da5f1de94484705a17fcfcfa8f186a",
+      "encoding": "gzip",
+      "source": ".build/FN12Integration/build-standard.log",
+      "sourceBytes": 876626,
+      "sourceSHA256": "be164859c50c922e4e598a0f5220905bac5e609091bc0cc4943aea712afad4f1"
+    },
+    {
+      "path": "build-local-trial.log.gz",
+      "bytes": 34681,
+      "sha256": "26777b4be86c1843d192ebf4ea9e6f39b581989ffa135af07eae12265a1a30a4",
+      "encoding": "gzip",
+      "source": ".build/FN12Integration/build-local-trial.log",
+      "sourceBytes": 881321,
+      "sourceSHA256": "69bf7cffeff70061f3f2140365f51b5cef73296b80ee9a543cb11a39251200da"
+    },
+    {
+      "path": "resolve.log",
+      "bytes": 623,
+      "sha256": "496bf100f915a9a8112af862be952ec76659ecdb2a6f5f66519fe19a5520fcfe",
+      "encoding": "identity",
+      "source": ".build/FN12Integration/resolve.log",
+      "sourceBytes": 623,
+      "sourceSHA256": "496bf100f915a9a8112af862be952ec76659ecdb2a6f5f66519fe19a5520fcfe"
+    },
+    {
+      "path": "fn11-run.log",
+      "bytes": 792,
+      "sha256": "780a3a8090d8eab2d1177620e5f5f80640d7bca0636b3a84ea3a3da0ac3c3ab7",
+      "encoding": "identity",
+      "source": ".build/FN12Integration/fn11-run.log",
+      "sourceBytes": 792,
+      "sourceSHA256": "780a3a8090d8eab2d1177620e5f5f80640d7bca0636b3a84ea3a3da0ac3c3ab7"
+    },
+    {
+      "path": "fn11-run-attempt-1.log.gz",
+      "bytes": 263,
+      "sha256": "48dd9426207c5b00c91200c36ee48d36dcdf303ecbb5da82e1fc457d219ead71",
+      "encoding": "gzip",
+      "source": ".build/FN12Integration/fn11-run-attempt-1.log",
+      "sourceBytes": 389,
+      "sourceSHA256": "14ee49b6061a50c3a2cfe35c1869947e1c03c885187ef68817479975951663b4"
+    },
+    {
+      "path": "fn11-harness-preparation.json",
+      "bytes": 1185,
+      "sha256": "eb177b03785d295e585b29dc58381464b5e043609a7ee5f6f1b36ad2056b5026",
+      "encoding": "identity",
+      "source": ".build/FN12Integration/fn11-harness-preparation.json",
+      "sourceBytes": 1185,
+      "sourceSHA256": "eb177b03785d295e585b29dc58381464b5e043609a7ee5f6f1b36ad2056b5026"
+    },
+    {
+      "path": "fn11-preference-cleanup.json",
+      "bytes": 23279,
+      "sha256": "bd58da2a62e2881bf7d68d7654442f6182128b6ad15bb6b0a3674d8482892b2b",
+      "encoding": "identity",
+      "source": ".build/FN12Integration/fn11-preference-cleanup.json",
+      "sourceBytes": 23279,
+      "sourceSHA256": "bd58da2a62e2881bf7d68d7654442f6182128b6ad15bb6b0a3674d8482892b2b"
+    },
+    {
+      "path": "fn11-cleanup-verification.json",
+      "bytes": 840,
+      "sha256": "852b93ac4084236a8c3cc5549bfe78899fda09e400dbe893b37a67a0b43709c6",
+      "encoding": "identity",
+      "source": ".build/FN12Integration/fn11-cleanup-verification.json",
+      "sourceBytes": 840,
+      "sourceSHA256": "852b93ac4084236a8c3cc5549bfe78899fda09e400dbe893b37a67a0b43709c6"
+    },
+    {
+      "path": "FN11Verification/compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "encoding": "identity",
+      "source": ".build/FN12Integration/FN11Verification/compile.log",
+      "sourceBytes": 0,
+      "sourceSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "FN11Verification/compile-attempt-1.log.gz",
+      "bytes": 263,
+      "sha256": "48dd9426207c5b00c91200c36ee48d36dcdf303ecbb5da82e1fc457d219ead71",
+      "encoding": "gzip",
+      "source": ".build/FN12Integration/FN11Verification/compile-attempt-1.log",
+      "sourceBytes": 389,
+      "sourceSHA256": "14ee49b6061a50c3a2cfe35c1869947e1c03c885187ef68817479975951663b4"
+    },
+    {
+      "path": "FN11Verification/result.log",
+      "bytes": 792,
+      "sha256": "780a3a8090d8eab2d1177620e5f5f80640d7bca0636b3a84ea3a3da0ac3c3ab7",
+      "encoding": "identity",
+      "source": ".build/FN12Integration/FN11Verification/result.log",
+      "sourceBytes": 792,
+      "sourceSHA256": "780a3a8090d8eab2d1177620e5f5f80640d7bca0636b3a84ea3a3da0ac3c3ab7"
+    },
+    {
+      "path": "FN11Verification/layout.png",
+      "bytes": 169854,
+      "sha256": "8fee5b3b4f8ca1a1e5220fdaf3beb0083a88adeb4f001f9fa61acb1570adc380",
+      "encoding": "identity",
+      "source": ".build/FN12Integration/FN11Verification/layout.png",
+      "sourceBytes": 169854,
+      "sourceSHA256": "8fee5b3b4f8ca1a1e5220fdaf3beb0083a88adeb4f001f9fa61acb1570adc380"
+    },
+    {
+      "path": "FN11Verification/rule-eof-1.png",
+      "bytes": 17019,
+      "sha256": "0de5f47fcbbd9278e3cf879d6f19e7f880deef269b00660881c330ac50ed8d84",
+      "encoding": "identity",
+      "source": ".build/FN12Integration/FN11Verification/rule-eof-1.png",
+      "sourceBytes": 17019,
+      "sourceSHA256": "0de5f47fcbbd9278e3cf879d6f19e7f880deef269b00660881c330ac50ed8d84"
+    },
+    {
+      "path": "FN11Verification/rule-eof-2.png",
+      "bytes": 15003,
+      "sha256": "fc0085d88157523eb2d11fe1044cda8252ff43a3e409266373af26d1a5208e78",
+      "encoding": "identity",
+      "source": ".build/FN12Integration/FN11Verification/rule-eof-2.png",
+      "sourceBytes": 15003,
+      "sourceSHA256": "fc0085d88157523eb2d11fe1044cda8252ff43a3e409266373af26d1a5208e78"
+    },
+    {
+      "path": "FN11Verification/task-checkbox-empty-eof.png",
+      "bytes": 15655,
+      "sha256": "b380ef539cb1ca426bafb9818540c81a4ed4e9d0a73e29b9125a7f199ee4b4fb",
+      "encoding": "identity",
+      "source": ".build/FN12Integration/FN11Verification/task-checkbox-empty-eof.png",
+      "sourceBytes": 15655,
+      "sourceSHA256": "b380ef539cb1ca426bafb9818540c81a4ed4e9d0a73e29b9125a7f199ee4b4fb"
+    },
+    {
+      "path": "FN12Components/summary.json",
+      "bytes": 1456,
+      "sha256": "57194f064a3da66fefd90f990122ec285c4ac0a5d26e077a52bdb35ab362667e",
+      "encoding": "identity",
+      "source": ".build/FN12Integration/FN12Components/summary.json",
+      "sourceBytes": 1456,
+      "sourceSHA256": "57194f064a3da66fefd90f990122ec285c4ac0a5d26e077a52bdb35ab362667e"
+    },
+    {
+      "path": "FN12Components/compile.log.gz",
+      "bytes": 472,
+      "sha256": "3349c8da4977785232dfd7e395e277c45c1cec924365786ac860e9979fd0f6b0",
+      "encoding": "gzip",
+      "source": ".build/FN12Integration/FN12Components/compile.log",
+      "sourceBytes": 1036,
+      "sourceSHA256": "28c2c6fafc9e0d0396c942ff636732e86d5384bf902ea53625846c676e639639"
+    },
+    {
+      "path": "FN12Components/compile-embedded-framework-failed.log.gz",
+      "bytes": 220,
+      "sha256": "7508ea86d37a0f201f791c3482a191cf11ca8a86a80cb53eefa1ae56a922e666",
+      "encoding": "gzip",
+      "source": ".build/FN12Integration/FN12Components/compile-embedded-framework-failed.log",
+      "sourceBytes": 311,
+      "sourceSHA256": "e8c54af6b54a802ddf46e1f9b7d2ba3b9a567d23e3de93008a5df93856ba931f"
+    },
+    {
+      "path": "FN12Components/run.log",
+      "bytes": 8610,
+      "sha256": "2d41e555cca74fd8f02460aef9f455471246850bac006489fcc20c832b4d5665",
+      "encoding": "identity",
+      "source": ".build/FN12Integration/FN12Components/run.log",
+      "sourceBytes": 8610,
+      "sourceSHA256": "2d41e555cca74fd8f02460aef9f455471246850bac006489fcc20c832b4d5665"
+    },
+    {
+      "path": "FN12Components/run-embedded-framework-failed.log.gz",
+      "bytes": 681,
+      "sha256": "a5dff20716aebba9b711cd5a26c5a50acd055fd98643464af3c624dbac6fadec",
+      "encoding": "gzip",
+      "source": ".build/FN12Integration/FN12Components/run-embedded-framework-failed.log",
+      "sourceBytes": 2485,
+      "sourceSHA256": "ee16bc38916b51e9ad8f56898d91dfdbf6f3e8278eae49a3ddb92bacaa88a698"
+    },
+    {
+      "path": "FN12Components/components/results.log",
+      "bytes": 6315,
+      "sha256": "46b6b81517cce5f32e65454f643dbb077fc05b4efad742a75fe34c49d7c1d049",
+      "encoding": "identity",
+      "source": ".build/FN12Integration/FN12Components/components/results.log",
+      "sourceBytes": 6315,
+      "sourceSHA256": "46b6b81517cce5f32e65454f643dbb077fc05b4efad742a75fe34c49d7c1d049"
+    },
+    {
+      "path": "FN12Components/audit-components-0851B54C-7108-435C-AB49-491271B353A9/resume-completed/Results/B359FCA6-90E1-4C1C-8D89-1E397761C4FB.json",
+      "bytes": 1737,
+      "sha256": "dc1dda8b035245e9a61cdc8d132e08e149b86806ba4d89de4caf323e74d4642c",
+      "encoding": "identity",
+      "source": ".build/FN12Integration/FN12Components/audit-components-0851B54C-7108-435C-AB49-491271B353A9/resume-completed/Results/B359FCA6-90E1-4C1C-8D89-1E397761C4FB.json",
+      "sourceBytes": 1737,
+      "sourceSHA256": "dc1dda8b035245e9a61cdc8d132e08e149b86806ba4d89de4caf323e74d4642c"
+    },
+    {
+      "path": "FN12Components/audit-components-0851B54C-7108-435C-AB49-491271B353A9/resume-unknown/Results/6AC2C41D-0344-4D19-8895-A52E69472DBE.json",
+      "bytes": 1022,
+      "sha256": "50f9cab6f9a04a5cb00f60512d33a157ff6b4f7d6f2ef30323ab72b5c7c11b25",
+      "encoding": "identity",
+      "source": ".build/FN12Integration/FN12Components/audit-components-0851B54C-7108-435C-AB49-491271B353A9/resume-unknown/Results/6AC2C41D-0344-4D19-8895-A52E69472DBE.json",
+      "sourceBytes": 1022,
+      "sourceSHA256": "50f9cab6f9a04a5cb00f60512d33a157ff6b4f7d6f2ef30323ab72b5c7c11b25"
+    },
+    {
+      "path": "FN12Components/audit-components-0851B54C-7108-435C-AB49-491271B353A9/unique/Results/2BD3ECF5-8921-4EB9-AC38-260F9A193676.json",
+      "bytes": 1647,
+      "sha256": "f4b08008f503157a0b07d53cea5c4313ab480a1f847060e39c42a388cd117027",
+      "encoding": "identity",
+      "source": ".build/FN12Integration/FN12Components/audit-components-0851B54C-7108-435C-AB49-491271B353A9/unique/Results/2BD3ECF5-8921-4EB9-AC38-260F9A193676.json",
+      "sourceBytes": 1647,
+      "sourceSHA256": "f4b08008f503157a0b07d53cea5c4313ab480a1f847060e39c42a388cd117027"
+    },
+    {
+      "path": "source-state.json",
+      "bytes": 3678,
+      "sha256": "f720e0f5ab6d13ac66ba9d86332c383cb8809335de6c5409b67676e0874ffeb9",
+      "encoding": "identity"
+    },
+    {
+      "path": "build-results.json",
+      "bytes": 1907,
+      "sha256": "071923d5de767fa45815263c8bf59b16faebb019128b6f35f63bb2455fa2b01c",
+      "encoding": "identity"
+    },
+    {
+      "path": "INTEGRATION.md",
+      "bytes": 3153,
+      "sha256": "616982814e9e2ab87ec2f3777fd72084eeb8b8c24b329ac109871d01704b52a3",
+      "encoding": "identity"
+    },
+    {
+      "path": "post-build-verification.json",
+      "bytes": 512,
+      "sha256": "91d85eefa27c06bc5dc17ee0663cfcd829925f34567463eaf64f31aa67475ec9",
+      "source": "Direct post-build verification by root agent"
+    }
+  ],
+  "excluded": [
+    "Test source .swift and temporary shell scripts (content not retained; fixture source hashes remain in summaries).",
+    "Harness executables, app/framework binaries, dSYM, dependency source and build caches.",
+    "Audit unsafe input fixtures: FIFO, symlink, hardlink, oversized or invalid JSON; only valid regular generated Results receipts retained.",
+    "No temporary resources deleted by evidence collection; originals remain under .build/FN12Integration."
+  ]
+}

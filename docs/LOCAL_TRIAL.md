@@ -2,13 +2,17 @@
 
 本手册用于 FinderNotes v0.1 的个人本机使用与安装卸载。Dan 于 2026-09-27 明确确认 v0.1、M2 和项目整体交付通过，项目状态与交付后清理结果以 [Notion 项目首页](https://app.notion.com/p/3e4e7607d6498038adeee4c1069f2bb9)为准。步骤与预期不代表已经实测；已有失败、未验证项和 FN08-I07／FN08-I08 保留原结论，见 [历史验收记录](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/docs/evidence/fn08/ACCEPTANCE.md)。本地测试资源和历史验收证据在交付后清理，Git 历史与 Notion 记录保留；本次交付仍为个人本机使用，未公开发布。
 
-当前软件显示名与安装文件名统一为 **FinderNotes**／**FinderNotes.app**。版本信息在“关于 FinderNotes”中显示为 `0.1.0 (11)`；历史交付记录按构建号追溯。服务显示名改为“用 FinderNotes 编辑笔记”，LocalTrial bundle ID、端口与恢复目录保持不变。
+当前软件显示名与安装文件名统一为 **FinderNotes**／**FinderNotes.app**。真实个人安装版为 `0.1.1 (12)`；历史交付记录按构建号追溯。服务显示名为“用 FinderNotes 编辑笔记”，LocalTrial bundle ID、端口与恢复目录保持不变。
+
+## FN-12 手动更新
+
+`0.1.1（12）` 新增手动“检查更新…”功能，已于 2026-10-10 安全覆盖 `~/Applications/FinderNotes.app` 并获 Dan 验收。LocalTrial 身份、服务端口及草稿恢复目录保持一致。生产 feed／Release 仍未发布，检查可能返回 404，应显示失败。首次升级、签名材料准备和后续更新操作见[更新手册](UPDATES.md)；验收接受不改写历史未验证边界，也不代表 V1.0 整体发布。
 
 ## 交付身份与使用范围
 
 | 项目 | 本地试用选择与影响 |
 | --- | --- |
-| 版本／构建号 | `0.1.0`／`11`，当前使用版；历史交付对象见固定提交中的验收记录 |
+| 版本／构建号 | `0.1.1`／`12`，当前个人安装版；历史交付对象见固定提交中的验收记录 |
 | Release bundle ID | `com.findernotes.FinderNotes.LocalTrial`，个人试用使用的独立稳定身份 |
 | Finder 服务 | `用 FinderNotes 编辑笔记`；服务端口 `FinderNotesLocalTrial` |
 | 默认安装位置 | `~/Applications/FinderNotes.app`，已有同名对象时拒绝覆盖 |
@@ -20,19 +24,18 @@
 
 build 8 的实际运行环境为 macOS 26.6.2（25G83）、Apple M2、Xcode 27.0（27A266a）、Swift 6.4、内置 APFS 的独立合成 PNG/MOV，详见 [2026-09-27 build 8 实测报告](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/docs/evidence/fn08/2026-09-27.md)。其 Release 含 arm64/x86_64，只有当前 arm64 主机经过运行测试。既有 140 项测试、真实文件与 Finder/UI 结果沿用为 build 8 历史证据，本次名称更新未据此声称 build 11 重跑通过；build 11 的构建、名称和安装核验另行留证。不能把构建成功或 deployment target 写成所有 macOS 26、Intel、大媒体、所有图片／视频格式均已支持。既有本机 ad hoc 构建带 `get-task-allow`、无 hardened runtime；不是公开分发签名配置。
 
-## 构建与安装
+## 构建产物与安装入口
 
-从保留的仓库根目录执行。需要完整 Xcode；如位于其他位置，只给当前命令设置 `FINDERNOTES_DEVELOPER_DIR`，不更改系统全局开发目录。
+以下命令构建当前 `0.1.1（12）` 产物，不安装或覆盖真实应用。从保留的仓库根目录执行。需要完整 Xcode；如位于其他位置，只给当前命令设置 `FINDERNOTES_DEVELOPER_DIR`，不更改系统全局开发目录。
 
 ```sh
-FINDERNOTES_DERIVED_DATA="$PWD/.build/DerivedData-build11" \
+FINDERNOTES_DERIVED_DATA="$PWD/.build/DerivedData-build12" \
   FINDERNOTES_BUILD_PROFILE=local-trial ./scripts/build_app.sh
-python3 -B scripts/install_local_trial.py
 ```
 
-上述命令使用 `.build/DerivedData-build11`；清理后需要重新构建才会产生该目录。构建脚本支持 `FINDERNOTES_DERIVED_DATA`，未设置时默认 `.build/DerivedData`。build 11 Release 产物及安装器默认源为 `.build/DerivedData-build11/Build/Products/Release/FinderNotes.app`，因此按上述命令显式指定路径。`local-trial` 只接受 Release；测试 target 和专用 profile 已移除。构建脚本核验代码签名、身份、版本、名称和服务，不会安装或覆盖当前应用。Xcode 可能向 LaunchServices 注册构建产物，因此“看到服务”不证明启动的是安装件，使用时还要核对实际进程路径。
+上述命令使用 `.build/DerivedData-build12`；构建脚本支持 `FINDERNOTES_DERIVED_DATA`，未设置时默认 `.build/DerivedData`。当前安装器默认源为 `.build/DerivedData-build12/Build/Products/Release/FinderNotes.app`，因此按上述命令显式指定路径。build 11 历史构建曾使用 `.build/DerivedData-build11`，当前源码不重建该旧版。`local-trial` 只接受 Release。构建脚本核验代码签名、身份、版本、名称、服务及 Sparkle 配置，不会安装或覆盖当前应用。Xcode 可能向 LaunchServices 注册构建产物，因此“看到服务”不证明启动的是安装件，使用时还要核对实际进程路径。
 
-安装脚本默认复制上述 Release 到用户级安装位置，不要求管理员权限。也可以显式指定源与一个不存在的目标：
+首次安装默认复制上述 Release 到用户级安装位置，不要求管理员权限。当前真实 11 → 12 已按单独授权完成；未来安装也可以显式指定源与一个不存在的目标：
 
 ```sh
 python3 -B scripts/install_local_trial.py \
@@ -40,7 +43,7 @@ python3 -B scripts/install_local_trial.py \
   --destination "$HOME/Applications/FinderNotes.app"
 ```
 
-目标已存在时保留原件并停止。重复安装不等于覆盖升级：先退出本次试用应用，核对来源、版本和草稿，再由用户决定保留或卸载原安装件后重新安装；不要为使脚本成功而自动删除、改名或覆盖已有应用。不要并行运行多个 LocalTrial 副本；它们共用恢复目录和服务身份。
+默认遇已有目标时保留原件并停止，不要为使脚本成功而手动删除、改名或覆盖已有应用。build 12 增加显式 `--replace-existing` 升级入口，只在后续明确授权后使用，详见[更新手册](UPDATES.md)；该入口要求正常退出应用、验证新旧身份和签名、新构建号递增，并在新包安装与复验成功后直接删除旧包。失败保留现场，不清理恢复记录。不要并行运行多个 LocalTrial 副本；它们共用恢复目录和服务身份。
 
 交付时须保存源码 SHA、当前分支和未提交状态、完整构建命令、系统和工具链、App 的 Info.plist、签名实际结果、可执行文件及交付包摘要、安装脚本结果和最终安装路径。运行应用不需要安装 Xcode；这只说明构建依赖与运行依赖不同，不承诺其他机器已可运行。
 
@@ -148,4 +151,4 @@ FN08-I07 服务路由仍未解决。FN08-I08 的历史合成恢复 JSON 缺失�
 - [FN-08 历史验收说明](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/validation/fn08/README.md)
 - [M0 评审报告](https://github.com/danding9717/FinderNotes/blob/868a4160cdb10f234ad3ec3cf94f631bd7d80591/docs/evidence/fn03/2026-09-24-m0-review.md)
 
-本手册不启动下一版本，也不把构建成功替代功能验收。
+本手册保留 v0.1 历史验收边界；FN-12 仅按本轮授权推进，不启动其他任务，也不把构建成功替代功能验收。

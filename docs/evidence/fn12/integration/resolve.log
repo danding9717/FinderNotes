@@ -1,0 +1,12 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -resolvePackageDependencies -project FinderNotes.xcodeproj -scheme FinderNotes -clonedSourcePackagesDirPath /Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Integration/Standard/SourcePackages
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  Sparkle: https://github.com/sparkle-project/Sparkle @ 2.10.0
+  cmark-gfm: https://github.com/swiftlang/swift-cmark.git @ 0.9.0
+  swift-markdown: https://github.com/swiftlang/swift-markdown.git @ 0.9.0
+
+resolved source packages: Sparkle, cmark-gfm, swift-markdown

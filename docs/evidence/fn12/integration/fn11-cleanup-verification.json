@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-10T07:09:30.132204+00:00",
+  "assertionsPassed": 2155,
+  "exitCode": 0,
+  "temporaryDirectoriesRemaining": [],
+  "preferenceFilesRemaining": [],
+  "newTemporaryDirectoriesRemaining": [],
+  "newPreferenceFilesRemaining": [],
+  "harnessRunLockRemoved": true,
+  "trackedVerificationScriptUnchanged": true,
+  "trackedVerificationScriptSHA256": "5229a0f7012e48270ee6d229fff525d8e45e49cda716b7150eae492f1a435335",
+  "compileLogBytes": 0,
+  "mode": "default component (FN11_TASK_REVIEW_UI disabled)",
+  "installedOrLaunchedFinderNotes": false,
+  "resultLog": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Integration/FN11Verification/result.log",
+  "preferenceCleanupReceipt": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Integration/fn11-preference-cleanup.json"
+}

@@ -1,0 +1,144 @@
+[
+  {
+    "source": "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12IMEReview/UpdateResults/08C3B412-DB32-4199-BB4F-E7D417592AB7.json",
+    "evidence": "additional-records/00-08C3B412-DB32-4199-BB4F-E7D417592AB7.json",
+    "bytes": 1417,
+    "sha256": "866a12b8f044a5cc8581985eefb80f927c71ad0b8f9cddcf1b38d9c6cfb20473"
+  },
+  {
+    "source": "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12IMEReview/UpdateResults/89966756-48E9-46D8-9F5A-64F99396DBA4.json",
+    "evidence": "additional-records/01-89966756-48E9-46D8-9F5A-64F99396DBA4.json",
+    "bytes": 1489,
+    "sha256": "7fa38137530b168c6981de7fd7801c53802b69909a508138cb03d7d454cd117d"
+  },
+  {
+    "source": "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12ReadOnlyReview/UpdateResults/F10C07CA-5154-4B97-AC21-94E0CE4ACC9B.json",
+    "evidence": "additional-records/02-F10C07CA-5154-4B97-AC21-94E0CE4ACC9B.json",
+    "bytes": 899,
+    "sha256": "9c493fe1f4609d491c26b09530e3ecad0a8768b1034819f63a99f10fbaca8fcf"
+  },
+  {
+    "source": "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12Review/UpdateResults/3A3EF9F3-4756-4D8F-9096-CDB8DF0E374F.json",
+    "evidence": "additional-records/03-3A3EF9F3-4756-4D8F-9096-CDB8DF0E374F.json",
+    "bytes": 1508,
+    "sha256": "a348c2d8fc11e099d58cdeff3eef866b7cdd0b7babe3992277653cd91e2bba31"
+  },
+  {
+    "source": "/Users/danding/Library/Application Support/com.findernotes.FinderNotes.FN12Review/UpdateResults/D5C6942C-CA59-4343-A309-13BB01BB2B09.json",
+    "evidence": "additional-records/04-D5C6942C-CA59-4343-A309-13BB01BB2B09.json",
+    "bytes": 1489,
+    "sha256": "a6f9a45b5faf90c725887d8c3597e13019a742dedd9a31999a6922f511210bbe"
+  },
+  {
+    "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/components/results.log",
+    "evidence": "additional-records/05-results.log",
+    "bytes": 5811,
+    "sha256": "81403f5656a1bafa323da5fae76129758569362a5d48fb9910c1278324a52fc8"
+  },
+  {
+    "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ValidationBeforePin/network/results.json",
+    "evidence": "additional-records/06-results.json",
+    "bytes": 9713,
+    "sha256": "c55ffe74194cf1fae25dee062f76d920eede9c3dc0d33ebb9711262c35962cad"
+  },
+  {
+    "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/native-final.json",
+    "evidence": "additional-records/07-native-final.json",
+    "bytes": 237,
+    "sha256": "d192b55568a7efc468aec5d8e48c969241bd0eef3a3236855f8e006021424c9f"
+  },
+  {
+    "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Validation/cleanup-observer.json",
+    "evidence": "additional-records/08-cleanup-observer.json",
+    "bytes": 560,
+    "sha256": "0a1dce8ac70bfa53ed8bd6fbdedb2fb65f3065531c0e0fcb127385aa31244ac3"
+  },
+  {
+    "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidation/native-final.json",
+    "evidence": "additional-records/09-native-final.json",
+    "bytes": 608,
+    "sha256": "06dafdfe65e7249d8d0b2b6bc3035ac13792b766dea9674bb8822d127182112f"
+  },
+  {
+    "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidation/native-ime-install-guard.json",
+    "evidence": "additional-records/10-native-ime-install-guard.json",
+    "bytes": 626,
+    "sha256": "24101cc9948d0317425663bb4539d758c4afc42e83c38ebefc2df092235c25bb"
+  },
+  {
+    "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12IMEValidation/cleanup-observer.json",
+    "evidence": "additional-records/11-cleanup-observer.json",
+    "bytes": 644,
+    "sha256": "f3851976a0b36e01fee981d5b2a4bc5aa139229df20b30428d45b9c79b5b1018"
+  },
+  {
+    "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ReadOnlyValidation/auth-verified-timeline.txt",
+    "evidence": "additional-records/12-auth-verified-timeline.txt",
+    "bytes": 2212,
+    "sha256": "79e0715b868fbbc0db9f3f14e2f38fa62613f2b1aec3062a9c0e1dacc10e2689"
+  },
+  {
+    "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ReadOnlyValidation/permission-result.json",
+    "evidence": "additional-records/13-permission-result.json",
+    "bytes": 919,
+    "sha256": "6e6d9dfc6d61c14f52be049e16f743ff0e0166685528f8597bf9e022f8985546"
+  },
+  {
+    "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12ReadOnlyVolumeValidation/native-result.json",
+    "evidence": "additional-records/14-native-result.json",
+    "bytes": 752,
+    "sha256": "a9457f4c94ced930f8d2c355a6b7e577239aa7509eeed1cdbd0cf68568248246"
+  },
+  {
+    "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12RealInstall-20261010-142424/install-result.json",
+    "evidence": "additional-records/15-install-result.json",
+    "bytes": 20105,
+    "sha256": "5097d396dc97ab006c418a693b65e910682702a59ca56081770e9937452c1f69"
+  },
+  {
+    "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12RealInstall-20261010-142424/launch-verification.json",
+    "evidence": "additional-records/16-launch-verification.json",
+    "bytes": 415,
+    "sha256": "a380c35dacddda8ec827c9cd4841555bab4b043a83f76adae366cdb4658a1bee"
+  },
+  {
+    "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/evidence/readiness.json",
+    "evidence": "additional-records/17-readiness.json",
+    "bytes": 2734,
+    "sha256": "0da0c0077b1ca33618345cb6a4f5c02fbac1671f40df02ab951c45537f14909e"
+  },
+  {
+    "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/evidence/console-smoke.json",
+    "evidence": "additional-records/18-console-smoke.json",
+    "bytes": 1114,
+    "sha256": "1bde51357eab57ed8d68b2af78265bdb28ba74c4d9db38aeb629cdda7324b9cf"
+  },
+  {
+    "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/evidence/console-smoke-transfer-marker.json",
+    "evidence": "additional-records/19-console-smoke-transfer-marker.json",
+    "bytes": 170,
+    "sha256": "bc6cdf97e8ec8979912ff38c5165f0628081cf8ae07847966d2228af9884bbba"
+  },
+  {
+    "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Acceptance/evidence/console-events.jsonl",
+    "evidence": "additional-records/20-console-events.jsonl",
+    "bytes": 2705,
+    "sha256": "8a25af8d0e7fe1a54d597f726f5bed13da9c2975863de266f9c2b90c056ec0b9"
+  },
+  {
+    "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Dependencies/build-standard-ime-guard.log",
+    "evidence": "additional-records/21-build-standard-ime-guard.log.gz",
+    "bytes": 8704,
+    "sha256": "a2e205f6f6eace6e17bbe5363f4249669c73a8a34628b40d2687c60b2b1cb981",
+    "uncompressedBytes": 93616,
+    "uncompressedSHA256": "8d37eec08ee005224f57d87894675065596805ae678263a481d04b6e53a43d5a"
+  },
+  {
+    "source": "/Users/danding/.codex/worktrees/fn-12-app-update/FinderNotes/.build/FN12Dependencies/build-local-trial-ime-guard.log",
+    "evidence": "additional-records/22-build-local-trial-ime-guard.log.gz",
+    "bytes": 8773,
+    "sha256": "8627ba432b0635529e72775e896e3088824d6f3552c8ad4dd078797636b62586",
+    "uncompressedBytes": 94548,
+    "uncompressedSHA256": "fa641a6ef81ee846e1fdd1c9eeda9178d79fb68b45b3d5bee0f58fe75218a507"
+  }
+]

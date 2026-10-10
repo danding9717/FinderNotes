@@ -1,0 +1,42 @@
+{
+  "awaitingRestart" : false,
+  "binding" : {
+    "bundlePath" : "\/Users\/danding\/.codex\/worktrees\/fn-12-app-update\/FinderNotes\/.build\/FN12Integration\/FN12Components\/audit-components-0851B54C-7108-435C-AB49-491271B353A9\/resume-completed\/Installation\/new-download\/extraction\/Fixture.app",
+    "directoryIdentity" : {
+      "device" : 16777232,
+      "inode" : 11076431
+    },
+    "directoryPath" : "\/Users\/danding\/.codex\/worktrees\/fn-12-app-update\/FinderNotes\/.build\/FN12Integration\/FN12Components\/audit-components-0851B54C-7108-435C-AB49-491271B353A9\/resume-completed\/Installation\/new-download",
+    "extractionIdentity" : {
+      "device" : 16777232,
+      "inode" : 11076432
+    }
+  },
+  "bundleID" : "com.findernotes.FinderNotes.FN12AuditChecks",
+  "cacheInstallationPath" : "\/Users\/danding\/.codex\/worktrees\/fn-12-app-update\/FinderNotes\/.build\/FN12Integration\/FN12Components\/audit-components-0851B54C-7108-435C-AB49-491271B353A9\/resume-completed\/Installation",
+  "checkedAt" : 813308818.794151,
+  "createdAt" : 813308818.579699,
+  "evaluation" : {
+    "reason" : "observed-old-bundle-then-removed",
+    "status" : "completed"
+  },
+  "id" : "B359FCA6-90E1-4C1C-8D89-1E397761C4FB",
+  "installationPath" : "\/Users\/danding\/.codex\/worktrees\/fn-12-app-update\/FinderNotes\/.build\/FN12Integration\/FN12Components\/audit-components-0851B54C-7108-435C-AB49-491271B353A9\/resume-completed\/Installed.app",
+  "observations" : [
+    "oldBundlePresent",
+    "missing"
+  ],
+  "oldIdentity" : {
+    "device" : 16777232,
+    "inode" : 11076433
+  },
+  "oldVersion" : {
+    "build" : "11",
+    "display" : "0.1.0"
+  },
+  "schema" : 1,
+  "targetVersion" : {
+    "build" : "12",
+    "display" : "0.1.1"
+  }
+}

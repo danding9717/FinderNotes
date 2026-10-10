@@ -1,0 +1,30 @@
+{
+  "component_fixture_commit": "c2f4253",
+  "source_files": {
+    ".build/FN12Integration/FN12Components/source/ComponentChecks.swift": "ede0e2ddcd0b7e2ac055a8e63a039c0d5870849556d7f00dad1809546846991f",
+    ".build/FN12Integration/FN12Components/source/AuditChecks.swift": "8a18e72e71cc4d5c00b989c8d23295267267fb2c2875009e801c2862bde8d22d"
+  },
+  "product_source_scope": "All FinderNotes/*.swift except main.swift; includes AppDelegate.swift",
+  "product_source_count": 17,
+  "configuration": "Release",
+  "target": "arm64-apple-macos26.0",
+  "release_build_success": true,
+  "result": {
+    "passed": 100,
+    "failed": 0,
+    "process_exit": 0
+  },
+  "evidence_boundary": "Hidden component harness with synthetic fixtures only. Does not launch FinderNotes, register services, install an update, or validate physical SCIM input.",
+  "compile_warning": "Historical test-only AuditFixtureFileManager inherits unavailable Sendable conformance; compilation succeeds.",
+  "preserved_initial_failure": "compile-embedded-framework-failed.log: embedded Sparkle.framework has no Modules. Temporary harness adds -F Release Products for module import, retaining embedded framework runtime rpath.",
+  "artifacts": [
+    "source/ComponentChecks.swift",
+    "source/AuditChecks.swift",
+    "run_components.zsh",
+    "compile.log",
+    "run.log",
+    "components/results.log",
+    "compile-embedded-framework-failed.log",
+    "run-embedded-framework-failed.log"
+  ]
+}

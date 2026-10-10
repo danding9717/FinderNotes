@@ -1,0 +1,13 @@
+{
+  "case": "real marked input during manual install request",
+  "oldPIDRemains": 76049,
+  "nativeInstallRequestWhileComposition": "中文shu ru",
+  "afterRejectedQuit": "中文shu ru",
+  "status": "请先完成中文输入，再退出。",
+  "confirmationSheetShown": false,
+  "forcedExitOccurred": false,
+  "diskBaselineRemains": "中文",
+  "fileModeDuringTest": "0o444",
+  "candidateContinuationAfterChangingToSparkleWindow": "candidate 1 produced literal shuru1; cross-window candidate context preservation is not passed",
+  "scope": "raw draft preserved and unfinished input blocks exit; I07/I08 conclusions retained"
+}

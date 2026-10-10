@@ -1,0 +1,41 @@
+{
+  "awaitingRestart" : false,
+  "binding" : {
+    "bundlePath" : "\/Users\/danding\/Library\/Caches\/com.findernotes.FinderNotes.FN12IMEReview\/org.sparkle-project.Sparkle\/Installation\/r4SNNB7Zx\/Zd8AKSR3M\/FN12 IME Review.app",
+    "directoryIdentity" : {
+      "device" : 16777232,
+      "inode" : 11021978
+    },
+    "directoryPath" : "\/Users\/danding\/Library\/Caches\/com.findernotes.FinderNotes.FN12IMEReview\/org.sparkle-project.Sparkle\/Installation\/r4SNNB7Zx",
+    "extractionIdentity" : {
+      "device" : 16777232,
+      "inode" : 11021979
+    }
+  },
+  "bundleID" : "com.findernotes.FinderNotes.FN12IMEReview",
+  "cacheInstallationPath" : "\/Users\/danding\/Library\/Caches\/com.findernotes.FinderNotes.FN12IMEReview\/org.sparkle-project.Sparkle\/Installation",
+  "checkedAt" : 813295872.509178,
+  "createdAt" : 813295594.323795,
+  "evaluation" : {
+    "reason" : "target-version-or-installation-path-not-running",
+    "status" : "unknown"
+  },
+  "id" : "08C3B412-DB32-4199-BB4F-E7D417592AB7",
+  "installationPath" : "\/Users\/danding\/.codex\/worktrees\/fn-12-app-update\/FinderNotes\/.build\/FN12IMEValidation\/Installed\/FN12 IME Review.app",
+  "observations" : [
+
+  ],
+  "oldIdentity" : {
+    "device" : 16777232,
+    "inode" : 11020832
+  },
+  "oldVersion" : {
+    "build" : "12",
+    "display" : "0.1.1"
+  },
+  "schema" : 1,
+  "targetVersion" : {
+    "build" : "13",
+    "display" : "0.1.2"
+  }
+}
