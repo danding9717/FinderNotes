@@ -4,7 +4,7 @@ FinderNotes 为 Finder 中的单份图片或视频提供原生笔记编辑入口
 
 ## 个人版本与历史交付
 
-个人版本沿用身份 `com.findernotes.FinderNotes.LocalTrial`，安装位置 `~/Applications/FinderNotes.app`，Finder 服务为“用 FinderNotes 编辑笔记”。`0.1.2（13）` 已发布；本轮准备单仓更新源迁移，实际安装版本请在应用中查看。历史 v0.1 交付版本为 `0.1.0（11）`。[安装、使用、恢复与卸载手册](docs/LOCAL_TRIAL.md)说明功能、构建方式和限制。
+个人版本沿用身份 `com.findernotes.FinderNotes.LocalTrial`，安装位置 `~/Applications/FinderNotes.app`，Finder 服务为“用 FinderNotes 编辑笔记”。`0.1.4（15）` 已发布，并完成实际 13→14→15 升级验证。历史 v0.1 交付版本为 `0.1.0（11）`。[安装、使用、恢复与卸载手册](docs/LOCAL_TRIAL.md)说明功能、构建方式和限制。
 
 Dan 于 2026-09-27 明确确认 FinderNotes v0.1、M2 和项目整体交付通过。整体验收不改变已有失败、未验证项或 FN08-I07／FN08-I08 的结论；项目状态与清理结果以 [Notion 项目首页](https://app.notion.com/p/3e4e7607d6498038adeee4c1069f2bb9)当前记录为准。该次历史交付为个人本机使用，未公开发布。
 
@@ -20,7 +20,7 @@ Dan 于 2026-09-27 明确确认 FinderNotes v0.1、M2 和项目整体交付通�
 https://raw.githubusercontent.com/danding9717/FinderNotes/updates/appcast.xml
 ```
 
-迁移安排为 **0.1.2（13）→ 0.1.3（14）→ 0.1.4（15）**：旧源只提供桥接版 14，14 内嵌新源；再由新源提供 15，以验证升级后仍能检查、下载安装并重启。14 和 15 使用同一迁移实现，仅版本及说明不同。这是待实测的迁移路径；只有 Dan 完成升级并确认新源检查、安装正常后，才删除 `FinderNotes-updates`。
+迁移安排为 **0.1.2（13）→ 0.1.3（14）→ 0.1.4（15）**：旧源只提供桥接版 14，14 内嵌新源；再由新源提供 15，以验证升级后仍能检查、下载安装并重启。14 和 15 使用同一迁移实现，仅版本及说明不同。该路径已于 2026-10-10 完成真实升级，15 再次检查显示当前最新版本，见[实测记录](docs/evidence/fn13/real-upgrade-verification.json)。旧库删除在收尾时单独核验。
 
 Release 附件只保留安装包 ZIP 和 `SHA256SUMS`；更新说明内嵌于更新列表，开发材料归档至 `docs/releases/`。GitHub 自动生成的源码 ZIP 和 tar.gz 仍会显示。操作与失败处理见[更新手册](docs/UPDATES.md)，历史测试和保留边界见[FN-12 验证报告](docs/FN12_VALIDATION.md)。
 
