@@ -1,0 +1,41 @@
+{
+  "bundleID": "com.findernotes.FinderNotes.LocalTrial",
+  "version": "0.1.5",
+  "build": "16",
+  "releaseTag": "v0.1.5",
+  "tagCommit": "981b268f003b66391547107dbcd395fcfde8a122",
+  "feedURL": "https://raw.githubusercontent.com/danding9717/FinderNotes/updates/appcast.xml",
+  "feedCommit": "188a579c33c7a1c949a2846883994a533afbe2a6",
+  "archiveURL": "https://github.com/danding9717/FinderNotes/releases/download/v0.1.5/FinderNotes-0.1.5-16.zip",
+  "releaseNotesURL": "https://github.com/danding9717/FinderNotes/releases/tag/v0.1.5",
+  "archiveSHA256": "28e45854ea5f3b8ad4b81b59f72301f6f25b64deff126f00cbf030e59279edf8",
+  "archiveLength": 4967216,
+  "publicEDKey": "osFBk+W7kVsju92PnwDjwW6PNCMStp1FrEjjyZyjyWg=",
+  "signatureVerified": true,
+  "signatureScope": "archive",
+  "releaseNotesMode": "inline",
+  "releaseAssets": [
+    "FinderNotes-0.1.5-16.zip",
+    "SHA256SUMS"
+  ],
+  "verification": {
+    "localTrialReleaseBuild": true,
+    "xcodeVersion": "27.0",
+    "hostArchitecture": "arm64",
+    "architectures": [
+      "arm64",
+      "x86_64"
+    ],
+    "archiveRoundTrip": true,
+    "strictCodeSignature": true,
+    "archiveEdDSASignature": true,
+    "anonymousDownloadSHA256": true,
+    "anonymousDownloadLength": 4967216,
+    "anonymousDownloadedBundleIdentityAndVersion": true,
+    "anonymousDownloadedStrictCodeSignature": true,
+    "productionFeedAnonymousReadback": true,
+    "automatedTests": "not run",
+    "manualPreviewScroll": "pending Dan verification",
+    "realInAppUpgrade": "pending Dan verification"
+  }
+}

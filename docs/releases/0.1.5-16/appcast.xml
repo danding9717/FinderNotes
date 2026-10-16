@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+  <channel>
+    <title>FinderNotes 个人版本更新</title>
+    <link>https://github.com/danding9717/FinderNotes</link>
+    <description>FinderNotes 手动更新</description>
+    <language>zh-CN</language>
+    <item>
+      <title>FinderNotes 0.1.5（16）</title>
+      <sparkle:version>16</sparkle:version>
+      <sparkle:shortVersionString>0.1.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <description>&lt;!doctype html&gt;
+&lt;html lang="zh-CN"&gt;&lt;meta charset="utf-8"&gt;&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;&lt;title&gt;FinderNotes 更新说明&lt;/title&gt;&lt;body&gt;&lt;h1&gt;FinderNotes 0.1.5（16）&lt;/h1&gt;&lt;p&gt;修复编辑长 Markdown 笔记时预览上下滚动不流畅的问题；滚动时仅处理可见区域中的列表、任务框、引用线和分隔线装饰。&lt;/p&gt;
+&lt;p&gt;安装前请完成中文组合输入并保存笔记。需要 macOS 26.0 或更高；包含 Apple Silicon 与 Intel 架构，实际运行验证限 Apple Silicon。个人本机使用版本采用 ad hoc 签名，未进行 Apple 公证。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+</description>
+      <sparkle:fullReleaseNotesLink>https://github.com/danding9717/FinderNotes/releases/tag/v0.1.5</sparkle:fullReleaseNotesLink>
+      <pubDate>Fri, 16 Oct 2026 09:52:28 GMT</pubDate>
+      <enclosure url="https://github.com/danding9717/FinderNotes/releases/download/v0.1.5/FinderNotes-0.1.5-16.zip" type="application/octet-stream" length="4967216" sparkle:edSignature="Tn9K+iuWi+bjdIjXxSTsvfdG2t3SARj33HYMB7ePnmjfZ4Aye2XAC86rp1LddlORfppohR6NRsRWpfNL6zdFBw==" />
+    </item>
+  </channel>
+</rss>
