@@ -77,8 +77,8 @@ expected = {
     'CFBundleIdentifier': 'com.findernotes.FinderNotes.LocalTrial',
     'CFBundleName': 'FinderNotes',
     'CFBundleDisplayName': 'FinderNotes',
-    'CFBundleShortVersionString': '0.1.4',
-    'CFBundleVersion': '15',
+    'CFBundleShortVersionString': '0.1.5',
+    'CFBundleVersion': '16',
     'FinderNotesUpdatesEnabled': True,
     'SUFeedURL': feed,
 }
@@ -93,6 +93,6 @@ if (service.get('NSMenuItem') != {'default': '用 FinderNotes 编辑笔记'}
         or service.get('NSPortName') != 'FinderNotesLocalTrial'
         or service.get('NSMessage') != 'receiveFiles'):
     sys.exit('Unexpected local-trial Finder service identity.')
-print('Verified local-trial identity: ' + expected['CFBundleIdentifier'] + ' 0.1.4 (15), Sparkle 2.10.0')
+print('Verified local-trial identity: ' + expected['CFBundleIdentifier'] + ' 0.1.5 (16), Sparkle 2.10.0')
 PY
 print -r -- "$app_path"
