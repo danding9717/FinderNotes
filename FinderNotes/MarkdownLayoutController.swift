@@ -21,6 +21,18 @@ final class MarkdownLayoutManager: NSLayoutManager, NSLayoutManagerDelegate {
         let kind: Kind
     }
 
+    struct DecorationParagraph {
+        let range: NSRange
+        let decorations: [Decoration]
+    }
+
+    private var decorationParagraphs: [DecorationParagraph] = []
+
+    func setDecorationParagraphs(_ paragraphs: [DecorationParagraph]) {
+        decorationParagraphs = paragraphs
+        decorations = paragraphs.flatMap(\.decorations)
+    }
+
     override init() {
         super.init()
         delegate = self
@@ -53,26 +65,48 @@ final class MarkdownLayoutManager: NSLayoutManager, NSLayoutManagerDelegate {
     }
 
     private func drawDecorations(for glyphsToShow: NSRange, at origin: NSPoint) {
-        for decoration in decorations {
-            guard let placement = decorationLine(for: decoration),
-                  NSLocationInRange(placement.glyph, glyphsToShow) else { continue }
-            let container = placement.container
-            let line = placement.line.offsetBy(dx: origin.x, dy: origin.y)
-            NSColor.secondaryLabelColor.set()
-            switch decoration.kind {
-            case .list(let label):
-                (label as NSString).draw(at: NSPoint(x: line.minX + container.lineFragmentPadding,
-                                                     y: line.minY),
-                                        withAttributes: [.font: NSFont.systemFont(ofSize: 16),
-                                                         .foregroundColor: NSColor.secondaryLabelColor])
-            case .task(let checked, _):
-                drawCheckbox(in: checkboxRectangle(for: decoration, line: line, container: container), checked: checked)
-            case .quote:
-                NSRect(x: line.minX + container.lineFragmentPadding, y: line.minY + 2,
-                       width: 2, height: max(2, line.height - 4)).fill()
-            case .rule:
-                NSRect(x: line.minX + container.lineFragmentPadding, y: line.midY,
-                       width: max(1, line.width - container.lineFragmentPadding * 2), height: 1).fill()
+        guard glyphsToShow.length > 0, !decorationParagraphs.isEmpty else { return }
+        let visibleCharacters = characterRange(forGlyphRange: glyphsToShow, actualGlyphRange: nil)
+        guard visibleCharacters.length > 0 else { return }
+        let visibleEnd = NSMaxRange(visibleCharacters)
+
+        // Paragraph groups are in source order and do not overlap. Start at the
+        // first group intersecting this draw pass so scrolling never lays out
+        // decorations for offscreen paragraphs.
+        var lower = 0
+        var upper = decorationParagraphs.count
+        while lower < upper {
+            let middle = lower + (upper - lower) / 2
+            if NSMaxRange(decorationParagraphs[middle].range) <= visibleCharacters.location {
+                lower = middle + 1
+            } else {
+                upper = middle
+            }
+        }
+
+        for paragraph in decorationParagraphs[lower...] {
+            if paragraph.range.location >= visibleEnd { break }
+            for decoration in paragraph.decorations {
+                guard let placement = decorationLine(for: decoration),
+                      NSLocationInRange(placement.glyph, glyphsToShow) else { continue }
+                let container = placement.container
+                let line = placement.line.offsetBy(dx: origin.x, dy: origin.y)
+                NSColor.secondaryLabelColor.set()
+                switch decoration.kind {
+                case .list(let label):
+                    (label as NSString).draw(at: NSPoint(x: line.minX + container.lineFragmentPadding,
+                                                         y: line.minY),
+                                            withAttributes: [.font: NSFont.systemFont(ofSize: 16),
+                                                             .foregroundColor: NSColor.secondaryLabelColor])
+                case .task(let checked, _):
+                    drawCheckbox(in: checkboxRectangle(for: decoration, line: line, container: container), checked: checked)
+                case .quote:
+                    NSRect(x: line.minX + container.lineFragmentPadding, y: line.minY + 2,
+                           width: 2, height: max(2, line.height - 4)).fill()
+                case .rule:
+                    NSRect(x: line.minX + container.lineFragmentPadding, y: line.midY,
+                           width: max(1, line.width - container.lineFragmentPadding * 2), height: 1).fill()
+                }
             }
         }
     }
@@ -380,7 +414,11 @@ final class MarkdownLayoutController: NSObject, @MainActor NSTextStorageDelegate
             characters.insert(integersIn: marker.location..<NSMaxRange(marker))
         }
         manager.hiddenCharacters = characters
-        manager.decorations = plan?.paragraphs.flatMap(\.decorations) ?? []
+        let decorationParagraphs = (plan?.paragraphs ?? []).compactMap { paragraph -> MarkdownLayoutManager.DecorationParagraph? in
+            guard !paragraph.decorations.isEmpty else { return nil }
+            return .init(range: paragraph.range, decorations: paragraph.decorations)
+        }
+        manager.setDecorationParagraphs(decorationParagraphs)
     }
 
     private func flushDisplay() {
@@ -487,7 +525,7 @@ final class MarkdownLayoutController: NSObject, @MainActor NSTextStorageDelegate
         textView.typingAttributes = MarkdownDisplayPlan.baseAttributes
         hiddenMarkers = []
         manager.hiddenCharacters = []
-        manager.decorations = []
+        manager.setDecorationParagraphs([])
         displayedPlan = nil
         pendingAttributeRanges = []
         lastAttributeUpdateRanges = [NSRange(location: 0, length: storage.length)]
